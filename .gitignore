@@ -337,4 +337,9 @@ ASALocalRun/
 .localhistory/
 
 # BeatPulse healthcheck temp database
+<<<<<<< HEAD
 healthchecksdb
+/Temp/UnityLockfile
+=======
+healthchecksdb
+>>>>>>> e3e6a7d (Add .gitignore and .gitattributes.)
