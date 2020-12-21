@@ -55,10 +55,7 @@ public class UIManager : MonoBehaviour
 
     public bool IsMouseOverUI()
     {
-        if (EventSystem.current.IsPointerOverGameObject())
-            return true;
-        else
-            return false;
+        return EventSystem.current.IsPointerOverGameObject();
     }
 
     public void PauseGameTab()
@@ -101,15 +98,15 @@ public class UIManager : MonoBehaviour
 
     public void UpdateSelectedInteractionUI()
     {
-        if (UnitSelection.instance.selectedUnits.Count > 0)
+        if (SelectionManager.instance.selectedUnits.Count > 0)
         {
             if (currentInteractionState != InteractionPanelState.Unit)
                 DisableCurrentInteractionPanel();
             EnableInteractionPanel(InteractionPanelState.Unit);
         }
-        else if (UnitSelection.instance.selectedBuilding != null)
+        else if (SelectionManager.instance.selectedBuilding != null)
         {
-            if (UnitSelection.instance.selectedBuilding.gameObject.GetComponent<ResourceCamp>() != null)
+            if (SelectionManager.instance.selectedBuilding.gameObject.GetComponent<ResourceCamp>() != null)
             {
                 if (currentInteractionState != InteractionPanelState.Camp)
                     DisableCurrentInteractionPanel();

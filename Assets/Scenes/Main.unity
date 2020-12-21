@@ -527,6 +527,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
 --- !u!223 &388753016
 Canvas:
   m_ObjectHideFlags: 0
@@ -2452,7 +2453,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8134852719751801435, guid: 1db0bec110cab904d90af6162ff0b584, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8134852719751801435, guid: 1db0bec110cab904d90af6162ff0b584, type: 3}
       propertyPath: m_AnchorMax.y
@@ -2460,7 +2461,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8134852719751801435, guid: 1db0bec110cab904d90af6162ff0b584, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8134852719751801435, guid: 1db0bec110cab904d90af6162ff0b584, type: 3}
       propertyPath: m_AnchorMin.y
@@ -2504,7 +2505,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8134852719751801435, guid: 1db0bec110cab904d90af6162ff0b584, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -30
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 8134852719751801435, guid: 1db0bec110cab904d90af6162ff0b584, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -4690,6 +4691,7 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 2.1081e-41, z: 0, w: -2.796875}
   m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!4 &771802810
@@ -4721,6 +4723,7 @@ GameObject:
   - component: {fileID: 788951018}
   - component: {fileID: 788951019}
   - component: {fileID: 788951020}
+  - component: {fileID: 788951021}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: GameController
@@ -4777,7 +4780,6 @@ MonoBehaviour:
   selectedBuilding: {fileID: 0}
   heroSelected: 0
   selectionArea: {fileID: 882245950}
-  isDragging: 0
 --- !u!114 &788951017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4796,7 +4798,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6510be95fe4a5c84f94f08a7876293e2, type: 2}
   buildingStatsList:
   - {fileID: 11400000, guid: a92c879ac4aeec442a42f5a2869fa5be, type: 2}
-  isPaused: 0
 --- !u!114 &788951018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4846,6 +4847,22 @@ MonoBehaviour:
   unitInteractionPanel: {fileID: 619565245}
   buildInteractionPanel: {fileID: 1667452353}
   campInteractionPanel: {fileID: 594682057}
+--- !u!114 &788951021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 788951013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de522968f98385240906d6444e3c300d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  previewResourceCamp: {fileID: 1267868042687567843, guid: 6cb6cd008d8fd1d49a0938ffdfdfc5ed, type: 3}
+  underConstructionResourceCamp: {fileID: 0}
+  constructedResourceCamp: {fileID: 0}
+  validityMaterial: {fileID: 2100000, guid: 437d769fa580a45449a625364e65df28, type: 2}
 --- !u!4 &798060993 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4142610424207970431, guid: 434afa706308cd44889264535d0a866e, type: 3}
@@ -21642,6 +21659,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1433883078}
     m_Modifications:
+    - target: {fileID: 8134852719751801434, guid: 1db0bec110cab904d90af6162ff0b584, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8134852719751801434, guid: 1db0bec110cab904d90af6162ff0b584, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8134852719751801434, guid: 1db0bec110cab904d90af6162ff0b584, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 788951021}
+    - target: {fileID: 8134852719751801434, guid: 1db0bec110cab904d90af6162ff0b584, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8134852719751801434, guid: 1db0bec110cab904d90af6162ff0b584, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StartPreviewResourceCampConstruction
+      objectReference: {fileID: 0}
+    - target: {fileID: 8134852719751801434, guid: 1db0bec110cab904d90af6162ff0b584, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ConstructionManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8134852719751801434, guid: 1db0bec110cab904d90af6162ff0b584, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8134852719751801435, guid: 1db0bec110cab904d90af6162ff0b584, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

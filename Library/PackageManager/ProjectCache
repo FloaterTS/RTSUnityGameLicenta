@@ -5,27 +5,27 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637416015958096173
-    m_Hash: 2828301996
+      ticks: 637438450248485905
+    m_Hash: 443103411
   m_LockFileStatus:
     m_FilePath: D:/Unity Projects/Licenta 3D/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637416015972975966
-    m_Hash: 2243055369
+      ticks: 637438450896009567
+    m_Hash: 4141474933
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_PackageAssets:
   m_Packages:
     m_ResolvedPackages:
-    - packageId: com.unity.2d.animation@4.2.6
+    - packageId: com.unity.2d.animation@5.0.3
       testable: 0
       isDirectDependency: 1
-      version: 4.2.6
+      version: 5.0.3
       source: 1
-      resolvedPath: D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.2d.animation@4.2.6
+      resolvedPath: D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.2d.animation@5.0.3
       assetPath: Packages/com.unity.2d.animation
       name: com.unity.2d.animation
       displayName: 2D Animation
@@ -91,11 +91,11 @@ m_PackageAssets:
         - 5.0.3
         - 6.0.0-pre.1
         compatible:
-        - 4.2.6
-        verified: 4.2.6
+        - 5.0.3
+        verified: 5.0.3
       dependencies:
       - name: com.unity.2d.common
-        version: 3.0.1
+        version: 4.0.3
       - name: com.unity.mathematics
         version: 1.1.0
       - name: com.unity.2d.sprite
@@ -106,7 +106,7 @@ m_PackageAssets:
         version: 1.0.0
       resolvedDependencies:
       - name: com.unity.2d.common
-        version: 3.0.1
+        version: 4.0.3
       - name: com.unity.2d.sprite
         version: 1.0.0
       - name: com.unity.modules.uielements
@@ -138,20 +138,20 @@ m_PackageAssets:
       entitlements:
         isAllowed: 1
       isAssetStorePackage: 0
-      datePublishedTicks: 637366431100000000
+      datePublishedTicks: 637408845570000000
       documentationUrl: 
       hasRepository: 1
       repository:
         type: git
         url: https://github.cds.internal.unity3d.com/unity/2d.git
-        revision: 4e323a9f3edf4c6dc06ab4d1582e12f07cb54189
+        revision: c97def465b1932276762fc13f4cfee58da99d5e9
         path: 
-    - packageId: com.unity.2d.psdimporter@3.1.6
+    - packageId: com.unity.2d.psdimporter@4.0.2
       testable: 0
       isDirectDependency: 1
-      version: 3.1.6
+      version: 4.0.2
       source: 1
-      resolvedPath: D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.2d.psdimporter@3.1.6
+      resolvedPath: D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.2d.psdimporter@4.0.2
       assetPath: Packages/com.unity.2d.psdimporter
       name: com.unity.2d.psdimporter
       displayName: 2D PSD Importer
@@ -199,18 +199,18 @@ m_PackageAssets:
         - 4.0.2
         - 5.0.0-pre.1
         compatible:
-        - 3.1.6
-        verified: 3.1.6
+        - 4.0.2
+        verified: 4.0.2
       dependencies:
       - name: com.unity.2d.common
-        version: 3.0.1
+        version: 4.0.2
       - name: com.unity.2d.animation
-        version: 4.2.6
+        version: 5.0.2
       - name: com.unity.2d.sprite
         version: 1.0.0
       resolvedDependencies:
       - name: com.unity.2d.common
-        version: 3.0.1
+        version: 4.0.3
       - name: com.unity.2d.sprite
         version: 1.0.0
       - name: com.unity.modules.uielements
@@ -224,7 +224,7 @@ m_PackageAssets:
       - name: com.unity.modules.uielementsnative
         version: 1.0.0
       - name: com.unity.2d.animation
-        version: 4.2.6
+        version: 5.0.3
       - name: com.unity.mathematics
         version: 1.1.0
       - name: com.unity.modules.animation
@@ -245,20 +245,20 @@ m_PackageAssets:
       entitlements:
         isAllowed: 1
       isAssetStorePackage: 0
-      datePublishedTicks: 637366434350000000
+      datePublishedTicks: 637366443480000000
       documentationUrl: 
       hasRepository: 1
       repository:
         type: git
         url: https://github.cds.internal.unity3d.com/unity/2d.git
-        revision: 4e323a9f3edf4c6dc06ab4d1582e12f07cb54189
+        revision: 4e96f68a7587d87b4fee15d6f88a5d86c2afa9aa
         path: 
     - packageId: com.unity.2d.sprite@1.0.0
       testable: 0
       isDirectDependency: 1
       version: 1.0.0
       source: 2
-      resolvedPath: D:\ProgramsLibrary\Unity\2020.1.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.2d.sprite
+      resolvedPath: D:\ProgramsLibrary\Unity\2020.2.0f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.2d.sprite
       assetPath: Packages/com.unity.2d.sprite
       name: com.unity.2d.sprite
       displayName: 2D Sprite
@@ -399,12 +399,12 @@ m_PackageAssets:
         url: https://github.cds.internal.unity3d.com/unity/com.unity.cloud.collaborate.git
         revision: fa825106f349f996acff22f718845eab46ca2d7c
         path: 
-    - packageId: com.unity.ide.visualstudio@2.0.3
+    - packageId: com.unity.ide.visualstudio@2.0.5
       testable: 0
       isDirectDependency: 1
-      version: 2.0.3
+      version: 2.0.5
       source: 1
-      resolvedPath: D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.ide.visualstudio@2.0.3
+      resolvedPath: D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.ide.visualstudio@2.0.5
       assetPath: Packages/com.unity.ide.visualstudio
       name: com.unity.ide.visualstudio
       displayName: Visual Studio Editor
@@ -460,13 +460,13 @@ m_PackageAssets:
       entitlements:
         isAllowed: 1
       isAssetStorePackage: 0
-      datePublishedTicks: 637359495930000000
+      datePublishedTicks: 637400980850000000
       documentationUrl: 
       hasRepository: 1
       repository:
         type: git
         url: https://github.cds.internal.unity3d.com/unity/com.unity.ide.visualstudio.git
-        revision: 869804bff6e99d0d0e9c1867aebaa070fad875e5
+        revision: 83ca94e82bb6da515dc57e0d860b6b2224f56991
         path: 
     - packageId: com.unity.ide.vscode@1.2.3
       testable: 0
@@ -616,12 +616,12 @@ m_PackageAssets:
         url: git@github.com:Unity-Technologies/PostProcessing.git
         revision: e6de985c41f04a5fc7c7227dd67e3e73fac834e7
         path: 
-    - packageId: com.unity.render-pipelines.universal@8.2.0
+    - packageId: com.unity.render-pipelines.universal@10.2.2
       testable: 0
       isDirectDependency: 1
-      version: 8.2.0
+      version: 10.2.2
       source: 1
-      resolvedPath: D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@8.2.0
+      resolvedPath: D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2
       assetPath: Packages/com.unity.render-pipelines.universal
       name: com.unity.render-pipelines.universal
       displayName: Universal RP
@@ -664,21 +664,22 @@ m_PackageAssets:
         - 10.0.0-preview.26
         - 10.1.0
         - 10.2.0
+        - 10.2.2
         compatible:
-        - 8.2.0
-        - 9.0.0-preview.14
-        - 9.0.0-preview.35
-        - 9.0.0-preview.55
-        - 9.0.0-preview.72
-        verified: 8.2.0
+        - 10.2.2
+        verified: 10.2.2
       dependencies:
+      - name: com.unity.mathematics
+        version: 1.1.0
       - name: com.unity.render-pipelines.core
-        version: 8.2.0
+        version: 10.2.2
       - name: com.unity.shadergraph
-        version: 8.2.0
+        version: 10.2.2
       resolvedDependencies:
+      - name: com.unity.mathematics
+        version: 1.1.0
       - name: com.unity.render-pipelines.core
-        version: 8.2.0
+        version: 10.2.2
       - name: com.unity.ugui
         version: 1.0.0
       - name: com.unity.modules.ui
@@ -686,9 +687,9 @@ m_PackageAssets:
       - name: com.unity.modules.imgui
         version: 1.0.0
       - name: com.unity.shadergraph
-        version: 8.2.0
+        version: 10.2.2
       - name: com.unity.searcher
-        version: 4.0.9
+        version: 4.3.1
       keywords:
       - graphics
       - performance
@@ -708,20 +709,20 @@ m_PackageAssets:
       entitlements:
         isAllowed: 1
       isAssetStorePackage: 0
-      datePublishedTicks: 637302625500000000
+      datePublishedTicks: 0
       documentationUrl: 
       hasRepository: 1
       repository:
         type: git
-        url: git+https://github.com/Unity-Technologies/Graphics.git
-        revision: 4ad03e7975af24c8e60c974edb24c696e74e39b3
+        url: https://github.com/Unity-Technologies/Graphics.git
+        revision: a197e35ba4e93349ccbb4fddd4f3f80ba7b1c113
         path: 
-    - packageId: com.unity.test-framework@1.1.18
+    - packageId: com.unity.test-framework@1.1.19
       testable: 0
       isDirectDependency: 1
-      version: 1.1.18
+      version: 1.1.19
       source: 1
-      resolvedPath: D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.test-framework@1.1.18
+      resolvedPath: D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.test-framework@1.1.19
       assetPath: Packages/com.unity.test-framework
       name: com.unity.test-framework
       displayName: Test Framework
@@ -762,19 +763,18 @@ m_PackageAssets:
         - 1.1.18
         - 1.1.19
         compatible:
-        - 1.1.18
         - 1.1.19
         verified: 1.1.19
       dependencies:
       - name: com.unity.ext.nunit
-        version: 1.0.0
+        version: 1.0.5
       - name: com.unity.modules.imgui
         version: 1.0.0
       - name: com.unity.modules.jsonserialize
         version: 1.0.0
       resolvedDependencies:
       - name: com.unity.ext.nunit
-        version: 1.0.0
+        version: 1.0.5
       - name: com.unity.modules.imgui
         version: 1.0.0
       - name: com.unity.modules.jsonserialize
@@ -794,13 +794,13 @@ m_PackageAssets:
       entitlements:
         isAllowed: 1
       isAssetStorePackage: 0
-      datePublishedTicks: 637378481950000000
+      datePublishedTicks: 637413148910000000
       documentationUrl: 
       hasRepository: 1
       repository:
         type: git
         url: git+https://github.com/Unity-Technologies/com.unity.test-framework.git
-        revision: 14025b364215f4465cbe1beb7a81e486b2687ced
+        revision: 83583c7273ee961612200215e8989039bbce8748
         path: 
     - packageId: com.unity.textmeshpro@3.0.3
       testable: 0
@@ -1061,7 +1061,7 @@ m_PackageAssets:
         - 1.5.0-preview.5
         - 1.5.1-pre.1
         - 1.5.1-pre.2
-        verified: 1.3.6
+        verified: 1.4.4
       dependencies: []
       resolvedDependencies: []
       keywords:
@@ -1095,7 +1095,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
-      resolvedPath: D:\ProgramsLibrary\Unity\2020.1.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.ugui
+      resolvedPath: D:\ProgramsLibrary\Unity\2020.2.0f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.ugui
       assetPath: Packages/com.unity.ugui
       name: com.unity.ugui
       displayName: Unity UI
@@ -1158,7 +1158,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
-      resolvedPath: D:\ProgramsLibrary\Unity\2020.1.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.ai
+      resolvedPath: D:\ProgramsLibrary\Unity\2020.2.0f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.ai
       assetPath: Packages/com.unity.modules.ai
       name: com.unity.modules.ai
       displayName: AI
@@ -1206,7 +1206,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
-      resolvedPath: D:\ProgramsLibrary\Unity\2020.1.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.androidjni
+      resolvedPath: D:\ProgramsLibrary\Unity\2020.2.0f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.androidjni
       assetPath: Packages/com.unity.modules.androidjni
       name: com.unity.modules.androidjni
       displayName: Android JNI
@@ -1254,7 +1254,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
-      resolvedPath: D:\ProgramsLibrary\Unity\2020.1.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.animation
+      resolvedPath: D:\ProgramsLibrary\Unity\2020.2.0f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.animation
       assetPath: Packages/com.unity.modules.animation
       name: com.unity.modules.animation
       displayName: Animation
@@ -1302,7 +1302,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
-      resolvedPath: D:\ProgramsLibrary\Unity\2020.1.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.assetbundle
+      resolvedPath: D:\ProgramsLibrary\Unity\2020.2.0f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.assetbundle
       assetPath: Packages/com.unity.modules.assetbundle
       name: com.unity.modules.assetbundle
       displayName: Asset Bundle
@@ -1350,7 +1350,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
-      resolvedPath: D:\ProgramsLibrary\Unity\2020.1.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.audio
+      resolvedPath: D:\ProgramsLibrary\Unity\2020.2.0f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.audio
       assetPath: Packages/com.unity.modules.audio
       name: com.unity.modules.audio
       displayName: Audio
@@ -1398,7 +1398,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
-      resolvedPath: D:\ProgramsLibrary\Unity\2020.1.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.cloth
+      resolvedPath: D:\ProgramsLibrary\Unity\2020.2.0f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.cloth
       assetPath: Packages/com.unity.modules.cloth
       name: com.unity.modules.cloth
       displayName: Cloth
@@ -1450,7 +1450,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
-      resolvedPath: D:\ProgramsLibrary\Unity\2020.1.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.director
+      resolvedPath: D:\ProgramsLibrary\Unity\2020.2.0f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.director
       assetPath: Packages/com.unity.modules.director
       name: com.unity.modules.director
       displayName: Director
@@ -1506,7 +1506,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
-      resolvedPath: D:\ProgramsLibrary\Unity\2020.1.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.imageconversion
+      resolvedPath: D:\ProgramsLibrary\Unity\2020.2.0f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.imageconversion
       assetPath: Packages/com.unity.modules.imageconversion
       name: com.unity.modules.imageconversion
       displayName: Image Conversion
@@ -1555,7 +1555,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
-      resolvedPath: D:\ProgramsLibrary\Unity\2020.1.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.imgui
+      resolvedPath: D:\ProgramsLibrary\Unity\2020.2.0f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.imgui
       assetPath: Packages/com.unity.modules.imgui
       name: com.unity.modules.imgui
       displayName: IMGUI
@@ -1603,7 +1603,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
-      resolvedPath: D:\ProgramsLibrary\Unity\2020.1.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.jsonserialize
+      resolvedPath: D:\ProgramsLibrary\Unity\2020.2.0f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.jsonserialize
       assetPath: Packages/com.unity.modules.jsonserialize
       name: com.unity.modules.jsonserialize
       displayName: JSONSerialize
@@ -1651,7 +1651,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
-      resolvedPath: D:\ProgramsLibrary\Unity\2020.1.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.particlesystem
+      resolvedPath: D:\ProgramsLibrary\Unity\2020.2.0f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.particlesystem
       assetPath: Packages/com.unity.modules.particlesystem
       name: com.unity.modules.particlesystem
       displayName: Particle System
@@ -1699,7 +1699,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
-      resolvedPath: D:\ProgramsLibrary\Unity\2020.1.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.physics
+      resolvedPath: D:\ProgramsLibrary\Unity\2020.2.0f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.physics
       assetPath: Packages/com.unity.modules.physics
       name: com.unity.modules.physics
       displayName: Physics
@@ -1747,7 +1747,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
-      resolvedPath: D:\ProgramsLibrary\Unity\2020.1.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.physics2d
+      resolvedPath: D:\ProgramsLibrary\Unity\2020.2.0f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.physics2d
       assetPath: Packages/com.unity.modules.physics2d
       name: com.unity.modules.physics2d
       displayName: Physics 2D
@@ -1795,7 +1795,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
-      resolvedPath: D:\ProgramsLibrary\Unity\2020.1.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.screencapture
+      resolvedPath: D:\ProgramsLibrary\Unity\2020.2.0f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.screencapture
       assetPath: Packages/com.unity.modules.screencapture
       name: com.unity.modules.screencapture
       displayName: Screen Capture
@@ -1847,7 +1847,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
-      resolvedPath: D:\ProgramsLibrary\Unity\2020.1.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.terrain
+      resolvedPath: D:\ProgramsLibrary\Unity\2020.2.0f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.terrain
       assetPath: Packages/com.unity.modules.terrain
       name: com.unity.modules.terrain
       displayName: Terrain
@@ -1895,7 +1895,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
-      resolvedPath: D:\ProgramsLibrary\Unity\2020.1.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.terrainphysics
+      resolvedPath: D:\ProgramsLibrary\Unity\2020.2.0f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.terrainphysics
       assetPath: Packages/com.unity.modules.terrainphysics
       name: com.unity.modules.terrainphysics
       displayName: Terrain Physics
@@ -1951,7 +1951,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
-      resolvedPath: D:\ProgramsLibrary\Unity\2020.1.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.tilemap
+      resolvedPath: D:\ProgramsLibrary\Unity\2020.2.0f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.tilemap
       assetPath: Packages/com.unity.modules.tilemap
       name: com.unity.modules.tilemap
       displayName: Tilemap
@@ -2003,7 +2003,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
-      resolvedPath: D:\ProgramsLibrary\Unity\2020.1.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.ui
+      resolvedPath: D:\ProgramsLibrary\Unity\2020.2.0f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.ui
       assetPath: Packages/com.unity.modules.ui
       name: com.unity.modules.ui
       displayName: UI
@@ -2051,7 +2051,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
-      resolvedPath: D:\ProgramsLibrary\Unity\2020.1.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.uielements
+      resolvedPath: D:\ProgramsLibrary\Unity\2020.2.0f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.uielements
       assetPath: Packages/com.unity.modules.uielements
       name: com.unity.modules.uielements
       displayName: UIElements
@@ -2115,7 +2115,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
-      resolvedPath: D:\ProgramsLibrary\Unity\2020.1.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.umbra
+      resolvedPath: D:\ProgramsLibrary\Unity\2020.2.0f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.umbra
       assetPath: Packages/com.unity.modules.umbra
       name: com.unity.modules.umbra
       displayName: Umbra
@@ -2163,7 +2163,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
-      resolvedPath: D:\ProgramsLibrary\Unity\2020.1.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unityanalytics
+      resolvedPath: D:\ProgramsLibrary\Unity\2020.2.0f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unityanalytics
       assetPath: Packages/com.unity.modules.unityanalytics
       name: com.unity.modules.unityanalytics
       displayName: Unity Analytics
@@ -2219,7 +2219,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
-      resolvedPath: D:\ProgramsLibrary\Unity\2020.1.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unitywebrequest
+      resolvedPath: D:\ProgramsLibrary\Unity\2020.2.0f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unitywebrequest
       assetPath: Packages/com.unity.modules.unitywebrequest
       name: com.unity.modules.unitywebrequest
       displayName: Unity Web Request
@@ -2267,7 +2267,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
-      resolvedPath: D:\ProgramsLibrary\Unity\2020.1.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unitywebrequestassetbundle
+      resolvedPath: D:\ProgramsLibrary\Unity\2020.2.0f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unitywebrequestassetbundle
       assetPath: Packages/com.unity.modules.unitywebrequestassetbundle
       name: com.unity.modules.unitywebrequestassetbundle
       displayName: Unity Web Request Asset Bundle
@@ -2323,7 +2323,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
-      resolvedPath: D:\ProgramsLibrary\Unity\2020.1.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unitywebrequestaudio
+      resolvedPath: D:\ProgramsLibrary\Unity\2020.2.0f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unitywebrequestaudio
       assetPath: Packages/com.unity.modules.unitywebrequestaudio
       name: com.unity.modules.unitywebrequestaudio
       displayName: Unity Web Request Audio
@@ -2379,7 +2379,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
-      resolvedPath: D:\ProgramsLibrary\Unity\2020.1.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unitywebrequesttexture
+      resolvedPath: D:\ProgramsLibrary\Unity\2020.2.0f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unitywebrequesttexture
       assetPath: Packages/com.unity.modules.unitywebrequesttexture
       name: com.unity.modules.unitywebrequesttexture
       displayName: Unity Web Request Texture
@@ -2435,7 +2435,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
-      resolvedPath: D:\ProgramsLibrary\Unity\2020.1.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unitywebrequestwww
+      resolvedPath: D:\ProgramsLibrary\Unity\2020.2.0f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unitywebrequestwww
       assetPath: Packages/com.unity.modules.unitywebrequestwww
       name: com.unity.modules.unitywebrequestwww
       displayName: Unity Web Request WWW
@@ -2507,7 +2507,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
-      resolvedPath: D:\ProgramsLibrary\Unity\2020.1.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.vehicles
+      resolvedPath: D:\ProgramsLibrary\Unity\2020.2.0f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.vehicles
       assetPath: Packages/com.unity.modules.vehicles
       name: com.unity.modules.vehicles
       displayName: Vehicles
@@ -2559,7 +2559,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
-      resolvedPath: D:\ProgramsLibrary\Unity\2020.1.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.video
+      resolvedPath: D:\ProgramsLibrary\Unity\2020.2.0f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.video
       assetPath: Packages/com.unity.modules.video
       name: com.unity.modules.video
       displayName: Video
@@ -2619,7 +2619,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
-      resolvedPath: D:\ProgramsLibrary\Unity\2020.1.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.vr
+      resolvedPath: D:\ProgramsLibrary\Unity\2020.2.0f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.vr
       assetPath: Packages/com.unity.modules.vr
       name: com.unity.modules.vr
       displayName: VR
@@ -2681,7 +2681,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
-      resolvedPath: D:\ProgramsLibrary\Unity\2020.1.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.wind
+      resolvedPath: D:\ProgramsLibrary\Unity\2020.2.0f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.wind
       assetPath: Packages/com.unity.modules.wind
       name: com.unity.modules.wind
       displayName: Wind
@@ -2729,7 +2729,7 @@ m_PackageAssets:
       isDirectDependency: 1
       version: 1.0.0
       source: 2
-      resolvedPath: D:\ProgramsLibrary\Unity\2020.1.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.xr
+      resolvedPath: D:\ProgramsLibrary\Unity\2020.2.0f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.xr
       assetPath: Packages/com.unity.modules.xr
       name: com.unity.modules.xr
       displayName: XR
@@ -2789,7 +2789,7 @@ m_PackageAssets:
       isDirectDependency: 0
       version: 1.0.0
       source: 2
-      resolvedPath: D:\ProgramsLibrary\Unity\2020.1.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.subsystems
+      resolvedPath: D:\ProgramsLibrary\Unity\2020.2.0f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.subsystems
       assetPath: Packages/com.unity.modules.subsystems
       name: com.unity.modules.subsystems
       displayName: Subsystems
@@ -2841,7 +2841,7 @@ m_PackageAssets:
       isDirectDependency: 0
       version: 1.0.0
       source: 2
-      resolvedPath: D:\ProgramsLibrary\Unity\2020.1.14f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.uielementsnative
+      resolvedPath: D:\ProgramsLibrary\Unity\2020.2.0f1\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.uielementsnative
       assetPath: Packages/com.unity.modules.uielementsnative
       name: com.unity.modules.uielementsnative
       displayName: UIElements Native
@@ -2895,12 +2895,12 @@ m_PackageAssets:
         url: 
         revision: 
         path: 
-    - packageId: com.unity.ext.nunit@1.0.0
+    - packageId: com.unity.ext.nunit@1.0.5
       testable: 0
       isDirectDependency: 0
-      version: 1.0.0
+      version: 1.0.5
       source: 1
-      resolvedPath: D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.ext.nunit@1.0.0
+      resolvedPath: D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.ext.nunit@1.0.5
       assetPath: Packages/com.unity.ext.nunit
       name: com.unity.ext.nunit
       displayName: Custom NUnit
@@ -2946,20 +2946,95 @@ m_PackageAssets:
       entitlements:
         isAllowed: 1
       isAssetStorePackage: 0
-      datePublishedTicks: 636898893830000000
+      datePublishedTicks: 637413148740000000
       documentationUrl: 
       hasRepository: 1
       repository:
         type: git
-        url: git@gitlab.cds.internal.unity3d.com/upm-packages/core/com.unity.ext.nunit.git
-        revision: c8f5044ffe6adb909f9836160b0bdaa30f2d1ec9
+        url: https://github.cds.internal.unity3d.com/unity/com.unity.ext.nunit.git
+        revision: 1b3e542964a65210e966f5bf8751f62b1dcd8d69
         path: 
-    - packageId: com.unity.render-pipelines.core@8.2.0
+    - packageId: com.unity.mathematics@1.1.0
       testable: 0
       isDirectDependency: 0
-      version: 8.2.0
+      version: 1.1.0
       source: 1
-      resolvedPath: D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.core@8.2.0
+      resolvedPath: D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.mathematics@1.1.0
+      assetPath: Packages/com.unity.mathematics
+      name: com.unity.mathematics
+      displayName: Mathematics
+      author:
+        name: 
+        email: 
+        url: 
+      category: 
+      type: 
+      description: Unity's C# SIMD math library providing vector types and math functions
+        with a shader like syntax.
+      status: 4
+      errors: []
+      versions:
+        all:
+        - 0.0.12-preview.2
+        - 0.0.12-preview.5
+        - 0.0.12-preview.8
+        - 0.0.12-preview.10
+        - 0.0.12-preview.11
+        - 0.0.12-preview.13
+        - 0.0.12-preview.17
+        - 0.0.12-preview.19
+        - 0.0.12-preview.20
+        - 1.0.0-preview.1
+        - 1.0.1
+        - 1.1.0-preview.1
+        - 1.1.0
+        - 1.2.1
+        compatible:
+        - 0.0.12-preview.2
+        - 0.0.12-preview.5
+        - 0.0.12-preview.8
+        - 0.0.12-preview.10
+        - 0.0.12-preview.11
+        - 0.0.12-preview.13
+        - 0.0.12-preview.17
+        - 0.0.12-preview.19
+        - 0.0.12-preview.20
+        - 1.0.0-preview.1
+        - 1.0.1
+        - 1.1.0-preview.1
+        - 1.1.0
+        - 1.2.1
+        verified: 1.2.1
+      dependencies: []
+      resolvedDependencies: []
+      keywords:
+      - unity
+      registry:
+        id: main
+        name: 
+        url: https://packages.unity.com
+        scopes: []
+        isDefault: 1
+        capabilities: 7
+      hasRegistry: 1
+      hideInEditor: 1
+      entitlements:
+        isAllowed: 1
+      isAssetStorePackage: 0
+      datePublishedTicks: 636984649280000000
+      documentationUrl: 
+      hasRepository: 1
+      repository:
+        type: git
+        url: git@github.com:Unity-Technologies/Unity.Mathematics.git
+        revision: 0a3dfafaf606098ea681de4c4be60f3aac63b773
+        path: 
+    - packageId: com.unity.render-pipelines.core@10.2.2
+      testable: 0
+      isDirectDependency: 0
+      version: 10.2.2
+      source: 1
+      resolvedPath: D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.core@10.2.2
       assetPath: Packages/com.unity.render-pipelines.core
       name: com.unity.render-pipelines.core
       displayName: Core RP Library
@@ -3058,14 +3133,10 @@ m_PackageAssets:
         - 10.0.0-preview.30
         - 10.1.0
         - 10.2.0
+        - 10.2.2
         compatible:
-        - 8.2.0
-        - 9.0.0-preview.13
-        - 9.0.0-preview.35
-        - 9.0.0-preview.38
-        - 9.0.0-preview.60
-        - 9.0.0-preview.77
-        verified: 8.2.0
+        - 10.2.2
+        verified: 10.2.2
       dependencies:
       - name: com.unity.ugui
         version: 1.0.0
@@ -3089,20 +3160,20 @@ m_PackageAssets:
       entitlements:
         isAllowed: 1
       isAssetStorePackage: 0
-      datePublishedTicks: 637302622600000000
+      datePublishedTicks: 0
       documentationUrl: 
       hasRepository: 1
       repository:
         type: git
-        url: git+https://github.com/Unity-Technologies/Graphics.git
-        revision: 4ad03e7975af24c8e60c974edb24c696e74e39b3
+        url: https://github.com/Unity-Technologies/Graphics.git
+        revision: a197e35ba4e93349ccbb4fddd4f3f80ba7b1c113
         path: 
-    - packageId: com.unity.shadergraph@8.2.0
+    - packageId: com.unity.shadergraph@10.2.2
       testable: 0
       isDirectDependency: 0
-      version: 8.2.0
+      version: 10.2.2
       source: 1
-      resolvedPath: D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@8.2.0
+      resolvedPath: D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2
       assetPath: Packages/com.unity.shadergraph
       name: com.unity.shadergraph
       displayName: Shader Graph
@@ -3198,21 +3269,18 @@ m_PackageAssets:
         - 10.0.0-preview.27
         - 10.1.0
         - 10.2.0
+        - 10.2.2
         compatible:
-        - 8.2.0
-        - 9.0.0-preview.14
-        - 9.0.0-preview.34
-        - 9.0.0-preview.55
-        - 9.0.0-preview.72
-        verified: 8.2.0
+        - 10.2.2
+        verified: 10.2.2
       dependencies:
       - name: com.unity.render-pipelines.core
-        version: 8.2.0
+        version: 10.2.2
       - name: com.unity.searcher
-        version: 4.0.9
+        version: 4.3.1
       resolvedDependencies:
       - name: com.unity.render-pipelines.core
-        version: 8.2.0
+        version: 10.2.2
       - name: com.unity.ugui
         version: 1.0.0
       - name: com.unity.modules.ui
@@ -3220,7 +3288,7 @@ m_PackageAssets:
       - name: com.unity.modules.imgui
         version: 1.0.0
       - name: com.unity.searcher
-        version: 4.0.9
+        version: 4.3.1
       keywords: []
       registry:
         id: main
@@ -3234,20 +3302,20 @@ m_PackageAssets:
       entitlements:
         isAllowed: 1
       isAssetStorePackage: 0
-      datePublishedTicks: 637302623400000000
+      datePublishedTicks: 0
       documentationUrl: 
       hasRepository: 1
       repository:
         type: git
-        url: git+https://github.com/Unity-Technologies/Graphics.git
-        revision: 4ad03e7975af24c8e60c974edb24c696e74e39b3
+        url: https://github.com/Unity-Technologies/Graphics.git
+        revision: a197e35ba4e93349ccbb4fddd4f3f80ba7b1c113
         path: 
-    - packageId: com.unity.2d.common@3.0.1
+    - packageId: com.unity.2d.common@4.0.3
       testable: 0
       isDirectDependency: 0
-      version: 3.0.1
+      version: 4.0.3
       source: 1
-      resolvedPath: D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.2d.common@3.0.1
+      resolvedPath: D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.2d.common@4.0.3
       assetPath: Packages/com.unity.2d.common
       name: com.unity.2d.common
       displayName: 2D Common
@@ -3280,8 +3348,9 @@ m_PackageAssets:
         - 4.0.3
         - 5.0.0-pre.1
         compatible:
-        - 3.0.1
-        verified: 3.0.1
+        - 4.0.2
+        - 4.0.3
+        verified: 4.0.3
       dependencies:
       - name: com.unity.2d.sprite
         version: 1.0.0
@@ -3314,95 +3383,20 @@ m_PackageAssets:
       entitlements:
         isAllowed: 1
       isAssetStorePackage: 0
-      datePublishedTicks: 637256005260000000
+      datePublishedTicks: 637408843940000000
       documentationUrl: 
       hasRepository: 1
       repository:
         type: git
         url: https://github.cds.internal.unity3d.com/unity/2d.git
-        revision: c73fb89a5b37a8e0f18f9e66307b3c2ed74c79e8
+        revision: c97def465b1932276762fc13f4cfee58da99d5e9
         path: 
-    - packageId: com.unity.mathematics@1.1.0
+    - packageId: com.unity.searcher@4.3.1
       testable: 0
       isDirectDependency: 0
-      version: 1.1.0
+      version: 4.3.1
       source: 1
-      resolvedPath: D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.mathematics@1.1.0
-      assetPath: Packages/com.unity.mathematics
-      name: com.unity.mathematics
-      displayName: Mathematics
-      author:
-        name: 
-        email: 
-        url: 
-      category: 
-      type: 
-      description: Unity's C# SIMD math library providing vector types and math functions
-        with a shader like syntax.
-      status: 4
-      errors: []
-      versions:
-        all:
-        - 0.0.12-preview.2
-        - 0.0.12-preview.5
-        - 0.0.12-preview.8
-        - 0.0.12-preview.10
-        - 0.0.12-preview.11
-        - 0.0.12-preview.13
-        - 0.0.12-preview.17
-        - 0.0.12-preview.19
-        - 0.0.12-preview.20
-        - 1.0.0-preview.1
-        - 1.0.1
-        - 1.1.0-preview.1
-        - 1.1.0
-        - 1.2.1
-        compatible:
-        - 0.0.12-preview.2
-        - 0.0.12-preview.5
-        - 0.0.12-preview.8
-        - 0.0.12-preview.10
-        - 0.0.12-preview.11
-        - 0.0.12-preview.13
-        - 0.0.12-preview.17
-        - 0.0.12-preview.19
-        - 0.0.12-preview.20
-        - 1.0.0-preview.1
-        - 1.0.1
-        - 1.1.0-preview.1
-        - 1.1.0
-        - 1.2.1
-        verified: 1.2.1
-      dependencies: []
-      resolvedDependencies: []
-      keywords:
-      - unity
-      registry:
-        id: main
-        name: 
-        url: https://packages.unity.com
-        scopes: []
-        isDefault: 1
-        capabilities: 7
-      hasRegistry: 1
-      hideInEditor: 1
-      entitlements:
-        isAllowed: 1
-      isAssetStorePackage: 0
-      datePublishedTicks: 636984649280000000
-      documentationUrl: 
-      hasRepository: 1
-      repository:
-        type: git
-        url: git@github.com:Unity-Technologies/Unity.Mathematics.git
-        revision: 0a3dfafaf606098ea681de4c4be60f3aac63b773
-        path: 
-    - packageId: com.unity.searcher@4.0.9
-      testable: 0
-      isDirectDependency: 0
-      version: 4.0.9
-      source: 1
-      resolvedPath: D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.searcher@4.0.9
+      resolvedPath: D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.searcher@4.3.1
       assetPath: Packages/com.unity.searcher
       name: com.unity.searcher
       displayName: Searcher
@@ -3445,7 +3439,7 @@ m_PackageAssets:
         - 4.3.1
         - 4.6.0-preview
         - 4.7.0-preview
-        verified: 4.0.9
+        verified: 4.3.1
       dependencies: []
       resolvedDependencies: []
       keywords:
@@ -3463,15 +3457,15 @@ m_PackageAssets:
       entitlements:
         isAllowed: 1
       isAssetStorePackage: 0
-      datePublishedTicks: 637090887100000000
+      datePublishedTicks: 637272602300000000
       documentationUrl: 
       hasRepository: 1
       repository:
         type: git
-        url: git@github.cds.internal.unity3d.com:unity/com.unity.searcher.git
-        revision: ec1fb56f8d8f95b1503ea22a73b83e2cfb02f083
+        url: https://github.cds.internal.unity3d.com/unity/com.unity.searcher.git
+        revision: 56c3321cb776740e60e242e6c72cb5b4e8245256
         path: 
   m_LocalPackages:
     m_LocalFileStatus: []
 m_ProjectPath: D:/Unity Projects/Licenta 3D/Packages
-m_EditorVersion: 2020.1.14f1 (d81f64f5201d)
+m_EditorVersion: 2020.2.0f1 (3721df5a8b28)

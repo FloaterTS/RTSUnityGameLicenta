@@ -123,6 +123,8 @@ public class CameraController : MonoBehaviour
 
     void CheckRotation()
     {
+        if (ConstructionManager.instance.IsPreviewingBuilding())
+            return;
         if (snapRotation)
         {
             if (Input.GetKeyDown(KeyCode.E))
@@ -178,7 +180,7 @@ public class CameraController : MonoBehaviour
 
     void CheckMovementFromMouse()
     {
-        if (UnitSelection.instance.isDragging)
+        if (SelectionManager.instance.IsDragging())
             return;
 
         Vector3 currentMousePosition = Input.mousePosition;

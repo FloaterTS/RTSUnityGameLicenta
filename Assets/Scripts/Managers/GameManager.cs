@@ -17,11 +17,10 @@ public class GameManager : MonoBehaviour
     public UnitStats[] unitStatsList;
     public BuildingStats[] buildingStatsList;
 
-    [HideInInspector] public bool isPaused = false;
-
-    private UnitSelection unitSelection;
-    private UnitMovement unitMovement;
-    private UnitInteraction unitInteraction;
+    private bool isPaused = false;
+    private SelectionManager unitSelection;
+    private MovementManager unitMovement;
+    private InteractionManager unitInteraction;
     private ResourceManager resourceManager;
     private UIManager uiManager;
 
@@ -32,9 +31,9 @@ public class GameManager : MonoBehaviour
         else
             Debug.LogError("Another game manager present.");
 
-        unitSelection = GetComponent<UnitSelection>();
-        unitMovement = GetComponent<UnitMovement>();
-        unitInteraction = GetComponent<UnitInteraction>();
+        unitSelection = GetComponent<SelectionManager>();
+        unitMovement = GetComponent<MovementManager>();
+        unitInteraction = GetComponent<InteractionManager>();
         resourceManager = GetComponent<ResourceManager>();
         uiManager = GetComponent<UIManager>();
 
@@ -57,4 +56,8 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1f;
     }
 
+    public bool IsPaused()
+    {
+        return isPaused;
+    }
 }
