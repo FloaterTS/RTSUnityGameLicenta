@@ -10,6 +10,7 @@ public class Worker : MonoBehaviour
     private NavMeshObstacle navWorkerObstacle;
     private CarriedResource carriedResource;
     private bool onWayToTask = false;
+    private bool constructionSiteReached = false;
 
     void Start()
     {
@@ -18,6 +19,16 @@ public class Worker : MonoBehaviour
         navWorkerObstacle = GetComponent<NavMeshObstacle>();
 
         carriedResource.amount = 0;
+    }
+
+    public bool IsBusy()
+    {
+        return onWayToTask;
+    }
+
+    public void SetConstructionSiteReached(bool reached)
+    {
+        constructionSiteReached = reached;
     }
 
     public void CollectResource(ResourceField targetResource)
@@ -33,6 +44,66 @@ public class Worker : MonoBehaviour
     public void StoreResourceInClosestCamp()
     {
         StartCoroutine(StoreResourceInClosestCampCo());
+    }
+
+    public void StartConstruction(GameObject underConstructionBuilding)
+    {
+        StartCoroutine(StartConstructionCo(underConstructionBuilding));
+    }
+
+    public IEnumerator StopTaskCo()
+    {
+        unit.unitState = UnitState.idle;
+        animator.SetBool("working", false);
+        navWorkerObstacle.enabled = false;
+        yield return null;
+        unit.EnableNavAgent(true);
+        unit.StopNavAgent();
+    }
+
+    private IEnumerator StartConstructionCo(GameObject underConstructionBuilding)
+    {
+        if (unit.target == underConstructionBuilding.transform.position)
+            yield break;
+
+        yield return StartCoroutine(GoToConstructionSite(underConstructionBuilding));
+
+        if (underConstructionBuilding == null || unit.target != underConstructionBuilding.transform.position)
+            yield break;
+
+        yield return StartCoroutine(ConstructBuilding(underConstructionBuilding));
+    }
+
+    private IEnumerator GoToConstructionSite(GameObject underConstructionBuilding)
+    {
+        yield return StartCoroutine(unit.MoveToLocationCo(underConstructionBuilding.transform.position));
+        onWayToTask = true;
+
+        while (!constructionSiteReached && underConstructionBuilding != null && unit.target == underConstructionBuilding.transform.position)
+            yield return null;
+
+        onWayToTask = false;
+    }
+
+    private IEnumerator ConstructBuilding(GameObject underConstructionBuilding)
+    {
+        StartTask();
+        Vector3 underConstructionBuildingPosition = underConstructionBuilding.transform.position;
+        transform.LookAt(new Vector3(underConstructionBuildingPosition.x, transform.position.y, underConstructionBuildingPosition.z));
+        animator.SetTrigger("hammering");
+        yield return new WaitForSeconds(0.5f); //animation transition duration
+
+        Building building = underConstructionBuilding.GetComponent<Building>();
+        UnderConstruction underConstruction = underConstructionBuilding.GetComponent<UnderConstruction>();
+        while (underConstructionBuilding != null && underConstruction.BuiltPercentage() < 100f && unit.target == underConstructionBuildingPosition)
+        {
+            yield return null;
+            underConstruction.Construct(Time.deltaTime);
+            float percentageConstructedThisFrame = Time.deltaTime * 100f / building.buildingStats.constructionTime;
+            building.Repair(percentageConstructedThisFrame * building.buildingStats.maxHitPoints / 100f);
+        }
+        if (unit.target == underConstructionBuildingPosition)
+            yield return StartCoroutine(StopTaskCo());
     }
 
     private IEnumerator CollectResourceCo(ResourceField resourceToCollect)
@@ -176,19 +247,6 @@ public class Worker : MonoBehaviour
         unit.EnableNavAgent(false);
         navWorkerObstacle.enabled = true;
     }
-
-    public IEnumerator StopTaskCo()
-    {
-        unit.unitState = UnitState.idle;
-        animator.SetBool("working", false);
-        navWorkerObstacle.enabled = false;
-        yield return null;
-        unit.EnableNavAgent(true);
-        unit.StopNavAgent();
-    }
-
-    public bool IsBusy()
-    {
-        return onWayToTask;
-    }    
+ 
+    
 }

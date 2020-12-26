@@ -98,25 +98,17 @@ public class UIManager : MonoBehaviour
 
     public void UpdateSelectedInteractionUI()
     {
+        DisableCurrentInteractionPanel();
         if (SelectionManager.instance.selectedUnits.Count > 0)
-        {
-            if (currentInteractionState != InteractionPanelState.Unit)
-                DisableCurrentInteractionPanel();
             EnableInteractionPanel(InteractionPanelState.Unit);
-        }
         else if (SelectionManager.instance.selectedBuilding != null)
         {
             if (SelectionManager.instance.selectedBuilding.gameObject.GetComponent<ResourceCamp>() != null)
-            {
-                if (currentInteractionState != InteractionPanelState.Camp)
-                    DisableCurrentInteractionPanel();
                 EnableInteractionPanel(InteractionPanelState.Camp);
-            }
             else
                 Debug.Log("Unknown UI Panel for Selected Building");
         }
-        else
-            DisableCurrentInteractionPanel();
+        // else: no panel will be enabled
     }
 
     // TO DO: use transition to state from unit panel to build panel to and use the functions from this script on button press?

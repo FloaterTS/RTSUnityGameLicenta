@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 4921902403869362964}
   m_Layer: 10
   m_Name: ResourceCamp
-  m_TagString: Untagged
+  m_TagString: ResourceCamp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

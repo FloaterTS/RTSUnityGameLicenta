@@ -276,7 +276,7 @@ GameObject:
   m_Component:
   - component: {fileID: 58512409}
   m_Layer: 0
-  m_Name: Buildings
+  m_Name: Player Buildings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -289,14 +289,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 58512408}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 410141102}
   - {fileID: 1524041024}
-  m_Father: {fileID: 1474869453}
-  m_RootOrder: 2
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &109010956 stripped
 Transform:
@@ -4859,10 +4859,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de522968f98385240906d6444e3c300d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerBuildingsParent: {fileID: 58512408}
   previewResourceCamp: {fileID: 1267868042687567843, guid: 6cb6cd008d8fd1d49a0938ffdfdfc5ed, type: 3}
-  underConstructionResourceCamp: {fileID: 0}
-  constructedResourceCamp: {fileID: 0}
-  validityMaterial: {fileID: 2100000, guid: 437d769fa580a45449a625364e65df28, type: 2}
+  underConstructionResourceCampPrefab: {fileID: 3371895042874901979, guid: 6a257ca9bf43a1c4784d506502734e6d, type: 3}
+  constructedResourceCampPrefab: {fileID: 1267868042687567843, guid: 502ed11b1857cca409b8fb52499dfb1c, type: 3}
 --- !u!4 &798060993 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4142610424207970431, guid: 434afa706308cd44889264535d0a866e, type: 3}
@@ -5012,7 +5012,7 @@ Transform:
   - {fileID: 388753017}
   - {fileID: 1421008885}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &849379004
 PrefabInstance:
@@ -5360,7 +5360,7 @@ Transform:
   - {fileID: 28569323}
   - {fileID: 1993883396}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1124787871 stripped
 Transform:
@@ -10853,9 +10853,8 @@ Transform:
   m_Children:
   - {fileID: 1279290884}
   - {fileID: 400706122}
-  - {fileID: 58512409}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1512540844
 PrefabInstance:

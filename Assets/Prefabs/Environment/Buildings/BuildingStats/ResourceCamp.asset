@@ -15,5 +15,5 @@ MonoBehaviour:
   buildingTeam: 0
   buildingName: Resource Camp
   maxHitPoints: 100
-  constructionTime: 6.5
+  constructionTime: 10
   baseBuildingStats: {fileID: 0}

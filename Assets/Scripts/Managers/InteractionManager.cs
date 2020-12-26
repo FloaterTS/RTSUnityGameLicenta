@@ -12,7 +12,7 @@ public class InteractionManager : MonoBehaviour
 {
     public static InteractionManager instance;
 
-    private SelectionManager unitSelection;
+    private SelectionManager selectionManager;
 
 
     void Start()
@@ -22,7 +22,7 @@ public class InteractionManager : MonoBehaviour
         else
             Debug.LogError("Another unit interaction manager present.");
 
-        unitSelection = GetComponent<SelectionManager>();
+        selectionManager = GetComponent<SelectionManager>();
     }
 
     void Update()
@@ -32,7 +32,7 @@ public class InteractionManager : MonoBehaviour
 
         if (Input.GetMouseButtonDown(1))
         {
-            if (unitSelection.selectedUnits.Count > 0)
+            if (selectionManager.selectedUnits.Count > 0)
                 PerformInteraction();
         }
     }
@@ -42,19 +42,31 @@ public class InteractionManager : MonoBehaviour
         Ray rayLocation = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(rayLocation, out RaycastHit hitLocation, 1000f, LayerMask.GetMask("Interactable", "Terrain")))
         {
-            ResourceField resource = hitLocation.collider.GetComponent<ResourceField>();
-            ResourceCamp resourceCamp = hitLocation.collider.GetComponent<ResourceCamp>();
-            if (resource != null)
+            if (hitLocation.collider.gameObject.CompareTag("Resource"))
             {
-                foreach (Unit unit in unitSelection.selectedUnits)
-                    if(unit.worker != null)
-                        unit.worker.CollectResource(resource);
+                ResourceField resource = hitLocation.collider.GetComponent<ResourceField>();
+                if (resource != null)
+                {
+                    foreach (Unit unit in selectionManager.selectedUnits)
+                        if (unit.worker != null)
+                            unit.worker.CollectResource(resource);
+                }
             }
-            else if (resourceCamp != null)
+            else if (hitLocation.collider.gameObject.CompareTag("ResourceCamp"))
             {
-                foreach (Unit unit in unitSelection.selectedUnits)
-                    if(unit.worker != null)
-                        unit.worker.StoreResource(resourceCamp);
+                ResourceCamp resourceCamp = hitLocation.collider.GetComponent<ResourceCamp>();
+                if (resourceCamp != null)
+                {
+                    foreach (Unit unit in selectionManager.selectedUnits)
+                        if (unit.worker != null)
+                            unit.worker.StoreResource(resourceCamp);
+                }
+            }
+            else if(hitLocation.collider.gameObject.CompareTag("UnderConstruction"))
+            {
+                foreach (Unit unit in selectionManager.selectedUnits)
+                    if (unit.worker != null)
+                        unit.worker.StartConstruction(hitLocation.collider.gameObject);
             }
             else
             {
@@ -66,8 +78,8 @@ public class InteractionManager : MonoBehaviour
 
     void MoveToSpot(RaycastHit hitLocation)
     {
-        if (unitSelection.selectedUnits.Count == 1)
-            unitSelection.selectedUnits[0].MoveToLocation(hitLocation.point);
+        if (selectionManager.selectedUnits.Count == 1)
+            selectionManager.selectedUnits[0].MoveToLocation(hitLocation.point);
         else
             MovementManager.instance.MoveInFormation(hitLocation.point);
     }

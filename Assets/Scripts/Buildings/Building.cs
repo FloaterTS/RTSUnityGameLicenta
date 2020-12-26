@@ -6,16 +6,15 @@ public class Building : MonoBehaviour
 {
     public BuildingStats buildingStats;
 
-    private int currentHitPoints;
-
-    private GameObject selectedArea = null;
+    private float currentHitPoints;
+    private Transform selectedArea = null;
 
     void Start()
     {
-        currentHitPoints = buildingStats.maxHitPoints;
+        SetInitialHitpoints(0.1f);
 
         if (buildingStats.buildingTeam == Team.Player)
-            selectedArea = transform.Find("Selected").gameObject;
+            selectedArea = transform.Find("Selected");
     }
 
     public void SetSelected(bool isSelected)
@@ -24,6 +23,23 @@ public class Building : MonoBehaviour
             return;
 
         if (selectedArea != null)
-            selectedArea.SetActive(isSelected);
+            selectedArea.gameObject.SetActive(isSelected);
     }
+
+    public void SetInitialHitpoints(float amount)
+    {
+        currentHitPoints = amount;
+    }
+
+    public float GetCurrentHitpoints()
+    {
+        return currentHitPoints;
+    }
+
+    public void Repair(float amount)
+    {
+        currentHitPoints += amount;
+        Mathf.Clamp(currentHitPoints, 0f, buildingStats.maxHitPoints);
+    }
+
 }

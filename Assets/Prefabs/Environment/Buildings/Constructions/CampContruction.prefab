@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 3371895042874803064}
   - component: {fileID: 3371895042874803065}
   - component: {fileID: 4768098035754462374}
+  - component: {fileID: -1546350172266769583}
   m_Layer: 10
   m_Name: CampContruction
-  m_TagString: Untagged
+  m_TagString: UnderConstruction
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125,3 +126,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40ac5d67f86b0f44d9d0276953d57e6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buildingStats: {fileID: 11400000, guid: a92c879ac4aeec442a42f5a2869fa5be, type: 2}
+--- !u!114 &-1546350172266769583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3371895042874901979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdace3f9e723da5448ea2455b5c7d97b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  constructedBuilding: {fileID: 1267868042687567843, guid: 502ed11b1857cca409b8fb52499dfb1c, type: 3}

@@ -12,6 +12,9 @@ public class Unit : MonoBehaviour
     [HideInInspector] public UnitState unitState;
     [HideInInspector] public Vector3 target;
 
+    //Worker
+    [HideInInspector] public Worker worker;
+
     //Components
     private Animator animator;
     private NavMeshAgent navAgent;
@@ -20,9 +23,6 @@ public class Unit : MonoBehaviour
     //Others
     private float minMovingVelocity = 0.6f;
     private bool isSelected = false;
-
-    //Worker
-    [HideInInspector] public Worker worker;
 
 
     private void Start()
@@ -105,7 +105,6 @@ public class Unit : MonoBehaviour
 
     public void StopNavAgent()
     {
-        
         //navAgent.isStopped = true;
         navAgent.ResetPath();
         navAgent.velocity = Vector3.zero;

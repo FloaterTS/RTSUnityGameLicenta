@@ -7,15 +7,16 @@ public class ConstructionManager : MonoBehaviour
 {
     public static ConstructionManager instance;
 
+    [SerializeField] private GameObject playerBuildingsParent;
     [SerializeField] private GameObject previewResourceCamp;
-    [SerializeField] private GameObject underConstructionResourceCamp;
-    [SerializeField] private GameObject constructedResourceCamp;
-    [SerializeField] private Material validityMaterial;
+    [SerializeField] private GameObject underConstructionResourceCampPrefab;
+    [SerializeField] private GameObject constructedResourceCampPrefab;
+
+    //[SerializeField] private Material validityMaterial;
 
     private GameObject previewBuildingGO;
     private GameObject underConstructionBuildingPrefab;
     private GameObject constructedBuildingPrefab;
-    private float constructionRotation;
     private float snapRotationDegrees = 45f;
     private bool isPreviewingBuildingConstruction = false;
 
@@ -45,11 +46,16 @@ public class ConstructionManager : MonoBehaviour
                     previewBuildingGO.transform.position = previewHit.point;
             }
 
-            if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
-                StopPreviewBuilding();
+            if (UIManager.instance.IsMouseOverUI())
+                return;
 
             if (Input.GetMouseButtonDown(0))
+            {
                 StartConstructionForSelection();
+            }
+
+            if (Input.GetMouseButtonDown(1))
+                StopPreviewBuilding();
 
             if (Input.GetMouseButtonUp(0) || Input.GetMouseButtonUp(1))
                 isPreviewingBuildingConstruction = false;
@@ -58,12 +64,12 @@ public class ConstructionManager : MonoBehaviour
 
     public void StartPreviewResourceCampConstruction()
     {
-        previewBuildingGO = Instantiate(previewResourceCamp);
+        if(previewBuildingGO == null)
+            previewBuildingGO = Instantiate(previewResourceCamp);
         previewBuildingGO.transform.eulerAngles = new Vector3(0f, FaceCameraInitialPreviewRotation(), 0f);
 
-        constructionRotation = previewBuildingGO.transform.eulerAngles.y;
-        underConstructionBuildingPrefab = underConstructionResourceCamp;
-        constructedBuildingPrefab = constructedResourceCamp;
+        underConstructionBuildingPrefab = underConstructionResourceCampPrefab;
+        constructedBuildingPrefab = constructedResourceCampPrefab;
 
         StartCoroutine(StartBuildingPreview());
     }
@@ -85,7 +91,6 @@ public class ConstructionManager : MonoBehaviour
             previewBuildingGO.transform.eulerAngles -= new Vector3(0f, snapRotationDegrees, 0f);
         if (Input.GetKeyDown(KeyCode.E))
             previewBuildingGO.transform.eulerAngles += new Vector3(0f, snapRotationDegrees, 0f);
-        constructionRotation = previewBuildingGO.transform.eulerAngles.y;
     }
 
     private float FaceCameraInitialPreviewRotation()
@@ -110,8 +115,16 @@ public class ConstructionManager : MonoBehaviour
 
     private void StartConstructionForSelection()
     {
-        //foreach(Unit unit in SelectionManager.instance.selectedUnits)
-            //unit.StartConstruction(underConstructionBuilding, constructedBuilding, constructionRotation);
+        GameObject inConstructionBuildingGO = Instantiate(underConstructionBuildingPrefab, previewBuildingGO.transform.position, previewBuildingGO.transform.rotation, playerBuildingsParent.transform);
+        UnderConstruction underConstruction = inConstructionBuildingGO.GetComponent<UnderConstruction>();
+        underConstruction.constructedBuildingPrefab = constructedBuildingPrefab;
+        underConstruction.parentBuildingsGO = playerBuildingsParent;
+
+        StopPreviewBuilding();
+
+        foreach (Unit unit in SelectionManager.instance.selectedUnits)
+            if(unit.worker != null)
+                unit.worker.StartConstruction(inConstructionBuildingGO);
     }
 
     public bool IsPreviewingBuilding()
