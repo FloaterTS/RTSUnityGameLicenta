@@ -14,37 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SimpleSelectedItems:
     m_Keys:
-    - Assets/Prefabs/Character/Units/PlayerVillager.prefab
-    - Assets/Prefabs/Environment/Buildings/BuildingStats/PlayerResourceCamp.asset
-    - Assets/Prefabs/Environment/Buildings/BuildingStats/ResourceCamp.asset
-    - Assets/Prefabs/Environment/Buildings/Buildings/ResourceCamp.prefab
-    - Assets/Prefabs/Environment/Buildings/Constructions/BuildingContruction.prefab
-    - Assets/Prefabs/Environment/Buildings/Constructions/CampContruction.prefab
-    - Assets/Prefabs/Environment/Buildings/Previews.meta
-    - Assets/Prefabs/Environment/Buildings/Previews/ResourceCampPreview.prefab
-    - Assets/Prefabs/Environment/Buildings/Previews/ResourceCampPreview.prefab.meta
-    - Assets/Prefabs/Environment/Resources/Fields/BerryBush_Small.prefab
-    - Assets/Prefabs/Environment/Resources/Fields/BerryBushes_Large.prefab
-    - Assets/Prefabs/Environment/Resources/Fields/Farm.prefab
-    - Assets/Prefabs/Environment/Resources/Fields/FarmRow.prefab
-    - Assets/Prefabs/Environment/Resources/Fields/GoldOre.prefab
-    - Assets/Prefabs/Environment/Resources/Fields/TreeBasic.prefab
-    - Assets/Prefabs/Environment/Resources/Fields/TreeBasicFallen.prefab
-    - Assets/Scenes/Main.unity
-    - Assets/Scripts/Buildings/Building.cs
-    - Assets/Scripts/Buildings/UnderConstruction.cs
-    - Assets/Scripts/Buildings/UnderConstruction.cs.meta
-    - Assets/Scripts/Managers/ConstructionManager.cs
-    - Assets/Scripts/Managers/InteractionManager.cs
-    - Assets/Scripts/Managers/UIManager.cs
-    - Assets/Scripts/Units/Unit.cs
-    - Assets/Scripts/Units/Worker.cs
-    - ProjectSettings/ProjectVersion.txt
-    - ProjectSettings/TagManager.asset
     - 
-    m_Values: 00000000000000000000000000000000000000000000000000000000
-  RevisionSummary: 
+    m_Values: 01
+  RevisionSummary: Added Building Construction Validation. Reimported library
   ChangesSearchValue: 
-  SelectedHistoryRevision: 
+  SelectedHistoryRevision: 374b5776a70804db68e53ae9625d0d83aeae4462
   HistoryPageNumber: 0
   TabIndex: 0
