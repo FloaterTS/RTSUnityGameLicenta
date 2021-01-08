@@ -24,8 +24,8 @@ public class ResourceField : MonoBehaviour
 
     void Update()
     {
-        if (leftAmount <= 0) 
-            this.gameObject.SetActive(false);
+        if (leftAmount <= 0)
+            Destroy(this.gameObject);
     }
 
     public int HarvestResourceField()

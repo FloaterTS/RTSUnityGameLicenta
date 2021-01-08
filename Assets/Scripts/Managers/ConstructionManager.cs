@@ -15,7 +15,8 @@ public class ConstructionManager : MonoBehaviour
     private GameObject previewBuildingGO;
     private GameObject underConstructionBuildingPrefab;
     private GameObject constructedBuildingPrefab;
-    private float snapRotationDegrees = 45f;
+    private PlacementValidity previewPlacementValidity;
+    private readonly float snapRotationDegrees = 45f;
     private bool isPreviewingBuildingConstruction = false;
 
     void Start()
@@ -32,8 +33,8 @@ public class ConstructionManager : MonoBehaviour
         {
             if (GameManager.instance.IsPaused())
             {
-                StopPreviewBuilding();
-                isPreviewingBuildingConstruction = false;
+                StopPreviewBuildingGO();
+                StopPreviewBuildingBool();
             }
 
             if (previewBuildingGO != null)
@@ -48,15 +49,15 @@ public class ConstructionManager : MonoBehaviour
                 return;
 
             if (Input.GetMouseButtonDown(0))
-                if(previewBuildingGO.GetComponent<PlacementValidity>().IsValidlyPlaced())
+                if(previewPlacementValidity.IsValidlyPlaced())
                     StartConstructionForSelection();
 
             if (Input.GetMouseButtonDown(1))
-                StopPreviewBuilding();
+                StopPreviewBuildingGO();
 
             if (Input.GetMouseButtonUp(0) || Input.GetMouseButtonUp(1))
-                if(previewBuildingGO == null)
-                    isPreviewingBuildingConstruction = false;
+                if (previewBuildingGO == null)
+                    StopPreviewBuildingBool();
         }
     }
 
@@ -67,22 +68,26 @@ public class ConstructionManager : MonoBehaviour
 
         previewBuildingGO = Instantiate(previewResourceCamp);
         previewBuildingGO.transform.eulerAngles = new Vector3(0f, FaceCameraInitialPreviewRotation(), 0f);
+        previewPlacementValidity = previewBuildingGO.GetComponent<PlacementValidity>();
 
         underConstructionBuildingPrefab = underConstructionResourceCampPrefab;
         constructedBuildingPrefab = constructedResourceCampPrefab;
         isPreviewingBuildingConstruction = true;
-        //StartCoroutine(StartBuildingPreview()); //we have to wait a frame so the click on the build button doesn't register as building placement
     }
 
-    private IEnumerator StartBuildingPreview()
-    {
-        yield return null;
-        isPreviewingBuildingConstruction = true;
-    }
-
-    private void StopPreviewBuilding()
+    public void StopPreviewBuildingGO()
     {
         Destroy(previewBuildingGO);
+    }
+
+    public void StopPreviewBuildingBool()
+    {
+        isPreviewingBuildingConstruction = false;
+    }
+
+    public bool IsPreviewingBuilding()
+    {
+        return isPreviewingBuildingConstruction;
     }
 
     private void RotatePreviewBuilding()
@@ -120,15 +125,10 @@ public class ConstructionManager : MonoBehaviour
         underConstruction.constructedBuildingPrefab = constructedBuildingPrefab;
         underConstruction.parentBuildingsGO = playerBuildingsParent;
 
-        StopPreviewBuilding();
+        StopPreviewBuildingGO();
 
         foreach (Unit unit in SelectionManager.instance.selectedUnits)
             if(unit.worker != null)
                 unit.worker.StartConstruction(inConstructionBuildingGO);
-    }
-
-    public bool IsPreviewingBuilding()
-    {
-        return isPreviewingBuildingConstruction;
     }
 }

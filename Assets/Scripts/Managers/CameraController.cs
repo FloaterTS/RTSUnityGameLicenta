@@ -125,6 +125,12 @@ public class CameraController : MonoBehaviour
     {
         if (ConstructionManager.instance.IsPreviewingBuilding())
             return;
+
+        Vector3 screenMiddlePoint;
+        Ray screenCenterRay = Camera.main.ScreenPointToRay(new Vector2(Screen.height / 2, Screen.width / 2));
+        if (Physics.Raycast(screenCenterRay, out RaycastHit hitPoint, 1000f, LayerMask.GetMask("TerrainBase")))
+            screenMiddlePoint = hitPoint.point; // TO REVISION THIS
+
         if (snapRotation)
         {
             if (Input.GetKeyDown(KeyCode.E))

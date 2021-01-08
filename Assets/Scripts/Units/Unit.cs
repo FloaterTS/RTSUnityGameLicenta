@@ -6,7 +6,7 @@ public class Unit : MonoBehaviour
 {
     //Unit Stats
     public UnitStats unitStats;
-    private int currentHealth;
+    private float currentHealth;
 
     //Unit States
     [HideInInspector] public UnitState unitState;
@@ -70,9 +70,12 @@ public class Unit : MonoBehaviour
 
         target = targetPosition;
 
-        if (worker != null && unitState == UnitState.working)
-            yield return StartCoroutine(worker.StopTaskCo());
-
+        if (worker != null)
+        {
+            if (unitState == UnitState.working)
+                yield return StartCoroutine(worker.StopTaskCo());
+            yield return StartCoroutine(worker.CheckIfImmobile());
+        }
         navAgent.isStopped = false;
         navAgent.SetDestination(targetPosition);
 
@@ -105,13 +108,38 @@ public class Unit : MonoBehaviour
 
     public void StopNavAgent()
     {
-        //navAgent.isStopped = true;
-        navAgent.ResetPath();
-        navAgent.velocity = Vector3.zero;
+        if (navAgent.enabled)
+        {
+            //navAgent.isStopped = true;
+            navAgent.ResetPath();
+            navAgent.velocity = Vector3.zero;
+        }
     }
 
     public void EnableNavAgent(bool isEnabled)
     {
         navAgent.enabled = isEnabled;
+    }
+
+    public void ChangeUnitSpeed(UnitSpeed unitSpeed)
+    {
+        switch(unitSpeed)
+        {
+            case UnitSpeed.run: 
+                navAgent.speed = unitStats.moveSpeed;
+                break;
+            case UnitSpeed.walk:
+                navAgent.speed = unitStats.moveSpeed * unitStats.walkSpeedMultiplier;
+                break;
+            case UnitSpeed.sprint:
+                navAgent.speed = unitStats.moveSpeed * unitStats.sprintSpeedMultiplier;
+                break;
+            case UnitSpeed.carryLight:
+                navAgent.speed = unitStats.moveSpeed * unitStats.carryLightSpeedMultiplier;
+                break;
+            case UnitSpeed.carryHeavy:
+                navAgent.speed = unitStats.moveSpeed * unitStats.carryHeavySpeedMultiplier;
+                break;
+        }
     }
 }

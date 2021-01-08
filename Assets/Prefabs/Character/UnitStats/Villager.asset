@@ -15,7 +15,11 @@ MonoBehaviour:
   unitTeam: 4
   unitName: Villager
   maxHealth: 70
-  moveSpeed: 7
+  moveSpeed: 6
+  walkSpeedMultiplier: 0.5
+  sprintSpeedMultiplier: 1.5
+  carryLightSpeedMultiplier: 0.5
+  carryHeavySpeedMultiplier: 0.4
   carryCapactity: 8
   harvestSpeedMultiplier: 1
   baseUnitStats: {fileID: 0}

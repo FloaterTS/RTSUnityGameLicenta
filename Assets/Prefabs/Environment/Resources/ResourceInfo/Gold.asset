@@ -15,7 +15,9 @@ MonoBehaviour:
   resourceType: 2
   resourceRaw: 1
   harvestAnimation: mining
-  carryAnimation: 
-  storeAnimation: 
+  carryAnimation: carryingHeavy
+  carriedResourceName: 
+  liftAnimationDuration: 2.2
+  dropAnimationDuration: 2.2
   harvestTimePerUnit: 1
-  storeDuration: 1
+  carrySpeed: 4

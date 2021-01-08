@@ -92,6 +92,9 @@ GameObject:
   - component: {fileID: 8739801600354156627}
   - component: {fileID: 6282835906537226674}
   - component: {fileID: 4486095497731755285}
+  - component: {fileID: 702555466731528584}
+  - component: {fileID: 3112786530167059621}
+  - component: {fileID: 7464766790059662448}
   m_Layer: 10
   m_Name: ResourceCampPreview
   m_TagString: Untagged
@@ -167,6 +170,49 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &702555466731528584
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1267868042687567843}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.3, y: 2.1, z: 2.8}
+  m_Center: {x: 0, y: 1.1499999, z: 0.3}
+--- !u!114 &3112786530167059621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1267868042687567843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7559962e6f5dc64438e33049b7c2fbe4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  validityMaterial: {fileID: 2100000, guid: 437d769fa580a45449a625364e65df28, type: 2}
+  maxTerrainHeightDifference: 2.5
+--- !u!54 &7464766790059662448
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1267868042687567843}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &3549816694642601051
 GameObject:
   m_ObjectHideFlags: 0

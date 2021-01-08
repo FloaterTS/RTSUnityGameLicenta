@@ -15,7 +15,9 @@ MonoBehaviour:
   resourceType: 0
   resourceRaw: 0
   harvestAnimation: gathering
-  carryAnimation: 
-  storeAnimation: 
+  carryAnimation: carryingLight
+  carriedResourceName: 
+  liftAnimationDuration: 2.2
+  dropAnimationDuration: 2.2
   harvestTimePerUnit: 1
-  storeDuration: 1
+  carrySpeed: 3

@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlacementValidity : MonoBehaviour
 {
     [SerializeField] private Material validityMaterial;
-    [SerializeField] private float maxTerrainHeightDifference = 2.25f;
+    [SerializeField] private float maxTerrainHeightDifference = 2f;
 
     private BoxCollider boxCollider;
     private Terrain terrain;
