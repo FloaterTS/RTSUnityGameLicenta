@@ -12709,7 +12709,7 @@ MonoBehaviour:
   regularRotationSpeed: 60
   fastRotationFactor: 2
   snapDegreeValue: 90
-  snapRotation: 0
+  snapRotation: 1
   scrollSensitivity: 250
   minHeightFromGround: 5
   maxHeightFromGround: 30

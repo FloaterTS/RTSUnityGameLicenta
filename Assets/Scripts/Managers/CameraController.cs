@@ -23,7 +23,6 @@ public class CameraController : MonoBehaviour
     [SerializeField] private bool snapRotation = true;
 
     private Quaternion desiredCameraRotation;
-    private Quaternion facingRotation;
 
     [Header("Zoom Settings")]
     [SerializeField] private float scrollSensitivity = 250f;
@@ -40,17 +39,15 @@ public class CameraController : MonoBehaviour
     [Header("Other Settings")]
     [SerializeField, Range(45f, 90f)]
     private float camXRotation = 67.5f;
-    [SerializeField, Range(45f, 60f)] 
+    [SerializeField, Range(45f, 60f)]
     private float camFieldOfView = 60f;
     [SerializeField] private bool lockMouseCursor = true;
 
 
-    void Start()
+    private void Start()
     {
         desiredCameraPosition = transform.position;
         desiredCameraRotation = transform.rotation;
-
-        facingRotation = Quaternion.Euler(0f, transform.rotation.eulerAngles.y, 0f);
 
         terrainToHoverOver = GameManager.instance.mainTerrain;
         terrainPosition = terrainToHoverOver.transform.position;
@@ -60,25 +57,29 @@ public class CameraController : MonoBehaviour
         AdjustFieldOfView(camFieldOfView);
         AdjustSnapRotation(snapRotation);
 
-        if(lockMouseCursor)
+        if (lockMouseCursor)
             Cursor.lockState = CursorLockMode.Confined;
     }
 
-    void Update()
+    private void Update()
     {
         CheckMovement();
         CheckZoom();
-        MoveCamera();
         CheckRotation();
+    }
+
+    private void LateUpdate()
+    {
+        MoveCamera();
         CheckBounds();
     }
 
-    void CheckMovement()
+    private void CheckMovement()
     {
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
 
-        if(movementByMouse)
+        if (movementByMouse)
             CheckMovementFromMouse();
 
         if (horizontal == 0f && vertical == 0f)
@@ -88,11 +89,12 @@ public class CameraController : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftShift))
             moveSpeed *= fastMoveFactor;
 
+        Quaternion facingRotation = Quaternion.Euler(0f, desiredCameraRotation.eulerAngles.y, 0f);
         desiredCameraPosition += facingRotation * Vector3.right * horizontal * moveSpeed * Time.deltaTime;
         desiredCameraPosition += facingRotation * Vector3.forward * vertical * moveSpeed * Time.deltaTime;
     }
 
-    void CheckZoom()
+    private void CheckZoom()
     {
         float scrollValue = Input.mouseScrollDelta.y;
 
@@ -121,25 +123,19 @@ public class CameraController : MonoBehaviour
         }
     }
 
-    void CheckRotation()
+    private void CheckRotation()
     {
         if (ConstructionManager.instance.IsPreviewingBuilding())
             return;
 
-        Vector3 screenMiddlePoint;
-        Ray screenCenterRay = Camera.main.ScreenPointToRay(new Vector2(Screen.height / 2, Screen.width / 2));
-        if (Physics.Raycast(screenCenterRay, out RaycastHit hitPoint, 1000f, LayerMask.GetMask("TerrainBase")))
-            screenMiddlePoint = hitPoint.point; // TO REVISION THIS
-
+        float rotationAngle = 0;
         if (snapRotation)
         {
             if (Input.GetKeyDown(KeyCode.E))
-                desiredCameraRotation = Quaternion.Euler(desiredCameraRotation.eulerAngles.x,
-                    desiredCameraRotation.eulerAngles.y + snapDegreeValue, desiredCameraRotation.eulerAngles.z);
+                rotationAngle = -snapDegreeValue;
 
             if (Input.GetKeyDown(KeyCode.Q))
-                desiredCameraRotation = Quaternion.Euler(desiredCameraRotation.eulerAngles.x,
-                    desiredCameraRotation.eulerAngles.y - snapDegreeValue, desiredCameraRotation.eulerAngles.z);
+                rotationAngle = snapDegreeValue;
         }
         else
         {
@@ -148,30 +144,34 @@ public class CameraController : MonoBehaviour
                 rotationSpeed *= fastRotationFactor;
 
             if (Input.GetKey(KeyCode.E))
-                desiredCameraRotation = Quaternion.Euler(
-                    desiredCameraRotation.eulerAngles.x,
-                    desiredCameraRotation.eulerAngles.y + rotationSpeed * Time.deltaTime, 
-                    desiredCameraRotation.eulerAngles.z);
+                rotationAngle = -rotationSpeed * Time.deltaTime;
 
-            if(Input.GetKey(KeyCode.Q))
-                desiredCameraRotation = Quaternion.Euler(
-                    desiredCameraRotation.eulerAngles.x,
-                    desiredCameraRotation.eulerAngles.y - rotationSpeed * Time.deltaTime,
-                    desiredCameraRotation.eulerAngles.z);
+            if (Input.GetKey(KeyCode.Q))
+                rotationAngle = rotationSpeed * Time.deltaTime;
         }
-        facingRotation = Quaternion.Euler(0f, desiredCameraRotation.eulerAngles.y, 0f);
+
+        if (rotationAngle == 0)
+            return;
+
+        Vector3 screenCenter = GetScreenCenterPoint(); // Get current screen center
+        Quaternion desiredRotation = Quaternion.AngleAxis(rotationAngle, Vector3.up); // Get the desired rotation
+        Vector3 directionDifference = desiredCameraPosition - screenCenter; // Find current direction relative to center
+        directionDifference = desiredRotation * directionDifference; // Rotate the direction vector
+
+        desiredCameraPosition = screenCenter + directionDifference; // Update camera to new position
+        desiredCameraRotation = desiredRotation * desiredCameraRotation; // Rotate camera to keep looking at the center
     }
 
-    void MoveCamera()
+    private void MoveCamera()
     {
-        if(transform.position != desiredCameraPosition)
+        if (transform.position != desiredCameraPosition)
             transform.position = Vector3.Lerp(transform.position, desiredCameraPosition, moveSmoothing);
 
-        if(transform.rotation != desiredCameraRotation)
+        if (transform.rotation != desiredCameraRotation)
             transform.rotation = Quaternion.Lerp(transform.rotation, desiredCameraRotation, rotationSmoothing);
     }
 
-    void CheckBounds()
+    private void CheckBounds()
     {
         float currentTerrainHeight = terrainToHoverOver.SampleHeight(transform.position);
 
@@ -184,7 +184,7 @@ public class CameraController : MonoBehaviour
         desiredCameraPosition.z = Mathf.Clamp(desiredCameraPosition.z, terrainPosition.z, terrainPosition.z + terrainSize.z);
     }
 
-    void CheckMovementFromMouse()
+    private void CheckMovementFromMouse()
     {
         if (SelectionManager.instance.IsDragging())
             return;
@@ -199,6 +199,17 @@ public class CameraController : MonoBehaviour
             vertical = -1;
         if (currentMousePosition.y >= Screen.height - screenPanBorderThickness)
             vertical = 1;
+    }
+
+    private Vector3 GetScreenCenterPoint()
+    {
+        Vector3 screenCenterPoint = Vector3.zero;
+        Ray screenCenterRay = Camera.main.ScreenPointToRay(new Vector2(Screen.width / 2, Screen.height / 2));
+        if (Physics.Raycast(screenCenterRay, out RaycastHit hitPoint, 1000f))
+            screenCenterPoint = hitPoint.point;
+        else
+            Debug.LogError("Screen center raycast not hitting anything");
+        return screenCenterPoint;
     }
 
     public void AdjustFieldOfView(float valueFOV)
@@ -216,17 +227,13 @@ public class CameraController : MonoBehaviour
     public void AdjustSnapRotation(bool snapRotationActive)
     {
         if (snapRotationActive)
-        {
             desiredCameraRotation = Quaternion.Euler(desiredCameraRotation.eulerAngles.x, 0f, desiredCameraRotation.eulerAngles.z);
-            facingRotation = Quaternion.Euler(0f, 0f, 0f);
-        }
+
         snapRotation = snapRotationActive;
     }
 
     public void ToggleMovementByMouse(bool movementByMouseActive)
     {
         movementByMouse = movementByMouseActive;
-    }   
-    
-    //void SelectionZoomOut()
+    }
 }
