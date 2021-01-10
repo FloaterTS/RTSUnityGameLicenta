@@ -14,12 +14,509 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SimpleSelectedItems:
     m_Keys:
-    - Assets/Art/Animations/AnimationClips/VillagerAnimations/Villager@Death01[RootMotion].fbx
-    - Assets/Art/Animations/AnimationClips/VillagerAnimations/Villager@Death02[RootMotion].fbx
+    - Assets/Art/Materials/MaterialAtlases/VillagerMaterial.mat
+    - Assets/Prefabs/Buildings.meta
+    - Assets/Prefabs/Buildings/BuildingStats.meta
+    - Assets/Prefabs/Buildings/BuildingStats/PlayerResourceCamp.asset
+    - Assets/Prefabs/Buildings/BuildingStats/PlayerResourceCamp.asset.meta
+    - Assets/Prefabs/Buildings/BuildingStats/ResourceCamp.asset
+    - Assets/Prefabs/Buildings/BuildingStats/ResourceCamp.asset.meta
+    - Assets/Prefabs/Buildings/Buildings.meta
+    - Assets/Prefabs/Buildings/Buildings/ResourceCamp.prefab
+    - Assets/Prefabs/Buildings/Buildings/ResourceCamp.prefab.meta
+    - Assets/Prefabs/Buildings/Constructions.meta
+    - Assets/Prefabs/Buildings/Constructions/BuildingContruction.prefab
+    - Assets/Prefabs/Buildings/Constructions/BuildingContruction.prefab.meta
+    - Assets/Prefabs/Buildings/Constructions/CampContruction.prefab
+    - Assets/Prefabs/Buildings/Constructions/CampContruction.prefab.meta
+    - Assets/Prefabs/Buildings/Previews.meta
+    - Assets/Prefabs/Buildings/Previews/ResourceCampPreview.prefab
+    - Assets/Prefabs/Buildings/Previews/ResourceCampPreview.prefab.meta
+    - Assets/Prefabs/Character/Equipment/Tools/VillagerBasketBerries.prefab
+    - Assets/Prefabs/Character/Equipment/Tools/VillagerBasketBerries.prefab.meta
+    - Assets/Prefabs/Character/Equipment/Tools/VillagerFishingPole.prefab
+    - Assets/Prefabs/Character/Equipment/Tools/VillagerHammer.prefab
+    - Assets/Prefabs/Character/Equipment/Tools/VillagerPlow.prefab
+    - Assets/Prefabs/Character/Units/PlayerVillager.prefab
+    - Assets/Prefabs/Environment.meta
+    - Assets/Prefabs/Objects.meta
+    - Assets/Prefabs/Objects/Anvil.prefab
+    - Assets/Prefabs/Objects/Anvil.prefab.meta
+    - Assets/Prefabs/Objects/BearSkin.prefab
+    - Assets/Prefabs/Objects/BearSkin.prefab.meta
+    - Assets/Prefabs/Objects/Cauldron.prefab
+    - Assets/Prefabs/Objects/Cauldron.prefab.meta
+    - Assets/Prefabs/Objects/Dirt.prefab
+    - Assets/Prefabs/Objects/Dirt.prefab.meta
+    - Assets/Prefabs/Objects/Plant.prefab
+    - Assets/Prefabs/Objects/Plant.prefab.meta
+    - Assets/Prefabs/Objects/Table.prefab
+    - Assets/Prefabs/Objects/Table.prefab.meta
+    - Assets/Prefabs/Resources.meta
+    - Assets/Prefabs/Resources/Carried.meta
+    - Assets/Prefabs/Resources/Carried/Berries.prefab
+    - Assets/Prefabs/Resources/Carried/Berries.prefab.meta
+    - Assets/Prefabs/Resources/Carried/Gold.prefab
+    - Assets/Prefabs/Resources/Carried/Gold.prefab.meta
+    - Assets/Prefabs/Resources/Carried/LogPile.prefab
+    - Assets/Prefabs/Resources/Carried/LogPile.prefab.meta
+    - Assets/Prefabs/Resources/Carried/VillagerBasketEmpty.prefab
+    - Assets/Prefabs/Resources/Carried/VillagerBasketEmpty.prefab.meta
+    - Assets/Prefabs/Resources/Carried/VillagerBasketFull.prefab
+    - Assets/Prefabs/Resources/Carried/VillagerBasketFull.prefab.meta
+    - Assets/Prefabs/Resources/Carried/VillagerBasketVegetables.prefab
+    - Assets/Prefabs/Resources/Carried/VillagerBasketVegetables.prefab.meta
+    - Assets/Prefabs/Resources/Fields.meta
+    - Assets/Prefabs/Resources/Fields/BerryBush_Small.prefab
+    - Assets/Prefabs/Resources/Fields/BerryBush_Small.prefab.meta
+    - Assets/Prefabs/Resources/Fields/BerryBushes_Large.prefab
+    - Assets/Prefabs/Resources/Fields/BerryBushes_Large.prefab.meta
+    - Assets/Prefabs/Resources/Fields/Farm.prefab
+    - Assets/Prefabs/Resources/Fields/Farm.prefab.meta
+    - Assets/Prefabs/Resources/Fields/FarmRow.prefab
+    - Assets/Prefabs/Resources/Fields/FarmRow.prefab.meta
+    - Assets/Prefabs/Resources/Fields/GoldOre.prefab
+    - Assets/Prefabs/Resources/Fields/GoldOre.prefab.meta
+    - Assets/Prefabs/Resources/Fields/TreeBasic.prefab
+    - Assets/Prefabs/Resources/Fields/TreeBasic.prefab.meta
+    - Assets/Prefabs/Resources/Fields/TreeBasicFallen.prefab
+    - Assets/Prefabs/Resources/Fields/TreeBasicFallen.prefab.meta
+    - Assets/Prefabs/Resources/LogPileLarge.prefab
+    - Assets/Prefabs/Resources/LogPileLarge.prefab.meta
+    - Assets/Prefabs/Resources/LogPileLong.prefab
+    - Assets/Prefabs/Resources/LogPileLong.prefab.meta
+    - Assets/Prefabs/Resources/ResourceInfo.meta
+    - Assets/Prefabs/Resources/ResourceInfo/Berries.asset
+    - Assets/Prefabs/Resources/ResourceInfo/Berries.asset.meta
+    - Assets/Prefabs/Resources/ResourceInfo/Gold.asset
+    - Assets/Prefabs/Resources/ResourceInfo/Gold.asset.meta
+    - Assets/Prefabs/Resources/Tools.meta
+    - Assets/Prefabs/Resources/Tools/VillagerBasketFloor.prefab
+    - Assets/Prefabs/Resources/Tools/VillagerBasketFloor.prefab.meta
+    - Assets/Prefabs/Resources/Tools/VillagerPickaxe.prefab
+    - Assets/Prefabs/Resources/Tools/VillagerPickaxe.prefab.meta
+    - Assets/Prefabs/Terrain.meta
+    - Assets/Prefabs/Terrain/Decor.meta
+    - Assets/Prefabs/Terrain/Decor/CampFire.prefab
+    - Assets/Prefabs/Terrain/Decor/CampFire.prefab.meta
+    - Assets/Prefabs/Terrain/Decor/Cloud1.prefab
+    - Assets/Prefabs/Terrain/Decor/Cloud1.prefab.meta
+    - Assets/Prefabs/Terrain/Decor/Cloud2.prefab
+    - Assets/Prefabs/Terrain/Decor/Cloud2.prefab.meta
+    - Assets/Prefabs/Terrain/Decor/Clouds1Layer.prefab
+    - Assets/Prefabs/Terrain/Decor/Clouds1Layer.prefab.meta
+    - Assets/Prefabs/Terrain/Decor/Clouds2Layer.prefab
+    - Assets/Prefabs/Terrain/Decor/Clouds2Layer.prefab.meta
+    - Assets/Prefabs/Terrain/Decor/Log.prefab
+    - Assets/Prefabs/Terrain/Decor/Log.prefab.meta
+    - Assets/Prefabs/Terrain/Decor/Paddle.prefab
+    - Assets/Prefabs/Terrain/Decor/Paddle.prefab.meta
+    - Assets/Prefabs/Terrain/Decor/Sign.prefab
+    - Assets/Prefabs/Terrain/Decor/Sign.prefab.meta
+    - Assets/Prefabs/Terrain/Decor/Tent.prefab
+    - Assets/Prefabs/Terrain/Decor/Tent.prefab.meta
+    - Assets/Prefabs/Terrain/Decor/WoodBoat.prefab
+    - Assets/Prefabs/Terrain/Decor/WoodBoat.prefab.meta
+    - Assets/Prefabs/Terrain/Decor/WoodFence1.prefab
+    - Assets/Prefabs/Terrain/Decor/WoodFence1.prefab.meta
+    - Assets/Prefabs/Terrain/Decor/WoodFence2.prefab
+    - Assets/Prefabs/Terrain/Decor/WoodFence2.prefab.meta
+    - Assets/Prefabs/Terrain/Decor/cloud_1.prefab
+    - Assets/Prefabs/Terrain/Decor/cloud_1.prefab.meta
+    - Assets/Prefabs/Terrain/Decor/cloud_2.prefab
+    - Assets/Prefabs/Terrain/Decor/cloud_2.prefab.meta
+    - Assets/Prefabs/Terrain/Decor/log_1.prefab
+    - Assets/Prefabs/Terrain/Decor/log_1.prefab.meta
+    - Assets/Prefabs/Terrain/Decor/log_2.prefab
+    - Assets/Prefabs/Terrain/Decor/log_2.prefab.meta
+    - Assets/Prefabs/Terrain/Decor/log_3.prefab
+    - Assets/Prefabs/Terrain/Decor/log_3.prefab.meta
+    - Assets/Prefabs/Terrain/Decor/log_4.prefab
+    - Assets/Prefabs/Terrain/Decor/log_4.prefab.meta
+    - Assets/Prefabs/Terrain/Decor/log_5.prefab
+    - Assets/Prefabs/Terrain/Decor/log_5.prefab.meta
+    - Assets/Prefabs/Terrain/Foliage.meta
+    - Assets/Prefabs/Terrain/Foliage/Bushes.meta
+    - Assets/Prefabs/Terrain/Foliage/Bushes/bush_1.prefab
+    - Assets/Prefabs/Terrain/Foliage/Bushes/bush_1.prefab.meta
+    - Assets/Prefabs/Terrain/Foliage/Bushes/bush_10.prefab
+    - Assets/Prefabs/Terrain/Foliage/Bushes/bush_10.prefab.meta
+    - Assets/Prefabs/Terrain/Foliage/Bushes/bush_3.prefab
+    - Assets/Prefabs/Terrain/Foliage/Bushes/bush_3.prefab.meta
+    - Assets/Prefabs/Terrain/Foliage/Bushes/bush_4.prefab
+    - Assets/Prefabs/Terrain/Foliage/Bushes/bush_4.prefab.meta
+    - Assets/Prefabs/Terrain/Foliage/Bushes/bush_5.prefab
+    - Assets/Prefabs/Terrain/Foliage/Bushes/bush_5.prefab.meta
+    - Assets/Prefabs/Terrain/Foliage/Bushes/bush_6.prefab
+    - Assets/Prefabs/Terrain/Foliage/Bushes/bush_6.prefab.meta
+    - Assets/Prefabs/Terrain/Foliage/Bushes/bush_7.prefab
+    - Assets/Prefabs/Terrain/Foliage/Bushes/bush_7.prefab.meta
+    - Assets/Prefabs/Terrain/Foliage/Bushes/bush_segment_1.prefab
+    - Assets/Prefabs/Terrain/Foliage/Bushes/bush_segment_1.prefab.meta
+    - Assets/Prefabs/Terrain/Foliage/Bushes/bush_segment_2.prefab
+    - Assets/Prefabs/Terrain/Foliage/Bushes/bush_segment_2.prefab.meta
+    - Assets/Prefabs/Terrain/Foliage/Bushes/bush_segment_3.prefab
+    - Assets/Prefabs/Terrain/Foliage/Bushes/bush_segment_3.prefab.meta
+    - Assets/Prefabs/Terrain/Foliage/Flowers.meta
+    - Assets/Prefabs/Terrain/Foliage/Flowers/Flower1.prefab
+    - Assets/Prefabs/Terrain/Foliage/Flowers/Flower1.prefab.meta
+    - Assets/Prefabs/Terrain/Foliage/Flowers/Flower2.prefab
+    - Assets/Prefabs/Terrain/Foliage/Flowers/Flower2.prefab.meta
+    - Assets/Prefabs/Terrain/Foliage/Flowers/Flower3.prefab
+    - Assets/Prefabs/Terrain/Foliage/Flowers/Flower3.prefab.meta
+    - Assets/Prefabs/Terrain/Foliage/Flowers/Flower4.prefab
+    - Assets/Prefabs/Terrain/Foliage/Flowers/Flower4.prefab.meta
+    - Assets/Prefabs/Terrain/Foliage/Flowers/LightingPlant1.prefab
+    - Assets/Prefabs/Terrain/Foliage/Flowers/LightingPlant1.prefab.meta
+    - Assets/Prefabs/Terrain/Foliage/Flowers/LightingPlant2.prefab
+    - Assets/Prefabs/Terrain/Foliage/Flowers/LightingPlant2.prefab.meta
+    - Assets/Prefabs/Terrain/Foliage/Flowers/flower_1.prefab
+    - Assets/Prefabs/Terrain/Foliage/Flowers/flower_1.prefab.meta
+    - Assets/Prefabs/Terrain/Foliage/Flowers/flower_2.prefab
+    - Assets/Prefabs/Terrain/Foliage/Flowers/flower_2.prefab.meta
+    - Assets/Prefabs/Terrain/Foliage/Flowers/flower_3.prefab
+    - Assets/Prefabs/Terrain/Foliage/Flowers/flower_3.prefab.meta
+    - Assets/Prefabs/Terrain/Foliage/Flowers/flower_4.prefab
+    - Assets/Prefabs/Terrain/Foliage/Flowers/flower_4.prefab.meta
+    - Assets/Prefabs/Terrain/Foliage/Grass.meta
+    - Assets/Prefabs/Terrain/Foliage/Grass/Grass1.prefab
+    - Assets/Prefabs/Terrain/Foliage/Grass/Grass1.prefab.meta
+    - Assets/Prefabs/Terrain/Foliage/Grass/Grass2.prefab
+    - Assets/Prefabs/Terrain/Foliage/Grass/Grass2.prefab.meta
+    - Assets/Prefabs/Terrain/Foliage/Grass/Grass3.prefab
+    - Assets/Prefabs/Terrain/Foliage/Grass/Grass3.prefab.meta
+    - Assets/Prefabs/Terrain/Foliage/Grass/Grass4.prefab
+    - Assets/Prefabs/Terrain/Foliage/Grass/Grass4.prefab.meta
+    - Assets/Prefabs/Terrain/Foliage/Grass/Ivy1.prefab
+    - Assets/Prefabs/Terrain/Foliage/Grass/Ivy1.prefab.meta
+    - Assets/Prefabs/Terrain/Foliage/Grass/Ivy2.prefab
+    - Assets/Prefabs/Terrain/Foliage/Grass/Ivy2.prefab.meta
+    - Assets/Prefabs/Terrain/Foliage/Grass/PlantEx1.prefab
+    - Assets/Prefabs/Terrain/Foliage/Grass/PlantEx1.prefab.meta
+    - Assets/Prefabs/Terrain/Foliage/Grass/PlantEx3.prefab
+    - Assets/Prefabs/Terrain/Foliage/Grass/PlantEx3.prefab.meta
+    - Assets/Prefabs/Terrain/Foliage/Grass/forestpack_foliage_grassPatch_small_1.prefab
+    - Assets/Prefabs/Terrain/Foliage/Grass/forestpack_foliage_grassPatch_small_1.prefab.meta
+    - Assets/Prefabs/Terrain/Foliage/Grass/forestpack_foliage_grassPatch_small_2.prefab
+    - Assets/Prefabs/Terrain/Foliage/Grass/forestpack_foliage_grassPatch_small_2.prefab.meta
+    - Assets/Prefabs/Terrain/Foliage/Grass/grass_1.prefab
+    - Assets/Prefabs/Terrain/Foliage/Grass/grass_1.prefab.meta
+    - Assets/Prefabs/Terrain/Foliage/Grass/grass_2.prefab
+    - Assets/Prefabs/Terrain/Foliage/Grass/grass_2.prefab.meta
+    - Assets/Prefabs/Terrain/Foliage/Grass/grass_3.prefab
+    - Assets/Prefabs/Terrain/Foliage/Grass/grass_3.prefab.meta
+    - Assets/Prefabs/Terrain/Foliage/Grass/plant_1.prefab
+    - Assets/Prefabs/Terrain/Foliage/Grass/plant_1.prefab.meta
+    - Assets/Prefabs/Terrain/Foliage/Grass/plant_2.prefab
+    - Assets/Prefabs/Terrain/Foliage/Grass/plant_2.prefab.meta
+    - Assets/Prefabs/Terrain/Foliage/Grass/plant_3.prefab
+    - Assets/Prefabs/Terrain/Foliage/Grass/plant_3.prefab.meta
+    - Assets/Prefabs/Terrain/Foliage/Grass/plant_4.prefab
+    - Assets/Prefabs/Terrain/Foliage/Grass/plant_4.prefab.meta
+    - Assets/Prefabs/Terrain/Foliage/Mushroom.meta
+    - Assets/Prefabs/Terrain/Foliage/Mushroom/Mushroom1.prefab
+    - Assets/Prefabs/Terrain/Foliage/Mushroom/Mushroom1.prefab.meta
+    - Assets/Prefabs/Terrain/Foliage/Mushroom/Mushroom2.prefab
+    - Assets/Prefabs/Terrain/Foliage/Mushroom/Mushroom2.prefab.meta
+    - Assets/Prefabs/Terrain/Foliage/Mushroom/Mushroom3.prefab
+    - Assets/Prefabs/Terrain/Foliage/Mushroom/Mushroom3.prefab.meta
+    - Assets/Prefabs/Terrain/Foliage/Mushroom/MushroomLarge.prefab
+    - Assets/Prefabs/Terrain/Foliage/Mushroom/MushroomLarge.prefab.meta
+    - Assets/Prefabs/Terrain/Foliage/Mushroom/Mushroom_blue.prefab
+    - Assets/Prefabs/Terrain/Foliage/Mushroom/Mushroom_blue.prefab.meta
+    - Assets/Prefabs/Terrain/Foliage/Mushroom/Mushroom_red.prefab
+    - Assets/Prefabs/Terrain/Foliage/Mushroom/Mushroom_red.prefab.meta
+    - Assets/Prefabs/Terrain/Foliage/Mushroom/mushroom_1.prefab
+    - Assets/Prefabs/Terrain/Foliage/Mushroom/mushroom_1.prefab.meta
+    - Assets/Prefabs/Terrain/Foliage/Mushroom/mushroom_2.prefab
+    - Assets/Prefabs/Terrain/Foliage/Mushroom/mushroom_2.prefab.meta
+    - Assets/Prefabs/Terrain/Foliage/Mushroom/mushroom_3.prefab
+    - Assets/Prefabs/Terrain/Foliage/Mushroom/mushroom_3.prefab.meta
+    - Assets/Prefabs/Terrain/Foliage/Others.meta
+    - Assets/Prefabs/Terrain/Foliage/Others/FallenBranch.prefab
+    - Assets/Prefabs/Terrain/Foliage/Others/FallenBranch.prefab.meta
+    - Assets/Prefabs/Terrain/Foliage/Others/PlantEx2.prefab
+    - Assets/Prefabs/Terrain/Foliage/Others/PlantEx2.prefab.meta
+    - Assets/Prefabs/Terrain/Foliage/Others/PlantEx4.prefab
+    - Assets/Prefabs/Terrain/Foliage/Others/PlantEx4.prefab.meta
+    - Assets/Prefabs/Terrain/Foliage/Others/debris_1.prefab
+    - Assets/Prefabs/Terrain/Foliage/Others/debris_1.prefab.meta
+    - Assets/Prefabs/Terrain/Foliage/Others/debris_2.prefab
+    - Assets/Prefabs/Terrain/Foliage/Others/debris_2.prefab.meta
+    - Assets/Prefabs/Terrain/Foliage/Others/debris_3.prefab
+    - Assets/Prefabs/Terrain/Foliage/Others/debris_3.prefab.meta
+    - Assets/Prefabs/Terrain/Foliage/Others/debris_4.prefab
+    - Assets/Prefabs/Terrain/Foliage/Others/debris_4.prefab.meta
+    - Assets/Prefabs/Terrain/Foliage/Others/plant_10.prefab
+    - Assets/Prefabs/Terrain/Foliage/Others/plant_10.prefab.meta
+    - Assets/Prefabs/Terrain/Foliage/Others/plant_5.prefab
+    - Assets/Prefabs/Terrain/Foliage/Others/plant_5.prefab.meta
+    - Assets/Prefabs/Terrain/Foliage/Others/plant_6.prefab
+    - Assets/Prefabs/Terrain/Foliage/Others/plant_6.prefab.meta
+    - Assets/Prefabs/Terrain/Foliage/Others/plant_7.prefab
+    - Assets/Prefabs/Terrain/Foliage/Others/plant_7.prefab.meta
+    - Assets/Prefabs/Terrain/Foliage/Others/plant_8.prefab
+    - Assets/Prefabs/Terrain/Foliage/Others/plant_8.prefab.meta
+    - Assets/Prefabs/Terrain/Foliage/Others/plant_9.prefab
+    - Assets/Prefabs/Terrain/Foliage/Others/plant_9.prefab.meta
+    - Assets/Prefabs/Terrain/Rocks.meta
+    - Assets/Prefabs/Terrain/Rocks/Rock Type1 01.prefab
+    - Assets/Prefabs/Terrain/Rocks/Rock Type1 01.prefab.meta
+    - Assets/Prefabs/Terrain/Rocks/Rock Type1 02.prefab
+    - Assets/Prefabs/Terrain/Rocks/Rock Type1 02.prefab.meta
+    - Assets/Prefabs/Terrain/Rocks/Rock Type1 03.prefab
+    - Assets/Prefabs/Terrain/Rocks/Rock Type1 03.prefab.meta
+    - Assets/Prefabs/Terrain/Rocks/Rock Type1 04.prefab
+    - Assets/Prefabs/Terrain/Rocks/Rock Type1 04.prefab.meta
+    - Assets/Prefabs/Terrain/Rocks/Rock Type2 01.prefab
+    - Assets/Prefabs/Terrain/Rocks/Rock Type2 01.prefab.meta
+    - Assets/Prefabs/Terrain/Rocks/Rock Type2 02.prefab
+    - Assets/Prefabs/Terrain/Rocks/Rock Type2 02.prefab.meta
+    - Assets/Prefabs/Terrain/Rocks/Rock Type2 03.prefab
+    - Assets/Prefabs/Terrain/Rocks/Rock Type2 03.prefab.meta
+    - Assets/Prefabs/Terrain/Rocks/Rock Type2 04.prefab
+    - Assets/Prefabs/Terrain/Rocks/Rock Type2 04.prefab.meta
+    - Assets/Prefabs/Terrain/Rocks/Rock Type3 01.prefab
+    - Assets/Prefabs/Terrain/Rocks/Rock Type3 01.prefab.meta
+    - Assets/Prefabs/Terrain/Rocks/Rock Type3 02.prefab
+    - Assets/Prefabs/Terrain/Rocks/Rock Type3 02.prefab.meta
+    - Assets/Prefabs/Terrain/Rocks/Rock Type3 03.prefab
+    - Assets/Prefabs/Terrain/Rocks/Rock Type3 03.prefab.meta
+    - Assets/Prefabs/Terrain/Rocks/Rock Type3 04.prefab
+    - Assets/Prefabs/Terrain/Rocks/Rock Type3 04.prefab.meta
+    - Assets/Prefabs/Terrain/Rocks/Rock Type4 01.prefab
+    - Assets/Prefabs/Terrain/Rocks/Rock Type4 01.prefab.meta
+    - Assets/Prefabs/Terrain/Rocks/Rock Type4 02.prefab
+    - Assets/Prefabs/Terrain/Rocks/Rock Type4 02.prefab.meta
+    - Assets/Prefabs/Terrain/Rocks/Rock Type4 03.prefab
+    - Assets/Prefabs/Terrain/Rocks/Rock Type4 03.prefab.meta
+    - Assets/Prefabs/Terrain/Rocks/Rock Type4 04.prefab
+    - Assets/Prefabs/Terrain/Rocks/Rock Type4 04.prefab.meta
+    - Assets/Prefabs/Terrain/Rocks/Rock Type5 01.prefab
+    - Assets/Prefabs/Terrain/Rocks/Rock Type5 01.prefab.meta
+    - Assets/Prefabs/Terrain/Rocks/Rock Type5 02.prefab
+    - Assets/Prefabs/Terrain/Rocks/Rock Type5 02.prefab.meta
+    - Assets/Prefabs/Terrain/Rocks/Rock Type5 03.prefab
+    - Assets/Prefabs/Terrain/Rocks/Rock Type5 03.prefab.meta
+    - Assets/Prefabs/Terrain/Rocks/Rock Type5 04.prefab
+    - Assets/Prefabs/Terrain/Rocks/Rock Type5 04.prefab.meta
+    - Assets/Prefabs/Terrain/Rocks/Rock Type6 01.prefab
+    - Assets/Prefabs/Terrain/Rocks/Rock Type6 01.prefab.meta
+    - Assets/Prefabs/Terrain/Rocks/Rock Type6 02.prefab
+    - Assets/Prefabs/Terrain/Rocks/Rock Type6 02.prefab.meta
+    - Assets/Prefabs/Terrain/Rocks/Rock Type6 03.prefab
+    - Assets/Prefabs/Terrain/Rocks/Rock Type6 03.prefab.meta
+    - Assets/Prefabs/Terrain/Rocks/Rock Type6 04.prefab
+    - Assets/Prefabs/Terrain/Rocks/Rock Type6 04.prefab.meta
+    - Assets/Prefabs/Terrain/Rocks/Rock1.prefab
+    - Assets/Prefabs/Terrain/Rocks/Rock1.prefab.meta
+    - Assets/Prefabs/Terrain/Rocks/Rock10.prefab
+    - Assets/Prefabs/Terrain/Rocks/Rock10.prefab.meta
+    - Assets/Prefabs/Terrain/Rocks/Rock11.prefab
+    - Assets/Prefabs/Terrain/Rocks/Rock11.prefab.meta
+    - Assets/Prefabs/Terrain/Rocks/Rock12.prefab
+    - Assets/Prefabs/Terrain/Rocks/Rock12.prefab.meta
+    - Assets/Prefabs/Terrain/Rocks/Rock2.prefab
+    - Assets/Prefabs/Terrain/Rocks/Rock2.prefab.meta
+    - Assets/Prefabs/Terrain/Rocks/Rock3.prefab
+    - Assets/Prefabs/Terrain/Rocks/Rock3.prefab.meta
+    - Assets/Prefabs/Terrain/Rocks/Rock4.prefab
+    - Assets/Prefabs/Terrain/Rocks/Rock4.prefab.meta
+    - Assets/Prefabs/Terrain/Rocks/Rock5.prefab
+    - Assets/Prefabs/Terrain/Rocks/Rock5.prefab.meta
+    - Assets/Prefabs/Terrain/Rocks/Rock6.prefab
+    - Assets/Prefabs/Terrain/Rocks/Rock6.prefab.meta
+    - Assets/Prefabs/Terrain/Rocks/Rock7.prefab
+    - Assets/Prefabs/Terrain/Rocks/Rock7.prefab.meta
+    - Assets/Prefabs/Terrain/Rocks/Rock8.prefab
+    - Assets/Prefabs/Terrain/Rocks/Rock8.prefab.meta
+    - Assets/Prefabs/Terrain/Rocks/Rock9.prefab
+    - Assets/Prefabs/Terrain/Rocks/Rock9.prefab.meta
+    - Assets/Prefabs/Terrain/Rocks/cliff_1.prefab
+    - Assets/Prefabs/Terrain/Rocks/cliff_1.prefab.meta
+    - Assets/Prefabs/Terrain/Rocks/cliff_2.prefab
+    - Assets/Prefabs/Terrain/Rocks/cliff_2.prefab.meta
+    - Assets/Prefabs/Terrain/Rocks/cliff_3.prefab
+    - Assets/Prefabs/Terrain/Rocks/cliff_3.prefab.meta
+    - Assets/Prefabs/Terrain/Rocks/cliff_4.prefab
+    - Assets/Prefabs/Terrain/Rocks/cliff_4.prefab.meta
+    - Assets/Prefabs/Terrain/Rocks/cliff_5.prefab
+    - Assets/Prefabs/Terrain/Rocks/cliff_5.prefab.meta
+    - Assets/Prefabs/Terrain/Rocks/cliff_6.prefab
+    - Assets/Prefabs/Terrain/Rocks/cliff_6.prefab.meta
+    - Assets/Prefabs/Terrain/Rocks/cliff_7.prefab
+    - Assets/Prefabs/Terrain/Rocks/cliff_7.prefab.meta
+    - Assets/Prefabs/Terrain/Rocks/cliff_8.prefab
+    - Assets/Prefabs/Terrain/Rocks/cliff_8.prefab.meta
+    - Assets/Prefabs/Terrain/Rocks/cliff_9.prefab
+    - Assets/Prefabs/Terrain/Rocks/cliff_9.prefab.meta
+    - Assets/Prefabs/Terrain/Rocks/rock_1.prefab
+    - Assets/Prefabs/Terrain/Rocks/rock_1.prefab.meta
+    - Assets/Prefabs/Terrain/Rocks/rock_10.prefab
+    - Assets/Prefabs/Terrain/Rocks/rock_10.prefab.meta
+    - Assets/Prefabs/Terrain/Rocks/rock_11.prefab
+    - Assets/Prefabs/Terrain/Rocks/rock_11.prefab.meta
+    - Assets/Prefabs/Terrain/Rocks/rock_12.prefab
+    - Assets/Prefabs/Terrain/Rocks/rock_12.prefab.meta
+    - Assets/Prefabs/Terrain/Rocks/rock_13.prefab
+    - Assets/Prefabs/Terrain/Rocks/rock_13.prefab.meta
+    - Assets/Prefabs/Terrain/Rocks/rock_14.prefab
+    - Assets/Prefabs/Terrain/Rocks/rock_14.prefab.meta
+    - Assets/Prefabs/Terrain/Rocks/rock_15.prefab
+    - Assets/Prefabs/Terrain/Rocks/rock_15.prefab.meta
+    - Assets/Prefabs/Terrain/Rocks/rock_16.prefab
+    - Assets/Prefabs/Terrain/Rocks/rock_16.prefab.meta
+    - Assets/Prefabs/Terrain/Rocks/rock_17.prefab
+    - Assets/Prefabs/Terrain/Rocks/rock_17.prefab.meta
+    - Assets/Prefabs/Terrain/Rocks/rock_18.prefab
+    - Assets/Prefabs/Terrain/Rocks/rock_18.prefab.meta
+    - Assets/Prefabs/Terrain/Rocks/rock_19.prefab
+    - Assets/Prefabs/Terrain/Rocks/rock_19.prefab.meta
+    - Assets/Prefabs/Terrain/Rocks/rock_2.prefab
+    - Assets/Prefabs/Terrain/Rocks/rock_2.prefab.meta
+    - Assets/Prefabs/Terrain/Rocks/rock_20.prefab
+    - Assets/Prefabs/Terrain/Rocks/rock_20.prefab.meta
+    - Assets/Prefabs/Terrain/Rocks/rock_21.prefab
+    - Assets/Prefabs/Terrain/Rocks/rock_21.prefab.meta
+    - Assets/Prefabs/Terrain/Rocks/rock_22.prefab
+    - Assets/Prefabs/Terrain/Rocks/rock_22.prefab.meta
+    - Assets/Prefabs/Terrain/Rocks/rock_23.prefab
+    - Assets/Prefabs/Terrain/Rocks/rock_23.prefab.meta
+    - Assets/Prefabs/Terrain/Rocks/rock_24.prefab
+    - Assets/Prefabs/Terrain/Rocks/rock_24.prefab.meta
+    - Assets/Prefabs/Terrain/Rocks/rock_25.prefab
+    - Assets/Prefabs/Terrain/Rocks/rock_25.prefab.meta
+    - Assets/Prefabs/Terrain/Rocks/rock_3.prefab
+    - Assets/Prefabs/Terrain/Rocks/rock_3.prefab.meta
+    - Assets/Prefabs/Terrain/Rocks/rock_4.prefab
+    - Assets/Prefabs/Terrain/Rocks/rock_4.prefab.meta
+    - Assets/Prefabs/Terrain/Rocks/rock_5.prefab
+    - Assets/Prefabs/Terrain/Rocks/rock_5.prefab.meta
+    - Assets/Prefabs/Terrain/Rocks/rock_6.prefab
+    - Assets/Prefabs/Terrain/Rocks/rock_6.prefab.meta
+    - Assets/Prefabs/Terrain/Rocks/rock_7.prefab
+    - Assets/Prefabs/Terrain/Rocks/rock_7.prefab.meta
+    - Assets/Prefabs/Terrain/Rocks/rock_8.prefab
+    - Assets/Prefabs/Terrain/Rocks/rock_8.prefab.meta
+    - Assets/Prefabs/Terrain/Rocks/rock_9.prefab
+    - Assets/Prefabs/Terrain/Rocks/rock_9.prefab.meta
+    - Assets/Prefabs/Terrain/Rocks/rock_path_1.prefab
+    - Assets/Prefabs/Terrain/Rocks/rock_path_1.prefab.meta
+    - Assets/Prefabs/Terrain/Rocks/rock_path_2.prefab
+    - Assets/Prefabs/Terrain/Rocks/rock_path_2.prefab.meta
+    - Assets/Prefabs/Terrain/Rocks/rock_path_3.prefab
+    - Assets/Prefabs/Terrain/Rocks/rock_path_3.prefab.meta
+    - Assets/Prefabs/Terrain/Rocks/slab_1.prefab
+    - Assets/Prefabs/Terrain/Rocks/slab_1.prefab.meta
+    - Assets/Prefabs/Terrain/Rocks/slab_2.prefab
+    - Assets/Prefabs/Terrain/Rocks/slab_2.prefab.meta
+    - Assets/Prefabs/Terrain/Rocks/stone_large.prefab
+    - Assets/Prefabs/Terrain/Rocks/stone_large.prefab.meta
+    - Assets/Prefabs/Terrain/Rocks/stone_medium.prefab
+    - Assets/Prefabs/Terrain/Rocks/stone_medium.prefab.meta
+    - Assets/Prefabs/Terrain/Trees.meta
+    - Assets/Prefabs/Terrain/Trees/Tree1.prefab
+    - Assets/Prefabs/Terrain/Trees/Tree1.prefab.meta
+    - Assets/Prefabs/Terrain/Trees/Tree2.prefab
+    - Assets/Prefabs/Terrain/Trees/Tree2.prefab.meta
+    - Assets/Prefabs/Terrain/Trees/Tree3.prefab
+    - Assets/Prefabs/Terrain/Trees/Tree3.prefab.meta
+    - Assets/Prefabs/Terrain/Trees/TreeDead1.prefab
+    - Assets/Prefabs/Terrain/Trees/TreeDead1.prefab.meta
+    - Assets/Prefabs/Terrain/Trees/TreeDead2.prefab
+    - Assets/Prefabs/Terrain/Trees/TreeDead2.prefab.meta
+    - Assets/Prefabs/Terrain/Trees/TreePink1.prefab
+    - Assets/Prefabs/Terrain/Trees/TreePink1.prefab.meta
+    - Assets/Prefabs/Terrain/Trees/TreePink3.prefab
+    - Assets/Prefabs/Terrain/Trees/TreePink3.prefab.meta
+    - Assets/Prefabs/Terrain/Trees/TreeStump.prefab
+    - Assets/Prefabs/Terrain/Trees/TreeStump.prefab.meta
+    - Assets/Prefabs/Terrain/Trees/TreeYellow1.prefab
+    - Assets/Prefabs/Terrain/Trees/TreeYellow1.prefab.meta
+    - Assets/Prefabs/Terrain/Trees/TreeYellow3.prefab
+    - Assets/Prefabs/Terrain/Trees/TreeYellow3.prefab.meta
+    - Assets/Prefabs/Terrain/Trees/Tree_Pine.prefab
+    - Assets/Prefabs/Terrain/Trees/Tree_Pine.prefab.meta
+    - Assets/Prefabs/Terrain/Trees/Tree_Round.prefab
+    - Assets/Prefabs/Terrain/Trees/Tree_Round.prefab.meta
+    - Assets/Prefabs/Terrain/Trees/Tree_Stump.prefab
+    - Assets/Prefabs/Terrain/Trees/Tree_Stump.prefab.meta
+    - Assets/Prefabs/Terrain/Trees/bush_8.prefab
+    - Assets/Prefabs/Terrain/Trees/bush_8.prefab.meta
+    - Assets/Prefabs/Terrain/Trees/bush_9.prefab
+    - Assets/Prefabs/Terrain/Trees/bush_9.prefab.meta
+    - Assets/Prefabs/Terrain/Trees/stump_1.prefab
+    - Assets/Prefabs/Terrain/Trees/stump_1.prefab.meta
+    - Assets/Prefabs/Terrain/Trees/stump_2.prefab
+    - Assets/Prefabs/Terrain/Trees/stump_2.prefab.meta
+    - Assets/Prefabs/Terrain/Trees/stump_3.prefab
+    - Assets/Prefabs/Terrain/Trees/stump_3.prefab.meta
+    - Assets/Prefabs/Terrain/Trees/stump_4.prefab
+    - Assets/Prefabs/Terrain/Trees/stump_4.prefab.meta
+    - Assets/Prefabs/Terrain/Trees/stump_5.prefab
+    - Assets/Prefabs/Terrain/Trees/stump_5.prefab.meta
+    - Assets/Prefabs/Terrain/Trees/stump_6.prefab
+    - Assets/Prefabs/Terrain/Trees/stump_6.prefab.meta
+    - Assets/Prefabs/Terrain/Trees/tree_1.prefab
+    - Assets/Prefabs/Terrain/Trees/tree_1.prefab.meta
+    - Assets/Prefabs/Terrain/Trees/tree_10.prefab
+    - Assets/Prefabs/Terrain/Trees/tree_10.prefab.meta
+    - Assets/Prefabs/Terrain/Trees/tree_11.prefab
+    - Assets/Prefabs/Terrain/Trees/tree_11.prefab.meta
+    - Assets/Prefabs/Terrain/Trees/tree_12.prefab
+    - Assets/Prefabs/Terrain/Trees/tree_12.prefab.meta
+    - Assets/Prefabs/Terrain/Trees/tree_13.prefab
+    - Assets/Prefabs/Terrain/Trees/tree_13.prefab.meta
+    - Assets/Prefabs/Terrain/Trees/tree_14.prefab
+    - Assets/Prefabs/Terrain/Trees/tree_14.prefab.meta
+    - Assets/Prefabs/Terrain/Trees/tree_15.prefab
+    - Assets/Prefabs/Terrain/Trees/tree_15.prefab.meta
+    - Assets/Prefabs/Terrain/Trees/tree_16.prefab
+    - Assets/Prefabs/Terrain/Trees/tree_16.prefab.meta
+    - Assets/Prefabs/Terrain/Trees/tree_17.prefab
+    - Assets/Prefabs/Terrain/Trees/tree_17.prefab.meta
+    - Assets/Prefabs/Terrain/Trees/tree_18.prefab
+    - Assets/Prefabs/Terrain/Trees/tree_18.prefab.meta
+    - Assets/Prefabs/Terrain/Trees/tree_19.prefab
+    - Assets/Prefabs/Terrain/Trees/tree_19.prefab.meta
+    - Assets/Prefabs/Terrain/Trees/tree_2.prefab
+    - Assets/Prefabs/Terrain/Trees/tree_2.prefab.meta
+    - Assets/Prefabs/Terrain/Trees/tree_20.prefab
+    - Assets/Prefabs/Terrain/Trees/tree_20.prefab.meta
+    - Assets/Prefabs/Terrain/Trees/tree_21.prefab
+    - Assets/Prefabs/Terrain/Trees/tree_21.prefab.meta
+    - Assets/Prefabs/Terrain/Trees/tree_22.prefab
+    - Assets/Prefabs/Terrain/Trees/tree_22.prefab.meta
+    - Assets/Prefabs/Terrain/Trees/tree_23.prefab
+    - Assets/Prefabs/Terrain/Trees/tree_23.prefab.meta
+    - Assets/Prefabs/Terrain/Trees/tree_24.prefab
+    - Assets/Prefabs/Terrain/Trees/tree_24.prefab.meta
+    - Assets/Prefabs/Terrain/Trees/tree_25.prefab
+    - Assets/Prefabs/Terrain/Trees/tree_25.prefab.meta
+    - Assets/Prefabs/Terrain/Trees/tree_3.prefab
+    - Assets/Prefabs/Terrain/Trees/tree_3.prefab.meta
+    - Assets/Prefabs/Terrain/Trees/tree_4.prefab
+    - Assets/Prefabs/Terrain/Trees/tree_4.prefab.meta
+    - Assets/Prefabs/Terrain/Trees/tree_5.prefab
+    - Assets/Prefabs/Terrain/Trees/tree_5.prefab.meta
+    - Assets/Prefabs/Terrain/Trees/tree_6.prefab
+    - Assets/Prefabs/Terrain/Trees/tree_6.prefab.meta
+    - Assets/Prefabs/Terrain/Trees/tree_7.prefab
+    - Assets/Prefabs/Terrain/Trees/tree_7.prefab.meta
+    - Assets/Prefabs/Terrain/Trees/tree_8.prefab
+    - Assets/Prefabs/Terrain/Trees/tree_8.prefab.meta
+    - Assets/Prefabs/Terrain/Trees/tree_9.prefab
+    - Assets/Prefabs/Terrain/Trees/tree_9.prefab.meta
     - Assets/Scenes/Main.unity
-    - Assets/Scripts/Managers/CameraController.cs
+    - Assets/Scripts/Scriptable/ResourceInfo.cs
+    - Assets/Scripts/Units/Unit.cs
+    - Assets/Scripts/Units/Worker.cs
+    - Assets/VillagerAnimationsPackHelp/Prefabs/Human Villagers/Human Villager -
+      Forager01.prefab
+    - Packages/manifest.json
+    - Packages/packages-lock.json
     - 
-    m_Values: 0000000000
+    m_Values: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   RevisionSummary: 
   ChangesSearchValue: 
   SelectedHistoryRevision: 

@@ -1,0 +1,899 @@
+/target:library
+/out:Temp/Unity.ShaderGraph.Editor.dll
+/nowarn:0169
+/nowarn:0649
+/refout:Temp/Unity.ShaderGraph.Editor.dll.ref
+/deterministic
+/debug:portable
+/optimize+
+/nostdlib+
+/preferreduilang:en-US
+/langversion:8.0
+/reference:Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll
+/reference:Library/ScriptAssemblies/Unity.Searcher.Editor.dll
+/reference:Library/ScriptAssemblies/Unity.ShaderGraph.Utilities.dll
+/reference:Library/ScriptAssemblies/UnityEditor.TestRunner.dll
+/reference:Library/ScriptAssemblies/UnityEditor.UI.dll
+/reference:Library/ScriptAssemblies/UnityEngine.TestRunner.dll
+/reference:Library/ScriptAssemblies/UnityEngine.UI.dll
+/reference:"C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/16.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll"
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEditor.Graphs.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+/reference:"D:/Unity Projects/Licenta 3D/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll"
+/reference:"D:/Unity Projects/Licenta 3D/Library/PackageCache/com.unity.render-pipelines.core@10.2.2/Editor/ShaderGenerator/ICSharpCode.NRefactory.dll"
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEditor.CoreModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEditor.GraphViewModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEditor.PackageManagerUIModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEditor.SceneTemplateModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEditor.UIElementsModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEditor.UIElementsSamplesModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEditor.UIServiceModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEditor.UnityConnectModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEditor.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.ARModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.AccessibilityModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.AndroidJNIModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.AnimationModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.AssetBundleModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.AudioModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.ClothModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.ClusterInputModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.ClusterRendererModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.CoreModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.CrashReportingModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.DSPGraphModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.DirectorModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.GIModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.GameCenterModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.GridModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.HotReloadModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.IMGUIModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.ImageConversionModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.InputLegacyModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.InputModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.JSONSerializeModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.LocalizationModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.ParticleSystemModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.PerformanceReportingModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.Physics2DModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.PhysicsModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.ProfilerModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.ScreenCaptureModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.SharedInternalsModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.SpriteMaskModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.SpriteShapeModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.StreamingModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.SubstanceModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.SubsystemsModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.TLSModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.TerrainModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.TerrainPhysicsModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.TextCoreModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.TextRenderingModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.TilemapModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.UIElementsModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.UIElementsNativeModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.UIModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.UNETModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.UmbraModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityAnalyticsModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityConnectModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityCurlModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityTestProtocolModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestAssetBundleModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestAudioModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestTextureModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestWWWModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.VFXModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.VRModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.VehiclesModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.VideoModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.VirtualTexturingModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.WindModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/Microsoft.Win32.Primitives.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.AppContext.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Collections.Concurrent.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Collections.NonGeneric.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Collections.Specialized.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Collections.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ComponentModel.Annotations.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ComponentModel.EventBasedAsync.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ComponentModel.Primitives.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ComponentModel.TypeConverter.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ComponentModel.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Console.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Data.Common.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Diagnostics.Contracts.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Diagnostics.Debug.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Diagnostics.FileVersionInfo.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Diagnostics.Process.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Diagnostics.StackTrace.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Diagnostics.TextWriterTraceListener.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Diagnostics.Tools.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Diagnostics.TraceSource.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Drawing.Primitives.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Dynamic.Runtime.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Globalization.Calendars.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Globalization.Extensions.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Globalization.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.Compression.ZipFile.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.FileSystem.DriveInfo.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.FileSystem.Primitives.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.FileSystem.Watcher.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.FileSystem.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.IsolatedStorage.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.MemoryMappedFiles.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.Pipes.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.UnmanagedMemoryStream.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Linq.Expressions.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Linq.Parallel.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Linq.Queryable.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Linq.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.Http.Rtc.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.NameResolution.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.NetworkInformation.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.Ping.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.Primitives.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.Requests.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.Security.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.Sockets.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.WebHeaderCollection.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.WebSockets.Client.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.WebSockets.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ObjectModel.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Reflection.Emit.ILGeneration.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Reflection.Emit.Lightweight.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Reflection.Emit.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Reflection.Extensions.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Reflection.Primitives.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Reflection.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Resources.Reader.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Resources.ResourceManager.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Resources.Writer.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.CompilerServices.VisualC.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.Extensions.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.Handles.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.InteropServices.RuntimeInformation.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.InteropServices.WindowsRuntime.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.InteropServices.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.Numerics.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.Serialization.Formatters.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.Serialization.Json.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.Serialization.Primitives.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.Serialization.Xml.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Security.Claims.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Security.Cryptography.Algorithms.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Security.Cryptography.Csp.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Security.Cryptography.Encoding.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Security.Cryptography.Primitives.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Security.Cryptography.X509Certificates.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Security.Principal.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Security.SecureString.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ServiceModel.Duplex.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ServiceModel.Http.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ServiceModel.NetTcp.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ServiceModel.Primitives.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ServiceModel.Security.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Text.Encoding.Extensions.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Text.Encoding.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Text.RegularExpressions.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Threading.Overlapped.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Threading.Tasks.Parallel.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Threading.Tasks.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Threading.Thread.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Threading.ThreadPool.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Threading.Timer.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Threading.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ValueTuple.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Xml.ReaderWriter.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Xml.XDocument.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Xml.XPath.XDocument.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Xml.XPath.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Xml.XmlDocument.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Xml.XmlSerializer.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/netstandard.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Microsoft.CSharp.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/System.Core.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/System.Data.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/System.Net.Http.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/System.Numerics.Vectors.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/System.Numerics.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/System.Runtime.Serialization.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/System.Xml.Linq.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/System.Xml.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/System.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll
+/define:CSHARP_7_3_OR_NEWER
+/define:CSHARP_7_OR_LATER
+/define:DEBUG
+/define:ENABLE_AR
+/define:ENABLE_AUDIO
+/define:ENABLE_BURST_AOT
+/define:ENABLE_CACHING
+/define:ENABLE_CLOTH
+/define:ENABLE_CLOUD_LICENSE
+/define:ENABLE_CLOUD_SERVICES
+/define:ENABLE_CLOUD_SERVICES_ADS
+/define:ENABLE_CLOUD_SERVICES_ANALYTICS
+/define:ENABLE_CLOUD_SERVICES_BUILD
+/define:ENABLE_CLOUD_SERVICES_COLLAB
+/define:ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS
+/define:ENABLE_CLOUD_SERVICES_CRASH_REPORTING
+/define:ENABLE_CLOUD_SERVICES_PURCHASING
+/define:ENABLE_CLOUD_SERVICES_UNET
+/define:ENABLE_CLOUD_SERVICES_USE_WEBREQUEST
+/define:ENABLE_CLUSTERINPUT
+/define:ENABLE_CLUSTER_SYNC
+/define:ENABLE_CRUNCH_TEXTURE_COMPRESSION
+/define:ENABLE_CUSTOM_RENDER_TEXTURE
+/define:ENABLE_DIRECTOR
+/define:ENABLE_DIRECTOR_AUDIO
+/define:ENABLE_DIRECTOR_TEXTURE
+/define:ENABLE_EDITOR_HUB_LICENSE
+/define:ENABLE_EVENT_QUEUE
+/define:ENABLE_LEGACY_INPUT_MANAGER
+/define:ENABLE_LOCALIZATION
+/define:ENABLE_LZMA
+/define:ENABLE_MANAGED_ANIMATION_JOBS
+/define:ENABLE_MANAGED_AUDIO_JOBS
+/define:ENABLE_MANAGED_JOBS
+/define:ENABLE_MANAGED_TRANSFORM_JOBS
+/define:ENABLE_MICROPHONE
+/define:ENABLE_MONO
+/define:ENABLE_MONO_BDWGC
+/define:ENABLE_MOVIES
+/define:ENABLE_MULTIPLE_DISPLAYS
+/define:ENABLE_NETWORK
+/define:ENABLE_OUT_OF_PROCESS_CRASH_HANDLER
+/define:ENABLE_PHYSICS
+/define:ENABLE_PROFILER
+/define:ENABLE_RUNTIME_GI
+/define:ENABLE_SCRIPTING_GC_WBARRIERS
+/define:ENABLE_SPRITES
+/define:ENABLE_TERRAIN
+/define:ENABLE_TEXTURE_STREAMING
+/define:ENABLE_TILEMAP
+/define:ENABLE_TIMELINE
+/define:ENABLE_UNET
+/define:ENABLE_UNITYEVENTS
+/define:ENABLE_UNITYWEBREQUEST
+/define:ENABLE_UNITY_COLLECTIONS_CHECKS
+/define:ENABLE_VIDEO
+/define:ENABLE_VIRTUALTEXTURING
+/define:ENABLE_VR
+/define:ENABLE_WEBCAM
+/define:ENABLE_WEBSOCKET_CLIENT
+/define:ENABLE_WEBSOCKET_HOST
+/define:ENABLE_WWW
+/define:GFXDEVICE_WAITFOREVENT_MESSAGEPUMP
+/define:INCLUDE_DYNAMIC_GI
+/define:NET_4_6
+/define:PLATFORM_ARCH_64
+/define:PLATFORM_STANDALONE
+/define:PLATFORM_STANDALONE_WIN
+/define:PLATFORM_SUPPORTS_MONO
+/define:PLATFORM_UPDATES_TIME_OUTSIDE_OF_PLAYER_LOOP
+/define:RENDER_SOFTWARE_CURSOR
+/define:SCENE_TEMPLATE_MODULE
+/define:TRACE
+/define:UNITY_2017_1_OR_NEWER
+/define:UNITY_2017_2_OR_NEWER
+/define:UNITY_2017_3_OR_NEWER
+/define:UNITY_2017_4_OR_NEWER
+/define:UNITY_2018_1_OR_NEWER
+/define:UNITY_2018_2_OR_NEWER
+/define:UNITY_2018_3_OR_NEWER
+/define:UNITY_2018_4_OR_NEWER
+/define:UNITY_2019_1_OR_NEWER
+/define:UNITY_2019_2_OR_NEWER
+/define:UNITY_2019_3_OR_NEWER
+/define:UNITY_2019_4_OR_NEWER
+/define:UNITY_2020
+/define:UNITY_2020_1_OR_NEWER
+/define:UNITY_2020_2
+/define:UNITY_2020_2_1
+/define:UNITY_2020_2_OR_NEWER
+/define:UNITY_5_3_OR_NEWER
+/define:UNITY_5_4_OR_NEWER
+/define:UNITY_5_5_OR_NEWER
+/define:UNITY_5_6_OR_NEWER
+/define:UNITY_64
+/define:UNITY_ASSERTIONS
+/define:UNITY_EDITOR
+/define:UNITY_EDITOR_64
+/define:UNITY_EDITOR_WIN
+/define:UNITY_INCLUDE_TESTS
+/define:UNITY_POST_PROCESSING_STACK_V2
+/define:UNITY_PRO_LICENSE
+/define:UNITY_STANDALONE
+/define:UNITY_STANDALONE_WIN
+/define:UNITY_TEAM_LICENSE
+/define:USE_SEARCH_ENGINE_API
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\AssemblyInfo.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\AssetCallbacks\CreateShaderGraph.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\AssetCallbacks\CreateShaderSubGraph.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\AssetCallbacks\CreateVFXShaderGraph.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Attributes\BuiltinKeywordAttribute.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Attributes\ContextFilterableAttribute.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Attributes\InspectableAttribute.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Attributes\NeverAllowedByTargetAttribute.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Attributes\SGPropertyDrawerAttribute.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Attributes\SRPFilterAttribute.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\ContextData.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Enumerations\Precision.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Graphs\AbstractMaterialGraphAsset.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Graphs\AbstractShaderProperty.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Graphs\BitangentMaterialSlot.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Graphs\BooleanMaterialSlot.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Graphs\BooleanShaderProperty.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Graphs\ColorMaterialSlot.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Graphs\ColorRGBMaterialSlot.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Graphs\ColorShaderProperty.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Graphs\CubemapInputMaterialSlot.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Graphs\CubemapMaterialSlot.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Graphs\CubemapShaderProperty.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Graphs\DynamicMatrixMaterialSlot.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Graphs\DynamicValueMaterialSlot.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Graphs\DynamicVectorMaterialSlot.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Graphs\GradientInputMaterialSlot.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Graphs\GradientMaterialSlot.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Graphs\GradientShaderProperty.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Graphs\GraphConcretization.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Graphs\GraphData.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Graphs\GraphDataUtils.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Graphs\GraphSetup.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Graphs\GraphValidation.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Graphs\GroupData.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Graphs\IMaterialGraphAsset.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Graphs\IMaterialSlotHasValue.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Graphs\LightmappingShaderProperties.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Graphs\MaterialSlot.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Graphs\Matrix2MaterialSlot.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Graphs\Matrix2ShaderProperty.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Graphs\Matrix3MaterialSlot.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Graphs\Matrix3ShaderProperty.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Graphs\Matrix4MaterialSlot.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Graphs\Matrix4ShaderProperty.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Graphs\MatrixShaderProperty.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Graphs\MinimalGraphData.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Graphs\NormalMaterialSlot.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Graphs\ParentGroupChange.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Graphs\PositionMaterialSlot.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Graphs\PreviewMode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Graphs\PreviewProperty.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Graphs\SamplerStateMaterialSlot.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Graphs\SamplerStateShaderProperty.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Graphs\ScreenPositionMaterialSlot.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Graphs\SerializableCubemap.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Graphs\SerializableGuid.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Graphs\SerializableMesh.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Graphs\SerializableTexture.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Graphs\SerializableTextureArray.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Graphs\SerializableVirtualTexture.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Graphs\ShaderGraphRequirements.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Graphs\ShaderInput.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Graphs\ShaderKeyword.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Graphs\SpaceMaterialSlot.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Graphs\StickyNoteData.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Graphs\TangentMaterialSlot.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Graphs\Texture2DArrayInputMaterialSlot.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Graphs\Texture2DArrayMaterialSlot.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Graphs\Texture2DArrayShaderProperty.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Graphs\Texture2DInputMaterialSlot.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Graphs\Texture2DMaterialSlot.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Graphs\Texture2DShaderProperty.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Graphs\Texture3DInputMaterialSlot.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Graphs\Texture3DMaterialSlot.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Graphs\Texture3DShaderProperty.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Graphs\TextureSamplerState.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Graphs\UVMaterialSlot.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Graphs\Vector1MaterialSlot.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Graphs\Vector1ShaderProperty.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Graphs\Vector2MaterialSlot.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Graphs\Vector2ShaderProperty.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Graphs\Vector3MaterialSlot.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Graphs\Vector3ShaderProperty.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Graphs\Vector4MaterialSlot.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Graphs\Vector4ShaderProperty.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Graphs\VectorShaderProperty.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Graphs\VertexColorMaterialSlot.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Graphs\ViewDirectionMaterialSlot.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Graphs\VirtualTextureInputMaterialSlot.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Graphs\VirtualTextureMaterialSlot.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Graphs\VirtualTextureShaderProperty.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Implementation\Edge.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Implementation\GraphObject.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Implementation\HasDependenciesAttribute.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Implementation\IHasDependencies.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Implementation\NodeUtils.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Implementation\SlotType.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Interfaces\GenerationMode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Interfaces\Graph\DrawState.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Interfaces\Graph\GraphDrawingData.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Interfaces\Graph\IEdge.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Interfaces\Graph\INode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Interfaces\Graph\IOnAssetEnabled.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Interfaces\Graph\SlotReference.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Interfaces\ICanChangeShaderGUI.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Interfaces\IGeneratesBodyCode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Interfaces\IGeneratesFunction.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Interfaces\IGroupItem.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Interfaces\IInspectable.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Interfaces\IMayRequireBitangent.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Interfaces\IMayRequireCameraOpaqueTexture.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Interfaces\IMayRequireDepthTexture.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Interfaces\IMayRequireFaceSign.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Interfaces\IMayRequireMeshUV.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Interfaces\IMayRequireNormal.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Interfaces\IMayRequirePosition.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Interfaces\IMayRequireScreenPosition.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Interfaces\IMayRequireTangent.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Interfaces\IMayRequireTime.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Interfaces\IMayRequireVertexColor.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Interfaces\IMayRequireVertexID.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Interfaces\IMayRequireVertexSkinning.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Interfaces\IMayRequireViewDirection.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Interfaces\IPropertyDrawer.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Interfaces\NeededCoordinateSpace.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Legacy\AbstractMaterialNode0.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Legacy\Edge0.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Legacy\GraphData0.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Legacy\GroupData0.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Legacy\ILegacyTarget.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Legacy\IMasterNode1.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Legacy\PBRMasterNode1.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Legacy\SerializableGuid.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Legacy\ShaderInput0.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Legacy\SlotReference0.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Legacy\SpriteLitMasterNode1.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Legacy\SpriteUnlitMasterNode1.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Legacy\StickyNoteData0.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Legacy\UnlitMasterNode1.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Legacy\VisualEffectMasterNode1.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\AbstractMaterialNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Artistic\Adjustment\ChannelMixerNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Artistic\Adjustment\ContrastNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Artistic\Adjustment\HueNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Artistic\Adjustment\InvertColorsNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Artistic\Adjustment\ReplaceColorNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Artistic\Adjustment\SaturationNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Artistic\Adjustment\WhiteBalanceNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Artistic\Blend\BlendMode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Artistic\Blend\BlendNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Artistic\Filter\DitherNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Artistic\Mask\ChannelMaskNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Artistic\Mask\ColorMaskNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Artistic\Normal\NormalBlendNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Artistic\Normal\NormalFromHeightNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Artistic\Normal\NormalFromTextureNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Artistic\Normal\NormalReconstructZNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Artistic\Normal\NormalStrengthNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Artistic\Normal\NormalUnpackNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Artistic\Utility\ColorspaceConversion.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\BlockNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Channel\CombineNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Channel\FlipNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Channel\SplitNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Channel\SwizzleNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\CodeFunctionNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\FormerNameAttribute.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\FunctionMultiInput.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\GeometryNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\GuidEncoder.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\IPropertyFromNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Input\Basic\BooleanNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Input\Basic\ColorNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Input\Basic\ConstantNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Input\Basic\IntegerNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Input\Basic\SliderNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Input\Basic\TimeNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Input\Basic\Vector1Node.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Input\Basic\Vector2Node.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Input\Basic\Vector3Node.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Input\Basic\Vector4Node.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Input\Geometry\BitangentVectorNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Input\Geometry\NormalVectorNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Input\Geometry\PositionNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Input\Geometry\ScreenPositionNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Input\Geometry\TangentVectorNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Input\Geometry\UVNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Input\Geometry\VertexColorNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Input\Geometry\ViewDirectionNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Input\Gradient\BlackbodyNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Input\Gradient\GradientNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Input\Gradient\SampleGradientNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Input\Lighting\AmbientNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Input\Lighting\BakedGINode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Input\Lighting\ReflectionProbeNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Input\Matrix\Matrix2Node.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Input\Matrix\Matrix3Node.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Input\Matrix\Matrix4Node.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Input\Matrix\TransformationMatrixNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Input\PBR\DielectricSpecularNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Input\PBR\MetalReflectanceNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Input\PropertyNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Input\Scene\CameraNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Input\Scene\FogNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Input\Scene\ObjectNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Input\Scene\SceneColorNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Input\Scene\SceneDepthNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Input\Scene\ScreenNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Input\Texture\CubemapAssetNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Input\Texture\ProceduralVirtualTextureNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Input\Texture\SampleCubemapNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Input\Texture\SampleRawCubemapNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Input\Texture\SampleTexture2DArrayNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Input\Texture\SampleTexture2DLODNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Input\Texture\SampleTexture2DNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Input\Texture\SampleTexture3DNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Input\Texture\SampleVirtualTextureNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Input\Texture\SamplerStateNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Input\Texture\TexelSizeNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Input\Texture\Texture2DArrayAssetNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Input\Texture\Texture2DAssetNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Input\Texture\Texture3DAssetNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Input\Texture\TextureStackNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\LegacyUnknownTypeNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Math\Advanced\AbsoluteNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Math\Advanced\ExponentialNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Math\Advanced\LengthNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Math\Advanced\LogNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Math\Advanced\ModuloNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Math\Advanced\NegateNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Math\Advanced\NormalizeNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Math\Advanced\PosterizeNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Math\Advanced\ReciprocalNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Math\Advanced\ReciprocalSquareRootNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Math\Basic\AddNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Math\Basic\DivideNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Math\Basic\MultiplyNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Math\Basic\PowerNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Math\Basic\SquareRootNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Math\Basic\SubtractNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Math\Derivative\DDXNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Math\Derivative\DDXYNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Math\Derivative\DDYNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Math\Interpolation\InverseLerpNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Math\Interpolation\LerpNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Math\Interpolation\SmoothstepNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Math\Matrix\MatrixConstructionNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Math\Matrix\MatrixDeterminantNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Math\Matrix\MatrixSplitNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Math\Matrix\MatrixTransposeNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Math\Range\ClampNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Math\Range\FractionNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Math\Range\MaximumNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Math\Range\MinimumNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Math\Range\OneMinusNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Math\Range\RandomRangeNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Math\Range\RemapNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Math\Range\SaturateNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Math\Round\CeilingNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Math\Round\FloorNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Math\Round\RoundNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Math\Round\SignNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Math\Round\StepNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Math\Round\TruncateNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Math\Trigonometry\ArccosineNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Math\Trigonometry\ArcsineNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Math\Trigonometry\Arctangent2Node.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Math\Trigonometry\ArctangentNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Math\Trigonometry\CosineNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Math\Trigonometry\DegreesToRadiansNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Math\Trigonometry\HyperbolicCosineNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Math\Trigonometry\HyperbolicSineNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Math\Trigonometry\HyperbolicTangentNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Math\Trigonometry\RadiansToDegreesNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Math\Trigonometry\SineNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Math\Trigonometry\TangentNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Math\Vector\CrossProductNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Math\Vector\DistanceNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Math\Vector\DotProductNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Math\Vector\FresnelEffectNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Math\Vector\ProjectionNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Math\Vector\ReflectionNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Math\Vector\RejectionNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Math\Vector\RotateAboutAxisNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Math\Vector\SphereMaskNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Math\Vector\TransformNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Math\Wave\NoiseSineWaveNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Math\Wave\SawtoothWaveNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Math\Wave\SquareWaveNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Math\Wave\TriangleWaveNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Mesh Deformation\ComputeDeformNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Mesh Deformation\LinearBlendSkinningNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\NodeClassCache.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\NormalMapSpace.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Procedural\CheckerboardNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Procedural\Noise\GradientNoiseNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Procedural\Noise\SimpleNoiseNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Procedural\Noise\VoronoiNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Procedural\Shape\EllipseNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Procedural\Shape\PolygonNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Procedural\Shape\RectangleNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Procedural\Shape\RoundedPolygonNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Procedural\Shape\RoundedRectangleNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\RedirectNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\ShaderStage.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\SlotValue.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\TitleAttribute.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\UV\FlipbookNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\UV\ParallaxMappingNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\UV\ParallaxOcclusionMappingNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\UV\PolarCoordinatesNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\UV\RadialShearNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\UV\RotateNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\UV\SpherizeNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\UV\TilingAndOffsetNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\UV\TriplanarNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\UV\TwirlNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Utility\CustomFunctionNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Utility\KeywordNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Utility\Logic\AllNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Utility\Logic\AndNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Utility\Logic\AnyNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Utility\Logic\BranchNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Utility\Logic\ComparisonNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Utility\Logic\IsFrontFaceNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Utility\Logic\IsInfiniteNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Utility\Logic\IsNanNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Utility\Logic\NandNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Utility\Logic\NotNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Utility\Logic\OrNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Utility\PreviewNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Utility\RedirectNodeData.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Utility\RedirectNodeView.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Nodes\Utility\SubGraphNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\SubGraph\SubGraphAsset.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\SubGraph\SubGraphOutputNode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Util\DictionaryPool.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Util\FunctionRegistry.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Util\GradientUtil.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Util\GraphUtil.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Util\Identifier.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Util\IndexSetPool.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Util\KeywordCollector.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Util\KeywordDependentCollection.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Util\KeywordUtil.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Util\ListPool.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Util\Logging.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Util\ObjectPool.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Util\PooledHashSet.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Util\PooledList.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Util\PooledObject.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Util\PrecisionUtil.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Util\PropertyUtil.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Util\QueuePool.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Util\ScreenSpaceType.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Util\SerializationHelper.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Util\ShaderGraphRequirementsPerKeyword.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Util\SlotValueTypeUtil.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Util\StackPool.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Util\TextUtil.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Data\Util\UvChannel.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\DefaultShaderIncludes.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Blackboard\BlackboardFieldView.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Blackboard\BlackboardInputInfo.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Blackboard\BlackboardProvider.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Colors\CategoryColors.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Colors\ColorManager.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Colors\CustomColorData.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Colors\IColorProvider.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Colors\NoColors.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Colors\PrecisionColors.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Colors\UserColors.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Controls\ButtonControl.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Controls\ChannelEnumControl.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Controls\ChannelEnumMaskControl.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Controls\ChannelMixerControl.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Controls\ColorControl.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Controls\CubemapControl.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Controls\DefaultControl.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Controls\DielectricSpecularControl.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Controls\EnumControl.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Controls\EnumConversionControl.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Controls\GradientControl.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Controls\IControlAttribute.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Controls\IdentifierControl.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Controls\IntegerControl.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Controls\ObjectControl.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Controls\PopupControl.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Controls\SliderControl.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Controls\Texture3DControl.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Controls\TextureArrayControl.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Controls\TextureControl.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Controls\ToggleControl.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Controls\VectorControl.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\EdgeConnectorListener.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\INodeModificationListener.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Inspector\InspectorView.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Inspector\MasterPreviewView.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Inspector\PropertyDrawerUtils.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Inspector\PropertyDrawers\AbstractMaterialNodePropertyDrawer.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Inspector\PropertyDrawers\BoolPropertyDrawer.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Inspector\PropertyDrawers\ColorPropertyDrawer.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Inspector\PropertyDrawers\CubemapPropertyDrawer.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Inspector\PropertyDrawers\CustomFunctionNodePropertyDrawer.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Inspector\PropertyDrawers\DropdownPropertyDrawer.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Inspector\PropertyDrawers\EnumPropertyDrawer.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Inspector\PropertyDrawers\FloatPropertyDrawer.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Inspector\PropertyDrawers\GradientPropertyDrawer.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Inspector\PropertyDrawers\GraphDataPropertyDrawer.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Inspector\PropertyDrawers\IShaderPropertyDrawer.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Inspector\PropertyDrawers\IntegerPropertyDrawer.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Inspector\PropertyDrawers\MatrixPropertyDrawer.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Inspector\PropertyDrawers\SampleVirtualTextureNodePropertyDrawer.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Inspector\PropertyDrawers\ShaderInputPropertyDrawer.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Inspector\PropertyDrawers\SubGraphOutputNodePropertyDrawer.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Inspector\PropertyDrawers\TextPropertyDrawer.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Inspector\PropertyDrawers\Texture2DArrayPropertyDrawer.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Inspector\PropertyDrawers\Texture2DPropertyDrawer.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Inspector\PropertyDrawers\Texture3DPropertyDrawer.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Inspector\PropertyDrawers\ToggleDataPropertyDrawer.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Inspector\PropertyDrawers\Vector2PropertyDrawer.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Inspector\PropertyDrawers\Vector3PropertyDrawer.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Inspector\PropertyDrawers\Vector4PropertyDrawer.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Inspector\TabbedView\TabButton.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Inspector\TabbedView\TabbedView.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Inspector\WindowDockingLayout.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Manipulators\Draggable.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Manipulators\ResizeBorderFrame.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Manipulators\ResizeSideHandle.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Manipulators\Scrollable.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Manipulators\WindowDraggable.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\MaterialGraphEditWindow.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\MaterialGraphPreviewGenerator.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\PreviewManager.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\PreviewRate.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\SearchWindowAdapter.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\SearchWindowProvider.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Views\ContextView.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Views\FloatField.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Views\GradientEdge.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Views\GraphEditorView.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Views\GraphSubWindow.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Views\HelpBoxRow.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Views\HlslFunctionView.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Views\IShaderNodeView.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Views\IdentifierField.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Views\MaterialGraphView.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Views\MaterialNodeView.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Views\NodeSettingsView.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Views\PortInputView.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Views\PreviewSceneResources.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Views\PropertyNodeView.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Views\PropertyRow.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Views\PropertySheet.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Views\ReorderableSlotListView.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Views\ReorderableTextListView.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Views\ShaderGroup.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Views\ShaderPort.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Views\Slots\BooleanSlotControlView.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Views\Slots\ColorRGBSlotControlView.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Views\Slots\ColorSlotControlView.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Views\Slots\CubemapSlotControlView.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Views\Slots\GradientSlotControlView.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Views\Slots\LabelSlotControlView.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Views\Slots\MultiFloatSlotControlView.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Views\Slots\ScreenPositionSlotControlView.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Views\Slots\Texture3DSlotControlView.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Views\Slots\TextureArraySlotControlView.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Views\Slots\TextureSlotControlView.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Views\Slots\UVSlotControlView.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Drawing\Views\StickyNote.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Extensions\FieldExtensions.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Extensions\IConditionalExtensions.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Extensions\StencilExtensions.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Generation\Attributes\GenerateBlocksAttribute.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Generation\Collections\AssetCollection.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Generation\Collections\DefineCollection.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Generation\Collections\DependencyCollection.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Generation\Collections\FieldCollection.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Generation\Collections\IncludeCollection.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Generation\Collections\KeywordCollection.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Generation\Collections\PassCollection.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Generation\Collections\PragmaCollection.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Generation\Collections\RenderStateCollection.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Generation\Collections\StructCollection.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Generation\Contexts\TargetActiveBlockContext.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Generation\Contexts\TargetFieldContext.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Generation\Contexts\TargetPropertyGUIContext.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Generation\Contexts\TargetSetupContext.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Generation\Controls.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Generation\Data\ConditionalField.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Generation\Data\FieldCondition.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Generation\Data\FieldDependency.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Generation\Data\KeywordEntry.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Generation\Descriptors\BlockFieldDescriptor.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Generation\Descriptors\FieldDescriptor.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Generation\Descriptors\IncludeDescriptor.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Generation\Descriptors\KeywordDescriptor.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Generation\Descriptors\PassDescriptor.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Generation\Descriptors\PragmaDescriptor.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Generation\Descriptors\RenderStateDescriptor.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Generation\Descriptors\StencilDescriptor.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Generation\Descriptors\StructDescriptor.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Generation\Descriptors\SubShaderDescriptor.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Generation\Enumerations\Blend.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Generation\Enumerations\BlendOp.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Generation\Enumerations\Cull.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Generation\Enumerations\IncludeLocation.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Generation\Enumerations\InstancingOptions.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Generation\Enumerations\KeywordDefinition.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Generation\Enumerations\KeywordScope.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Generation\Enumerations\KeywordType.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Generation\Enumerations\NormalDropOffSpace.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Generation\Enumerations\Platform.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Generation\Enumerations\PropertyType.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Generation\Enumerations\RenderQueue.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Generation\Enumerations\RenderType.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Generation\Enumerations\ShaderModel.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Generation\Enumerations\ShaderValueType.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Generation\Enumerations\StructFieldOptions.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Generation\Enumerations\ZTest.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Generation\Enumerations\ZWrite.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Generation\GraphCode.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Generation\IHasMetaData.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Generation\OutputMetadata.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Generation\Processors\ActiveFields.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Generation\Processors\GenerationUtils.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Generation\Processors\Generator.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Generation\Processors\GraphCompilationResult.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Generation\Processors\MatrixNames.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Generation\Processors\PropertyCollector.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Generation\Processors\ShaderGeneratorNames.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Generation\Processors\ShaderSpliceUtil.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Generation\Processors\ShaderStringBuilder.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Generation\ShaderGraphVfxAsset.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Generation\SubTarget.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Generation\Target.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Generation\TargetResources\BlockFields.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Generation\TargetResources\FieldDependencies.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Generation\TargetResources\Fields.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Generation\TargetResources\StructFields.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Generation\TargetResources\Structs.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Generation\Targets\PreviewTarget.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Generation\Targets\VFXTarget.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Generation\Utils\TargetUtils.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Importers\ShaderGraphAssetPostProcessor.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Importers\ShaderGraphImporter.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Importers\ShaderGraphImporterEditor.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Importers\ShaderGraphMetadata.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Importers\ShaderSubGraphImporter.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Importers\ShaderSubGraphImporterEditor.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Importers\ShaderSubGraphMetadata.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Interface\IConditional.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Interface\IShaderString.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Serialization\FakeJsonObject.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Serialization\JsonData.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Serialization\JsonObject.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Serialization\JsonRef.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Serialization\MultiJson.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Serialization\MultiJsonEntry.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Serialization\MultiJsonInternal.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Serialization\RefDataEnumerable.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Serialization\RefValueEnumerable.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Serialization\SerializationExtensions.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\ShaderGUI\PBRMasterGUI.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\ShaderGraphAnalytics.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\ShaderGraphPreferences.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Util\CompatibilityExtensions.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Util\CopyPasteGraph.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Util\CreateSerializableGraph.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Util\Documentation.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Util\FileUtilities.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Util\IndexSet.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Util\ListUtilities.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Util\MessageManager.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Util\TypeMapper.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Util\TypeMapping.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Util\UIUtilities.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.shadergraph@10.2.2\Editor\Util\ValueUtilities.cs"

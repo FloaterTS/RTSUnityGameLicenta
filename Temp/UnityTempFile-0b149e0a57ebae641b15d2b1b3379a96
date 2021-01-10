@@ -1,0 +1,456 @@
+/target:library
+/out:Temp/Unity.RenderPipelines.Universal.Editor.dll
+/nowarn:0169
+/nowarn:0649
+/refout:Temp/Unity.RenderPipelines.Universal.Editor.dll.ref
+/unsafe
+/deterministic
+/debug:portable
+/optimize+
+/nostdlib+
+/preferreduilang:en-US
+/langversion:8.0
+/reference:Library/ScriptAssemblies/Unity.Mathematics.Editor.dll
+/reference:Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll
+/reference:Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll
+/reference:Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll
+/reference:Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll
+/reference:Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Runtime.dll
+/reference:Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll
+/reference:Library/ScriptAssemblies/UnityEditor.TestRunner.dll
+/reference:Library/ScriptAssemblies/UnityEditor.UI.dll
+/reference:Library/ScriptAssemblies/UnityEngine.TestRunner.dll
+/reference:Library/ScriptAssemblies/UnityEngine.UI.dll
+/reference:"C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/16.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll"
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEditor.Graphs.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+/reference:"D:/Unity Projects/Licenta 3D/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll"
+/reference:"D:/Unity Projects/Licenta 3D/Library/PackageCache/com.unity.render-pipelines.core@10.2.2/Editor/ShaderGenerator/ICSharpCode.NRefactory.dll"
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEditor.CoreModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEditor.GraphViewModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEditor.PackageManagerUIModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEditor.SceneTemplateModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEditor.UIElementsModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEditor.UIElementsSamplesModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEditor.UIServiceModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEditor.UnityConnectModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEditor.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.ARModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.AccessibilityModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.AndroidJNIModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.AnimationModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.AssetBundleModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.AudioModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.ClothModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.ClusterInputModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.ClusterRendererModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.CoreModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.CrashReportingModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.DSPGraphModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.DirectorModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.GIModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.GameCenterModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.GridModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.HotReloadModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.IMGUIModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.ImageConversionModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.InputLegacyModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.InputModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.JSONSerializeModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.LocalizationModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.ParticleSystemModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.PerformanceReportingModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.Physics2DModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.PhysicsModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.ProfilerModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.ScreenCaptureModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.SharedInternalsModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.SpriteMaskModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.SpriteShapeModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.StreamingModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.SubstanceModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.SubsystemsModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.TLSModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.TerrainModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.TerrainPhysicsModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.TextCoreModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.TextRenderingModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.TilemapModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.UIElementsModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.UIElementsNativeModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.UIModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.UNETModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.UmbraModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityAnalyticsModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityConnectModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityCurlModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityTestProtocolModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestAssetBundleModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestAudioModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestTextureModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestWWWModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.VFXModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.VRModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.VehiclesModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.VideoModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.VirtualTexturingModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.WindModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/Microsoft.Win32.Primitives.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.AppContext.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Collections.Concurrent.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Collections.NonGeneric.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Collections.Specialized.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Collections.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ComponentModel.Annotations.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ComponentModel.EventBasedAsync.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ComponentModel.Primitives.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ComponentModel.TypeConverter.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ComponentModel.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Console.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Data.Common.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Diagnostics.Contracts.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Diagnostics.Debug.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Diagnostics.FileVersionInfo.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Diagnostics.Process.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Diagnostics.StackTrace.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Diagnostics.TextWriterTraceListener.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Diagnostics.Tools.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Diagnostics.TraceSource.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Drawing.Primitives.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Dynamic.Runtime.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Globalization.Calendars.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Globalization.Extensions.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Globalization.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.Compression.ZipFile.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.FileSystem.DriveInfo.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.FileSystem.Primitives.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.FileSystem.Watcher.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.FileSystem.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.IsolatedStorage.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.MemoryMappedFiles.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.Pipes.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.UnmanagedMemoryStream.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.IO.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Linq.Expressions.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Linq.Parallel.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Linq.Queryable.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Linq.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.Http.Rtc.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.NameResolution.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.NetworkInformation.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.Ping.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.Primitives.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.Requests.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.Security.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.Sockets.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.WebHeaderCollection.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.WebSockets.Client.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Net.WebSockets.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ObjectModel.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Reflection.Emit.ILGeneration.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Reflection.Emit.Lightweight.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Reflection.Emit.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Reflection.Extensions.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Reflection.Primitives.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Reflection.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Resources.Reader.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Resources.ResourceManager.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Resources.Writer.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.CompilerServices.VisualC.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.Extensions.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.Handles.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.InteropServices.RuntimeInformation.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.InteropServices.WindowsRuntime.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.InteropServices.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.Numerics.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.Serialization.Formatters.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.Serialization.Json.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.Serialization.Primitives.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.Serialization.Xml.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Runtime.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Security.Claims.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Security.Cryptography.Algorithms.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Security.Cryptography.Csp.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Security.Cryptography.Encoding.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Security.Cryptography.Primitives.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Security.Cryptography.X509Certificates.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Security.Principal.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Security.SecureString.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ServiceModel.Duplex.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ServiceModel.Http.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ServiceModel.NetTcp.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ServiceModel.Primitives.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ServiceModel.Security.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Text.Encoding.Extensions.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Text.Encoding.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Text.RegularExpressions.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Threading.Overlapped.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Threading.Tasks.Parallel.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Threading.Tasks.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Threading.Thread.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Threading.ThreadPool.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Threading.Timer.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Threading.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.ValueTuple.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Xml.ReaderWriter.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Xml.XDocument.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Xml.XPath.XDocument.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Xml.XPath.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Xml.XmlDocument.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/System.Xml.XmlSerializer.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Facades/netstandard.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/Microsoft.CSharp.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/System.Core.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/System.Data.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/System.Net.Http.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/System.Numerics.Vectors.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/System.Numerics.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/System.Runtime.Serialization.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/System.Xml.Linq.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/System.Xml.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/System.dll
+/reference:D:/ProgramsLibrary/Unity/2020.2.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll
+/define:CSHARP_7_3_OR_NEWER
+/define:CSHARP_7_OR_LATER
+/define:DEBUG
+/define:ENABLE_AR
+/define:ENABLE_AUDIO
+/define:ENABLE_BURST_AOT
+/define:ENABLE_CACHING
+/define:ENABLE_CLOTH
+/define:ENABLE_CLOUD_LICENSE
+/define:ENABLE_CLOUD_SERVICES
+/define:ENABLE_CLOUD_SERVICES_ADS
+/define:ENABLE_CLOUD_SERVICES_ANALYTICS
+/define:ENABLE_CLOUD_SERVICES_BUILD
+/define:ENABLE_CLOUD_SERVICES_COLLAB
+/define:ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS
+/define:ENABLE_CLOUD_SERVICES_CRASH_REPORTING
+/define:ENABLE_CLOUD_SERVICES_PURCHASING
+/define:ENABLE_CLOUD_SERVICES_UNET
+/define:ENABLE_CLOUD_SERVICES_USE_WEBREQUEST
+/define:ENABLE_CLUSTERINPUT
+/define:ENABLE_CLUSTER_SYNC
+/define:ENABLE_CRUNCH_TEXTURE_COMPRESSION
+/define:ENABLE_CUSTOM_RENDER_TEXTURE
+/define:ENABLE_DIRECTOR
+/define:ENABLE_DIRECTOR_AUDIO
+/define:ENABLE_DIRECTOR_TEXTURE
+/define:ENABLE_EDITOR_HUB_LICENSE
+/define:ENABLE_EVENT_QUEUE
+/define:ENABLE_LEGACY_INPUT_MANAGER
+/define:ENABLE_LOCALIZATION
+/define:ENABLE_LZMA
+/define:ENABLE_MANAGED_ANIMATION_JOBS
+/define:ENABLE_MANAGED_AUDIO_JOBS
+/define:ENABLE_MANAGED_JOBS
+/define:ENABLE_MANAGED_TRANSFORM_JOBS
+/define:ENABLE_MICROPHONE
+/define:ENABLE_MONO
+/define:ENABLE_MONO_BDWGC
+/define:ENABLE_MOVIES
+/define:ENABLE_MULTIPLE_DISPLAYS
+/define:ENABLE_NETWORK
+/define:ENABLE_OUT_OF_PROCESS_CRASH_HANDLER
+/define:ENABLE_PHYSICS
+/define:ENABLE_PROFILER
+/define:ENABLE_RUNTIME_GI
+/define:ENABLE_SCRIPTING_GC_WBARRIERS
+/define:ENABLE_SPRITES
+/define:ENABLE_TERRAIN
+/define:ENABLE_TEXTURE_STREAMING
+/define:ENABLE_TILEMAP
+/define:ENABLE_TIMELINE
+/define:ENABLE_UNET
+/define:ENABLE_UNITYEVENTS
+/define:ENABLE_UNITYWEBREQUEST
+/define:ENABLE_UNITY_COLLECTIONS_CHECKS
+/define:ENABLE_VIDEO
+/define:ENABLE_VIRTUALTEXTURING
+/define:ENABLE_VR
+/define:ENABLE_WEBCAM
+/define:ENABLE_WEBSOCKET_CLIENT
+/define:ENABLE_WEBSOCKET_HOST
+/define:ENABLE_WWW
+/define:ENABLE_XR_MODULE
+/define:GFXDEVICE_WAITFOREVENT_MESSAGEPUMP
+/define:INCLUDE_DYNAMIC_GI
+/define:NET_4_6
+/define:PLATFORM_ARCH_64
+/define:PLATFORM_STANDALONE
+/define:PLATFORM_STANDALONE_WIN
+/define:PLATFORM_SUPPORTS_MONO
+/define:PLATFORM_UPDATES_TIME_OUTSIDE_OF_PLAYER_LOOP
+/define:RENDER_SOFTWARE_CURSOR
+/define:SCENE_TEMPLATE_MODULE
+/define:TRACE
+/define:UNITY_2017_1_OR_NEWER
+/define:UNITY_2017_2_OR_NEWER
+/define:UNITY_2017_3_OR_NEWER
+/define:UNITY_2017_4_OR_NEWER
+/define:UNITY_2018_1_OR_NEWER
+/define:UNITY_2018_2_OR_NEWER
+/define:UNITY_2018_3_OR_NEWER
+/define:UNITY_2018_4_OR_NEWER
+/define:UNITY_2019_1_OR_NEWER
+/define:UNITY_2019_2_OR_NEWER
+/define:UNITY_2019_3_OR_NEWER
+/define:UNITY_2019_4_OR_NEWER
+/define:UNITY_2020
+/define:UNITY_2020_1_OR_NEWER
+/define:UNITY_2020_2
+/define:UNITY_2020_2_1
+/define:UNITY_2020_2_OR_NEWER
+/define:UNITY_5_3_OR_NEWER
+/define:UNITY_5_4_OR_NEWER
+/define:UNITY_5_5_OR_NEWER
+/define:UNITY_5_6_OR_NEWER
+/define:UNITY_64
+/define:UNITY_ASSERTIONS
+/define:UNITY_EDITOR
+/define:UNITY_EDITOR_64
+/define:UNITY_EDITOR_WIN
+/define:UNITY_INCLUDE_TESTS
+/define:UNITY_POST_PROCESSING_STACK_V2
+/define:UNITY_PRO_LICENSE
+/define:UNITY_STANDALONE
+/define:UNITY_STANDALONE_WIN
+/define:UNITY_TEAM_LICENSE
+/define:USE_SEARCH_ENGINE_API
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\2D\CinemachineUniversalPixelPerfectEditor.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\2D\CompositeShadowCaster2DEditor.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\2D\Light2DEditor.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\2D\Light2DEditorUtility.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\2D\PixelPerfectCameraEditor.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\2D\Renderer2DAnalytics.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\2D\Renderer2DDataEditor.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\2D\Renderer2DMenus.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\2D\Renderer2DUpgrader.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\2D\ShadowCaster2DEditor.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\2D\ShadowCaster2DShapeTool.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\2D\ShapeEditor\EditablePath\BezierUtility.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\2D\ShapeEditor\EditablePath\ControlPoint.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\2D\ShapeEditor\EditablePath\EditablePath.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\2D\ShapeEditor\EditablePath\EditablePathController.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\2D\ShapeEditor\EditablePath\EditablePathExtensions.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\2D\ShapeEditor\EditablePath\EditablePathUtility.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\2D\ShapeEditor\EditablePath\IEditablePath.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\2D\ShapeEditor\EditablePath\IEditablePathController.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\2D\ShapeEditor\EditablePath\ISnapping.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\2D\ShapeEditor\EditablePath\IUndoObject.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\2D\ShapeEditor\EditablePath\MultipleEditablePathController.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\2D\ShapeEditor\EditablePath\Snapping.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\2D\ShapeEditor\EditorTool\GenericScriptablePath.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\2D\ShapeEditor\EditorTool\GenericScriptablePathInspector.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\2D\ShapeEditor\EditorTool\PathComponentEditor.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\2D\ShapeEditor\EditorTool\PathEditorTool.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\2D\ShapeEditor\EditorTool\PathEditorToolExtensions.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\2D\ShapeEditor\EditorTool\ScriptableData.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\2D\ShapeEditor\EditorTool\ScriptablePath.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\2D\ShapeEditor\EditorTool\ScriptablePathInspector.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\2D\ShapeEditor\GUIFramework\ClickAction.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\2D\ShapeEditor\GUIFramework\CommandAction.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\2D\ShapeEditor\GUIFramework\Control.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\2D\ShapeEditor\GUIFramework\DefaultControl.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\2D\ShapeEditor\GUIFramework\GUIAction.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\2D\ShapeEditor\GUIFramework\GUIState.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\2D\ShapeEditor\GUIFramework\GUISystem.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\2D\ShapeEditor\GUIFramework\GenericControl.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\2D\ShapeEditor\GUIFramework\GenericDefaultControl.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\2D\ShapeEditor\GUIFramework\HoveredControlAction.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\2D\ShapeEditor\GUIFramework\IGUIState.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\2D\ShapeEditor\GUIFramework\LayoutData.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\2D\ShapeEditor\GUIFramework\SliderAction.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\2D\ShapeEditor\Selection\ISelectable.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\2D\ShapeEditor\Selection\ISelection.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\2D\ShapeEditor\Selection\ISelector.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\2D\ShapeEditor\Selection\IndexedSelection.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\2D\ShapeEditor\Selection\PointRectSelector.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\2D\ShapeEditor\Selection\RectSelector.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\2D\ShapeEditor\Selection\SerializableSelection.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\2D\ShapeEditor\Shapes\IShape.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\2D\ShapeEditor\Shapes\Polygon.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\2D\ShapeEditor\Shapes\ShapeExtensions.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\2D\ShapeEditor\Shapes\Spline.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\2D\ShapeEditor\View\CreatePointAction.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\2D\ShapeEditor\View\Drawer.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\2D\ShapeEditor\View\EditablePathView.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\2D\ShapeEditor\View\IDrawer.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\2D\ShapeEditor\View\IEditablePathView.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\2D\SortingLayerDropDown.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\AssemblyInfo.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\AssetPostProcessors\AutodeskInteractiveMaterialImport.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\AssetPostProcessors\FBXArnoldSurfaceMaterialDescriptionPreprocessor.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\AssetPostProcessors\FBXMaterialDescriptionPreprocessor.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\AssetPostProcessors\MaterialPostprocessor.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\AssetPostProcessors\PhysicalMaterial3DsMaxPreprocessor.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\AssetPostProcessors\SketchupMaterialDescriptionPostprocessor.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\AssetPostProcessors\ThreeDSMaterialDescriptionPostprocessor.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\AssetVersion.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\DefaultScene\UniversalProjectSettings.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\Deprecated.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\EditorUtils.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\ForwardRendererDataEditor.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\LightExplorer.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\Overrides\BloomEditor.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\Overrides\ChannelMixerEditor.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\Overrides\ColorCurvesEditor.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\Overrides\ColorLookupEditor.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\Overrides\DepthOfFieldEditor.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\Overrides\FilmGrainEditor.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\Overrides\LiftGammaGainEditor.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\Overrides\MotionBlurEditor.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\Overrides\ShadowsMidtonesHighlightsEditor.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\Overrides\TonemappingEditor.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\PostProcessDataEditor.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\RenderStateDataEditor.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\RendererFeatures\NewRendererFeatureDropdownItem.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\RendererFeatures\RenderObjectsPassFeatureEditor.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\RendererFeatures\ScreenSpaceAmbientOcclusionEditor.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\SavedParameter.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\ScriptableRendererDataEditor.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\ScriptableRendererFeatureEditor.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\ShaderGUI\BaseShaderGUI.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\ShaderGUI\ParticleGUI.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\ShaderGUI\Shaders\BakedLitShader.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\ShaderGUI\Shaders\LitShader.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\ShaderGUI\Shaders\ParticlesLitShader.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\ShaderGUI\Shaders\ParticlesSimpleLitShader.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\ShaderGUI\Shaders\ParticlesUnlitShader.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\ShaderGUI\Shaders\SimpleLitShader.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\ShaderGUI\Shaders\UnlitShader.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\ShaderGUI\ShadingModels\BakedLitGUI.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\ShaderGUI\ShadingModels\LitDetailGUI.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\ShaderGUI\ShadingModels\LitGUI.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\ShaderGUI\ShadingModels\SimpleLitGUI.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\ShaderGUI\TerrainLitShaderGUI.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\ShaderGraph\AssetCallbacks\CreateLitShaderGraph.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\ShaderGraph\AssetCallbacks\CreateSpriteLitShaderGraph.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\ShaderGraph\AssetCallbacks\CreateSpriteUnlitShaderGraph.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\ShaderGraph\AssetCallbacks\CreateUnlitShaderGraph.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\ShaderGraph\Targets\UniversalLitSubTarget.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\ShaderGraph\Targets\UniversalSpriteLitSubTarget.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\ShaderGraph\Targets\UniversalSpriteUnlitSubTarget.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\ShaderGraph\Targets\UniversalTarget.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\ShaderGraph\Targets\UniversalUnlitSubTarget.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\ShaderGraph\UniversalBlockFields.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\ShaderGraph\UniversalFields.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\ShaderGraph\UniversalStructFields.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\ShaderGraph\UniversalStructs.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\ShaderPreprocessor.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\Shadow\ShadowCascadeSplitGUI.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\TrackballUIDrawer.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\UniversalAdditionalCameraDataEditor.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\UniversalAdditionalLightDataEditor.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\UniversalAnalytics.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\UniversalRenderPipelineAssetEditor.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\UniversalRenderPipelineCameraEditor.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\UniversalRenderPipelineLightEditor.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\UniversalRenderPipelineMaterialUpgrader.cs"
+"D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.render-pipelines.universal@10.2.2\Editor\UpgradeCommon.cs"

@@ -338,9 +338,6 @@
     <Reference Include="UnityEditor.UnityConnectModule">
       <HintPath>D:\ProgramsLibrary\Unity\2020.2.1f1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
     </Reference>
-    <Reference Include="nunit.framework">
-      <HintPath>Library\PackageCache\com.unity.ext.nunit@1.0.5\net35\unity-custom\nunit.framework.dll</HintPath>
-    </Reference>
     <Reference Include="netstandard">
       <HintPath>D:\ProgramsLibrary\Unity\2020.2.1f1\Editor\Data\NetStandard\ref\2.0.0\netstandard.dll</HintPath>
     </Reference>

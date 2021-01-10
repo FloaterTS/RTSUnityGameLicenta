@@ -8,6 +8,8 @@ public class ResourceInfo : ScriptableObject
     public string harvestAnimation;
     public string carryAnimation;
     public string carriedResourceName;
+    public string toolInHandName;
+    public string toolHarvestingName;
     public float liftAnimationDuration;
     public float dropAnimationDuration;
     public float harvestTimePerUnit = 1f;

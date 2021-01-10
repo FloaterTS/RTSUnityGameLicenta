@@ -75,6 +75,8 @@ public class Unit : MonoBehaviour
             if (unitState == UnitState.working)
                 yield return StartCoroutine(worker.StopTaskCo());
             yield return StartCoroutine(worker.CheckIfImmobile());
+            if (targetPosition != target)
+                yield break;
         }
         navAgent.isStopped = false;
         navAgent.SetDestination(targetPosition);
