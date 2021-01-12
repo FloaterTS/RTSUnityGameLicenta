@@ -5,6 +5,8 @@ This is a 3D RTS game made in Unity for my final project.
 
 It features Object Oriented Programming written in C#, vector math and AI algorithms in order to create my own version of popular RTS games like Age of Empires/ Starcraft.
 
+All written scripts can be found in Assets/Scripts folder.
+
 What is implemented:
 - Fully controllable camera, by keys or by mouse, with zoom in and out to a certain degree and fully rotative with a possibility for snap rotations to certain degrees. Bounded by map area and height coordinates.
 
