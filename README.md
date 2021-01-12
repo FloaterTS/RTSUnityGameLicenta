@@ -1,4 +1,4 @@
-# RTSUnityGameLicenta
+# 3D Strategy Game Final Project
 Unity 3D RTS Game
 --Work In Progress--
 This is a 3D RTS game made in Unity for my final project.
