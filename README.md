@@ -8,7 +8,7 @@ It features Object Oriented Programming written in C#, vector math and AI algori
 All written scripts can be found in Assets/Scripts folder.
 
 What is implemented:
-- Fully controllable camera, by keys or by mouse, with zoom in and out to a certain degree and fully rotative with a possibility for snap rotations to certain degrees. Bounded by map area and height coordinates.
+- Fully controllable camera, by keys or by mouse, with zoom in and out to a certain degree and fully rotative with a possibility for snap rotations to certain degrees (rotation relatice to screen center for better visualization and ease of use). Bounded by map area and height coordinates.
 
 - Unit movement with the help of Unity Navigation Mesh implementation, each unit can move to any valid place on map, using obstacle avoidance, on the shortest path.
 
