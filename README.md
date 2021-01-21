@@ -1,7 +1,10 @@
 # 3D Strategy Game Final Project
 Unity 3D RTS Game - Guilds
+
 --Work In Progress--
+
 This is a 3D RTS game made in Unity for my final project.
+
 
 It features Object Oriented Programming written in C#, vector math and AI algorithms in order to create my own version of popular RTS games like Age of Empires/ Starcraft.
 
