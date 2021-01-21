@@ -1,8 +1,6 @@
 # 3D Strategy Game Final Project
 Unity 3D RTS Game - Guilds
-
---Work In Progress--
-
+*Work In Progress*
 This is a 3D RTS game made in Unity for my final project.
 
 
@@ -36,10 +34,10 @@ It is still in progress and the final version will have the following:
 
 
 Game presentation with some of the implemented mechanics can be found here: 
--- to be added soon --
+*to be added soon*
 
 Game -in development- can be downloaded here: 
--- to be added soon --
+*to be added soon*
 
 Game documentation can be found here:
--- to be added soon --
+*to be added soon*
