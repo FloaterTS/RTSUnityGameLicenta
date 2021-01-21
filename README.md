@@ -1,5 +1,5 @@
 # 3D Strategy Game Final Project
-Unity 3D RTS Game
+Unity 3D RTS Game - Guilds
 --Work In Progress--
 This is a 3D RTS game made in Unity for my final project.
 
