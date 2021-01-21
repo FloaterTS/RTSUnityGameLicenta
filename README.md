@@ -33,3 +33,13 @@ It is still in progress and the final version will have the following:
 - Finalized map with level design and resource field placement.
 
 - Complete game design with level start, finish and goal accomplishment.
+
+
+Game presentation with some of the implemented mechanics can be found here: 
+- to be added soon -
+
+Game -in development- can be downloaded here: 
+- to be added soon -
+
+Game documentation can be found here:
+- to be added soon -
