@@ -36,10 +36,10 @@ It is still in progress and the final version will have the following:
 
 
 Game presentation with some of the implemented mechanics can be found here: 
-- - to be added soon -
+-- to be added soon --
 
 Game -in development- can be downloaded here: 
-- - to be added soon -
+-- to be added soon --
 
 Game documentation can be found here:
-- - to be added soon -
+-- to be added soon --
