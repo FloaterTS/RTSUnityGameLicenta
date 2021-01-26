@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingTeam: 0
   buildingName: Resource Camp
+  toolConstructionName: 
   maxHitPoints: 100
   constructionTime: 10
   baseBuildingStats: {fileID: 11400000, guid: ec3b42f7be3e3c84e9cffaae8e2859fa, type: 2}

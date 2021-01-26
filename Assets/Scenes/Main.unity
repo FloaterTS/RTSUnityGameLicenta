@@ -21395,6 +21395,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 831647768}
     m_Modifications:
+    - target: {fileID: 4209212914097422845, guid: a0368b2ce47ca184493cc06c2fdaf864, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4209212914097422845, guid: a0368b2ce47ca184493cc06c2fdaf864, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 788951020}
+    - target: {fileID: 4209212914097422845, guid: a0368b2ce47ca184493cc06c2fdaf864, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PauseGameTab
+      objectReference: {fileID: 0}
+    - target: {fileID: 4209212914097422845, guid: a0368b2ce47ca184493cc06c2fdaf864, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UIManager, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 4209212914412245238, guid: a0368b2ce47ca184493cc06c2fdaf864, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -21576,6 +21592,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pause Menu Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 5662153212350742827, guid: 8371fb72ce8e3e34cbeb78d8c73ed29b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5662153212350742831, guid: 8371fb72ce8e3e34cbeb78d8c73ed29b, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -21659,10 +21679,6 @@ PrefabInstance:
     - target: {fileID: 5662153212350742831, guid: 8371fb72ce8e3e34cbeb78d8c73ed29b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5683864755356838862, guid: 8371fb72ce8e3e34cbeb78d8c73ed29b, type: 3}
-      propertyPath: m_text
-      value: Something
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8371fb72ce8e3e34cbeb78d8c73ed29b, type: 3}

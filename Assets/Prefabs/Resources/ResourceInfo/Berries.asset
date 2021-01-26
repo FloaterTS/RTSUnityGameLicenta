@@ -17,7 +17,7 @@ MonoBehaviour:
   harvestAnimation: gathering
   carryAnimation: carryingLight
   carriedResourceName: Villager/root/B-hips/B-spine/B-chest/B-upperChest/B-shoulder_R/B-upper_arm_R/B-forearm_R/B-hand_R/Carried/BasketFull
-  toolInHandName: Villager/root/B-hips/B-spine/B-chest/B-upperChest/B-shoulder_R/B-upper_arm_R/B-forearm_R/B-hand_R/Carried/BasketEmpty
+  toolInHandName: Villager/root/B-hips/B-spine/B-chest/B-upperChest/B-shoulder_R/B-upper_arm_R/B-forearm_R/B-hand_R/Tools_R/BasketEmpty
   toolHarvestingName: Others/BasketHarvest
   liftAnimationDuration: 2.2
   dropAnimationDuration: 2.2

@@ -5,6 +5,7 @@ public class BuildingStats : ScriptableObject
 {
     public Team buildingTeam;
     public string buildingName;
+    public string toolConstructionName;
     public int maxHitPoints;
     public float constructionTime;
 
@@ -15,6 +16,7 @@ public class BuildingStats : ScriptableObject
         if (baseBuildingStats == null)
             return;
         buildingName = baseBuildingStats.buildingName;
+        toolConstructionName = baseBuildingStats.toolConstructionName;
         maxHitPoints = baseBuildingStats.maxHitPoints;
         constructionTime = baseBuildingStats.constructionTime;
     }

@@ -101,7 +101,7 @@ public class Worker : MonoBehaviour
         if (carriedResource.amount > 0)
         {
             yield return StartCoroutine(LetDownResource());
-            // and drop resource
+            DropResource();
         }
         StartTask();
         Vector3 underConstructionBuildingPosition = underConstructionBuilding.transform.position;
@@ -118,6 +118,13 @@ public class Worker : MonoBehaviour
 
         Building building = underConstructionBuilding.GetComponent<Building>();
         UnderConstruction underConstruction = underConstructionBuilding.GetComponent<UnderConstruction>();
+
+        if (thingInHand != null)
+            thingInHand.gameObject.SetActive(false);
+        thingInHand = transform.Find(building.buildingStats.toolConstructionName);
+        if (thingInHand != null)
+            thingInHand.gameObject.SetActive(true);
+
         while (underConstructionBuilding != null && underConstruction.BuiltPercentage() < 100f && unit.target == underConstructionBuildingPosition)
         {
             yield return null;
@@ -127,6 +134,9 @@ public class Worker : MonoBehaviour
         }
         if (unit.target == underConstructionBuildingPosition)
             yield return StartCoroutine(StopTaskCo());
+
+        if (thingInHand != null)
+            thingInHand.gameObject.SetActive(false);
     }
 
     private IEnumerator CollectResourceCo(ResourceField resourceToCollect)
@@ -139,9 +149,8 @@ public class Worker : MonoBehaviour
         if (carriedResource.amount > 0 && carriedResource.resourceInfo != resourceToCollect.resourceInfo)
         {
             yield return StartCoroutine(LetDownResource());
-            //Drop on the ground
+            DropResource();
             carriedResource.resourceInfo = resourceToCollect.resourceInfo;
-            carriedResource.amount = 0;
         }
 
         yield return StartCoroutine(GoToResourceCo(resourceToCollect));
@@ -161,7 +170,7 @@ public class Worker : MonoBehaviour
 
         ResourceCamp campStoredInto = FindClosestResourceCampByType(ResourceManager.ResourceRawToType(resourceToCollect.resourceInfo.resourceRaw));
         if (campStoredInto != null)
-            if (unit.target == campStoredInto.accessLocation)
+            if (unit.target == campStoredInto.accessLocation && resourceToCollect != null)
                 CollectResource(resourceToCollect);
     }
 
@@ -336,6 +345,12 @@ public class Worker : MonoBehaviour
 
         if (thingInHand != null)
             thingInHand.gameObject.SetActive(false);
+    }
+
+    private void DropResource()
+    {
+        //To be fully implemented
+        carriedResource.amount = 0;
     }
 
 }
