@@ -1,4 +1,4 @@
-# 3D Strategy Game Final Project
+# Guilds - 3D Real-Time Strategy Game Final Project
 Unity 3D RTS Game - Guilds
 
 --Work In Progress--
