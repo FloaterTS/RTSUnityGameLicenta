@@ -25,7 +25,7 @@ What is implemented:
 
 - Partially finished map using Unity 3D Terrain Tools.
 
-It is still in progress and the final version will have the following:
+It is still work in progress and the final version will have the following:
 - Enemy AI - Base building and coordinated attacking
 
 - More base building options - buildings and upgrades
