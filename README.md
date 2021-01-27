@@ -5,6 +5,8 @@ Unity 3D RTS Game - Guilds
 
 This is a 3D RTS game made in Unity for my final project.
 
+Game presentation with some of the implemented mechanics can be found here: 
+https://youtu.be/xMr-BFS46VQ
 
 It features Object Oriented Programming written in C#, vector math and AI algorithms in order to create my own version of popular RTS games like Age of Empires/ Starcraft.
 
@@ -34,9 +36,6 @@ It is still in progress and the final version will have the following:
 
 - Complete game design with level start, finish and goal accomplishment.
 
-
-Game presentation with some of the implemented mechanics can be found here: 
-- to be added soon
 
 Game -in development- can be downloaded here: 
 - to be added soon
