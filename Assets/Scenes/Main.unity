@@ -21580,10 +21580,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 831647768}
     m_Modifications:
+    - target: {fileID: 360350219306385113, guid: 8371fb72ce8e3e34cbeb78d8c73ed29b, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1588073810}
+    - target: {fileID: 775305996647791201, guid: 8371fb72ce8e3e34cbeb78d8c73ed29b, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1588073810}
+    - target: {fileID: 3215587336633077912, guid: 8371fb72ce8e3e34cbeb78d8c73ed29b, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1588073810}
     - target: {fileID: 4304664625503159546, guid: 8371fb72ce8e3e34cbeb78d8c73ed29b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 788951020}
+    - target: {fileID: 4409329859303308394, guid: 8371fb72ce8e3e34cbeb78d8c73ed29b, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1588073810}
     - target: {fileID: 5662153211090768487, guid: 8371fb72ce8e3e34cbeb78d8c73ed29b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

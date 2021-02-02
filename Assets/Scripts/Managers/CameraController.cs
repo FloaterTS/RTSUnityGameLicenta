@@ -38,7 +38,7 @@ public class CameraController : MonoBehaviour
 
     [Header("Other Settings")]
     [SerializeField, Range(45f, 90f)]
-    private float camXRotation = 67.5f;
+    private float camXRotation = 60f;
     [SerializeField, Range(45f, 60f)]
     private float camFieldOfView = 60f;
     [SerializeField] private bool lockMouseCursor = true;
@@ -132,10 +132,10 @@ public class CameraController : MonoBehaviour
         if (snapRotation)
         {
             if (Input.GetKeyDown(KeyCode.E))
-                rotationAngle = -snapDegreeValue;
+                rotationAngle = snapDegreeValue;
 
             if (Input.GetKeyDown(KeyCode.Q))
-                rotationAngle = snapDegreeValue;
+                rotationAngle = -snapDegreeValue;
         }
         else
         {
@@ -144,10 +144,10 @@ public class CameraController : MonoBehaviour
                 rotationSpeed *= fastRotationFactor;
 
             if (Input.GetKey(KeyCode.E))
-                rotationAngle = -rotationSpeed * Time.deltaTime;
+                rotationAngle = rotationSpeed * Time.deltaTime;
 
             if (Input.GetKey(KeyCode.Q))
-                rotationAngle = rotationSpeed * Time.deltaTime;
+                rotationAngle = -rotationSpeed * Time.deltaTime;
         }
 
         if (rotationAngle == 0)

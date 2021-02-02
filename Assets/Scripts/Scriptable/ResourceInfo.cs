@@ -14,4 +14,5 @@ public class ResourceInfo : ScriptableObject
     public float dropAnimationDuration;
     public float harvestTimePerUnit = 1f;
     public UnitSpeed carrySpeed;
+    public GameObject droppedResourcePrefab;
 }

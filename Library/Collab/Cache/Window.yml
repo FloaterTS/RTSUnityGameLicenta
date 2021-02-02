@@ -14,19 +14,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SimpleSelectedItems:
     m_Keys:
-    - Assets/Prefabs/Buildings/BuildingStats/PlayerResourceCamp.asset
-    - Assets/Prefabs/Buildings/BuildingStats/ResourceCamp.asset
-    - Assets/Prefabs/Character/Units/PlayerVillager.prefab
+    - Assets/Prefabs/Resources/Dropped.meta
+    - Assets/Prefabs/Resources/Dropped/BerriesDropped.prefab
+    - Assets/Prefabs/Resources/Dropped/BerriesDropped.prefab.meta
+    - Assets/Prefabs/Resources/Dropped/GoldDropped.prefab
+    - Assets/Prefabs/Resources/Dropped/GoldDropped.prefab.meta
     - Assets/Prefabs/Resources/ResourceInfo/Berries.asset
-    - Assets/Prefabs/Resources/Tools/Hammer.prefab
-    - Assets/Prefabs/Resources/Tools/Hammer.prefab.meta
-    - Assets/Prefabs/UI/Canvases/Pause Menu Canvas.prefab
-    - Assets/Prefabs/UI/MenuComponents/MenuOption.prefab
+    - Assets/Prefabs/Resources/ResourceInfo/Gold.asset
     - Assets/Scenes/Main.unity
-    - Assets/Scripts/Scriptable/BuildingStats.cs
+    - Assets/Scripts/Managers/CameraController.cs
+    - Assets/Scripts/Others/ResourceDrop.cs
+    - Assets/Scripts/Others/ResourceDrop.cs.meta
+    - Assets/Scripts/Scriptable/ResourceInfo.cs
+    - Assets/Scripts/Units/Unit.cs
     - Assets/Scripts/Units/Worker.cs
     - 
-    m_Values: 010101010101010101010101
+    m_Values: 000000000000000000000000000000
   RevisionSummary: 
   ChangesSearchValue: 
   SelectedHistoryRevision: 

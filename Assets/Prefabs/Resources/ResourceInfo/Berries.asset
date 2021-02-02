@@ -23,3 +23,4 @@ MonoBehaviour:
   dropAnimationDuration: 2.2
   harvestTimePerUnit: 1
   carrySpeed: 3
+  droppedResourcePrefab: {fileID: 5312246984776751316, guid: 2c41d814b10c6754db38c9d01ecaafb1, type: 3}

@@ -74,7 +74,7 @@ public class Unit : MonoBehaviour
         {
             if (unitState == UnitState.working)
                 yield return StartCoroutine(worker.StopTaskCo());
-            yield return StartCoroutine(worker.CheckIfImmobile());
+            yield return StartCoroutine(worker.CheckIfImmobileCo());
             if (targetPosition != target)
                 yield break;
         }

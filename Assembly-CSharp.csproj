@@ -91,6 +91,7 @@
     <Compile Include="Assets\Scripts\Scriptable\UnitStats.cs" />
     <Compile Include="Assets\Tools\IKHelperTool\Scripts\IKHelperToolSequenceSMB.cs" />
     <Compile Include="Assets\Tools\IKHelperTool\Scripts\IKHelperToolCustomInspector.cs" />
+    <Compile Include="Assets\Scripts\Others\ResourceDrop.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Tools\TextMesh Pro\Shaders\TMPro.cginc" />
