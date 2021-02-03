@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 8833172306504371682}
   - component: {fileID: 5090525395767090049}
   - component: {fileID: 796674928049553413}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: GoldDropped
-  m_TagString: Untagged
+  m_TagString: ResourceDrop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -108,4 +108,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 909e1c164b3564a46a9d48ebc46506f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickupDistance: 0
+  pickupDistance: 0.4

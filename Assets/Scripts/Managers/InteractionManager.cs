@@ -62,6 +62,13 @@ public class InteractionManager : MonoBehaviour
                             unit.worker.StoreResource(resourceCamp);
                 }
             }
+            else if (hitLocation.collider.gameObject.CompareTag("ResourceDrop"))
+            {
+                ResourceDrop resourceDrop = hitLocation.collider.GetComponent<ResourceDrop>();
+                Unit closestUnit = selectionManager.ClosestUnitToSpot(hitLocation.point, true);
+                if(closestUnit != null)
+                    closestUnit.worker.PickUpResourceAction(resourceDrop);
+            }
             else if(hitLocation.collider.gameObject.CompareTag("UnderConstruction"))
             {
                 foreach (Unit unit in selectionManager.selectedUnits)

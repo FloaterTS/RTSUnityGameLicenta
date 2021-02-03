@@ -8,6 +8,8 @@ TagManager:
   - ResourceCamp
   - UnderConstruction
   - Unit
+  - Terrain
+  - ResourceDrop
   layers:
   - Default
   - TransparentFX

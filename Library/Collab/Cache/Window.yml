@@ -14,22 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SimpleSelectedItems:
     m_Keys:
-    - Assets/Prefabs/Resources/Dropped.meta
     - Assets/Prefabs/Resources/Dropped/BerriesDropped.prefab
-    - Assets/Prefabs/Resources/Dropped/BerriesDropped.prefab.meta
     - Assets/Prefabs/Resources/Dropped/GoldDropped.prefab
-    - Assets/Prefabs/Resources/Dropped/GoldDropped.prefab.meta
-    - Assets/Prefabs/Resources/ResourceInfo/Berries.asset
-    - Assets/Prefabs/Resources/ResourceInfo/Gold.asset
-    - Assets/Scenes/Main.unity
-    - Assets/Scripts/Managers/CameraController.cs
-    - Assets/Scripts/Others/ResourceDrop.cs
-    - Assets/Scripts/Others/ResourceDrop.cs.meta
-    - Assets/Scripts/Scriptable/ResourceInfo.cs
-    - Assets/Scripts/Units/Unit.cs
+    - Assets/Scripts/Managers/InteractionManager.cs
+    - Assets/Scripts/Managers/SelectionManager.cs
     - Assets/Scripts/Units/Worker.cs
+    - ProjectSettings/TagManager.asset
     - 
-    m_Values: 000000000000000000000000000000
+    m_Values: 01010101010101
   RevisionSummary: 
   ChangesSearchValue: 
   SelectedHistoryRevision: 

@@ -156,16 +156,20 @@ public class Worker : MonoBehaviour
         if (unit.target == targetResourcePosition)
             yield break;
 
-        yield return StartCoroutine(CheckIfImmobileCo());
+        Vector3 currentUnitTarget = unit.target;
 
         if (carriedResource.amount > 0 && carriedResource.resourceInfo != resourceToCollect.resourceInfo)
         {
             if (unit.unitState != UnitState.working)
-                yield return StartCoroutine(LetDownDropResourceCo());
+                yield return StartCoroutine(LetDownDropResourceCo(true));
             else
-                DropResource();
+                yield return StartCoroutine(LetDownDropResourceCo(false)); 
+            // If we translate from harvesting a field to targeting another (different type), we don't lift the current harvested resource, we just drop it
         }
         carriedResource.resourceInfo = resourceToCollect.resourceInfo;
+
+        if (currentUnitTarget != unit.target)
+            yield break; // unit target changed while waiting to be ready for current task => task no longer valid
 
         yield return StartCoroutine(GoToResourceCo(resourceToCollect));
 
@@ -185,7 +189,7 @@ public class Worker : MonoBehaviour
         ResourceCamp campStoredInto = FindClosestResourceCampByType(ResourceManager.ResourceRawToType(resourceToCollect.resourceInfo.resourceRaw));
         if (campStoredInto != null)
             if (unit.target == campStoredInto.accessLocation && resourceToCollect != null)
-                CollectResource(resourceToCollect);
+                CollectResource(resourceToCollect); //TO RE-VAMP THIS
     }
 
     private IEnumerator GoToResourceCo(ResourceField resourceToGoTo)
@@ -242,8 +246,8 @@ public class Worker : MonoBehaviour
             thingInHand.gameObject.SetActive(false);
 
         if (carriedResource.amount > 0 && carriedResource.resourceInfo == resourceToHarvest.resourceInfo)
-            StartCoroutine(LiftResourceCo());
-        yield return StartCoroutine(StopTaskCo());
+            yield return StartCoroutine(LiftResourceCo());
+        //yield return StartCoroutine(StopTaskCo());
     }
 
     private IEnumerator StoreResourceCo(ResourceCamp resourceCamp)
@@ -306,66 +310,82 @@ public class Worker : MonoBehaviour
 
     private IEnumerator LiftResourceCo()
     {
+        yield return StartCoroutine(CheckIfImmobileCo());
+
         unit.StopNavAgent();
 
         animator.SetBool(carriedResource.resourceInfo.carryAnimation, true);
 
-        unit.ChangeUnitSpeed(carriedResource.resourceInfo.carrySpeed);
-
+        if (thingInHand != null)
+            thingInHand.gameObject.SetActive(false);
         thingInHand = transform.Find(carriedResource.resourceInfo.carriedResourceName);
         if (thingInHand != null)
             thingInHand.gameObject.SetActive(true);
 
-        immobile = true;
+        SetImmobile(true);
         yield return new WaitForSeconds(carriedResource.resourceInfo.liftAnimationDuration);
-        immobile = false;
+        SetImmobile(false);
+
+        unit.ChangeUnitSpeed(carriedResource.resourceInfo.carrySpeed);
     }
 
-    private IEnumerator LetDownResourceCo()
+    private IEnumerator LetDownResourceCo(bool withAnimation = true)
     {
+        yield return StartCoroutine(CheckIfImmobileCo());
+
         unit.StopNavAgent();
 
         animator.SetBool(carriedResource.resourceInfo.carryAnimation, false);
 
-        unit.ChangeUnitSpeed(UnitSpeed.run);
+        if (withAnimation)
+        {
+            SetImmobile(true);
+            yield return new WaitForSeconds(carriedResource.resourceInfo.dropAnimationDuration);
+            SetImmobile(false);
+        }
 
-        immobile = true;
-        yield return new WaitForSeconds(carriedResource.resourceInfo.dropAnimationDuration);
-        immobile = false;
+        unit.ChangeUnitSpeed(UnitSpeed.run);
 
         if (thingInHand != null)
             thingInHand.gameObject.SetActive(false);
     }
 
-    private IEnumerator LetDownDropResourceCo()
+    private IEnumerator LetDownDropResourceCo(bool withAnimation = true)
     {
-        yield return StartCoroutine(LetDownResourceCo());
+        yield return StartCoroutine(LetDownResourceCo(withAnimation));
         DropResource();
     }
 
     private IEnumerator PickUpResourceCo(ResourceDrop resourceDrop)
     {
+        if (resourceDrop == null)
+            yield break;
+
         if (carriedResource.amount > 0 && carriedResource.resourceInfo != resourceDrop.droppedResource.resourceInfo)
             yield return StartCoroutine(LetDownDropResourceCo());
         carriedResource.resourceInfo = resourceDrop.droppedResource.resourceInfo;
 
+        if (resourceDrop == null)
+            yield break;
+
         yield return StartCoroutine(unit.MoveToLocationCo(resourceDrop.transform.position));
+
         onWayToTask = true;
-        while (Vector3.Distance(transform.position, resourceDrop.transform.position) > resourceDrop.pickupDistance
+        while (resourceDrop != null && Vector3.Distance(transform.position, resourceDrop.transform.position) > resourceDrop.pickupDistance
             && unit.target == resourceDrop.transform.position)
             yield return null;
         onWayToTask = false;
 
-        if (unit.target != resourceDrop.transform.position)
+        if (resourceDrop == null || unit.target != resourceDrop.transform.position)
             yield break;
+
+        if (carriedResource.amount > 0)
+            yield return LetDownResourceCo();
+
+        carriedResource.amount += resourceDrop.droppedResource.amount;
+        Destroy(resourceDrop.gameObject);
 
         yield return StartCoroutine(LiftResourceCo());
-
-        if (unit.target != resourceDrop.transform.position)
-            yield break;
-
-        carriedResource.amount = resourceDrop.droppedResource.amount;
-        Destroy(resourceDrop.gameObject);
     }
 
     private void DropResource()
@@ -373,7 +393,9 @@ public class Worker : MonoBehaviour
         GameObject droppedResource = Instantiate(carriedResource.resourceInfo.droppedResourcePrefab,
             new Vector3(transform.position.x, GameManager.instance.mainTerrain.SampleHeight(transform.position), transform.position.z),
             transform.rotation);
-        droppedResource.GetComponent<ResourceDrop>().droppedResource.amount = carriedResource.amount;
+        ResourceDrop resourceDrop = droppedResource.GetComponent<ResourceDrop>();
+        resourceDrop.droppedResource.amount = carriedResource.amount;
+        resourceDrop.droppedResource.resourceInfo = carriedResource.resourceInfo;
         carriedResource.amount = 0;
     }
 

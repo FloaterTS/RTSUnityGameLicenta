@@ -335,4 +335,27 @@ public class SelectionManager : MonoBehaviour
     {
         return isDragging;
     }
+
+    public Unit ClosestUnitToSpot(Vector3 spot, bool workersOnly = false)
+    {
+        if (selectedUnits.Count == 0)
+            return null;
+        Unit closestUnit = selectedUnits[0];
+        float minDistance = Vector3.Distance(closestUnit.transform.position, spot);
+        for (int i = 1; i < selectedUnits.Count; i++)
+        {
+            if (workersOnly && selectedUnits[i].worker == null)
+                continue;
+            float distance = Vector3.Distance(selectedUnits[i].transform.position, spot);
+            if (distance < minDistance)
+            {
+                minDistance = distance;
+                closestUnit = selectedUnits[i];
+            }
+        }
+        if (workersOnly && closestUnit.worker == null)
+            return null;
+        else
+            return closestUnit;
+    }
 }
