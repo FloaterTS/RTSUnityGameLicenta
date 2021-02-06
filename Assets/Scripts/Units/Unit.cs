@@ -144,4 +144,20 @@ public class Unit : MonoBehaviour
                 break;
         }
     }
+
+    public void StopAction()
+    {
+        StartCoroutine(StopActionCo());
+    }
+
+    private IEnumerator StopActionCo()
+    {
+        target = Vector3.zero;
+
+        if (worker != null)
+            yield return StartCoroutine(worker.StopWorkAction());
+
+        StopNavAgent();
+    }
+
 }

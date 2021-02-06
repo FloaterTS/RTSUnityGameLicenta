@@ -154,4 +154,21 @@ public class UIManager : MonoBehaviour
         }
         return;
     }
+
+    public void BuildPanelConstructCamp()
+    {
+        ConstructionManager.instance.StartPreviewResourceCampConstruction();
+    }
+
+    public void BuildPanelCancelBuildPreview()
+    {
+        ConstructionManager.instance.StopPreviewBuildingGO();
+        ConstructionManager.instance.StopPreviewBuildingBool();
+    }
+
+    public void UnitPanelStopAction()
+    {
+        foreach (Unit unit in SelectionManager.instance.selectedUnits)
+            unit.StopAction();
+    }
 }

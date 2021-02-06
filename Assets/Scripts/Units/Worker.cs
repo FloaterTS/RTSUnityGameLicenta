@@ -82,6 +82,18 @@ public class Worker : MonoBehaviour
             yield return null;
     }
 
+    public IEnumerator StopWorkAction()
+    {
+        yield return StartCoroutine(StopTaskCo()); // TO DO: Solve bug where workers lift and let down resource when stopping harvest action
+        if (carriedResource.amount > 0)
+        {
+            if (unit.unitState == UnitState.working)
+                yield return StartCoroutine(LetDownDropResourceCo(false));
+            else
+                yield return StartCoroutine(LetDownDropResourceCo());
+        }
+    }
+
     private IEnumerator StartConstructionCo(GameObject underConstructionBuilding)
     {
         if (unit.target == underConstructionBuilding.transform.position)
@@ -164,12 +176,15 @@ public class Worker : MonoBehaviour
                 yield return StartCoroutine(LetDownDropResourceCo(true));
             else
                 yield return StartCoroutine(LetDownDropResourceCo(false)); 
-            // If we translate from harvesting a field to targeting another (different type), we don't lift the current harvested resource, we just drop it
+            // If we go from harvesting a field to targeting another (different type), we don't lift the current harvested resource, we just drop it
         }
         carriedResource.resourceInfo = resourceToCollect.resourceInfo;
 
         if (currentUnitTarget != unit.target)
             yield break; // unit target changed while waiting to be ready for current task => task no longer valid
+
+        if (resourceToCollect == null)
+            yield break; // check to see if resource dissapeared while in animation state
 
         yield return StartCoroutine(GoToResourceCo(resourceToCollect));
 
@@ -189,7 +204,7 @@ public class Worker : MonoBehaviour
         ResourceCamp campStoredInto = FindClosestResourceCampByType(ResourceManager.ResourceRawToType(resourceToCollect.resourceInfo.resourceRaw));
         if (campStoredInto != null)
             if (unit.target == campStoredInto.accessLocation && resourceToCollect != null)
-                CollectResource(resourceToCollect); //TO RE-VAMP THIS
+                CollectResource(resourceToCollect);
     }
 
     private IEnumerator GoToResourceCo(ResourceField resourceToGoTo)
@@ -229,6 +244,7 @@ public class Worker : MonoBehaviour
         if (thingInHand != null)
             thingInHand.gameObject.SetActive(true);
 
+        ResourceInfo resourceToHarvestInfo = resourceToHarvest.resourceInfo;
         float timeElapsed = 0f;
         while (carriedResource.amount < unit.unitStats.carryCapactity && resourceToHarvest != null
             && unit.target == resourceToHarvest.transform.position)
@@ -245,9 +261,9 @@ public class Worker : MonoBehaviour
         if (thingInHand != null)
             thingInHand.gameObject.SetActive(false);
 
-        if (carriedResource.amount > 0 && carriedResource.resourceInfo == resourceToHarvest.resourceInfo)
-            yield return StartCoroutine(LiftResourceCo());
         //yield return StartCoroutine(StopTaskCo());
+        if (carriedResource.amount > 0 && carriedResource.resourceInfo == resourceToHarvestInfo)
+            yield return StartCoroutine(LiftResourceCo());
     }
 
     private IEnumerator StoreResourceCo(ResourceCamp resourceCamp)
@@ -322,6 +338,8 @@ public class Worker : MonoBehaviour
         if (thingInHand != null)
             thingInHand.gameObject.SetActive(true);
 
+        StartCoroutine(StopTaskCo());
+
         SetImmobile(true);
         yield return new WaitForSeconds(carriedResource.resourceInfo.liftAnimationDuration);
         SetImmobile(false);
@@ -339,6 +357,8 @@ public class Worker : MonoBehaviour
 
         if (withAnimation)
         {
+            StartCoroutine(StopTaskCo());
+
             SetImmobile(true);
             yield return new WaitForSeconds(carriedResource.resourceInfo.dropAnimationDuration);
             SetImmobile(false);
@@ -431,5 +451,4 @@ public class Worker : MonoBehaviour
         }
         return closestResourceCamp;
     }
-
 }
