@@ -72,7 +72,7 @@ public class Worker : MonoBehaviour
         navWorkerObstacle.enabled = false;
         yield return null;
         unit.EnableNavAgent(true);
-        unit.StopNavAgent();
+        //unit.StopNavAgent();
     }
 
     public IEnumerator CheckIfImmobileCo()
@@ -84,7 +84,6 @@ public class Worker : MonoBehaviour
 
     public IEnumerator StopWorkAction()
     {
-        yield return StartCoroutine(StopTaskCo()); // TO DO: Solve bug where workers lift and let down resource when stopping harvest action
         if (carriedResource.amount > 0)
         {
             if (unit.unitState == UnitState.working)
@@ -92,6 +91,7 @@ public class Worker : MonoBehaviour
             else
                 yield return StartCoroutine(LetDownDropResourceCo());
         }
+        yield return StartCoroutine(StopTaskCo());
     }
 
     private IEnumerator StartConstructionCo(GameObject underConstructionBuilding)
@@ -221,7 +221,7 @@ public class Worker : MonoBehaviour
                 thingInHand.gameObject.SetActive(true);
         }
 
-        while (Vector3.Distance(transform.position, resourceToGoTo.transform.position) > resourceToGoTo.collectDistance
+        while (resourceToGoTo != null && Vector3.Distance(transform.position, resourceToGoTo.transform.position) > resourceToGoTo.collectDistance
             && unit.target == resourceToGoTo.transform.position)
             yield return null;
 
@@ -372,17 +372,27 @@ public class Worker : MonoBehaviour
 
     private IEnumerator LetDownDropResourceCo(bool withAnimation = true)
     {
+        if(!withAnimation)
+            DropResource();
         yield return StartCoroutine(LetDownResourceCo(withAnimation));
-        DropResource();
+        if(withAnimation)
+            DropResource();
+
     }
 
     private IEnumerator PickUpResourceCo(ResourceDrop resourceDrop)
     {
-        if (resourceDrop == null)
+        if (resourceDrop == null || unit.target == resourceDrop.transform.position)
             yield break;
 
         if (carriedResource.amount > 0 && carriedResource.resourceInfo != resourceDrop.droppedResource.resourceInfo)
-            yield return StartCoroutine(LetDownDropResourceCo());
+        {
+            if (unit.unitState != UnitState.working)
+                yield return StartCoroutine(LetDownDropResourceCo(true));
+            else
+                yield return StartCoroutine(LetDownDropResourceCo(false));
+            // If we go from harvesting a field to targeting another (different type), we don't lift the current harvested resource, we just drop it
+        }
         carriedResource.resourceInfo = resourceDrop.droppedResource.resourceInfo;
 
         if (resourceDrop == null)
@@ -396,14 +406,23 @@ public class Worker : MonoBehaviour
             yield return null;
         onWayToTask = false;
 
-        if (resourceDrop == null || unit.target != resourceDrop.transform.position)
+        if (resourceDrop == null || unit.target != resourceDrop.transform.position || carriedResource.amount == unit.unitStats.carryCapactity)
             yield break;
 
         if (carriedResource.amount > 0)
             yield return LetDownResourceCo();
 
-        carriedResource.amount += resourceDrop.droppedResource.amount;
-        Destroy(resourceDrop.gameObject);
+        if (resourceDrop != null)
+        {
+            carriedResource.amount += resourceDrop.droppedResource.amount;
+            if (carriedResource.amount > unit.unitStats.carryCapactity)
+            {
+                resourceDrop.droppedResource.amount = carriedResource.amount - unit.unitStats.carryCapactity;
+                carriedResource.amount = unit.unitStats.carryCapactity;
+            }
+            else
+                Destroy(resourceDrop.gameObject);
+        }
 
         yield return StartCoroutine(LiftResourceCo());
     }
