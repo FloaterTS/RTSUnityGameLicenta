@@ -170,18 +170,23 @@ public class Worker : MonoBehaviour
 
         Vector3 currentUnitTarget = unit.target;
 
+        yield return StartCoroutine(CheckIfImmobileCo());
+
+        if (unit.target != currentUnitTarget)
+            yield break; // unit target changed while waiting to be free for current task => task no longer valid
+
         if (carriedResource.amount > 0 && carriedResource.resourceInfo != resourceToCollect.resourceInfo)
         {
             if (unit.unitState != UnitState.working)
                 yield return StartCoroutine(LetDownDropResourceCo(true));
             else
-                yield return StartCoroutine(LetDownDropResourceCo(false)); 
+                yield return StartCoroutine(LetDownDropResourceCo(false));
             // If we go from harvesting a field to targeting another (different type), we don't lift the current harvested resource, we just drop it
         }
         carriedResource.resourceInfo = resourceToCollect.resourceInfo;
 
-        if (currentUnitTarget != unit.target)
-            yield break; // unit target changed while waiting to be ready for current task => task no longer valid
+        if (unit.target != currentUnitTarget)
+            yield break; // unit target changed while getting ready for current task => task no longer valid
 
         if (resourceToCollect == null)
             yield break; // check to see if resource dissapeared while in animation state
@@ -203,7 +208,7 @@ public class Worker : MonoBehaviour
 
         ResourceCamp campStoredInto = FindClosestResourceCampByType(ResourceManager.ResourceRawToType(resourceToCollect.resourceInfo.resourceRaw));
         if (campStoredInto != null)
-            if (unit.target == campStoredInto.accessLocation && resourceToCollect != null)
+            if (unit.target == campStoredInto.accessLocation && resourceToCollect != null) //search for another field
                 CollectResource(resourceToCollect);
     }
 
@@ -372,10 +377,10 @@ public class Worker : MonoBehaviour
 
     private IEnumerator LetDownDropResourceCo(bool withAnimation = true)
     {
-        if(!withAnimation)
+        if (!withAnimation)
             DropResource();
         yield return StartCoroutine(LetDownResourceCo(withAnimation));
-        if(withAnimation)
+        if (withAnimation)
             DropResource();
 
     }

@@ -110,8 +110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resourceInfo: {fileID: 11400000, guid: 41aef8636866ade419342a4e4c134696, type: 2}
-  collectDistanceFromCollider: 0.35
-  collectDistance: 0
+  collectDistance: 1.35
   initialAmount: 175
   leftAmount: 0
 --- !u!208 &14781392

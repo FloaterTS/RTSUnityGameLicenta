@@ -95,7 +95,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.25
+  m_Radius: 1.4002106
   m_Center: {x: 0, y: 1.25, z: 0}
 --- !u!114 &1718262686
 MonoBehaviour:
@@ -110,8 +110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resourceInfo: {fileID: 11400000, guid: bc5f86b57fc1f1f46adcfa3e2f18fc75, type: 2}
-  collectDistanceFromCollider: -0.15
-  collectDistance: 0
+  collectDistance: 1.1
   initialAmount: 75
   leftAmount: 0
 --- !u!208 &453157405

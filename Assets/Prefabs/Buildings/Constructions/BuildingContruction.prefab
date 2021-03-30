@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 4031727784790756594}
   - component: {fileID: 4031727784792790161}
   - component: {fileID: 4031727784792790160}
+  - component: {fileID: -3714919863962961542}
+  - component: {fileID: 6849758801491857418}
   m_Layer: 10
   m_Name: BuildingContruction
   m_TagString: UnderConstruction
@@ -112,3 +114,30 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0.6, z: 0}
   m_TimeToStationary: 0.5
+--- !u!114 &-3714919863962961542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4031727784792691250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40ac5d67f86b0f44d9d0276953d57e6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildingStats: {fileID: 0}
+--- !u!114 &6849758801491857418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4031727784792691250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdace3f9e723da5448ea2455b5c7d97b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentBuildingsGO: {fileID: 0}
+  constructedBuildingPrefab: {fileID: 0}

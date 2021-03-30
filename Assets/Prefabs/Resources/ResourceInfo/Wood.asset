@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0bff8ab8eb28164698702ae0ad0a3c9, type: 3}
+  m_Name: Wood
+  m_EditorClassIdentifier: 
+  resourceType: 1
+  resourceRaw: 2
+  harvestAnimation: cutting
+  carryAnimation: carryingLight
+  carriedResourceName: Villager/root/B-hips/B-spine/B-chest/B-upperChest/B-shoulder_R/B-upper_arm_R/B-forearm_R/B-hand_R/Carried/LogPile
+  toolInHandName: Villager/root/B-hips/B-spine/B-chest/B-upperChest/B-shoulder_R/B-upper_arm_R/B-forearm_R/B-hand_R/Tools_R/LumberAxeBig
+  toolHarvestingName: Villager/root/B-hips/B-spine/B-chest/B-upperChest/B-shoulder_R/B-upper_arm_R/B-forearm_R/B-hand_R/Tools_R/LumberAxeBig
+  liftAnimationDuration: 2.2
+  dropAnimationDuration: 2.2
+  harvestTimePerUnit: 1
+  carrySpeed: 3
+  droppedResourcePrefab: {fileID: 5832075680587380271, guid: 7369f7387fa688d4095c202b908a83e3, type: 3}

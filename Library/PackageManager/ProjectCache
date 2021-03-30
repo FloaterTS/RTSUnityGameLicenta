@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637514460441490614
-    m_Hash: 2321603987
+      ticks: 637524874261106259
+    m_Hash: 341901154
   m_LockFileStatus:
     m_FilePath: D:/Unity Projects/Licenta 3D/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637514461083835455
-    m_Hash: 687061246
+      ticks: 637524874291582615
+    m_Hash: 2259575429
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_PackageAssets:
@@ -458,7 +458,7 @@ m_PackageAssets:
         version: 1.1.9
       resolvedDependencies:
       - name: com.unity.test-framework
-        version: 1.1.22
+        version: 1.1.24
       - name: com.unity.ext.nunit
         version: 1.0.6
       - name: com.unity.modules.imgui
@@ -555,12 +555,12 @@ m_PackageAssets:
         url: https://github.cds.internal.unity3d.com/unity/com.unity.ide.vscode.git
         revision: b5ec9b38109e52b1b26597d521e4df75e042ebb9
         path: 
-    - packageId: com.unity.postprocessing@2.3.0
+    - packageId: com.unity.postprocessing@3.0.3
       testable: 0
       isDirectDependency: 1
-      version: 2.3.0
+      version: 3.0.3
       source: 1
-      resolvedPath: D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.postprocessing@2.3.0
+      resolvedPath: D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.postprocessing@3.0.3
       assetPath: Packages/com.unity.postprocessing
       name: com.unity.postprocessing
       displayName: Post Processing
@@ -607,12 +607,20 @@ m_PackageAssets:
         - 2.2.2
         - 2.3.0
         - 3.0.1
+        - 3.0.3
+        - 3.1.0
         compatible:
         - 2.3.0
         - 3.0.1
-        verified: 3.0.1
-      dependencies: []
-      resolvedDependencies: []
+        - 3.0.3
+        - 3.1.0
+        verified: 3.0.3
+      dependencies:
+      - name: com.unity.modules.physics
+        version: 1.0.0
+      resolvedDependencies:
+      - name: com.unity.modules.physics
+        version: 1.0.0
       keywords: []
       registry:
         id: main
@@ -626,13 +634,13 @@ m_PackageAssets:
       entitlements:
         isAllowed: 1
       isAssetStorePackage: 0
-      datePublishedTicks: 637144563160000000
+      datePublishedTicks: 637496860130000000
       documentationUrl: 
       hasRepository: 1
       repository:
         type: git
-        url: git@github.com:Unity-Technologies/PostProcessing.git
-        revision: e6de985c41f04a5fc7c7227dd67e3e73fac834e7
+        url: git+https://github.com/Unity-Technologies/Graphics.git
+        revision: 267c9ab2b6aae8e296d78e27ca27af29b3bc7606
         path: 
     - packageId: com.unity.render-pipelines.universal@10.3.2
       testable: 0
@@ -689,8 +697,10 @@ m_PackageAssets:
         - 10.2.2
         - 10.3.1
         - 10.3.2
+        - 10.4.0
         compatible:
         - 10.3.2
+        - 10.4.0
         verified: 10.3.2
       dependencies:
       - name: com.unity.mathematics
@@ -733,20 +743,20 @@ m_PackageAssets:
       entitlements:
         isAllowed: 1
       isAssetStorePackage: 0
-      datePublishedTicks: 0
+      datePublishedTicks: 637502286510000000
       documentationUrl: 
       hasRepository: 1
       repository:
         type: git
-        url: https://github.com/Unity-Technologies/Graphics.git
+        url: git+https://github.com/Unity-Technologies/Graphics.git
         revision: 1342255ea41f4ab7910113c8dc207aecdfd4cf8e
         path: 
-    - packageId: com.unity.test-framework@1.1.22
+    - packageId: com.unity.test-framework@1.1.24
       testable: 0
       isDirectDependency: 1
-      version: 1.1.22
+      version: 1.1.24
       source: 1
-      resolvedPath: D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.test-framework@1.1.22
+      resolvedPath: D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.test-framework@1.1.24
       assetPath: Packages/com.unity.test-framework
       name: com.unity.test-framework
       displayName: Test Framework
@@ -788,9 +798,11 @@ m_PackageAssets:
         - 1.1.19
         - 1.1.20
         - 1.1.22
+        - 1.1.24
         compatible:
         - 1.1.22
-        verified: 1.1.22
+        - 1.1.24
+        verified: 1.1.24
       dependencies:
       - name: com.unity.ext.nunit
         version: 1.0.6
@@ -820,20 +832,20 @@ m_PackageAssets:
       entitlements:
         isAllowed: 1
       isAssetStorePackage: 0
-      datePublishedTicks: 637469345300000000
+      datePublishedTicks: 637505702940000000
       documentationUrl: 
       hasRepository: 1
       repository:
         type: git
         url: git+https://github.com/Unity-Technologies/com.unity.test-framework.git
-        revision: 56c667cbc326a1cbab8dfd7ebc693a1121d0abe1
+        revision: e6fe8892689398c0d9aba4587e0ba69edc3d82b8
         path: 
-    - packageId: com.unity.textmeshpro@3.0.3
+    - packageId: com.unity.textmeshpro@3.0.4
       testable: 0
       isDirectDependency: 1
-      version: 3.0.3
+      version: 3.0.4
       source: 1
-      resolvedPath: D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.textmeshpro@3.0.3
+      resolvedPath: D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.textmeshpro@3.0.4
       assetPath: Packages/com.unity.textmeshpro
       name: com.unity.textmeshpro
       displayName: TextMeshPro
@@ -971,20 +983,20 @@ m_PackageAssets:
       entitlements:
         isAllowed: 1
       isAssetStorePackage: 0
-      datePublishedTicks: 637394911680000000
+      datePublishedTicks: 637492944820000000
       documentationUrl: 
       hasRepository: 1
       repository:
         type: git
         url: https://github.cds.internal.unity3d.com/unity/com.unity.textmeshpro.git
-        revision: 648406226df6c4f28a0f64eaab42ddc3db70c475
+        revision: e2f8dffb26de9a130d5b2140d83891d9a7825330
         path: 
-    - packageId: com.unity.timeline@1.4.6
+    - packageId: com.unity.timeline@1.4.7
       testable: 0
       isDirectDependency: 1
-      version: 1.4.6
+      version: 1.4.7
       source: 1
-      resolvedPath: D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.timeline@1.4.6
+      resolvedPath: D:\Unity Projects\Licenta 3D\Library\PackageCache\com.unity.timeline@1.4.7
       assetPath: Packages/com.unity.timeline
       name: com.unity.timeline
       displayName: Timeline
@@ -1044,6 +1056,7 @@ m_PackageAssets:
         - 1.4.4
         - 1.4.5
         - 1.4.6
+        - 1.4.7
         - 1.5.0-pre.2
         - 1.5.0-preview.1
         - 1.5.0-preview.2
@@ -1054,9 +1067,12 @@ m_PackageAssets:
         - 1.5.1-pre.2
         - 1.5.1-pre.3
         - 1.5.2
+        - 1.5.4
         - 1.6.0-pre.1
+        - 1.6.0-pre.3
         compatible:
         - 1.4.6
+        - 1.4.7
         - 1.5.0-pre.2
         - 1.5.0-preview.1
         - 1.5.0-preview.2
@@ -1067,8 +1083,10 @@ m_PackageAssets:
         - 1.5.1-pre.2
         - 1.5.1-pre.3
         - 1.5.2
+        - 1.5.4
         - 1.6.0-pre.1
-        verified: 1.4.6
+        - 1.6.0-pre.3
+        verified: 1.4.7
       dependencies:
       - name: com.unity.modules.director
         version: 1.0.0
@@ -1105,13 +1123,13 @@ m_PackageAssets:
       entitlements:
         isAllowed: 1
       isAssetStorePackage: 0
-      datePublishedTicks: 637463150940000000
+      datePublishedTicks: 637516874380000000
       documentationUrl: 
       hasRepository: 1
       repository:
         type: git
         url: https://github.cds.internal.unity3d.com/unity/com.unity.timeline.git
-        revision: 2fe55e5d14362cc4fdcc886f56dbfe518298e4a5
+        revision: 66f96ddbbc76f565093e1e5e5d3d322d28acc7d7
         path: 
     - packageId: com.unity.ugui@1.0.0
       testable: 0
@@ -3165,8 +3183,10 @@ m_PackageAssets:
         - 10.2.2
         - 10.3.1
         - 10.3.2
+        - 10.4.0
         compatible:
         - 10.3.2
+        - 10.4.0
         verified: 10.3.2
       dependencies:
       - name: com.unity.ugui
@@ -3191,12 +3211,12 @@ m_PackageAssets:
       entitlements:
         isAllowed: 1
       isAssetStorePackage: 0
-      datePublishedTicks: 0
+      datePublishedTicks: 637502284870000000
       documentationUrl: 
       hasRepository: 1
       repository:
         type: git
-        url: https://github.com/Unity-Technologies/Graphics.git
+        url: git+https://github.com/Unity-Technologies/Graphics.git
         revision: 1342255ea41f4ab7910113c8dc207aecdfd4cf8e
         path: 
     - packageId: com.unity.shadergraph@10.3.2
@@ -3307,8 +3327,10 @@ m_PackageAssets:
         - 10.2.2
         - 10.3.1
         - 10.3.2
+        - 10.4.0
         compatible:
         - 10.3.2
+        - 10.4.0
         verified: 10.3.2
       dependencies:
       - name: com.unity.render-pipelines.core
@@ -3339,12 +3361,12 @@ m_PackageAssets:
       entitlements:
         isAllowed: 1
       isAssetStorePackage: 0
-      datePublishedTicks: 0
+      datePublishedTicks: 637502285180000000
       documentationUrl: 
       hasRepository: 1
       repository:
         type: git
-        url: https://github.com/Unity-Technologies/Graphics.git
+        url: git+https://github.com/Unity-Technologies/Graphics.git
         revision: 1342255ea41f4ab7910113c8dc207aecdfd4cf8e
         path: 
     - packageId: com.unity.2d.common@4.0.3
@@ -3462,6 +3484,7 @@ m_PackageAssets:
         - 4.2.0
         - 4.3.0
         - 4.3.1
+        - 4.3.2
         - 4.6.0-preview
         - 4.7.0-preview
         compatible:
@@ -3476,9 +3499,10 @@ m_PackageAssets:
         - 4.2.0
         - 4.3.0
         - 4.3.1
+        - 4.3.2
         - 4.6.0-preview
         - 4.7.0-preview
-        verified: 4.3.1
+        verified: 4.3.2
       dependencies: []
       resolvedDependencies: []
       keywords:

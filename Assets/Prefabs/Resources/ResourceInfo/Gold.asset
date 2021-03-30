@@ -16,7 +16,7 @@ MonoBehaviour:
   resourceRaw: 1
   harvestAnimation: mining
   carryAnimation: carryingHeavy
-  carriedResourceName: Villager/root/B-hips/B-spine/B-chest/B-upperChest/B-shoulder_R/B-upper_arm_R/B-forearm_R/B-hand_R/Carried/Gold
+  carriedResourceName: Villager/root/B-hips/B-spine/B-chest/B-upperChest/B-shoulder_R/B-upper_arm_R/B-forearm_R/B-hand_R/Carried/GoldOre
   toolInHandName: Villager/root/B-hips/B-spine/B-chest/B-upperChest/B-shoulder_R/B-upper_arm_R/B-forearm_R/B-hand_R/Tools_R/Pickaxe
   toolHarvestingName: Villager/root/B-hips/B-spine/B-chest/B-upperChest/B-shoulder_R/B-upper_arm_R/B-forearm_R/B-hand_R/Tools_R/Pickaxe
   liftAnimationDuration: 2.2
