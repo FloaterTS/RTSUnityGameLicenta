@@ -528,6 +528,7 @@ GameObject:
   - component: {fileID: 293999988}
   - component: {fileID: 293999990}
   - component: {fileID: 293999989}
+  - component: {fileID: 293999991}
   m_Layer: 5
   m_Name: MinimapRawImage
   m_TagString: Untagged
@@ -589,6 +590,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 293999987}
   m_CullTransparentMesh: 1
+--- !u!114 &293999991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 293999987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cd14483fe08d074289a2ed32d79bee3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  miniMapCam: {fileID: 1561754135}
 --- !u!1 &388753013
 GameObject:
   m_ObjectHideFlags: 0
@@ -13003,7 +13017,7 @@ GameObject:
   - component: {fileID: 1561754136}
   - component: {fileID: 1561754135}
   m_Layer: 0
-  m_Name: MinimapCamera
+  m_Name: Minimap Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

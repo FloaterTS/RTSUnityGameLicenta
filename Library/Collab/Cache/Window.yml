@@ -14,14 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SimpleSelectedItems:
     m_Keys:
-    - Assets/Prefabs/Buildings/BuildingStats/ResourceCamp.asset
+    - Assets/Art/Textures/Minimap/MinimapRenderTexture.renderTexture
     - Assets/Scenes/Main.unity
-    - Assets/Scripts/Managers/ConstructionManager.cs
-    - Assets/Scripts/Managers/ResourceManager.cs
-    - Assets/Scripts/Scriptable/BuildingStats.cs
+    - Assets/Scripts/Others/MiniMapClick.cs
+    - Assets/Scripts/Others/MiniMapClick.cs.meta
     - 
-    m_Values: 010101010101
-  RevisionSummary: Added wood resource
+    m_Values: 0101010101
+  RevisionSummary: Started adding minimap + fixed toolInHand bug
   ChangesSearchValue: 
   SelectedHistoryRevision: 
   HistoryPageNumber: 0
