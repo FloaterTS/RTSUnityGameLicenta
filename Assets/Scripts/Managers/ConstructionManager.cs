@@ -66,6 +66,9 @@ public class ConstructionManager : MonoBehaviour
         if (previewBuildingGO != null)
             Destroy(previewBuildingGO);
 
+        /*if (!DeductBuildingCostRequirements(underConstructionResourceCampPrefab.GetComponent<Building>().buildingStats.buildingCost))
+            return;*/
+
         previewBuildingGO = Instantiate(previewResourceCamp);
         previewBuildingGO.transform.eulerAngles = new Vector3(0f, FaceCameraInitialPreviewRotation(), 0f);
         previewPlacementValidity = previewBuildingGO.GetComponent<PlacementValidity>();
@@ -131,4 +134,26 @@ public class ConstructionManager : MonoBehaviour
             if(unit.worker != null)
                 unit.worker.StartConstruction(inConstructionBuildingGO);
     }
+
+    /*bool DeductBuildingCostRequirements(ResourceCost buildingCost)
+    {
+        if(ResourceManager.instance.currentFoodAmount >= buildingCost.foodCost)
+        {
+            if (ResourceManager.instance.currentWoodAmount >= buildingCost.woodCost)
+            {
+                if (ResourceManager.instance.currentGoldAmount >= buildingCost.goldCost)
+                {
+                    ResourceManager.instance.currentFoodAmount -= buildingCost.foodCost;
+                    ResourceManager.instance.currentWoodAmount -= buildingCost.woodCost;
+                    ResourceManager.instance.currentGoldAmount -= buildingCost.goldCost;
+                    return true;
+                }
+                // else show not enough gold
+            }
+            // else show not enough wood
+        }
+        // else show not enough food
+
+        return false;
+    }*/
 }

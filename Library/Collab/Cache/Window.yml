@@ -14,30 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SimpleSelectedItems:
     m_Keys:
-    - Assets/Art/Animations/AnimationControllers/Villager.controller
-    - Assets/Prefabs/Character/Units/PlayerVillager.prefab
-    - Assets/Prefabs/Resources/Carried/BasketBerries.prefab
-    - Assets/Prefabs/Resources/Carried/BasketBerries.prefab.meta
-    - Assets/Prefabs/Resources/Carried/BasketEmpty.prefab
-    - Assets/Prefabs/Resources/Carried/BasketEmpty.prefab.meta
-    - Assets/Prefabs/Resources/Carried/BasketVegetables.prefab
-    - Assets/Prefabs/Resources/Carried/BasketVegetables.prefab.meta
-    - Assets/Prefabs/Resources/Carried/LogPile.prefab
-    - Assets/Prefabs/Resources/Dropped/LogPileDropped.prefab
-    - Assets/Prefabs/Resources/Dropped/LogPileDropped.prefab.meta
-    - Assets/Prefabs/Resources/Fields/LumberWoodTree.prefab
-    - Assets/Prefabs/Resources/Fields/LumberWoodTree.prefab.meta
-    - Assets/Prefabs/Resources/ResourceInfo/Berries.asset
-    - Assets/Prefabs/Resources/ResourceInfo/Gold.asset
-    - Assets/Prefabs/Resources/ResourceInfo/Wood.asset
-    - Assets/Prefabs/Resources/Tools/Hammer.prefab
-    - Assets/Prefabs/Resources/Tools/VillagerAxeBig.prefab
-    - Assets/Prefabs/Resources/Tools/VillagerAxeBig.prefab.meta
+    - Assets/Prefabs/Buildings/BuildingStats/ResourceCamp.asset
     - Assets/Scenes/Main.unity
-    - Assets/Scripts/Units/Worker.cs
+    - Assets/Scripts/Managers/ConstructionManager.cs
+    - Assets/Scripts/Managers/ResourceManager.cs
+    - Assets/Scripts/Scriptable/BuildingStats.cs
     - 
-    m_Values: 01010101010101010101010101010101010101010101
-  RevisionSummary: 
+    m_Values: 010101010101
+  RevisionSummary: Added wood resource
   ChangesSearchValue: 
   SelectedHistoryRevision: 
   HistoryPageNumber: 0

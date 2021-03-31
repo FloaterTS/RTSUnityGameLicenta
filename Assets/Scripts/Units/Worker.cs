@@ -114,6 +114,15 @@ public class Worker : MonoBehaviour
         yield return StartCoroutine(unit.MoveToLocationCo(underConstructionBuilding.transform.position));
         onWayToTask = true;
 
+        if (carriedResource.amount == 0)
+        {
+            if (thingInHand != null)
+                thingInHand.gameObject.SetActive(false);
+            thingInHand = transform.Find(underConstructionBuilding.GetComponent<Building>().buildingStats.toolConstructionName);
+            if (thingInHand != null)
+                thingInHand.gameObject.SetActive(true);
+        }
+
         while (!constructionSiteReached && underConstructionBuilding != null && unit.target == underConstructionBuilding.transform.position)
             yield return null;
 
@@ -157,8 +166,8 @@ public class Worker : MonoBehaviour
         if (unit.target == underConstructionBuildingPosition)
             yield return StartCoroutine(StopTaskCo());
 
-        if (thingInHand != null)
-            thingInHand.gameObject.SetActive(false);
+        /*if (thingInHand != null)
+            thingInHand.gameObject.SetActive(false);*/
     }
 
     private IEnumerator CollectResourceCo(ResourceField resourceToCollect)
@@ -263,12 +272,12 @@ public class Worker : MonoBehaviour
             }
         }
 
-        if (thingInHand != null)
-            thingInHand.gameObject.SetActive(false);
-
-        //yield return StartCoroutine(StopTaskCo());
         if (carriedResource.amount > 0 && carriedResource.resourceInfo == resourceToHarvestInfo)
+        {
+            if (thingInHand != null)
+                thingInHand.gameObject.SetActive(false);
             yield return StartCoroutine(LiftResourceCo());
+        }
     }
 
     private IEnumerator StoreResourceCo(ResourceCamp resourceCamp)

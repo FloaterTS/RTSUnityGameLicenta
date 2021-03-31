@@ -18,6 +18,14 @@ public enum ResourceRaw
     Farm
 }
 
+[System.Serializable]
+public struct ResourceCost
+{
+    public int foodCost;
+    public int woodCost;
+    public int goldCost;
+}
+
 public struct CarriedResource
 {
     public int amount;
