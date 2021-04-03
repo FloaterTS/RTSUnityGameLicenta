@@ -14,13 +14,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SimpleSelectedItems:
     m_Keys:
-    - Assets/Art/Textures/Minimap/MinimapRenderTexture.renderTexture
+    - Assets/Art/Animations/AnimationClips/Villager/BasicMotions/Idle/Villager_Idle.fbx.meta
+    - Assets/Art/Animations/AnimationClips/Villager/BasicMotions/Idle/Villager_Idle01.fbx.meta
+    - Assets/Art/Animations/AnimationClips/Villager/BasicMotions/Idle/Villager_Idle02.fbx.meta
+    - Assets/Art/Animations/AnimationClips/Villager/BasicMotions/Idle/Villager_Idle03.fbx.meta
     - Assets/Scenes/Main.unity
-    - Assets/Scripts/Others/MiniMapClick.cs
-    - Assets/Scripts/Others/MiniMapClick.cs.meta
+    - Assets/Scripts/Managers/CameraController.cs
+    - Assets/Scripts/Managers/InteractionManager.cs
+    - Assets/Scripts/Managers/MinimapController.cs
+    - Assets/Scripts/Managers/MinimapController.cs.meta
+    - Packages/manifest.json
+    - Packages/packages-lock.json
+    - ProjectSettings/ProjectVersion.txt
     - 
-    m_Values: 0101010101
-  RevisionSummary: Started adding minimap + fixed toolInHand bug
+    m_Values: 00000000000000000000000000
+  RevisionSummary: 
   ChangesSearchValue: 
   SelectedHistoryRevision: 
   HistoryPageNumber: 0

@@ -2,6 +2,8 @@
 
 public class CameraController : MonoBehaviour
 {
+    public static CameraController instance;
+
     [Header("Movement Settings")]
     [SerializeField, Range(0f, 0.25f)]
     private float moveSmoothing = 0.075f;
@@ -46,6 +48,11 @@ public class CameraController : MonoBehaviour
 
     private void Start()
     {
+        if (instance == null)
+            instance = this;
+        else
+            Debug.LogError("Another Camera Controller already active.");
+
         desiredCameraPosition = transform.position;
         desiredCameraRotation = transform.rotation;
 
@@ -153,7 +160,7 @@ public class CameraController : MonoBehaviour
         if (rotationAngle == 0)
             return;
 
-        Vector3 screenCenter = GetScreenCenterPoint(); // Get current screen center
+        Vector3 screenCenter = GetScreenCenterPoint(); // Get current screen center point
         Quaternion desiredRotation = Quaternion.AngleAxis(rotationAngle, Vector3.up); // Get the desired rotation
         Vector3 directionDifference = desiredCameraPosition - screenCenter; // Find current direction relative to center
         directionDifference = desiredRotation * directionDifference; // Rotate the direction vector
@@ -169,6 +176,10 @@ public class CameraController : MonoBehaviour
 
         if (transform.rotation != desiredCameraRotation)
             transform.rotation = Quaternion.Lerp(transform.rotation, desiredCameraRotation, rotationSmoothing);
+
+        //We also rotate the minimap so that it will have the same rotation on the y axis as the main camera
+        if (MinimapController.instance.minimapCam.transform.rotation.y != transform.eulerAngles.y)
+            MinimapController.instance.RotateMinimap(transform.eulerAngles.y);
     }
 
     private void CheckBounds()
@@ -235,5 +246,22 @@ public class CameraController : MonoBehaviour
     public void ToggleMovementByMouse(bool movementByMouseActive)
     {
         movementByMouse = movementByMouseActive;
+    }
+
+    public void GoToPosition(float x, float z, bool zoomOutOnMove = false, float y = 0)
+    {
+        Vector3 screenCenterPoint = GetScreenCenterPoint(); // Get current screen center point
+        Vector3 centerDifferenceVector = transform.position - screenCenterPoint; // Find current center-to-camera vector
+
+        desiredCameraPosition.x = x;
+        desiredCameraPosition.z = z;
+        if (zoomOutOnMove)
+            desiredCameraPosition.y = maxHeight;
+        else if (y > 0)
+            desiredCameraPosition.y = y;
+
+        desiredCameraPosition.x += centerDifferenceVector.x;
+        desiredCameraPosition.z += centerDifferenceVector.z;
+        // Add or substract directionDifference from line 165 so the camera will be looking at the desired spot, not be directly above it
     }
 }

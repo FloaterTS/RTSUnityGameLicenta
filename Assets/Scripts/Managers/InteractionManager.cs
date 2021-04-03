@@ -22,7 +22,7 @@ public class InteractionManager : MonoBehaviour
         else
             Debug.LogError("Another unit interaction manager present.");
 
-        selectionManager = GetComponent<SelectionManager>();
+        selectionManager = SelectionManager.instance;
     }
 
     void Update()
@@ -32,63 +32,71 @@ public class InteractionManager : MonoBehaviour
 
         if (Input.GetMouseButtonDown(1))
         {
-            if (selectionManager.selectedUnits.Count > 0)
-                PerformInteraction();
+            CheckInteraction();
         }
     }
 
-    void PerformInteraction()
+    void CheckInteraction()
     {
-        Ray rayLocation = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(rayLocation, out RaycastHit hitLocation, 1000f, LayerMask.GetMask("Interactable", "Terrain")))
+        if (selectionManager.selectedUnits.Count > 0)
         {
-            if (hitLocation.collider.gameObject.CompareTag("Resource"))
+            Ray rayLocation = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(rayLocation, out RaycastHit hitLocation, 1000f, LayerMask.GetMask("Interactable", "Terrain")))
             {
-                ResourceField resource = hitLocation.collider.GetComponent<ResourceField>();
-                if (resource != null)
-                {
-                    foreach (Unit unit in selectionManager.selectedUnits)
-                        if (unit.worker != null)
-                            unit.worker.CollectResource(resource);
-                }
+                PerformInteraction(hitLocation);
             }
-            else if (hitLocation.collider.gameObject.CompareTag("ResourceCamp"))
-            {
-                ResourceCamp resourceCamp = hitLocation.collider.GetComponent<ResourceCamp>();
-                if (resourceCamp != null)
-                {
-                    foreach (Unit unit in selectionManager.selectedUnits)
-                        if (unit.worker != null)
-                            unit.worker.StoreResource(resourceCamp);
-                }
-            }
-            else if (hitLocation.collider.gameObject.CompareTag("ResourceDrop"))
-            {
-                ResourceDrop resourceDrop = hitLocation.collider.GetComponent<ResourceDrop>();
-                Unit closestUnit = selectionManager.ClosestUnitToSpot(hitLocation.point, true);
-                if(closestUnit != null)
-                    closestUnit.worker.PickUpResourceAction(resourceDrop);
-            }
-            else if(hitLocation.collider.gameObject.CompareTag("UnderConstruction"))
+        }
+    }
+
+    public void PerformInteraction(RaycastHit hitLocation)
+    {
+
+        if (hitLocation.collider.gameObject.CompareTag("Resource"))
+        {
+            ResourceField resource = hitLocation.collider.GetComponent<ResourceField>();
+            if (resource != null)
             {
                 foreach (Unit unit in selectionManager.selectedUnits)
                     if (unit.worker != null)
-                        unit.worker.StartConstruction(hitLocation.collider.gameObject);
+                        unit.worker.CollectResource(resource);
             }
-            else
+        }
+        else if (hitLocation.collider.gameObject.CompareTag("ResourceCamp"))
+        {
+            ResourceCamp resourceCamp = hitLocation.collider.GetComponent<ResourceCamp>();
+            if (resourceCamp != null)
             {
-                MoveToSpot(hitLocation);
+                foreach (Unit unit in selectionManager.selectedUnits)
+                    if (unit.worker != null)
+                        unit.worker.StoreResource(resourceCamp);
             }
+        }
+        else if (hitLocation.collider.gameObject.CompareTag("ResourceDrop"))
+        {
+            ResourceDrop resourceDrop = hitLocation.collider.GetComponent<ResourceDrop>();
+            Unit closestUnit = selectionManager.ClosestUnitToSpot(hitLocation.point, true);
+            if (closestUnit != null)
+                closestUnit.worker.PickUpResourceAction(resourceDrop);
+        }
+        else if (hitLocation.collider.gameObject.CompareTag("UnderConstruction"))
+        {
+            foreach (Unit unit in selectionManager.selectedUnits)
+                if (unit.worker != null)
+                    unit.worker.StartConstruction(hitLocation.collider.gameObject);
+        }
+        else
+        {
+            MoveToSpot(hitLocation.point);
         }
     }
 
 
-    void MoveToSpot(RaycastHit hitLocation)
+    void MoveToSpot(Vector3 spot)
     {
         if (selectionManager.selectedUnits.Count == 1)
-            selectionManager.selectedUnits[0].MoveToLocation(hitLocation.point);
+            selectionManager.selectedUnits[0].MoveToLocation(spot);
         else
-            MovementManager.instance.MoveInFormation(hitLocation.point);
+            MovementManager.instance.MoveInFormation(spot);
     }
 
 }

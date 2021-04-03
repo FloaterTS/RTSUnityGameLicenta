@@ -602,7 +602,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cd14483fe08d074289a2ed32d79bee3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  miniMapCam: {fileID: 1561754135}
+  minimapCam: {fileID: 1561754135}
 --- !u!1 &388753013
 GameObject:
   m_ObjectHideFlags: 0
