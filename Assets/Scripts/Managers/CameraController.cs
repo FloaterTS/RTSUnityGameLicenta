@@ -176,10 +176,6 @@ public class CameraController : MonoBehaviour
 
         if (transform.rotation != desiredCameraRotation)
             transform.rotation = Quaternion.Lerp(transform.rotation, desiredCameraRotation, rotationSmoothing);
-
-        //We also rotate the minimap so that it will have the same rotation on the y axis as the main camera
-        if (MinimapController.instance.minimapCam.transform.rotation.y != transform.eulerAngles.y)
-            MinimapController.instance.RotateMinimap(transform.eulerAngles.y);
     }
 
     private void CheckBounds()

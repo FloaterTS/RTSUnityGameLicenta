@@ -14,20 +14,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SimpleSelectedItems:
     m_Keys:
-    - Assets/Art/Animations/AnimationClips/Villager/BasicMotions/Idle/Villager_Idle.fbx.meta
-    - Assets/Art/Animations/AnimationClips/Villager/BasicMotions/Idle/Villager_Idle01.fbx.meta
-    - Assets/Art/Animations/AnimationClips/Villager/BasicMotions/Idle/Villager_Idle02.fbx.meta
-    - Assets/Art/Animations/AnimationClips/Villager/BasicMotions/Idle/Villager_Idle03.fbx.meta
+    - Assets/Art/Materials/Others.meta
+    - Assets/Art/Materials/Others/cameraOutlineMaterial.mat
+    - Assets/Art/Materials/Others/cameraOutlineMaterial.mat.meta
+    - Assets/Art/Materials/Terrain/Foliage.meta
+    - Assets/Art/Materials/Terrain/Foliage/forestpack_foliage.mat
+    - Assets/Art/Materials/Terrain/Foliage/forestpack_foliage.mat.meta
+    - Assets/Art/Materials/Terrain/SignAndBridge.meta
+    - Assets/Art/Materials/Terrain/SignAndBridge/forestpack_roadSignAndBridge.mat
+    - Assets/Art/Materials/Terrain/SignAndBridge/forestpack_roadSignAndBridge.mat.meta
+    - Assets/Art/Materials/Terrain/Stone.meta
+    - Assets/Art/Materials/Terrain/Stone/forestpack_stone.mat
+    - Assets/Art/Materials/Terrain/Stone/forestpack_stone.mat.meta
+    - Assets/Art/Materials/Terrain/Tree.meta
+    - Assets/Art/Materials/Terrain/Tree/forestpack_treeStumpAndRoot.mat
+    - Assets/Art/Materials/Terrain/Tree/forestpack_treeStumpAndRoot.mat.meta
+    - Assets/Art/Materials/Terrain/Tree/forestpack_tree_fir.mat
+    - Assets/Art/Materials/Terrain/Tree/forestpack_tree_fir.mat.meta
+    - Assets/Art/Materials/Terrain/Tree/forestpack_tree_leaf.mat
+    - Assets/Art/Materials/Terrain/Tree/forestpack_tree_leaf.mat.meta
+    - Assets/Art/Materials/TerrainHQ.meta
     - Assets/Scenes/Main.unity
     - Assets/Scripts/Managers/CameraController.cs
-    - Assets/Scripts/Managers/InteractionManager.cs
-    - Assets/Scripts/Managers/MinimapController.cs
-    - Assets/Scripts/Managers/MinimapController.cs.meta
-    - Packages/manifest.json
-    - Packages/packages-lock.json
-    - ProjectSettings/ProjectVersion.txt
+    - Assets/Scripts/Managers/MinimapCameraController.cs
+    - Assets/Scripts/Managers/MinimapCameraController.cs.meta
+    - Assets/Scripts/Managers/MinimapInteractionController.cs
+    - Assets/Scripts/Managers/MinimapInteractionController.cs.meta
     - 
-    m_Values: 00000000000000000000000000
+    m_Values: 000000000000000000000000000000000000000000000000000000
   RevisionSummary: 
   ChangesSearchValue: 
   SelectedHistoryRevision: 

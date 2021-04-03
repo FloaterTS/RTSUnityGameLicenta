@@ -62,7 +62,7 @@
     <Compile Include="Assets\Scripts\Units\Worker.cs" />
     <Compile Include="Assets\Scripts\Managers\CameraController.cs" />
     <Compile Include="Assets\Scripts\Units\Unit.cs" />
-    <Compile Include="Assets\Scripts\Managers\MinimapController.cs" />
+    <Compile Include="Assets\Scripts\Managers\MinimapInteractionController.cs" />
     <Compile Include="Assets\Scripts\Buildings\PlacementValidity.cs" />
     <Compile Include="Assets\Scripts\Others\ResourceField.cs" />
     <Compile Include="Assets\Tools\IKHelperTool\Old\Scripts\IKHelperToolSMBRemover.cs" />
@@ -86,6 +86,7 @@
     <Compile Include="Assets\Scripts\Scriptable\UnitStats.cs" />
     <Compile Include="Assets\Tools\IKHelperTool\Old\Scripts\IKHelperToolSequenceSMB.cs" />
     <Compile Include="Assets\Tools\IKHelperTool\Old\Scripts\IKHelperToolCustomInspector.cs" />
+    <Compile Include="Assets\Scripts\Managers\MinimapCameraController.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Tools\TextMesh Pro\Shaders\TMPro.cginc" />
