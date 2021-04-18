@@ -157,7 +157,7 @@ public class SelectionManager : MonoBehaviour
             }
             else //If we didn't hit a unit
             {
-                 // do I need this???
+                 // no hit
             }
         }
         UIManager.instance.UpdateSelectedInteractionUI();

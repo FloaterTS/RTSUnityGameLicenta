@@ -13,6 +13,8 @@ public class ResourceField : MonoBehaviour
     void Start()
     {
         leftAmount = initialAmount;
+
+        GameManager.instance.activeResourceFields.Add(this);
     }
 
     void Update()

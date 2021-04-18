@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
-enum InteractionPanelState
+public enum InteractionPanelState
 {
     None,
     Unit,
@@ -113,7 +113,7 @@ public class UIManager : MonoBehaviour
 
     // TO DO: use transition to state from unit panel to build panel to and use the functions from this script on button press?
 
-    void DisableCurrentInteractionPanel()
+    public void DisableCurrentInteractionPanel()
     {
         if (currentInteractionState == InteractionPanelState.None)
             return;
@@ -133,7 +133,7 @@ public class UIManager : MonoBehaviour
         return;
     }
 
-    void EnableInteractionPanel(InteractionPanelState newInteractionState)
+    public void EnableInteractionPanel(InteractionPanelState newInteractionState)
     {
         if (newInteractionState == InteractionPanelState.None)
             return;

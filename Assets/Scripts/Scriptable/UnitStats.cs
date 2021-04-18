@@ -9,10 +9,16 @@ public enum UnitSpeed
     carryHeavy
 }
 
+public enum UnitType
+{
+    villager
+}
+
 [CreateAssetMenu]
 public class UnitStats : ScriptableObject
 {
     public Team unitTeam;
+    public UnitType unitType;
     public string unitName;
     public float maxHealth;
     public float moveSpeed;

@@ -13094,7 +13094,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mapBaseCollider: {fileID: 978131960}
-  cameraBoxMat: {fileID: 2100000, guid: 00691295fe3fd1c4bb67f36981446017, type: 2}
+  cameraFrustumMat: {fileID: 2100000, guid: 00691295fe3fd1c4bb67f36981446017, type: 2}
+  cameraFrustumColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1588073806
 GameObject:
   m_ObjectHideFlags: 0

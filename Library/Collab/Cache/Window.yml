@@ -14,34 +14,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SimpleSelectedItems:
     m_Keys:
-    - Assets/Art/Materials/Others.meta
-    - Assets/Art/Materials/Others/cameraOutlineMaterial.mat
-    - Assets/Art/Materials/Others/cameraOutlineMaterial.mat.meta
-    - Assets/Art/Materials/Terrain/Foliage.meta
-    - Assets/Art/Materials/Terrain/Foliage/forestpack_foliage.mat
-    - Assets/Art/Materials/Terrain/Foliage/forestpack_foliage.mat.meta
-    - Assets/Art/Materials/Terrain/SignAndBridge.meta
-    - Assets/Art/Materials/Terrain/SignAndBridge/forestpack_roadSignAndBridge.mat
-    - Assets/Art/Materials/Terrain/SignAndBridge/forestpack_roadSignAndBridge.mat.meta
-    - Assets/Art/Materials/Terrain/Stone.meta
-    - Assets/Art/Materials/Terrain/Stone/forestpack_stone.mat
-    - Assets/Art/Materials/Terrain/Stone/forestpack_stone.mat.meta
-    - Assets/Art/Materials/Terrain/Tree.meta
-    - Assets/Art/Materials/Terrain/Tree/forestpack_treeStumpAndRoot.mat
-    - Assets/Art/Materials/Terrain/Tree/forestpack_treeStumpAndRoot.mat.meta
-    - Assets/Art/Materials/Terrain/Tree/forestpack_tree_fir.mat
-    - Assets/Art/Materials/Terrain/Tree/forestpack_tree_fir.mat.meta
-    - Assets/Art/Materials/Terrain/Tree/forestpack_tree_leaf.mat
-    - Assets/Art/Materials/Terrain/Tree/forestpack_tree_leaf.mat.meta
-    - Assets/Art/Materials/TerrainHQ.meta
-    - Assets/Scenes/Main.unity
-    - Assets/Scripts/Managers/CameraController.cs
-    - Assets/Scripts/Managers/MinimapCameraController.cs
-    - Assets/Scripts/Managers/MinimapCameraController.cs.meta
-    - Assets/Scripts/Managers/MinimapInteractionController.cs
-    - Assets/Scripts/Managers/MinimapInteractionController.cs.meta
+    - Assets/Art/Materials/Minimap.meta
+    - Assets/Art/Materials/Minimap/cameraOutlineMaterial.mat
+    - Assets/Art/Materials/Minimap/cameraOutlineMaterial.mat.meta
+    - Assets/Scripts/Buildings/Building.cs
+    - Assets/Scripts/Managers/Camera.meta
+    - Assets/Scripts/Managers/Camera/CameraController.cs
+    - Assets/Scripts/Managers/Camera/CameraController.cs.meta
+    - Assets/Scripts/Managers/Camera/MinimapCameraController.cs
+    - Assets/Scripts/Managers/Camera/MinimapCameraController.cs.meta
+    - Assets/Scripts/Managers/Camera/MinimapInteractionController.cs
+    - Assets/Scripts/Managers/Camera/MinimapInteractionController.cs.meta
+    - Assets/Scripts/Managers/GameManager.cs
+    - Assets/Scripts/Managers/SaveSystem.meta
+    - Assets/Scripts/Managers/SaveSystem/GamePrefsManager.cs
+    - Assets/Scripts/Managers/SaveSystem/GamePrefsManager.cs.meta
+    - Assets/Scripts/Managers/SaveSystem/GameSaveData.cs
+    - Assets/Scripts/Managers/SaveSystem/GameSaveData.cs.meta
+    - Assets/Scripts/Managers/SaveSystem/SaveLoadSystem.cs
+    - Assets/Scripts/Managers/SaveSystem/SaveLoadSystem.cs.meta
+    - Assets/Scripts/Others/ResourceDrop.cs
+    - Assets/Scripts/Others/ResourceField.cs
+    - Assets/Scripts/Scriptable/BuildingStats.cs
+    - Assets/Scripts/Scriptable/UnitStats.cs
+    - Assets/Scripts/Units/Unit.cs
+    - Assets/Scripts/Units/Worker.cs
     - 
-    m_Values: 000000000000000000000000000000000000000000000000000000
+    m_Values: 0000000000000000000000000000000000000000000000000000
   RevisionSummary: 
   ChangesSearchValue: 
   SelectedHistoryRevision: 

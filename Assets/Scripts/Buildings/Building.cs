@@ -15,6 +15,8 @@ public class Building : MonoBehaviour
 
         if (buildingStats.buildingTeam == Team.Player)
             selectedArea = transform.Find("Selected");
+
+        GameManager.instance.activeBuildings.Add(this);
     }
 
     public void SetSelected(bool isSelected)

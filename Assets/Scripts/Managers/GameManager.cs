@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 public enum Team
 {
@@ -17,31 +19,30 @@ public class GameManager : MonoBehaviour
     public UnitStats[] unitStatsList;
     public BuildingStats[] buildingStatsList;
 
-    private bool isPaused = false;
-    private SelectionManager unitSelection;
-    private MovementManager unitMovement;
-    private InteractionManager unitInteraction;
-    private ResourceManager resourceManager;
-    private UIManager uiManager;
+    public List<Unit> activeUnits;
+    public List<Building> activeBuildings;
+    public List<ResourceField> activeResourceFields;
+    public List<ResourceDrop> activeResourceDrops;
 
-    void Start()
+    private bool isPaused = false;
+
+    void Awake()
     {
         if (instance == null)
             instance = this;
         else
             Debug.LogError("Another game manager present.");
 
-        unitSelection = GetComponent<SelectionManager>();
-        unitMovement = GetComponent<MovementManager>();
-        unitInteraction = GetComponent<InteractionManager>();
-        resourceManager = GetComponent<ResourceManager>();
-        uiManager = GetComponent<UIManager>();
-
         foreach (UnitStats unitStats in unitStatsList)
             unitStats.ResetStats();
 
         foreach (BuildingStats buildingStats in buildingStatsList)
             buildingStats.ResetStats();
+
+        activeUnits = new List<Unit>();
+        activeBuildings = new List<Building>();
+        activeResourceFields = new List<ResourceField>();
+        activeResourceDrops = new List<ResourceDrop>();
     }
 
     public void PauseGameState()

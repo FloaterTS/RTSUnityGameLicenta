@@ -5,11 +5,12 @@ using UnityEngine.AI;
 [RequireComponent(typeof(Unit))]
 public class Worker : MonoBehaviour
 {
+    public CarriedResource carriedResource;
+
     private Unit unit;
     private Animator animator;
     private Transform thingInHand;
     private NavMeshObstacle navWorkerObstacle;
-    private CarriedResource carriedResource;
     private bool onWayToTask = false;
     private bool constructionSiteReached = false;
     private bool immobile = false;

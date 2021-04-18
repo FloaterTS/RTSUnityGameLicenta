@@ -1,9 +1,16 @@
 ﻿using UnityEngine;
 
+public enum BuildingType
+{
+    resourceCampConstruction,
+    resourceCamp
+}
+
 [CreateAssetMenu]
 public class BuildingStats : ScriptableObject
 {
     public Team buildingTeam;
+    public BuildingType buildingType;
     public string buildingName;
     public string toolConstructionName;
     public int maxHitPoints;

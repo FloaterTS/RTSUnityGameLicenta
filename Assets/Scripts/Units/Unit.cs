@@ -38,6 +38,8 @@ public class Unit : MonoBehaviour
             selectedArea = transform.Find("Selected").gameObject;
 
         unitState = UnitState.idle;
+
+        GameManager.instance.activeUnits.Add(this);
     }
 
     private void Update()
