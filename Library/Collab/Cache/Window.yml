@@ -14,33 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SimpleSelectedItems:
     m_Keys:
-    - Assets/Art/Materials/Minimap.meta
-    - Assets/Art/Materials/Minimap/cameraOutlineMaterial.mat
-    - Assets/Art/Materials/Minimap/cameraOutlineMaterial.mat.meta
-    - Assets/Scripts/Buildings/Building.cs
-    - Assets/Scripts/Managers/Camera.meta
+    - Assets/Scenes/Main.unity
     - Assets/Scripts/Managers/Camera/CameraController.cs
-    - Assets/Scripts/Managers/Camera/CameraController.cs.meta
     - Assets/Scripts/Managers/Camera/MinimapCameraController.cs
-    - Assets/Scripts/Managers/Camera/MinimapCameraController.cs.meta
     - Assets/Scripts/Managers/Camera/MinimapInteractionController.cs
-    - Assets/Scripts/Managers/Camera/MinimapInteractionController.cs.meta
+    - Assets/Scripts/Managers/ConstructionManager.cs
     - Assets/Scripts/Managers/GameManager.cs
-    - Assets/Scripts/Managers/SaveSystem.meta
+    - Assets/Scripts/Managers/InteractionManager.cs
+    - Assets/Scripts/Managers/MovementManager.cs
     - Assets/Scripts/Managers/SaveSystem/GamePrefsManager.cs
-    - Assets/Scripts/Managers/SaveSystem/GamePrefsManager.cs.meta
-    - Assets/Scripts/Managers/SaveSystem/GameSaveData.cs
-    - Assets/Scripts/Managers/SaveSystem/GameSaveData.cs.meta
-    - Assets/Scripts/Managers/SaveSystem/SaveLoadSystem.cs
-    - Assets/Scripts/Managers/SaveSystem/SaveLoadSystem.cs.meta
-    - Assets/Scripts/Others/ResourceDrop.cs
-    - Assets/Scripts/Others/ResourceField.cs
-    - Assets/Scripts/Scriptable/BuildingStats.cs
-    - Assets/Scripts/Scriptable/UnitStats.cs
-    - Assets/Scripts/Units/Unit.cs
-    - Assets/Scripts/Units/Worker.cs
+    - Assets/Scripts/Managers/SelectionManager.cs
+    - Assets/Scripts/Managers/UIManager.cs
     - 
-    m_Values: 0000000000000000000000000000000000000000000000000000
+    m_Values: 000000000000000000000000
   RevisionSummary: 
   ChangesSearchValue: 
   SelectedHistoryRevision: 

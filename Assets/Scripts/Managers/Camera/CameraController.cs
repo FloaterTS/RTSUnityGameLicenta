@@ -41,12 +41,12 @@ public class CameraController : MonoBehaviour
     [Header("Other Settings")]
     [SerializeField, Range(45f, 90f)]
     private float camXRotation = 60f;
-    [SerializeField, Range(45f, 60f)]
+    [SerializeField, Range(45f, 75f)]
     private float camFieldOfView = 60f;
     [SerializeField] private bool lockMouseCursor = true;
 
 
-    private void Start()
+    private void Awake()
     {
         if (instance == null)
             instance = this;
@@ -62,7 +62,7 @@ public class CameraController : MonoBehaviour
 
         AdjustXRotation(camXRotation);
         AdjustFieldOfView(camFieldOfView);
-        AdjustSnapRotation(snapRotation);
+        ToggleSnapRotation(snapRotation);
 
         if (lockMouseCursor)
             Cursor.lockState = CursorLockMode.Confined;
@@ -231,7 +231,7 @@ public class CameraController : MonoBehaviour
         desiredCameraRotation = Quaternion.Euler(camXRotation, desiredCameraRotation.eulerAngles.y, desiredCameraRotation.eulerAngles.z);
     }
 
-    public void AdjustSnapRotation(bool snapRotationActive)
+    public void ToggleSnapRotation(bool snapRotationActive)
     {
         if (snapRotationActive)
             desiredCameraRotation = Quaternion.Euler(desiredCameraRotation.eulerAngles.x, 0f, desiredCameraRotation.eulerAngles.z);

@@ -9,14 +9,16 @@ public class MinimapInteractionController : MonoBehaviour, IPointerClickHandler
 
     public Camera minimapCam; // we keep the minimap camera component here
 
-
-    private void Start()
+    private void Awake()
     {
         if (instance == null)
             instance = this;
         else
-            Debug.LogError("Another minimap controller is already active");
+            Debug.LogError("Another minimap interaction controller is already active");
+    }
 
+    private void Start()
+    {
         minimapCam = MinimapCameraController.instance.gameObject.GetComponent<Camera>();
     }
 

@@ -27,14 +27,16 @@ public class MovementManager : MonoBehaviour
     private bool startFromMiddleColumn = false;  // change for formation movement tuning
 
 
-
-    void Start()
+    private void Awake()
     {
         if (instance == null)
             instance = this;
         else
             Debug.LogError("Another unit movement manager present.");
+    }
 
+    void Start()
+    {
         unitSelection = GetComponent<SelectionManager>();
         groundTerrain = GetComponent<GameManager>().mainTerrain;
     }

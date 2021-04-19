@@ -32,7 +32,7 @@ public class SelectionManager : MonoBehaviour
     private bool doubleClicked = false;
 
 
-    void Start()
+    void Awake()
     {
         if (instance == null)
             instance = this;

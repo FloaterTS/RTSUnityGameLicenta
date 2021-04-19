@@ -19,7 +19,7 @@ public class ConstructionManager : MonoBehaviour
     private readonly float snapRotationDegrees = 45f;
     private bool isPreviewingBuildingConstruction = false;
 
-    void Start()
+    void Awake()
     {
         if (instance == null)
             instance = this;

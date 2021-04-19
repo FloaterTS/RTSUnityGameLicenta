@@ -14,14 +14,16 @@ public class MinimapCameraController : MonoBehaviour
 
     private Vector3 topLeftFrustumCorner, topRightFrustumCorner, bottomLeftFrustumCorner, bottomRightFrustumCorner;
 
-
-    private void Start()
+    private void Awake()
     {
         if (instance == null)
             instance = this;
         else
-            Debug.LogError("Another minimap controller is already active");
+            Debug.LogError("Another minimap camera controller is already active");
+    }
 
+    private void Start()
+    {
         minimapCam = GetComponent<Camera>();
 
         cameraFrustumMat.color = cameraFrustumColor;

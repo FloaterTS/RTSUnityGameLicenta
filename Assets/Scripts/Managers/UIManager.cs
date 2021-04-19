@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
-public enum InteractionPanelState
+enum InteractionPanelState
 {
     None,
     Unit,
@@ -29,13 +29,16 @@ public class UIManager : MonoBehaviour
     public GameObject campInteractionPanel;
     InteractionPanelState currentInteractionState;
 
-    void Start()
+    private void Awake()
     {
         if (instance == null)
             instance = this;
         else
             Debug.LogError("Another UI manager present.");
+    }
 
+    private void Start()
+    {
         currentInteractionState = InteractionPanelState.None;
 
         Destroy(Instantiate(fadeUncoverPanel), 1f);
@@ -113,7 +116,7 @@ public class UIManager : MonoBehaviour
 
     // TO DO: use transition to state from unit panel to build panel to and use the functions from this script on button press?
 
-    public void DisableCurrentInteractionPanel()
+    void DisableCurrentInteractionPanel()
     {
         if (currentInteractionState == InteractionPanelState.None)
             return;
@@ -133,7 +136,7 @@ public class UIManager : MonoBehaviour
         return;
     }
 
-    public void EnableInteractionPanel(InteractionPanelState newInteractionState)
+    void EnableInteractionPanel(InteractionPanelState newInteractionState)
     {
         if (newInteractionState == InteractionPanelState.None)
             return;
@@ -170,5 +173,29 @@ public class UIManager : MonoBehaviour
     {
         foreach (Unit unit in SelectionManager.instance.selectedUnits)
             unit.StopAction();
+    }
+
+    public void AdjustCameraXRotationSetting(float valueXRotation)
+    {
+        CameraController.instance.AdjustXRotation(valueXRotation);
+        GamePrefsManager.instance.SaveCameraXRotationPref(valueXRotation);
+    }
+
+    public void AdjustCameraFOVSetting(float valueFOV)
+    {
+        CameraController.instance.AdjustFieldOfView(valueFOV);
+        GamePrefsManager.instance.SaveCameraFieldOfViewPref(valueFOV);
+    }
+
+    public void ToggleCameraSnapRotationSetting(bool snapRotationActive)
+    {
+        CameraController.instance.ToggleSnapRotation(snapRotationActive);
+        GamePrefsManager.instance.SaveCameraSnapRotationPref(snapRotationActive);
+    }
+
+    public void ToggleCameraMouseMovementSetting(bool movementByMouseActive)
+    {
+        CameraController.instance.ToggleMovementByMouse(movementByMouseActive);
+        GamePrefsManager.instance.SaveCameraMovementByMousePref(movementByMouseActive);
     }
 }

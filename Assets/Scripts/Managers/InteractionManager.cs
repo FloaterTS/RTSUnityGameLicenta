@@ -14,14 +14,16 @@ public class InteractionManager : MonoBehaviour
 
     private SelectionManager selectionManager;
 
-
-    void Start()
+    private void Awake()
     {
         if (instance == null)
             instance = this;
         else
             Debug.LogError("Another unit interaction manager present.");
+    }
 
+    void Start()
+    {
         selectionManager = SelectionManager.instance;
     }
 

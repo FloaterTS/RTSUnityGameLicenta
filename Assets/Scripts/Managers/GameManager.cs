@@ -61,4 +61,23 @@ public class GameManager : MonoBehaviour
     {
         return isPaused;
     }
+
+    public void ClearSceneEntities()
+    {
+        foreach(Unit unit in activeUnits)
+            Destroy(unit.gameObject);
+        activeUnits.Clear();
+
+        foreach (Building building in activeBuildings)
+            Destroy(building.gameObject);
+        activeBuildings.Clear();
+
+        foreach (ResourceField resourceField in activeResourceFields)
+            Destroy(resourceField.gameObject);
+        activeResourceFields.Clear();
+
+        foreach (ResourceDrop resourceDrop in activeResourceDrops)
+            Destroy(resourceDrop.gameObject);
+        activeResourceDrops.Clear();
+    }
 }
