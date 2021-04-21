@@ -60,6 +60,11 @@ public class Unit : MonoBehaviour
         }
     }
 
+    public float GetHealth()
+    {
+        return currentHealth;
+    }
+
     public void MoveToLocation(Vector3 targetPosition)
     {
         StartCoroutine(MoveToLocationCo(targetPosition));
@@ -74,7 +79,7 @@ public class Unit : MonoBehaviour
 
         if (worker != null)
         {
-            if (unitState == UnitState.working)
+            if (unitState == UnitState.working || !navAgent.enabled)
                 yield return StartCoroutine(worker.StopTaskCo());
             yield return StartCoroutine(worker.CheckIfImmobileCo());
             if (targetPosition != target)
@@ -162,4 +167,13 @@ public class Unit : MonoBehaviour
         StopNavAgent();
     }
 
+    public float GetCurrentHealth()
+    {
+        return currentHealth;
+    }
+
+    public void SetCurrentHealth(float newHealth)
+    {
+        currentHealth = newHealth;
+    }
 }

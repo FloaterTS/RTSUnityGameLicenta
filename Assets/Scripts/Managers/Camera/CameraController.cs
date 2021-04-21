@@ -60,9 +60,9 @@ public class CameraController : MonoBehaviour
         terrainPosition = terrainToHoverOver.transform.position;
         terrainSize = terrainToHoverOver.terrainData.size;
 
-        AdjustXRotation(camXRotation);
         AdjustFieldOfView(camFieldOfView);
-        ToggleSnapRotation(snapRotation);
+        AdjustXRotation(camXRotation, true);
+        ToggleSnapRotation(snapRotation, true);
 
         if (lockMouseCursor)
             Cursor.lockState = CursorLockMode.Confined;
@@ -225,18 +225,24 @@ public class CameraController : MonoBehaviour
         Camera.main.fieldOfView = camFieldOfView;
     }
 
-    public void AdjustXRotation(float valueXRotation)
+    public void AdjustXRotation(float valueXRotation, bool instant = false)
     {
         camXRotation = valueXRotation;
         desiredCameraRotation = Quaternion.Euler(camXRotation, desiredCameraRotation.eulerAngles.y, desiredCameraRotation.eulerAngles.z);
+
+        if (instant)
+            transform.rotation = desiredCameraRotation;
     }
 
-    public void ToggleSnapRotation(bool snapRotationActive)
+    public void ToggleSnapRotation(bool snapRotationActive, bool instant = false)
     {
-        if (snapRotationActive)
+        if (snapRotationActive && desiredCameraRotation.eulerAngles.y % snapDegreeValue != 0)
             desiredCameraRotation = Quaternion.Euler(desiredCameraRotation.eulerAngles.x, 0f, desiredCameraRotation.eulerAngles.z);
 
         snapRotation = snapRotationActive;
+
+        if (instant)
+            transform.rotation = desiredCameraRotation;
     }
 
     public void ToggleMovementByMouse(bool movementByMouseActive)
@@ -244,7 +250,7 @@ public class CameraController : MonoBehaviour
         movementByMouse = movementByMouseActive;
     }
 
-    public void GoToPosition(float x, float z, bool zoomOutOnMove = false, float y = 0)
+    public void MoveCameraToPosition(float x, float z, bool zoomOutOnMove = false, float y = 0)
     {
         Vector3 screenCenterPoint = GetScreenCenterPoint(); // Get current screen center point
         Vector3 centerDifferenceVector = transform.position - screenCenterPoint; // Find current center-to-camera vector
@@ -258,7 +264,18 @@ public class CameraController : MonoBehaviour
 
         desiredCameraPosition.x += centerDifferenceVector.x;
         desiredCameraPosition.z += centerDifferenceVector.z;
-        // Add or substract directionDifference from line 165 so the camera will be looking at the desired spot, not be directly above it
+    }
+
+    public void SetCameraPositionAndRotation(Vector3 position, float yRotationDegrees)
+    {
+        if (snapRotation && yRotationDegrees % snapDegreeValue != 0)
+            yRotationDegrees = 0;
+
+        desiredCameraPosition = position;
+        desiredCameraRotation = Quaternion.Euler(desiredCameraRotation.eulerAngles.x, yRotationDegrees, desiredCameraRotation.eulerAngles.z);
+
+        transform.position = desiredCameraPosition;
+        transform.rotation = desiredCameraRotation;
     }
 
     public Vector3 GetCurrentDesiredCameraPosition()

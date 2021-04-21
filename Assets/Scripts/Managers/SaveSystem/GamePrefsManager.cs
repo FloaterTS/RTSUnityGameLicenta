@@ -73,7 +73,7 @@ public class GamePrefsManager : MonoBehaviour
         if (cameraXRotationSlider != null)
         {
             cameraXRotationSlider.value = cameraXRot;
-            UIManager.instance.AdjustCameraXRotationSetting(cameraXRot);
+            CameraController.instance.AdjustXRotation(cameraXRot, true);
         }
         else
             Debug.LogError("Camera X rotation slider reference not assigned!");
@@ -90,7 +90,7 @@ public class GamePrefsManager : MonoBehaviour
         if (cameraFOVSlider != null)
         {
             cameraFOVSlider.value = cameraFOV;
-            UIManager.instance.AdjustCameraFOVSetting(cameraFOV);
+            CameraController.instance.AdjustFieldOfView(cameraFOV);
         }
         else
             Debug.LogError("Camera FOV slider reference not assigned!");
@@ -107,7 +107,7 @@ public class GamePrefsManager : MonoBehaviour
         if (cameraSnapRotationToggle != null)
         {
             cameraSnapRotationToggle.isOn = cameraSnapRot;
-            UIManager.instance.ToggleCameraSnapRotationSetting(cameraSnapRot);
+            CameraController.instance.ToggleSnapRotation(cameraSnapRot);
         }
         else
             Debug.LogError("Camera snap rotation toggle reference not assigned!");
@@ -124,7 +124,7 @@ public class GamePrefsManager : MonoBehaviour
         if (cameraMouseMovementToggle != null)
         {
             cameraMouseMovementToggle.isOn = cameraMouseMovement;
-            UIManager.instance.ToggleCameraMouseMovementSetting(cameraMouseMovement);
+            CameraController.instance.ToggleMovementByMouse(cameraMouseMovement);
         }
         else
             Debug.LogError("Camera mouse movement toggle reference not assigned!");

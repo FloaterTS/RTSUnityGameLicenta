@@ -47,6 +47,14 @@ public class UIManager : MonoBehaviour
     private void Update()
     {
         UpdateResourceText();
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (GameManager.instance.isPaused)
+                UnPauseGameTab();
+            else
+                PauseGameTab();
+        }  
     }
 
     private void UpdateResourceText()
@@ -197,5 +205,18 @@ public class UIManager : MonoBehaviour
     {
         CameraController.instance.ToggleMovementByMouse(movementByMouseActive);
         GamePrefsManager.instance.SaveCameraMovementByMousePref(movementByMouseActive);
+    }
+
+    public void QuickSaveButton()
+    {
+        SaveLoadSystem.instance.SaveGame();
+    }
+
+    public void QuickLoadButton()
+    {
+        if (SaveLoadSystem.instance.saveFileExists.saveToBeLoaded)
+            SaveLoadSystem.instance.LoadGame();
+        else
+            Debug.Log("No save file saved."); // Alert to player screen
     }
 }

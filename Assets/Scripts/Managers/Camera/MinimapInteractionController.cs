@@ -49,7 +49,7 @@ public class MinimapInteractionController : MonoBehaviour, IPointerClickHandler
         {
             if (mouseButton == InputButton.Left)
             {
-                CameraController.instance.GoToPosition(minimapHit.point.x, minimapHit.point.z, true);
+                CameraController.instance.MoveCameraToPosition(minimapHit.point.x, minimapHit.point.z, true);
             }
             else if (mouseButton == InputButton.Right)
             {

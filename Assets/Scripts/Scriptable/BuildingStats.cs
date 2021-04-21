@@ -2,7 +2,6 @@
 
 public enum BuildingType
 {
-    resourceCampConstruction,
     resourceCamp
 }
 

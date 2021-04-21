@@ -24,7 +24,8 @@ public class GameManager : MonoBehaviour
     public List<ResourceField> activeResourceFields;
     public List<ResourceDrop> activeResourceDrops;
 
-    private bool isPaused = false;
+    [HideInInspector]
+    public bool isPaused = false;
 
     void Awake()
     {

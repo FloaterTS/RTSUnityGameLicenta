@@ -7,7 +7,6 @@ public class ConstructionManager : MonoBehaviour
 {
     public static ConstructionManager instance;
 
-    [SerializeField] private GameObject playerBuildingsParent;
     [SerializeField] private GameObject previewResourceCamp;
     [SerializeField] private GameObject underConstructionResourceCampPrefab;
     [SerializeField] private GameObject constructedResourceCampPrefab;
@@ -123,10 +122,9 @@ public class ConstructionManager : MonoBehaviour
 
     private void StartConstructionForSelection()
     {
-        GameObject inConstructionBuildingGO = Instantiate(underConstructionBuildingPrefab, previewBuildingGO.transform.position, previewBuildingGO.transform.rotation, playerBuildingsParent.transform);
+        GameObject inConstructionBuildingGO = Instantiate(underConstructionBuildingPrefab, previewBuildingGO.transform.position, previewBuildingGO.transform.rotation, PrefabManager.instance.buildingsTransformParentGO.transform);
         UnderConstruction underConstruction = inConstructionBuildingGO.GetComponent<UnderConstruction>();
         underConstruction.constructedBuildingPrefab = constructedBuildingPrefab;
-        underConstruction.parentBuildingsGO = playerBuildingsParent;
 
         StopPreviewBuildingGO();
 

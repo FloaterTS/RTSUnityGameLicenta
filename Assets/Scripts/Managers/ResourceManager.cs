@@ -26,6 +26,7 @@ public struct ResourceCost
     public int goldCost;
 }
 
+[System.Serializable]
 public struct CarriedResource
 {
     public int amount;

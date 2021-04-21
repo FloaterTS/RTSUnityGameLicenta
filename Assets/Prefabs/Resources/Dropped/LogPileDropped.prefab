@@ -108,4 +108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 909e1c164b3564a46a9d48ebc46506f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  droppedResource:
+    amount: 0
+    resourceInfo: {fileID: 11400000, guid: 5e9dc06090410d3469685143aa69f28c, type: 2}
   pickupDistance: 0.4

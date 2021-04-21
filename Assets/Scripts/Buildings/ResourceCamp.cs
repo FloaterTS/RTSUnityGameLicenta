@@ -39,7 +39,7 @@ public class ResourceCamp : MonoBehaviour
         if (campType == ResourceType.None)
             AssignCampType(resourceType);
         else if (campType != resourceType)
-            Debug.LogError("Error: Trying to store resource to different type camp!");
+            Debug.LogError("Error: Trying to store resource " + resourceType + " to camp of type: " + campType);
 
         amountStored += amount;
     }
@@ -113,6 +113,8 @@ public class ResourceCamp : MonoBehaviour
             case ResourceType.Wood:
                 transform.Find(woodStuffName).gameObject.SetActive(false);
                 break;
+            default:
+                return;
         }
         campType = ResourceType.None;
     }

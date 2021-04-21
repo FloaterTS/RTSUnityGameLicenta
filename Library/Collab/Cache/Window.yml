@@ -14,19 +14,51 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SimpleSelectedItems:
     m_Keys:
+    - Assets/Art/Animations/AnimationClips/UI/PauseFadeIn.anim
+    - Assets/Art/Animations/AnimationClips/UI/PauseFadeOut.anim
+    - Assets/Prefabs/Buildings/BuildingStats/PlayerResourceCamp.asset
+    - Assets/Prefabs/Buildings/BuildingStats/ResourceCamp.asset
+    - Assets/Prefabs/Buildings/Buildings/ResourceCamp.prefab
+    - Assets/Prefabs/Character/Units/Villager.prefab
+    - Assets/Prefabs/Character/Units/Villager.prefab.meta
+    - Assets/Prefabs/Resources/Dropped/BerriesDropped.prefab
+    - Assets/Prefabs/Resources/Dropped/GoldDropped.prefab
+    - Assets/Prefabs/Resources/Dropped/LogPileDropped.prefab
+    - Assets/Prefabs/Resources/Fields/BerryBushes_Large.prefab
+    - Assets/Prefabs/Resources/Fields/GoldOre.prefab
+    - Assets/Prefabs/Resources/Fields/LumberWoodTree.prefab
+    - Assets/Prefabs/UI/Canvases/Pause Menu Canvas.prefab
     - Assets/Scenes/Main.unity
+    - Assets/Scripts/Buildings/Building.cs
+    - Assets/Scripts/Buildings/ResourceCamp.cs
+    - Assets/Scripts/Buildings/UnderConstruction.cs
     - Assets/Scripts/Managers/Camera/CameraController.cs
-    - Assets/Scripts/Managers/Camera/MinimapCameraController.cs
     - Assets/Scripts/Managers/Camera/MinimapInteractionController.cs
     - Assets/Scripts/Managers/ConstructionManager.cs
     - Assets/Scripts/Managers/GameManager.cs
-    - Assets/Scripts/Managers/InteractionManager.cs
-    - Assets/Scripts/Managers/MovementManager.cs
+    - Assets/Scripts/Managers/PrefabManager.cs
+    - Assets/Scripts/Managers/PrefabManager.cs.meta
+    - Assets/Scripts/Managers/ResourceManager.cs
     - Assets/Scripts/Managers/SaveSystem/GamePrefsManager.cs
-    - Assets/Scripts/Managers/SelectionManager.cs
+    - Assets/Scripts/Managers/SaveSystem/GameSaveData.cs
+    - Assets/Scripts/Managers/SaveSystem/SaveFileExists.asset
+    - Assets/Scripts/Managers/SaveSystem/SaveFileExists.asset.meta
+    - Assets/Scripts/Managers/SaveSystem/SaveLoadSystem.cs
+    - Assets/Scripts/Managers/SaveSystem/SaveTrigger.asset
+    - Assets/Scripts/Managers/SaveSystem/SaveTrigger.asset.meta
     - Assets/Scripts/Managers/UIManager.cs
+    - Assets/Scripts/Resources.meta
+    - Assets/Scripts/Resources/ResourceDrop.cs
+    - Assets/Scripts/Resources/ResourceDrop.cs.meta
+    - Assets/Scripts/Resources/ResourceField.cs
+    - Assets/Scripts/Resources/ResourceField.cs.meta
+    - Assets/Scripts/Scriptable/BuildingStats.cs
+    - Assets/Scripts/Scriptable/LoadSaveBool.cs
+    - Assets/Scripts/Scriptable/LoadSaveBool.cs.meta
+    - Assets/Scripts/Units/Unit.cs
+    - Assets/Scripts/Units/Worker.cs
     - 
-    m_Values: 000000000000000000000000
+    m_Values: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   RevisionSummary: 
   ChangesSearchValue: 
   SelectedHistoryRevision: 

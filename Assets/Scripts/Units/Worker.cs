@@ -73,7 +73,6 @@ public class Worker : MonoBehaviour
         navWorkerObstacle.enabled = false;
         yield return null;
         unit.EnableNavAgent(true);
-        //unit.StopNavAgent();
     }
 
     public IEnumerator CheckIfImmobileCo()
@@ -151,11 +150,11 @@ public class Worker : MonoBehaviour
         Building building = underConstructionBuilding.GetComponent<Building>();
         UnderConstruction underConstruction = underConstructionBuilding.GetComponent<UnderConstruction>();
 
-        if (thingInHand != null)
+        /*if (thingInHand != null)
             thingInHand.gameObject.SetActive(false);
         thingInHand = transform.Find(building.buildingStats.toolConstructionName);
         if (thingInHand != null)
-            thingInHand.gameObject.SetActive(true);
+            thingInHand.gameObject.SetActive(true);*/
 
         while (underConstructionBuilding != null && underConstruction.BuiltPercentage() < 100f && unit.target == underConstructionBuildingPosition)
         {
@@ -292,13 +291,15 @@ public class Worker : MonoBehaviour
 
         if (unit.target == resourceCamp.accessLocation)
         {
+            transform.LookAt(new Vector3(resourceCamp.transform.position.x, transform.position.y, resourceCamp.transform.position.z));
+
             if (carriedResource.amount == 0)
                 yield break;
             if (resourceCamp.campType != ResourceType.None && resourceCamp.campType != carriedResource.resourceInfo.resourceType)
                 yield return StartCoroutine(StoreResourceInClosestCampCo());
             else
             {
-                StartTask();
+                DisableNavAgent();
                 yield return StartCoroutine(LetDownResourceCo());
 
                 if (resourceCamp.campType != ResourceType.None && resourceCamp.campType != carriedResource.resourceInfo.resourceType)
@@ -449,7 +450,7 @@ public class Worker : MonoBehaviour
             transform.rotation);
         ResourceDrop resourceDrop = droppedResource.GetComponent<ResourceDrop>();
         resourceDrop.droppedResource.amount = carriedResource.amount;
-        resourceDrop.droppedResource.resourceInfo = carriedResource.resourceInfo;
+        //resourceDrop.droppedResource.resourceInfo = carriedResource.resourceInfo;
         carriedResource.amount = 0;
     }
 
@@ -457,6 +458,11 @@ public class Worker : MonoBehaviour
     {
         unit.unitState = UnitState.working;
         animator.SetBool("working", true);
+        DisableNavAgent();
+    }
+
+    private void DisableNavAgent()
+    {
         unit.EnableNavAgent(false);
         navWorkerObstacle.enabled = true;
     }
@@ -485,4 +491,5 @@ public class Worker : MonoBehaviour
         }
         return closestResourceCamp;
     }
+
 }

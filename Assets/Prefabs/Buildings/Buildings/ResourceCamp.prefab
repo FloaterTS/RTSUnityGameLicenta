@@ -214,7 +214,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialCampType: 3
   initialAmountStored: 0
-  campType: 0
+  campType: 3
   accessLocation: {x: 0, y: 0, z: 0}
   accessDistance: 0.5
   amountStored: 0
@@ -231,6 +231,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buildingStats: {fileID: 11400000, guid: a92c879ac4aeec442a42f5a2869fa5be, type: 2}
+  currentHitPoints: 0
 --- !u!54 &4921902403869362964
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: ResourceCamp
   m_EditorClassIdentifier: 
   buildingTeam: 0
+  buildingType: 0
   buildingName: Resource Camp
   toolConstructionName: Villager/root/B-hips/B-spine/B-chest/B-upperChest/B-shoulder_R/B-upper_arm_R/B-forearm_R/B-hand_R/Tools_R/Hammer
   maxHitPoints: 100

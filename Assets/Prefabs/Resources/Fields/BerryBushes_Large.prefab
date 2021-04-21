@@ -110,6 +110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resourceInfo: {fileID: 11400000, guid: bc5f86b57fc1f1f46adcfa3e2f18fc75, type: 2}
+  resourceFieldModel: 1
   collectDistance: 1.7
   initialAmount: 175
   leftAmount: 0

@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Building : MonoBehaviour
 {
@@ -33,15 +31,19 @@ public class Building : MonoBehaviour
         currentHitPoints = amount;
     }
 
-    public float GetCurrentHitpoints()
-    {
-        return currentHitPoints;
-    }
-
     public void Repair(float amount)
     {
         currentHitPoints += amount;
         Mathf.Clamp(currentHitPoints, 0f, buildingStats.maxHitPoints);
     }
 
+    public float GetCurrentHitpoints()
+    {
+        return currentHitPoints;
+    }
+
+    public void SetCurrentHitpoints(float newHitpointsValue)
+    {
+        currentHitPoints = newHitpointsValue;
+    }
 }

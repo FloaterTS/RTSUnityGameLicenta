@@ -19,11 +19,16 @@ using UnityEngine;
 //2 = Wood
 //3 = Gold
 
+//Resource field model classification
+//0 - Small berry bush / Fallen Tree / Gold Ore Mine
+//1 - Large berry bush
+
 [System.Serializable]
 public class UnitData
 {
     public float[] unitPosition;
     public float[] unitRotation;
+    public float unitHealth;
     public int unitTeam;
     public int unitType;
     public int unitResourceAmountCarried;
@@ -38,9 +43,11 @@ public class UnitData
         unitPosition[1] = unit.transform.position.y;
         unitPosition[2] = unit.transform.position.z;
 
-        unitRotation[0] = unit.transform.rotation.x;
-        unitRotation[1] = unit.transform.rotation.y;
-        unitRotation[2] = unit.transform.rotation.z;
+        unitRotation[0] = unit.transform.eulerAngles.x;
+        unitRotation[1] = unit.transform.eulerAngles.y;
+        unitRotation[2] = unit.transform.eulerAngles.z;
+
+        unitHealth = unit.GetHealth();
 
         switch (unit.unitStats.unitTeam)
         {
@@ -97,10 +104,12 @@ public class BuildingData
 {
     public float[] buildingPosition;
     public float[] buildingRotation;
+    public float buildingHealth;
     public int buildingTeam;
     public int buildingType;
     public int storedResourceAmount;
     public int storedResourceType;
+    public float amountConstructed;
 
     public BuildingData(Building building)
     {
@@ -111,9 +120,11 @@ public class BuildingData
         buildingPosition[1] = building.transform.position.y;
         buildingPosition[2] = building.transform.position.z;
 
-        buildingRotation[0] = building.transform.rotation.x;
-        buildingRotation[1] = building.transform.rotation.y;
-        buildingRotation[2] = building.transform.rotation.z;
+        buildingRotation[0] = building.transform.eulerAngles.x;
+        buildingRotation[1] = building.transform.eulerAngles.y;
+        buildingRotation[2] = building.transform.eulerAngles.z;
+
+        buildingHealth = building.GetCurrentHitpoints();
 
         switch (building.buildingStats.buildingTeam)
         {
@@ -130,11 +141,16 @@ public class BuildingData
 
         switch (building.buildingStats.buildingType)
         {
-            case BuildingType.resourceCampConstruction:
-                buildingType = 0;
-                break;
             case BuildingType.resourceCamp:
-                buildingType = 1;
+                {
+                    if (building.gameObject.GetComponent<UnderConstruction>() != null)
+                    {
+                        buildingType = 0;
+                        Debug.Log(building.gameObject.GetComponent<UnderConstruction>());
+                    }
+                    else
+                        buildingType = 1;
+                }
                 break;
             default:
                 Debug.LogError("Unknown building type detected.");
@@ -147,6 +163,9 @@ public class BuildingData
             storedResourceAmount = resourceCamp.amountStored;
             switch (resourceCamp.campType)
             {
+                case ResourceType.None:
+                    storedResourceType = 0;
+                    break;
                 case ResourceType.Food:
                     storedResourceType = 1;
                     break;
@@ -157,7 +176,7 @@ public class BuildingData
                     storedResourceType = 3;
                     break;
                 default:
-                    storedResourceType = 0;
+                    storedResourceType = -1;
                     break;
             }
         }
@@ -166,6 +185,12 @@ public class BuildingData
             storedResourceAmount = 0;
             storedResourceType = 0;
         }
+
+        UnderConstruction underConstruction = building.GetComponent<UnderConstruction>();
+        if (underConstruction != null)
+            amountConstructed = underConstruction.GetAmountConstructed();
+        else
+            amountConstructed = 0f;
     }
 }
 
@@ -176,6 +201,7 @@ public class ResourceFieldData
     public float[] resourceFieldRotation;
     public int resourceFieldAmount;
     public int resourceFieldType;
+    public int resourceFieldModelType;
 
     public ResourceFieldData(ResourceField resourceField)
     {
@@ -186,9 +212,9 @@ public class ResourceFieldData
         resourceFieldPosition[1] = resourceField.transform.position.y;
         resourceFieldPosition[2] = resourceField.transform.position.z;
 
-        resourceFieldRotation[0] = resourceField.transform.rotation.x;
-        resourceFieldRotation[1] = resourceField.transform.rotation.y;
-        resourceFieldRotation[2] = resourceField.transform.rotation.z;
+        resourceFieldRotation[0] = resourceField.transform.eulerAngles.x;
+        resourceFieldRotation[1] = resourceField.transform.eulerAngles.y;
+        resourceFieldRotation[2] = resourceField.transform.eulerAngles.z;
 
         resourceFieldAmount = resourceField.leftAmount;
         switch (resourceField.resourceInfo.resourceRaw)
@@ -204,6 +230,21 @@ public class ResourceFieldData
                 break;
             default:
                 resourceFieldType = 0;
+                break;
+        }
+
+        switch (resourceField.resourceFieldModel)
+        {
+            case ResourceFieldModel.BerryBushSmall:
+            case ResourceFieldModel.LumberTree:
+            case ResourceFieldModel.GoldOreMine:
+                resourceFieldModelType = 0;
+                break;
+            case ResourceFieldModel.BerryBushLarge:
+                resourceFieldModelType = 1;
+                break;
+            default:
+                resourceFieldModelType = 0;
                 break;
         }
     }
@@ -251,7 +292,7 @@ public class GameSaveData
     public ResourceFieldData[] resourceFieldsData;
     public ResourceDropData[] resourceDropsData;
     public float[] cameraPosition;
-    public float[] cameraRotation;
+    public float cameraYRotationDegrees;
 
     public GameSaveData()
     {
@@ -262,10 +303,7 @@ public class GameSaveData
         cameraPosition[2] = cameraPos.z;
 
         Quaternion cameraRot = CameraController.instance.GetCurrentDesiredCameraRotation();
-        cameraRotation = new float[3];
-        cameraRotation[0] = cameraRot.x;
-        cameraRotation[1] = cameraRot.y;
-        cameraRotation[2] = cameraRot.z;
+        cameraYRotationDegrees = cameraRot.eulerAngles.y;
 
         unitsData = new UnitData[GameManager.instance.activeUnits.Count];
         for(int i = 0; i < GameManager.instance.activeUnits.Count; i++)
