@@ -25,7 +25,7 @@ public class Unit : MonoBehaviour
     private bool isSelected = false;
 
 
-    private void Start()
+    private void Awake()
     {
         animator = GetComponent<Animator>();
         navAgent = GetComponent<NavMeshAgent>();
@@ -34,10 +34,13 @@ public class Unit : MonoBehaviour
         currentHealth = unitStats.maxHealth;
         navAgent.speed = unitStats.moveSpeed;
 
+        unitState = UnitState.idle;
+    }
+
+    private void Start()
+    {
         if (unitStats.unitTeam == Team.Player)
             selectedArea = transform.Find("Selected").gameObject;
-
-        unitState = UnitState.idle;
 
         GameManager.instance.activeUnits.Add(this);
     }

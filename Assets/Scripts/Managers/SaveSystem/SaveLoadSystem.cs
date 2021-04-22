@@ -190,7 +190,7 @@ public class SaveLoadSystem : MonoBehaviour
                         return;
                 }
 
-                unitGO.GetComponent<Animator>().SetBool(worker.carriedResource.resourceInfo.carryAnimation, true);
+                worker.LiftResorce(true);
             }
         }
 

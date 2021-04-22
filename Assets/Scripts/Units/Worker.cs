@@ -15,7 +15,7 @@ public class Worker : MonoBehaviour
     private bool constructionSiteReached = false;
     private bool immobile = false;
 
-    void Start()
+    void Awake()
     {
         unit = GetComponent<Unit>();
         animator = GetComponent<Animator>();
@@ -64,10 +64,13 @@ public class Worker : MonoBehaviour
         StartCoroutine(PickUpResourceCo(resourceDrop));
     }
 
+    public void LiftResorce(bool instant = false)
+    {
+        StartCoroutine(LiftResourceCo(instant));
+    }
+
     public IEnumerator StopTaskCo()
     {
-        if (unit.unitState != UnitState.working)
-            yield break;
         unit.unitState = UnitState.idle;
         animator.SetBool("working", false);
         navWorkerObstacle.enabled = false;
@@ -340,11 +343,14 @@ public class Worker : MonoBehaviour
         }
     }
 
-    private IEnumerator LiftResourceCo()
+    private IEnumerator LiftResourceCo(bool instant = false)
     {
         yield return StartCoroutine(CheckIfImmobileCo());
 
-        unit.StopNavAgent();
+        if(!instant)
+            unit.StopNavAgent();
+        else
+            animator.SetBool("instant", true);
 
         animator.SetBool(carriedResource.resourceInfo.carryAnimation, true);
 
@@ -354,11 +360,19 @@ public class Worker : MonoBehaviour
         if (thingInHand != null)
             thingInHand.gameObject.SetActive(true);
 
-        StartCoroutine(StopTaskCo());
+        if (!instant)
+        {
+            StartCoroutine(StopTaskCo());
 
-        SetImmobile(true);
-        yield return new WaitForSeconds(carriedResource.resourceInfo.liftAnimationDuration);
-        SetImmobile(false);
+            SetImmobile(true);
+            yield return new WaitForSeconds(carriedResource.resourceInfo.liftAnimationDuration);
+            SetImmobile(false);
+        }
+        else
+        {
+            yield return null;
+            animator.SetBool("instant", false);
+        }
 
         unit.ChangeUnitSpeed(carriedResource.resourceInfo.carrySpeed);
     }
