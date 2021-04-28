@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c8ce4f5f409e644facdc852a2becf94, type: 3}
   m_Name: SaveFileExists
   m_EditorClassIdentifier: 
-  saveToBeLoaded: 0
+  saveToBeLoaded: 1
