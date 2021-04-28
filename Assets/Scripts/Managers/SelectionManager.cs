@@ -141,7 +141,7 @@ public class SelectionManager : MonoBehaviour
                     selectedUnits.Remove(unit);
                     unit.SetSelected(false);
                 }
-                else if (!selectedUnits.Contains(unit) && unit.unitStats.unitTeam == Team.Player)
+                else if (!selectedUnits.Contains(unit) && unit.unitStats.unitTeam == Team.PLAYER)
                 {
                     selectedUnits.Add(unit);
                     unit.SetSelected(true);
@@ -203,7 +203,7 @@ public class SelectionManager : MonoBehaviour
         Unit unit = other.gameObject.GetComponent<Unit>();
         if (unit != null)
         {
-            if (!selectedUnits.Contains(unit) && unit.unitStats.unitTeam == Team.Player)
+            if (!selectedUnits.Contains(unit) && unit.unitStats.unitTeam == Team.PLAYER)
             {
                 if (doubleClicked && unit.unitStats.unitName != lastClickedUnit.unitStats.unitName) //Double click selection check
                     return;

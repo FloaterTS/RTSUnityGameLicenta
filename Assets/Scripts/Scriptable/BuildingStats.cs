@@ -2,7 +2,7 @@
 
 public enum BuildingType
 {
-    resourceCamp
+    RESOURCE_CAMP
 }
 
 [CreateAssetMenu]

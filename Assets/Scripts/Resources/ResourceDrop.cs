@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ResourceDrop : MonoBehaviour
@@ -10,5 +8,10 @@ public class ResourceDrop : MonoBehaviour
     private void Start()
     {
         GameManager.instance.activeResourceDrops.Add(this);
+    }
+
+    private void OnDestroy()
+    {
+        GameManager.instance.activeResourceDrops.Remove(this);
     }
 }

@@ -7,19 +7,30 @@ public class Building : MonoBehaviour
     private float currentHitPoints;
     private Transform selectedArea = null;
 
-    void Start()
+    private void Awake()
     {
         SetInitialHitpoints(0.1f);
 
-        if (buildingStats.buildingTeam == Team.Player)
+        if (buildingStats.buildingTeam == Team.PLAYER)
             selectedArea = transform.Find("Selected");
+    }
 
+    void Start()
+    {
         GameManager.instance.activeBuildings.Add(this);
+    }
+
+    private void OnDestroy()
+    {
+        GameManager.instance.activeBuildings.Remove(this);
+
+        if (SelectionManager.instance.selectedBuilding == this)
+            SelectionManager.instance.selectedBuilding = null;
     }
 
     public void SetSelected(bool isSelected)
     {
-        if (buildingStats.buildingTeam != Team.Player)  //For Player Units Only
+        if (buildingStats.buildingTeam != Team.PLAYER)  //For Player Units Only
             return;
 
         if (selectedArea != null)

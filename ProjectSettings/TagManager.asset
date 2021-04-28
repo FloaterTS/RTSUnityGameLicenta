@@ -10,6 +10,7 @@ TagManager:
   - Unit
   - Terrain
   - ResourceDrop
+  - Building
   layers:
   - Default
   - TransparentFX

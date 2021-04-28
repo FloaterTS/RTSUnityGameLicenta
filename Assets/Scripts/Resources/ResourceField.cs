@@ -2,10 +2,10 @@
 
 public enum ResourceFieldModel
 {
-    BerryBushSmall,
-    BerryBushLarge,
-    LumberTree,
-    GoldOreMine
+    BERRY_BUSH_SMALL,
+    BERRY_BUSH_LARGE,
+    LUMBER_TREE,
+    GOLD_ORE_MINE
 }
 
 public class ResourceField : MonoBehaviour
@@ -21,11 +21,19 @@ public class ResourceField : MonoBehaviour
     [HideInInspector] public int leftAmount;
 
 
-    void Start()
+    private void Awake()
     {
         leftAmount = initialAmount;
+    }
 
+    void Start()
+    {
         GameManager.instance.activeResourceFields.Add(this);
+    }
+
+    private void OnDestroy()
+    {
+        GameManager.instance.activeResourceFields.Remove(this);
     }
 
     void Update()

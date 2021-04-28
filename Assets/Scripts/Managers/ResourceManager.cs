@@ -3,19 +3,19 @@ using UnityEngine;
 
 public enum ResourceType
 {
-    Food,
-    Wood,
-    Gold,
-    None
+    FOOD,
+    WOOD,
+    GOLD,
+    NONE
 }
 
 public enum ResourceRaw
 {
-    Berries,
-    Gold,
-    Wood,
-    Fish,
-    Farm
+    BERRIES,
+    GOLD,
+    WOOD,
+    FISH,
+    FARM
 }
 
 [System.Serializable]
@@ -67,13 +67,13 @@ public class ResourceManager : MonoBehaviour
         {
             switch (resourceCamp.campType)
             {
-                case ResourceType.Food:
+                case ResourceType.FOOD:
                     newFoodAmount += resourceCamp.amountStored;
                     break;
-                case ResourceType.Gold:
+                case ResourceType.GOLD:
                     newGoldAmount += resourceCamp.amountStored;
                     break;
-                case ResourceType.Wood:
+                case ResourceType.WOOD:
                     newWoodAmount += resourceCamp.amountStored;
                     break;
             }
@@ -87,15 +87,15 @@ public class ResourceManager : MonoBehaviour
     {
         switch (resourceRaw)
         {
-            case ResourceRaw.Berries:
-            case ResourceRaw.Farm:
-            case ResourceRaw.Fish:
-                return ResourceType.Food;
-            case ResourceRaw.Gold:
-                return ResourceType.Gold;
-            case ResourceRaw.Wood:
-                return ResourceType.Wood;
+            case ResourceRaw.BERRIES:
+            case ResourceRaw.FARM:
+            case ResourceRaw.FISH:
+                return ResourceType.FOOD;
+            case ResourceRaw.GOLD:
+                return ResourceType.GOLD;
+            case ResourceRaw.WOOD:
+                return ResourceType.WOOD;
         }
-        return ResourceType.None;
+        return ResourceType.NONE;
     }
 }

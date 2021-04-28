@@ -44,7 +44,7 @@ public class UnderConstruction : MonoBehaviour
             Unit unit = other.GetComponent<Unit>();
             if (unit.worker != null)
             {
-                if (unit.target == transform.position && unit.unitState == UnitState.moving)
+                if (unit.target == transform.position && unit.unitState == UnitState.MOVING)
                     unit.worker.SetConstructionSiteReached(true);
                 else
                     unit.worker.SetConstructionSiteReached(false);

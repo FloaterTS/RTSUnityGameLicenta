@@ -71,7 +71,7 @@ public class Worker : MonoBehaviour
 
     public IEnumerator StopTaskCo()
     {
-        unit.unitState = UnitState.idle;
+        unit.unitState = UnitState.IDLE;
         animator.SetBool("working", false);
         navWorkerObstacle.enabled = false;
         yield return null;
@@ -89,7 +89,7 @@ public class Worker : MonoBehaviour
     {
         if (carriedResource.amount > 0)
         {
-            if (unit.unitState == UnitState.working)
+            if (unit.unitState == UnitState.WORKING)
                 yield return StartCoroutine(LetDownDropResourceCo(false));
             else
                 yield return StartCoroutine(LetDownDropResourceCo());
@@ -189,7 +189,7 @@ public class Worker : MonoBehaviour
 
         if (carriedResource.amount > 0 && carriedResource.resourceInfo != resourceToCollect.resourceInfo)
         {
-            if (unit.unitState != UnitState.working)
+            if (unit.unitState != UnitState.WORKING)
                 yield return StartCoroutine(LetDownDropResourceCo(true));
             else
                 yield return StartCoroutine(LetDownDropResourceCo(false));
@@ -298,14 +298,14 @@ public class Worker : MonoBehaviour
 
             if (carriedResource.amount == 0)
                 yield break;
-            if (resourceCamp.campType != ResourceType.None && resourceCamp.campType != carriedResource.resourceInfo.resourceType)
+            if (resourceCamp.campType != ResourceType.NONE && resourceCamp.campType != carriedResource.resourceInfo.resourceType)
                 yield return StartCoroutine(StoreResourceInClosestCampCo());
             else
             {
                 DisableNavAgent();
                 yield return StartCoroutine(LetDownResourceCo());
 
-                if (resourceCamp.campType != ResourceType.None && resourceCamp.campType != carriedResource.resourceInfo.resourceType)
+                if (resourceCamp.campType != ResourceType.NONE && resourceCamp.campType != carriedResource.resourceInfo.resourceType)
                     DropResource(); // a check in case camp changed type during animation duration
                 else
                 {
@@ -325,7 +325,7 @@ public class Worker : MonoBehaviour
 
         while (Vector3.Distance(transform.position, resourceCamp.accessLocation) > resourceCamp.accessDistance
             && unit.target == resourceCamp.accessLocation
-            && (carriedResource.amount == 0 || resourceCamp.campType == ResourceType.None || resourceCamp.campType == carriedResource.resourceInfo.resourceType))
+            && (carriedResource.amount == 0 || resourceCamp.campType == ResourceType.NONE || resourceCamp.campType == carriedResource.resourceInfo.resourceType))
             yield return null;
 
         onWayToTask = false;
@@ -394,7 +394,7 @@ public class Worker : MonoBehaviour
             SetImmobile(false);
         }
 
-        unit.ChangeUnitSpeed(UnitSpeed.run);
+        unit.ChangeUnitSpeed(UnitSpeed.RUN);
 
         if (thingInHand != null)
             thingInHand.gameObject.SetActive(false);
@@ -417,7 +417,7 @@ public class Worker : MonoBehaviour
 
         if (carriedResource.amount > 0 && carriedResource.resourceInfo != resourceDrop.droppedResource.resourceInfo)
         {
-            if (unit.unitState != UnitState.working)
+            if (unit.unitState != UnitState.WORKING)
                 yield return StartCoroutine(LetDownDropResourceCo(true));
             else
                 yield return StartCoroutine(LetDownDropResourceCo(false));
@@ -470,7 +470,7 @@ public class Worker : MonoBehaviour
 
     private void StartTask()
     {
-        unit.unitState = UnitState.working;
+        unit.unitState = UnitState.WORKING;
         animator.SetBool("working", true);
         DisableNavAgent();
     }
@@ -493,7 +493,7 @@ public class Worker : MonoBehaviour
         float distanceFromUnit;
         foreach (ResourceCamp resourceCamp in ResourceManager.instance.resourceCamps)
         {
-            if (resourceCamp.campType == ResourceType.None || resourceCamp.campType == searchedResourceType)
+            if (resourceCamp.campType == ResourceType.NONE || resourceCamp.campType == searchedResourceType)
             {
                 distanceFromUnit = Vector3.Distance(transform.position, resourceCamp.transform.position);
                 if (distanceFromUnit < minDistanceFromUnit)

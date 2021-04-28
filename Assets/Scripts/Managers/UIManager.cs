@@ -6,10 +6,10 @@ using UnityEngine.SceneManagement;
 
 enum InteractionPanelState
 {
-    None,
-    Unit,
-    //Build,
-    Camp
+    NONE,
+    UNIT,
+    //BUILD,
+    CAMP
 }
 
 public class UIManager : MonoBehaviour
@@ -39,7 +39,7 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
-        currentInteractionState = InteractionPanelState.None;
+        currentInteractionState = InteractionPanelState.NONE;
 
         Destroy(Instantiate(fadeUncoverPanel), 1f);
     }
@@ -111,11 +111,11 @@ public class UIManager : MonoBehaviour
     {
         DisableCurrentInteractionPanel();
         if (SelectionManager.instance.selectedUnits.Count > 0)
-            EnableInteractionPanel(InteractionPanelState.Unit);
+            EnableInteractionPanel(InteractionPanelState.UNIT);
         else if (SelectionManager.instance.selectedBuilding != null)
         {
             if (SelectionManager.instance.selectedBuilding.gameObject.GetComponent<ResourceCamp>() != null)
-                EnableInteractionPanel(InteractionPanelState.Camp);
+                EnableInteractionPanel(InteractionPanelState.CAMP);
             else
                 Debug.Log("Unknown UI Panel for Selected Building");
         }
@@ -126,40 +126,40 @@ public class UIManager : MonoBehaviour
 
     void DisableCurrentInteractionPanel()
     {
-        if (currentInteractionState == InteractionPanelState.None)
+        if (currentInteractionState == InteractionPanelState.NONE)
             return;
         switch (currentInteractionState)
         {
-            case InteractionPanelState.Unit:
+            case InteractionPanelState.UNIT:
                 {
                     unitInteractionPanel.SetActive(false);
                     buildInteractionPanel.SetActive(false); //we also disable the build panel in case the unit was on the build panel when it was deselected
                 }
                 break;
-            case InteractionPanelState.Camp:
+            case InteractionPanelState.CAMP:
                 campInteractionPanel.SetActive(false);
                 break;
         }
-        currentInteractionState = InteractionPanelState.None;
+        currentInteractionState = InteractionPanelState.NONE;
         return;
     }
 
     void EnableInteractionPanel(InteractionPanelState newInteractionState)
     {
-        if (newInteractionState == InteractionPanelState.None)
+        if (newInteractionState == InteractionPanelState.NONE)
             return;
         switch (newInteractionState)
         {
-            case InteractionPanelState.Unit:
+            case InteractionPanelState.UNIT:
                 {
                     unitInteractionPanel.SetActive(true);
-                    currentInteractionState = InteractionPanelState.Unit;
+                    currentInteractionState = InteractionPanelState.UNIT;
                 }
                 return;
-            case InteractionPanelState.Camp:
+            case InteractionPanelState.CAMP:
                 {
                     campInteractionPanel.SetActive(true);
-                    currentInteractionState = InteractionPanelState.Camp;
+                    currentInteractionState = InteractionPanelState.CAMP;
                 }
                 return;
         }

@@ -34,15 +34,23 @@ public class Unit : MonoBehaviour
         currentHealth = unitStats.maxHealth;
         navAgent.speed = unitStats.moveSpeed;
 
-        unitState = UnitState.idle;
+        unitState = UnitState.IDLE;
+
+        if (unitStats.unitTeam == Team.PLAYER)
+            selectedArea = transform.Find("Selected").gameObject;
     }
 
     private void Start()
     {
-        if (unitStats.unitTeam == Team.Player)
-            selectedArea = transform.Find("Selected").gameObject;
-
         GameManager.instance.activeUnits.Add(this);
+    }
+
+    private void OnDestroy()
+    {
+        GameManager.instance.activeUnits.Remove(this);
+
+        if (SelectionManager.instance.selectedUnits.Contains(this))
+            SelectionManager.instance.selectedUnits.Remove(this);
     }
 
     private void Update()
@@ -82,7 +90,7 @@ public class Unit : MonoBehaviour
 
         if (worker != null)
         {
-            if (unitState == UnitState.working || !navAgent.enabled)
+            if (unitState == UnitState.WORKING || !navAgent.enabled)
                 yield return StartCoroutine(worker.StopTaskCo());
             yield return StartCoroutine(worker.CheckIfImmobileCo());
             if (targetPosition != target)
@@ -91,25 +99,25 @@ public class Unit : MonoBehaviour
         navAgent.isStopped = false;
         navAgent.SetDestination(targetPosition);
 
-        unitState = UnitState.moving;
+        unitState = UnitState.MOVING;
     }
 
     void CheckIfIdle()
     {
-        if (unitState != UnitState.moving || !navAgent.enabled || (worker != null && worker.IsBusy()))
+        if (unitState != UnitState.MOVING || !navAgent.enabled || (worker != null && worker.IsBusy()))
             return;
         //Do I need the distance condition?
         if (navAgent.hasPath && Vector3.Distance(transform.position, navAgent.destination) <= navAgent.stoppingDistance + 0.1f) 
         {
             StopNavAgent();
-            unitState = UnitState.idle;
+            unitState = UnitState.IDLE;
             target = Vector3.zero;
         }
     }
 
     public void SetSelected(bool isSelected)
     {
-        if (unitStats.unitTeam != Team.Player)  //For Player Units Only
+        if (unitStats.unitTeam != Team.PLAYER)  //For Player Units Only
             return;
 
         if (selectedArea != null)
@@ -137,19 +145,19 @@ public class Unit : MonoBehaviour
     {
         switch(unitSpeed)
         {
-            case UnitSpeed.run: 
+            case UnitSpeed.RUN: 
                 navAgent.speed = unitStats.moveSpeed;
                 break;
-            case UnitSpeed.walk:
+            case UnitSpeed.WALK:
                 navAgent.speed = unitStats.moveSpeed * unitStats.walkSpeedMultiplier;
                 break;
-            case UnitSpeed.sprint:
+            case UnitSpeed.SPRINT:
                 navAgent.speed = unitStats.moveSpeed * unitStats.sprintSpeedMultiplier;
                 break;
-            case UnitSpeed.carryLight:
+            case UnitSpeed.CARRY_LIGHT:
                 navAgent.speed = unitStats.moveSpeed * unitStats.carryLightSpeedMultiplier;
                 break;
-            case UnitSpeed.carryHeavy:
+            case UnitSpeed.CARRY_HEAVY:
                 navAgent.speed = unitStats.moveSpeed * unitStats.carryHeavySpeedMultiplier;
                 break;
         }
@@ -178,5 +186,10 @@ public class Unit : MonoBehaviour
     public void SetCurrentHealth(float newHealth)
     {
         currentHealth = newHealth;
+    }
+
+    public bool IsSelected()
+    {
+        return isSelected;
     }
 }

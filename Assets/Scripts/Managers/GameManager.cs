@@ -4,11 +4,11 @@ using UnityEngine;
 
 public enum Team
 {
-    Player,
-    Enemy1,
-    Enemy2,
-    Enemy3,
-    Neutral,
+    PLAYER,
+    ENEMY1,
+    ENEMY2,
+    ENEMY3,
+    NEUTRAL,
 }
 
 public class GameManager : MonoBehaviour
@@ -80,5 +80,49 @@ public class GameManager : MonoBehaviour
         foreach (ResourceDrop resourceDrop in activeResourceDrops)
             Destroy(resourceDrop.gameObject);
         activeResourceDrops.Clear();
+
+        ResourceManager.instance.resourceCamps.Clear();
+
+        SelectionManager.instance.selectedUnits.Clear();
+        SelectionManager.instance.selectedBuilding = null;
+        SelectionManager.instance.heroSelected = false;
     }
+
+    public GameObject CheckForActiveObjectAtPosition(Vector3 positionToCheck)
+    {
+        foreach (Unit unit in activeUnits)
+            if(unit.transform.position == positionToCheck)
+                return unit.gameObject;
+
+        foreach (Building building in activeBuildings)
+        {
+            if (building.gameObject.CompareTag("ResourceCamp"))
+            {
+                ResourceCamp resourceCamp = building.GetComponent<ResourceCamp>();
+                if (resourceCamp != null)
+                {
+                    if (resourceCamp.accessLocation == positionToCheck)
+                        return building.gameObject;
+                }
+                else
+                {
+                    Debug.LogError("ResourceCamp script missing from " + building.gameObject + " tagged as ResourceCamp");
+                    return null;
+                }
+            }
+            else if (building.transform.position == positionToCheck)
+                return building.gameObject;
+        }
+
+        foreach (ResourceField resourceField in activeResourceFields)
+            if (resourceField.transform.position == positionToCheck)
+                return resourceField.gameObject;
+
+        foreach (ResourceDrop resourceDrop in activeResourceDrops)
+            if (resourceDrop.transform.position == positionToCheck)
+                return resourceDrop.gameObject;
+
+        return null;
+    }
+
 }

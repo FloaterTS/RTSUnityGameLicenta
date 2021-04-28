@@ -2,16 +2,16 @@
 
 public enum UnitSpeed
 { 
-    run,
-    walk,
-    sprint,
-    carryLight,
-    carryHeavy
+    RUN,
+    WALK,
+    SPRINT,
+    CARRY_LIGHT,
+    CARRY_HEAVY
 }
 
 public enum UnitType
 {
-    villager
+    VILLAGER
 }
 
 [CreateAssetMenu]

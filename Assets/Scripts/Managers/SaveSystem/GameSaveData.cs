@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 //Teams classification:
@@ -28,33 +26,41 @@ public class UnitData
 {
     public float[] unitPosition;
     public float[] unitRotation;
+    public float[] unitTarget;
     public float unitHealth;
     public int unitTeam;
     public int unitType;
     public int unitResourceAmountCarried;
     public int unitResourceTypeCarried;
+    public bool isSelected;
 
     public UnitData(Unit unit)
     {
         unitPosition = new float[3];
-        unitRotation = new float[3];
-
         unitPosition[0] = unit.transform.position.x;
         unitPosition[1] = unit.transform.position.y;
         unitPosition[2] = unit.transform.position.z;
 
+        unitRotation = new float[3];
         unitRotation[0] = unit.transform.eulerAngles.x;
         unitRotation[1] = unit.transform.eulerAngles.y;
         unitRotation[2] = unit.transform.eulerAngles.z;
 
+        unitTarget = new float[3];
+        unitTarget[0] = unit.target.x;
+        unitTarget[1] = unit.target.y;
+        unitTarget[2] = unit.target.z;
+
         unitHealth = unit.GetHealth();
+
+        isSelected = unit.IsSelected();
 
         switch (unit.unitStats.unitTeam)
         {
-            case Team.Player:
+            case Team.PLAYER:
                 unitTeam = 0;
                 break;
-            case Team.Enemy1:
+            case Team.ENEMY1:
                 unitTeam = 1;
                 break;
             default:
@@ -64,7 +70,7 @@ public class UnitData
 
         switch (unit.unitStats.unitType)
         {
-            case UnitType.villager:
+            case UnitType.VILLAGER:
                 unitType = 0;
                 break;
             default:
@@ -77,13 +83,13 @@ public class UnitData
             unitResourceAmountCarried = unit.worker.carriedResource.amount;
             switch (unit.worker.carriedResource.resourceInfo.resourceRaw)
             {
-                case ResourceRaw.Berries:
+                case ResourceRaw.BERRIES:
                     unitResourceTypeCarried = 1;
                     break;
-                case ResourceRaw.Wood:
+                case ResourceRaw.WOOD:
                     unitResourceTypeCarried = 2;
                     break;
-                case ResourceRaw.Gold:
+                case ResourceRaw.GOLD:
                     unitResourceTypeCarried = 3;
                     break;
                 default:
@@ -104,12 +110,13 @@ public class BuildingData
 {
     public float[] buildingPosition;
     public float[] buildingRotation;
+    public float amountConstructed;
     public float buildingHealth;
     public int buildingTeam;
     public int buildingType;
     public int storedResourceAmount;
     public int storedResourceType;
-    public float amountConstructed;
+    public bool isSelected;
 
     public BuildingData(Building building)
     {
@@ -126,12 +133,14 @@ public class BuildingData
 
         buildingHealth = building.GetCurrentHitpoints();
 
+        isSelected = SelectionManager.instance.selectedBuilding == building;
+
         switch (building.buildingStats.buildingTeam)
         {
-            case Team.Player:
+            case Team.PLAYER:
                 buildingTeam = 0;
                 break;
-            case Team.Enemy1:
+            case Team.ENEMY1:
                 buildingTeam = 1;
                 break;
             default:
@@ -141,7 +150,7 @@ public class BuildingData
 
         switch (building.buildingStats.buildingType)
         {
-            case BuildingType.resourceCamp:
+            case BuildingType.RESOURCE_CAMP:
                 {
                     if (building.gameObject.GetComponent<UnderConstruction>() != null)
                     {
@@ -163,16 +172,16 @@ public class BuildingData
             storedResourceAmount = resourceCamp.amountStored;
             switch (resourceCamp.campType)
             {
-                case ResourceType.None:
+                case ResourceType.NONE:
                     storedResourceType = 0;
                     break;
-                case ResourceType.Food:
+                case ResourceType.FOOD:
                     storedResourceType = 1;
                     break;
-                case ResourceType.Wood:
+                case ResourceType.WOOD:
                     storedResourceType = 2;
                     break;
-                case ResourceType.Gold:
+                case ResourceType.GOLD:
                     storedResourceType = 3;
                     break;
                 default:
@@ -219,13 +228,13 @@ public class ResourceFieldData
         resourceFieldAmount = resourceField.leftAmount;
         switch (resourceField.resourceInfo.resourceRaw)
         {
-            case ResourceRaw.Berries:
+            case ResourceRaw.BERRIES:
                 resourceFieldType = 1;
                 break;
-            case ResourceRaw.Wood:
+            case ResourceRaw.WOOD:
                 resourceFieldType = 2;
                 break;
-            case ResourceRaw.Gold:
+            case ResourceRaw.GOLD:
                 resourceFieldType = 3;
                 break;
             default:
@@ -235,12 +244,12 @@ public class ResourceFieldData
 
         switch (resourceField.resourceFieldModel)
         {
-            case ResourceFieldModel.BerryBushSmall:
-            case ResourceFieldModel.LumberTree:
-            case ResourceFieldModel.GoldOreMine:
+            case ResourceFieldModel.BERRY_BUSH_SMALL:
+            case ResourceFieldModel.LUMBER_TREE:
+            case ResourceFieldModel.GOLD_ORE_MINE:
                 resourceFieldModelType = 0;
                 break;
-            case ResourceFieldModel.BerryBushLarge:
+            case ResourceFieldModel.BERRY_BUSH_LARGE:
                 resourceFieldModelType = 1;
                 break;
             default:
@@ -268,13 +277,13 @@ public class ResourceDropData
         resourceDropAmount = resourceDrop.droppedResource.amount;
         switch (resourceDrop.droppedResource.resourceInfo.resourceRaw)
         {
-            case ResourceRaw.Berries:
+            case ResourceRaw.BERRIES:
                 resourceDropType = 1;
                 break;
-            case ResourceRaw.Wood:
+            case ResourceRaw.WOOD:
                 resourceDropType = 2;
                 break;
-            case ResourceRaw.Gold:
+            case ResourceRaw.GOLD:
                 resourceDropType = 3;
                 break;
             default:

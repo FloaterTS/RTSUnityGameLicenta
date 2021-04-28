@@ -2,10 +2,10 @@
 
 public enum UnitState
 {
-    idle,
-    moving,
-    working,
-    attacking
+    IDLE,
+    MOVING,
+    WORKING,
+    ATTACKING
 }
 
 public class InteractionManager : MonoBehaviour
@@ -55,13 +55,15 @@ public class InteractionManager : MonoBehaviour
 
         if (hitLocation.collider.gameObject.CompareTag("Resource"))
         {
-            ResourceField resource = hitLocation.collider.GetComponent<ResourceField>();
-            if (resource != null)
+            ResourceField resourceField = hitLocation.collider.GetComponent<ResourceField>();
+            if (resourceField != null)
             {
                 foreach (Unit unit in selectionManager.selectedUnits)
                     if (unit.worker != null)
-                        unit.worker.CollectResource(resource);
+                        unit.worker.CollectResource(resourceField);
             }
+            else
+                Debug.LogError("ResourceField script missing from " + hitLocation.collider.gameObject + " tagged as ResourceField");
         }
         else if (hitLocation.collider.gameObject.CompareTag("ResourceCamp"))
         {
@@ -72,19 +74,31 @@ public class InteractionManager : MonoBehaviour
                     if (unit.worker != null)
                         unit.worker.StoreResource(resourceCamp);
             }
+            else
+                Debug.LogError("ResourceCamp script missing from " + hitLocation.collider.gameObject + " tagged as ResourceCamp");
         }
         else if (hitLocation.collider.gameObject.CompareTag("ResourceDrop"))
         {
             ResourceDrop resourceDrop = hitLocation.collider.GetComponent<ResourceDrop>();
-            Unit closestUnit = selectionManager.ClosestUnitToSpot(hitLocation.point, true);
-            if (closestUnit != null)
-                closestUnit.worker.PickUpResourceAction(resourceDrop);
+            if (resourceDrop != null)
+            {
+                Unit closestUnit = selectionManager.ClosestUnitToSpot(hitLocation.point, true);
+                if (closestUnit != null)
+                    closestUnit.worker.PickUpResourceAction(resourceDrop);
+            }
+            else
+                Debug.LogError("ResourceDrop script missing from " + hitLocation.collider.gameObject + " tagged as ResourceDrop");
         }
         else if (hitLocation.collider.gameObject.CompareTag("UnderConstruction"))
         {
-            foreach (Unit unit in selectionManager.selectedUnits)
-                if (unit.worker != null)
-                    unit.worker.StartConstruction(hitLocation.collider.gameObject);
+            if (hitLocation.collider.GetComponent<UnderConstruction>() != null)
+            {
+                foreach (Unit unit in selectionManager.selectedUnits)
+                    if (unit.worker != null)
+                        unit.worker.StartConstruction(hitLocation.collider.gameObject);
+            }
+            else
+                Debug.LogError("UnderConstruction script missing from " + hitLocation.collider.gameObject + " tagged as UnderConstruction");
         }
         else
         {

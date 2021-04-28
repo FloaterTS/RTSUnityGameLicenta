@@ -2,6 +2,16 @@ using UnityEngine;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Runtime.Serialization;
+using System.Collections;
+
+public enum UnitTargetType
+{
+    NONE,
+    UNIT,
+    BUILDING,
+    RESOURCE_FIELD,
+    RESOURCE_DROP
+}
 
 public class SaveLoadSystem : MonoBehaviour
 {
@@ -91,7 +101,7 @@ public class SaveLoadSystem : MonoBehaviour
             Debug.Log("Game save loaded");
 
             // Setting up the game data from the save file
-            SetUpLoadedGame(gameSaveData);
+            StartCoroutine(SetUpLoadedGame(gameSaveData));
         }
         catch (SerializationException e)
         {
@@ -117,14 +127,18 @@ public class SaveLoadSystem : MonoBehaviour
             Debug.LogError("Save file to be deleted not found in " + saveFilePath);
     }
 
-    private void SetUpLoadedGame(GameSaveData data)
+    private IEnumerator SetUpLoadedGame(GameSaveData data)
     {
         Debug.Log("Setting up loaded save..");
 
         // Clearing current active objects from scene
         GameManager.instance.ClearSceneEntities();
 
-        for(int i = 0; i < data.unitsData.Length; i++)
+        yield return null;
+
+        Unit[] loadedUnitsArr = new Unit[data.unitsData.Length]; 
+
+        for (int i = 0; i < data.unitsData.Length; i++)
         {
             GameObject unitGO;
             Unit unitScript;
@@ -139,13 +153,15 @@ public class SaveLoadSystem : MonoBehaviour
                         unitGO = Instantiate(PrefabManager.instance.villagerPrefab, unitPosition, unitRotation, PrefabManager.instance.unitsTransformParentGO.transform);
                         unitScript = unitGO.GetComponent<Unit>();
 
-                        if(unitScript == null)
+                        if (unitScript == null)
                         {
                             Debug.LogError("Unit prefab doesn't have Unit script attached");
-                            return;
+                            yield break;
                         }
 
-                        switch(data.unitsData[i].unitTeam)
+                        loadedUnitsArr[i] = unitScript;
+
+                        switch (data.unitsData[i].unitTeam)
                         {
                             case 0: // Player Team
                                 unitScript.unitStats = PrefabManager.instance.playerVillagerStats;
@@ -155,19 +171,25 @@ public class SaveLoadSystem : MonoBehaviour
                                 break;
                             default:
                                 Debug.LogError("Unit team " + data.unitsData[i].unitTeam + " from save data not recognized");
-                                return;
+                                yield break;
                         }
                     }
                     break;
                 default:
                     Debug.LogError("Unit type " + data.unitsData[i].unitType + " from save data not recognized");
-                    return;
+                    yield break;
             }
 
             unitScript.SetCurrentHealth(data.unitsData[i].unitHealth);
 
+            if (data.unitsData[i].isSelected)
+            {
+                SelectionManager.instance.selectedUnits.Add(unitScript);
+                unitScript.SetSelected(true);
+            }
+
             Worker worker = unitGO.GetComponent<Worker>();
-            if(worker != null && data.unitsData[i].unitResourceAmountCarried > 0)
+            if (worker != null && data.unitsData[i].unitResourceAmountCarried > 0)
             {
                 worker.carriedResource.amount = data.unitsData[i].unitResourceAmountCarried;
 
@@ -184,10 +206,10 @@ public class SaveLoadSystem : MonoBehaviour
                         break;
                     case 0:
                         Debug.LogError("Unit carrying non-zero amount of resource type None in save data");
-                        return;
+                        yield break;
                     default:
                         Debug.LogError("Carried resource type " + data.unitsData[i].unitResourceTypeCarried + " from save data not recognized");
-                        return;
+                        yield break;
                 }
 
                 worker.LiftResorce(true);
@@ -212,7 +234,7 @@ public class SaveLoadSystem : MonoBehaviour
                         if (buildingScript == null)
                         {
                             Debug.LogError("Resource Camp Construction prefab doesn't have Building script attached");
-                            return;
+                            yield break;
                         }
 
                         switch (data.buildingsData[i].buildingTeam)
@@ -222,7 +244,7 @@ public class SaveLoadSystem : MonoBehaviour
                                 break;
                             default:
                                 Debug.LogError("Building team " + data.buildingsData[i].buildingTeam + " from save data not recognized");
-                                return;
+                                yield break;
                         }
 
                         UnderConstruction underConstruction = buildingGO.GetComponent<UnderConstruction>();
@@ -233,7 +255,7 @@ public class SaveLoadSystem : MonoBehaviour
                         else
                         {
                             Debug.LogError("Resource Camp Construction prefab doesn't have under construction script");
-                            return;
+                            yield break;
                         }
                     }
                     break;
@@ -245,7 +267,7 @@ public class SaveLoadSystem : MonoBehaviour
                         if (buildingScript == null)
                         {
                             Debug.LogError("Resource Camp prefab doesn't have Building script attached");
-                            return;
+                            yield break;
                         }
 
                         switch (data.buildingsData[i].buildingTeam)
@@ -255,40 +277,46 @@ public class SaveLoadSystem : MonoBehaviour
                                 break;
                             default:
                                 Debug.LogError("Building team " + data.buildingsData[i].buildingTeam + " from save data not recognized");
-                                return;
+                                yield break;
                         }
 
                         ResourceCamp resourceCampScript = buildingGO.GetComponent<ResourceCamp>();
                         if (resourceCampScript == null)
                         {
                             Debug.LogError("Resource Camp prefab doesn't have Building script attached");
-                            return;
+                            yield break;
                         }
                         switch (data.buildingsData[i].storedResourceType)
                         {
                             case 0:
                                 break;
                             case 1:
-                                resourceCampScript.StoreResourceInCamp(data.buildingsData[i].storedResourceAmount, ResourceType.Food);
+                                resourceCampScript.StoreResourceInCamp(data.buildingsData[i].storedResourceAmount, ResourceType.FOOD);
                                 break;
                             case 2:
-                                resourceCampScript.StoreResourceInCamp(data.buildingsData[i].storedResourceAmount, ResourceType.Wood);
+                                resourceCampScript.StoreResourceInCamp(data.buildingsData[i].storedResourceAmount, ResourceType.WOOD);
                                 break;
                             case 3:
-                                resourceCampScript.StoreResourceInCamp(data.buildingsData[i].storedResourceAmount, ResourceType.Gold);
+                                resourceCampScript.StoreResourceInCamp(data.buildingsData[i].storedResourceAmount, ResourceType.GOLD);
                                 break;
                             default:
                                 Debug.LogError("Camp resource type " + data.buildingsData[i].storedResourceType + " from save data not recognized");
-                                return;
+                                yield break;
                         }
                     }
                     break;
                 default:
                     Debug.LogError("Building type " + data.buildingsData[i].buildingType + " from save data not recognized");
-                    return;
+                    yield break;
             }
 
             buildingScript.SetCurrentHitpoints(data.buildingsData[i].buildingHealth);
+
+            if (data.buildingsData[i].isSelected)
+            {
+                SelectionManager.instance.selectedBuilding = buildingScript;
+                buildingScript.SetSelected(true);
+            }
         }
 
         for (int i = 0; i < data.resourceFieldsData.Length; i++)
@@ -313,7 +341,7 @@ public class SaveLoadSystem : MonoBehaviour
                                 break;
                             default:
                                 Debug.LogError("Resource field model type " + data.resourceFieldsData[i].resourceFieldModelType + " from save data not recognized");
-                                return;
+                                yield break;
                         }
                     }
                     break;
@@ -326,7 +354,7 @@ public class SaveLoadSystem : MonoBehaviour
                                 break;
                             default:
                                 Debug.LogError("Resource field model type " + data.resourceFieldsData[i].resourceFieldModelType + " from save data not recognized");
-                                return;
+                                yield break;
                         }
                     }
                     break;
@@ -339,16 +367,16 @@ public class SaveLoadSystem : MonoBehaviour
                                 break;
                             default:
                                 Debug.LogError("Resource field model type " + data.resourceFieldsData[i].resourceFieldModelType + " from save data not recognized");
-                                return;
+                                yield break;
                         }
                     }
                     break;
                 case 0:
                     Debug.LogError("Resource field type None from save data not possible");
-                    return;
+                    yield break;
                 default:
                     Debug.LogError("Resource field type " + data.resourceFieldsData[i].resourceFieldType + " from save data not recognized");
-                    return;
+                    yield break;
             }
 
             resourceFieldScript = resourceFieldGO.GetComponent<ResourceField>();
@@ -359,7 +387,7 @@ public class SaveLoadSystem : MonoBehaviour
             else
             {
                 Debug.LogError("Resource field prefab doesn't have resource field script");
-                return;
+                yield break;
             }
         }
 
@@ -383,10 +411,10 @@ public class SaveLoadSystem : MonoBehaviour
                     break;
                 case 0:
                     Debug.LogError("Resource drop type None from save data not possible");
-                    return;
+                    yield break;
                 default:
                     Debug.LogError("Resource drop type " + data.resourceDropsData[i].resourceDropType + " from save data not recognized");
-                    return;
+                    yield break;
             }
 
             resourceDropScript = resourceDropGO.GetComponent<ResourceDrop>();
@@ -395,10 +423,115 @@ public class SaveLoadSystem : MonoBehaviour
             else
             {
                 Debug.LogError("Resource drop prefab doesn't have resource drop script");
-                return;
+                yield break;
             }
         }
 
+        yield return null;
+
+        // Assigning former units targets
+        for (int i = 0; i < loadedUnitsArr.Length; i++)
+        {
+            Vector3 unitTargetPosition = new Vector3(data.unitsData[i].unitTarget[0], data.unitsData[i].unitTarget[1], data.unitsData[i].unitTarget[2]);
+            GameObject unitTargetGO = GameManager.instance.CheckForActiveObjectAtPosition(unitTargetPosition);
+            if (unitTargetGO == null)
+            {
+                loadedUnitsArr[i].MoveToLocation(unitTargetPosition);
+            }
+            else if (unitTargetGO.gameObject.CompareTag("Unit"))
+            {
+                Unit unitTargetScript = unitTargetGO.GetComponent<Unit>();
+                if (unitTargetScript.GetComponent<Unit>() != null)
+                {
+                    if (unitTargetScript.unitStats.unitTeam == loadedUnitsArr[i].unitStats.unitTeam)
+                    {
+                        loadedUnitsArr[i].MoveToLocation(unitTargetPosition);
+                    }
+                    // else
+                    // TO IMPLEMENT ATTACKING AND ATTACK UNIT HERE
+                }
+                else
+                {
+                    Debug.LogError("Unit script missing from " + unitTargetGO + " tagged as Unit");
+                    yield break;
+                }
+            }
+            else if (unitTargetGO.gameObject.CompareTag("Building"))
+            {
+                Building building = unitTargetGO.GetComponent<Building>();
+                if (building != null)
+                {
+                    if (building.buildingStats.buildingTeam == loadedUnitsArr[i].unitStats.unitTeam)
+                    {
+                        loadedUnitsArr[i].MoveToLocation(unitTargetPosition);
+                    }
+                    // else
+                    // TO IMPLEMENT ATTACKING AND ATTACK ENEMY BUILDING HERE
+                }
+                else
+                {
+                    Debug.LogError("Building script missing from " + unitTargetGO + " tagged as Building");
+                    yield break;
+                }
+            }
+            else if (unitTargetGO.gameObject.CompareTag("UnderConstruction"))
+            {
+                if (unitTargetGO.GetComponent<UnderConstruction>() != null)
+                {
+                    loadedUnitsArr[i].worker.StartConstruction(unitTargetGO);
+                }
+                else
+                {
+                    Debug.LogError("UnderConstruction script missing from " + unitTargetGO + " tagged as UnderConstruction");
+                    yield break;
+                }
+            }
+            else if (unitTargetGO.CompareTag("ResourceCamp"))
+            {
+                ResourceCamp resourceCamp = unitTargetGO.GetComponent<ResourceCamp>();
+                if (resourceCamp != null)
+                {
+                    loadedUnitsArr[i].worker.StoreResource(resourceCamp);
+                }
+                else
+                {
+                    Debug.LogError("ResourceCamp script missing from " + unitTargetGO + " tagged as ResourceCamp");
+                    yield break;
+                }
+            }
+            else if (unitTargetGO.CompareTag("Resource"))
+            {
+                ResourceField resourceField = unitTargetGO.GetComponent<ResourceField>();
+                if (resourceField != null)
+                {
+                    loadedUnitsArr[i].worker.CollectResource(resourceField);
+                }
+                else
+                {
+                    Debug.LogError("ResourceField script missing from " + unitTargetGO + " tagged as ResourceField");
+                    yield break;
+                }
+            }
+            else if (unitTargetGO.CompareTag("ResourceDrop"))
+            {
+                ResourceDrop resourceDrop = unitTargetGO.GetComponent<ResourceDrop>();
+                if (resourceDrop != null)
+                {
+                    loadedUnitsArr[i].worker.PickUpResourceAction(resourceDrop);
+                }
+                else
+                {
+                    Debug.LogError("ResourceDrop script missing from " + unitTargetGO + " tagged as ResourceDrop");
+                    yield break;
+                }
+            }
+            else
+            {
+                loadedUnitsArr[i].MoveToLocation(unitTargetPosition);
+                Debug.Log("Unit-Target GameObject tag missing for " + unitTargetGO);
+            }
+        }
+        
         Vector3 cameraPositionVector = new Vector3(data.cameraPosition[0], data.cameraPosition[1], data.cameraPosition[2]);
         CameraController.instance.SetCameraPositionAndRotation(cameraPositionVector, data.cameraYRotationDegrees);
        
