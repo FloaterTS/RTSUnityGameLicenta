@@ -26,8 +26,9 @@ public class UnitStats : ScriptableObject
     public float sprintSpeedMultiplier;
     public float carryLightSpeedMultiplier;
     public float carryHeavySpeedMultiplier;
+    public float harvestSpeedMultiplier;
+    public float resourceSearchDistance;
     public int carryCapactity;
-    public float harvestSpeedMultiplier; 
 
     [SerializeField] private UnitStats baseUnitStats = null;
 
@@ -43,6 +44,7 @@ public class UnitStats : ScriptableObject
         carryLightSpeedMultiplier = baseUnitStats.carryLightSpeedMultiplier;
         carryHeavySpeedMultiplier = baseUnitStats.carryHeavySpeedMultiplier;
         harvestSpeedMultiplier = baseUnitStats.harvestSpeedMultiplier;
+        resourceSearchDistance = baseUnitStats.resourceSearchDistance;
         carryCapactity = baseUnitStats.carryCapactity;
     }
 }

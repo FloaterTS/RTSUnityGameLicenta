@@ -14,27 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SimpleSelectedItems:
     m_Keys:
-    - Assets/Prefabs/UI/MenuElements/Buttons/Continue.prefab
-    - Assets/Prefabs/UI/MenuElements/Buttons/Continue.prefab.meta
-    - Assets/Prefabs/UI/MenuElements/Buttons/MenuCanvas.prefab
-    - Assets/Prefabs/UI/MenuElements/Buttons/MenuCanvas.prefab.meta
-    - Assets/Prefabs/UI/MenuElements/Buttons/Options.prefab
-    - Assets/Prefabs/UI/MenuElements/Buttons/Quit.prefab
-    - Assets/Prefabs/UI/MenuElements/Buttons/Start.prefab
-    - Assets/Scenes/MainMenu.unity
-    - Assets/Scripts/Managers/SaveSystem/SaveFileExists.asset
-    - Assets/Scripts/UI/MainMenu.cs
+    - Assets/Prefabs/Character/UnitStats/Villager.asset
+    - Assets/Scripts/Managers/GameManager.cs
+    - Assets/Scripts/Managers/ResourceManager.cs
+    - Assets/Scripts/Scriptable/UnitStats.cs
+    - Assets/Scripts/Units/Worker.cs
     - 
-    m_Values: 0101010101010101010101
-  RevisionSummary: 'Improved Save System:
-
-    - Unit former task now saved and resumed
-
-    -
-    Selected units saved
-
-
-    Renamed enum values to match all caps naming'
+    m_Values: 000000000000
+  RevisionSummary: 
   ChangesSearchValue: 
   SelectedHistoryRevision: 
   HistoryPageNumber: 0

@@ -14,8 +14,8 @@ public enum ResourceRaw
     BERRIES,
     GOLD,
     WOOD,
-    FISH,
-    FARM
+    Fish,
+    Farm
 }
 
 [System.Serializable]
@@ -43,7 +43,7 @@ public class ResourceManager : MonoBehaviour
 
     [HideInInspector] public List<ResourceCamp> resourceCamps;
 
-    void Awake()
+    private void Awake()
     {
         if (instance == null)
             instance = this;
@@ -53,12 +53,12 @@ public class ResourceManager : MonoBehaviour
         resourceCamps = new List<ResourceCamp>();
     }
 
-    void Update()
+    private void Update()
     {
         GetResourceAmount();
     }
 
-    void GetResourceAmount()
+    private void GetResourceAmount()
     {
         int newFoodAmount = 0;
         int newGoldAmount = 0;
@@ -88,8 +88,8 @@ public class ResourceManager : MonoBehaviour
         switch (resourceRaw)
         {
             case ResourceRaw.BERRIES:
-            case ResourceRaw.FARM:
-            case ResourceRaw.FISH:
+            case ResourceRaw.Farm:
+            case ResourceRaw.Fish:
                 return ResourceType.FOOD;
             case ResourceRaw.GOLD:
                 return ResourceType.GOLD;
@@ -98,4 +98,5 @@ public class ResourceManager : MonoBehaviour
         }
         return ResourceType.NONE;
     }
+
 }

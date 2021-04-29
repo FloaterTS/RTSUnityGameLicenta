@@ -180,6 +180,8 @@ public class Worker : MonoBehaviour
         if (unit.target == targetResourcePosition)
             yield break;
 
+        ResourceRaw targetResourceType = resourceToCollect.resourceInfo.resourceRaw;
+
         Vector3 currentUnitTarget = unit.target;
 
         yield return StartCoroutine(CheckIfImmobileCo());
@@ -200,28 +202,63 @@ public class Worker : MonoBehaviour
         if (unit.target != currentUnitTarget)
             yield break; // unit target changed while getting ready for current task => task no longer valid
 
-        if (resourceToCollect == null)
-            yield break; // check to see if resource dissapeared while in animation state
+        // check to see if resource was depleted while in animation state
+        if (resourceToCollect == null) 
+        {
+            // search for another field of same type in certain area around former field, and if not found then break
+            resourceToCollect = FindResourceFieldAround(targetResourceType, targetResourcePosition);
+            if (resourceToCollect != null)
+                targetResourcePosition = resourceToCollect.transform.position; 
+            else
+                yield break;
+        } 
 
         yield return StartCoroutine(GoToResourceCo(resourceToCollect));
 
         if (unit.target != targetResourcePosition)
             yield break;
 
+        // check to see if resource was depleted while walking towards it
         if (resourceToCollect == null)
-            yield break; //Change this to search for another field in certain area around former field, and if not found then break
+        {
+            // search for another field of same type in certain area around former field, and if not found then break
+            resourceToCollect = FindResourceFieldAround(targetResourceType, targetResourcePosition);
+            if (resourceToCollect != null)
+                CollectResource(resourceToCollect);
+            yield break;
+        }
 
         yield return StartCoroutine(HarvestResourceCo(resourceToCollect));
 
-        if (unit.target != targetResourcePosition || carriedResource.amount == 0)
+        if (unit.target != targetResourcePosition)
             yield break;
+
+        if(carriedResource.amount == 0) // resource depleted while starting harvesting it
+        {
+            // search for another field of same type in certain area around former field, and if not found then break
+            resourceToCollect = FindResourceFieldAround(targetResourceType, targetResourcePosition);
+            if (resourceToCollect != null)
+                CollectResource(resourceToCollect);
+            yield break;
+        }
 
         yield return StartCoroutine(StoreResourceInClosestCampCo());
 
         ResourceCamp campStoredInto = FindClosestResourceCampByType(ResourceManager.ResourceRawToType(resourceToCollect.resourceInfo.resourceRaw));
-        if (campStoredInto != null)
-            if (unit.target == campStoredInto.accessLocation && resourceToCollect != null) //search for another field
+        if (campStoredInto != null && unit.target == campStoredInto.accessLocation)
+        {
+            if (resourceToCollect != null)
+            {
                 CollectResource(resourceToCollect);
+            }
+            else
+            {
+                // search for another field of same type in certain area around former field, and if not found then break
+                resourceToCollect = FindResourceFieldAround(targetResourceType, targetResourcePosition);
+                if (resourceToCollect != null)
+                    CollectResource(resourceToCollect);
+            }
+        }
     }
 
     private IEnumerator GoToResourceCo(ResourceField resourceToGoTo)
@@ -275,12 +312,13 @@ public class Worker : MonoBehaviour
             }
         }
 
+        if (thingInHand != null)
+            thingInHand.gameObject.SetActive(false);
+
         if (carriedResource.amount > 0 && carriedResource.resourceInfo == resourceToHarvestInfo)
-        {
-            if (thingInHand != null)
-                thingInHand.gameObject.SetActive(false);
             yield return StartCoroutine(LiftResourceCo());
-        }
+        else
+            yield return StartCoroutine(StopTaskCo());
     }
 
     private IEnumerator StoreResourceCo(ResourceCamp resourceCamp)
@@ -484,6 +522,15 @@ public class Worker : MonoBehaviour
     private void SetImmobile(bool active)
     {
         immobile = active;
+    }
+
+    private ResourceField FindResourceFieldAround(ResourceRaw type, Vector3 searchPoint)
+    {
+        ResourceField newResourceToCollect = GameManager.instance.GetClosestResourceFieldOfTypeFrom(type, searchPoint);
+        if (newResourceToCollect != null && Vector3.Distance(searchPoint, newResourceToCollect.transform.position) <= unit.unitStats.resourceSearchDistance)
+            return newResourceToCollect;
+        else
+            return null;
     }
 
     private ResourceCamp FindClosestResourceCampByType(ResourceType searchedResourceType)

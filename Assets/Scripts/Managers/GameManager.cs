@@ -125,4 +125,22 @@ public class GameManager : MonoBehaviour
         return null;
     }
 
+    public ResourceField GetClosestResourceFieldOfTypeFrom(ResourceRaw type, Vector3 from)
+    {
+        ResourceField closestResourceField = null;
+        float minDistance = 10000;
+        foreach (ResourceField resourseField in activeResourceFields)
+        {
+            if (resourseField.resourceInfo.resourceRaw == type)
+            {
+                float distance = Vector3.Distance(resourseField.transform.position, from);
+                if (distance < minDistance)
+                {
+                    closestResourceField = resourseField;
+                    minDistance = distance;
+                }
+            }
+        }
+        return closestResourceField;
+    }
 }
