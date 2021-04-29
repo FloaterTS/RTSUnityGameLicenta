@@ -27,7 +27,11 @@ public class UIManager : MonoBehaviour
     public GameObject unitInteractionPanel;
     public GameObject buildInteractionPanel;
     public GameObject campInteractionPanel;
-    InteractionPanelState currentInteractionState;
+    [Space]
+    public TextMeshProUGUI infoText;
+
+    private InteractionPanelState currentInteractionState;
+
 
     private void Awake()
     {
@@ -217,6 +221,22 @@ public class UIManager : MonoBehaviour
         if (SaveLoadSystem.instance.saveFileExists.saveToBeLoaded)
             SaveLoadSystem.instance.LoadGame();
         else
-            Debug.Log("No save file saved."); // Alert to player screen
+            ShowScreenAlert("No save file found.");
+    }
+
+    public void ShowScreenAlert(string message, float seconds = 5f)
+    {
+        if(infoText.text != message)
+            StartCoroutine(ShowScreenAlertCo(message, seconds));
+    }
+
+    private IEnumerator ShowScreenAlertCo(string message, float seconds)
+    {
+        infoText.text = message;
+
+        yield return new WaitForSeconds(seconds);
+
+        if (infoText.text == message)
+            infoText.text = "";
     }
 }

@@ -14,13 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SimpleSelectedItems:
     m_Keys:
-    - Assets/Prefabs/Character/UnitStats/Villager.asset
-    - Assets/Scripts/Managers/GameManager.cs
-    - Assets/Scripts/Managers/ResourceManager.cs
-    - Assets/Scripts/Scriptable/UnitStats.cs
-    - Assets/Scripts/Units/Worker.cs
+    - Assets/Scenes/Main.unity
+    - Assets/Scripts/Managers/UIManager.cs
+    - ProjectSettings/ProjectVersion.txt
     - 
-    m_Values: 000000000000
+    m_Values: 00000000
   RevisionSummary: 
   ChangesSearchValue: 
   SelectedHistoryRevision: 
