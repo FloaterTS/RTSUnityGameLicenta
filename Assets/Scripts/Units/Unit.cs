@@ -38,6 +38,20 @@ public class Unit : MonoBehaviour
 
         if (unitStats.unitTeam == Team.PLAYER)
             selectedArea = transform.Find("Selected").gameObject;
+
+        AssignUnitMaterial();
+    }
+
+    private void AssignUnitMaterial()
+    {
+        if (unitStats.unitModelMeshName == null || unitStats.unitMaterial == null)
+            return;
+
+        GameObject meshGO = transform.Find(unitStats.unitModelMeshName).gameObject;
+        if (meshGO != null)
+            meshGO.GetComponent<Renderer>().material = unitStats.unitMaterial;
+        else
+            Debug.LogError("Cannot find " + unitStats.unitModelMeshName + " in children of " + this.gameObject);
     }
 
     private void Start()

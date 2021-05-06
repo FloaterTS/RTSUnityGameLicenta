@@ -24,4 +24,6 @@ MonoBehaviour:
   harvestSpeedMultiplier: 1
   resourceSearchDistance: 5
   carryCapactity: 8
+  unitModelMeshName: VillagerMesh
+  unitMaterial: {fileID: 0}
   baseUnitStats: {fileID: 0}

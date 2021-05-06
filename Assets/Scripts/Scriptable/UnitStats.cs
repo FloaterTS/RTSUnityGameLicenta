@@ -29,6 +29,8 @@ public class UnitStats : ScriptableObject
     public float harvestSpeedMultiplier;
     public float resourceSearchDistance;
     public int carryCapactity;
+    public string unitModelMeshName;
+    public Material unitMaterial;
 
     [SerializeField] private UnitStats baseUnitStats = null;
 
@@ -46,5 +48,6 @@ public class UnitStats : ScriptableObject
         harvestSpeedMultiplier = baseUnitStats.harvestSpeedMultiplier;
         resourceSearchDistance = baseUnitStats.resourceSearchDistance;
         carryCapactity = baseUnitStats.carryCapactity;
+        unitModelMeshName = baseUnitStats.unitModelMeshName;
     }
 }

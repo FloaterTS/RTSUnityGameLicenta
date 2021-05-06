@@ -13,9 +13,16 @@ MonoBehaviour:
   m_Name: EnemyVillager
   m_EditorClassIdentifier: 
   unitTeam: 1
+  unitType: 0
   unitName: Villager
   maxHealth: 70
   moveSpeed: 7
-  carryCapactity: 10
+  walkSpeedMultiplier: 0.5
+  sprintSpeedMultiplier: 1.5
+  carryLightSpeedMultiplier: 0.5
+  carryHeavySpeedMultiplier: 0.4
   harvestSpeedMultiplier: 1
+  resourceSearchDistance: 5
+  carryCapactity: 10
+  unitMaterial: {fileID: 2100000, guid: d97748b7096e3b04a862654f4fd2bd42, type: 2}
   baseUnitStats: {fileID: 11400000, guid: 88922b06f5aa64141ae443321f1a603f, type: 2}
