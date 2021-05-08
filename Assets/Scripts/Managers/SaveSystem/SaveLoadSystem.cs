@@ -148,26 +148,15 @@ public class SaveLoadSystem : MonoBehaviour
 
             switch (data.unitsData[i].unitType)
             {
-                case 0:
+                case 0: // Villager Type
                     {
-                        unitGO = Instantiate(PrefabManager.instance.villagerPrefab, unitPosition, unitRotation, PrefabManager.instance.unitsTransformParentGO.transform);
-                        unitScript = unitGO.GetComponent<Unit>();
-
-                        if (unitScript == null)
-                        {
-                            Debug.LogError("Unit prefab doesn't have Unit script attached");
-                            yield break;
-                        }
-
-                        loadedUnitsArr[i] = unitScript;
-
                         switch (data.unitsData[i].unitTeam)
                         {
                             case 0: // Player Team
-                                unitScript.unitStats = PrefabManager.instance.playerVillagerStats;
+                                unitGO = Instantiate(PrefabManager.instance.villagerPlayerPrefab, unitPosition, unitRotation, PrefabManager.instance.unitsTransformParentGO.transform);
                                 break;
                             case 1: // Enemy Team
-                                unitScript.unitStats = PrefabManager.instance.enemyVillagerStats;
+                                unitGO = Instantiate(PrefabManager.instance.villagerEnemyPrefab, unitPosition, unitRotation, PrefabManager.instance.unitsTransformParentGO.transform);
                                 break;
                             default:
                                 Debug.LogError("Unit team " + data.unitsData[i].unitTeam + " from save data not recognized");
@@ -180,6 +169,14 @@ public class SaveLoadSystem : MonoBehaviour
                     yield break;
             }
 
+            unitScript = unitGO.GetComponent<Unit>();
+
+            if (unitScript == null)
+            {
+                Debug.LogError("Unit prefab doesn't have Unit script attached");
+                yield break;
+            }
+
             unitScript.SetCurrentHealth(data.unitsData[i].unitHealth);
 
             if (data.unitsData[i].isSelected)
@@ -187,6 +184,8 @@ public class SaveLoadSystem : MonoBehaviour
                 SelectionManager.instance.selectedUnits.Add(unitScript);
                 unitScript.SetSelected(true);
             }
+
+            loadedUnitsArr[i] = unitScript;
 
             Worker worker = unitGO.GetComponent<Worker>();
             if (worker != null && data.unitsData[i].unitResourceAmountCarried > 0)
@@ -228,19 +227,10 @@ public class SaveLoadSystem : MonoBehaviour
             {
                 case 0: // Resource Camp Construction
                     {
-                        buildingGO = Instantiate(PrefabManager.instance.resourceCampConstructionPrefab, buildingPosition, buildingRotation, PrefabManager.instance.buildingsTransformParentGO.transform);
-                        buildingScript = buildingGO.GetComponent<Building>();
-
-                        if (buildingScript == null)
-                        {
-                            Debug.LogError("Resource Camp Construction prefab doesn't have Building script attached");
-                            yield break;
-                        }
-
                         switch (data.buildingsData[i].buildingTeam)
                         {
-                            case 0:
-                                buildingScript.buildingStats = PrefabManager.instance.playerResourceCamp;
+                            case 0: // Player Team
+                                buildingGO = Instantiate(PrefabManager.instance.resourceCampConstructionPlayerPrefab, buildingPosition, buildingRotation, PrefabManager.instance.buildingsTransformParentGO.transform);
                                 break;
                             default:
                                 Debug.LogError("Building team " + data.buildingsData[i].buildingTeam + " from save data not recognized");
@@ -261,19 +251,10 @@ public class SaveLoadSystem : MonoBehaviour
                     break;
                 case 1: // Resource Camp
                     {
-                        buildingGO = Instantiate(PrefabManager.instance.resourceCampPrefab, buildingPosition, buildingRotation, PrefabManager.instance.buildingsTransformParentGO.transform);
-                        buildingScript = buildingGO.GetComponent<Building>();
-
-                        if (buildingScript == null)
-                        {
-                            Debug.LogError("Resource Camp prefab doesn't have Building script attached");
-                            yield break;
-                        }
-
                         switch (data.buildingsData[i].buildingTeam)
                         {
-                            case 0:
-                                buildingScript.buildingStats = PrefabManager.instance.playerResourceCamp;
+                            case 0: // Player Team
+                                buildingGO = Instantiate(PrefabManager.instance.resourceCampPlayerPrefab, buildingPosition, buildingRotation, PrefabManager.instance.buildingsTransformParentGO.transform);
                                 break;
                             default:
                                 Debug.LogError("Building team " + data.buildingsData[i].buildingTeam + " from save data not recognized");
@@ -283,7 +264,7 @@ public class SaveLoadSystem : MonoBehaviour
                         ResourceCamp resourceCampScript = buildingGO.GetComponent<ResourceCamp>();
                         if (resourceCampScript == null)
                         {
-                            Debug.LogError("Resource Camp prefab doesn't have Building script attached");
+                            Debug.LogError("Resource Camp prefab doesn't have ResourceCamp script attached");
                             yield break;
                         }
                         switch (data.buildingsData[i].storedResourceType)
@@ -308,6 +289,14 @@ public class SaveLoadSystem : MonoBehaviour
                 default:
                     Debug.LogError("Building type " + data.buildingsData[i].buildingType + " from save data not recognized");
                     yield break;
+            }
+
+            buildingScript = buildingGO.GetComponent<Building>();
+
+            if (buildingScript == null)
+            {
+                Debug.LogError("Building of type " + data.buildingsData[i].buildingType + " (from save data) prefab doesn't have Building script attached");
+                yield break;
             }
 
             buildingScript.SetCurrentHitpoints(data.buildingsData[i].buildingHealth);

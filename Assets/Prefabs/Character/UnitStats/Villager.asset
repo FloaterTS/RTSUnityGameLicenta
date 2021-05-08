@@ -22,8 +22,13 @@ MonoBehaviour:
   carryLightSpeedMultiplier: 0.5
   carryHeavySpeedMultiplier: 0.4
   harvestSpeedMultiplier: 1
-  resourceSearchDistance: 5
+  resourceSearchDistance: 8.5
+  checkSurroundingsDistance: 10
+  checkSurroundingsRate: 1
+  alertDistance: 5
+  chaseDistance: 25
+  chaseVision: 17.5
+  attackRange: 1.5
+  attackDamage: 1
   carryCapactity: 8
-  unitModelMeshName: VillagerMesh
-  unitMaterial: {fileID: 0}
   baseUnitStats: {fileID: 0}

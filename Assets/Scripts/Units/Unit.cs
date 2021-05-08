@@ -1,6 +1,15 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+
+public enum UnitState
+{
+    IDLE,
+    MOVING,
+    WORKING,
+    ATTACKING
+}
 
 public class Unit : MonoBehaviour
 {
@@ -11,25 +20,32 @@ public class Unit : MonoBehaviour
     //Unit States
     [HideInInspector] public UnitState unitState;
     [HideInInspector] public Vector3 target;
+    [HideInInspector] public Transform thingInHand;
 
-    //Worker
+    //Worker & Fighter
     [HideInInspector] public Worker worker;
+    [HideInInspector] public Fighter fighter;
 
     //Components
     private Animator animator;
     private NavMeshAgent navAgent;
+    private NavMeshObstacle navObstacle;
     private GameObject selectedArea = null;
 
     //Others
     private float minMovingVelocity = 0.6f;
     private bool isSelected = false;
+    private bool immobile = false;
 
 
     private void Awake()
     {
         animator = GetComponent<Animator>();
         navAgent = GetComponent<NavMeshAgent>();
+        navObstacle = GetComponent<NavMeshObstacle>();
+
         worker = GetComponent<Worker>();
+        fighter = GetComponent<Fighter>();
 
         currentHealth = unitStats.maxHealth;
         navAgent.speed = unitStats.moveSpeed;
@@ -38,20 +54,6 @@ public class Unit : MonoBehaviour
 
         if (unitStats.unitTeam == Team.PLAYER)
             selectedArea = transform.Find("Selected").gameObject;
-
-        AssignUnitMaterial();
-    }
-
-    private void AssignUnitMaterial()
-    {
-        if (unitStats.unitModelMeshName == null || unitStats.unitMaterial == null)
-            return;
-
-        GameObject meshGO = transform.Find(unitStats.unitModelMeshName).gameObject;
-        if (meshGO != null)
-            meshGO.GetComponent<Renderer>().material = unitStats.unitMaterial;
-        else
-            Debug.LogError("Cannot find " + unitStats.unitModelMeshName + " in children of " + this.gameObject);
     }
 
     private void Start()
@@ -85,48 +87,65 @@ public class Unit : MonoBehaviour
         }
     }
 
-    public float GetHealth()
+    private void CheckIfIdle()
     {
-        return currentHealth;
+        if (unitState != UnitState.MOVING || !navAgent.enabled || (worker != null && worker.IsBusy()) || (fighter!= null && fighter.GetAttackTarget() != null))
+            return;
+
+        if (Vector3.Distance(transform.position, navAgent.destination) <= navAgent.stoppingDistance + 0.1f)
+        {
+            StopNavAgent();
+            unitState = UnitState.IDLE;
+            target = Vector3.zero;
+        }
     }
 
-    public void MoveToLocation(Vector3 targetPosition)
+    public void MoveToLocation(Vector3 targetPosition, bool attackMove = false)
     {
-        StartCoroutine(MoveToLocationCo(targetPosition));
+        StartCoroutine(MoveToLocationCo(targetPosition, attackMove));
     }
 
-    public IEnumerator MoveToLocationCo(Vector3 targetPosition)
+    public IEnumerator MoveToLocationCo(Vector3 targetPosition, bool attackMove = false)
     {
         if (target == targetPosition)
             yield break;
 
         target = targetPosition;
 
+        if (fighter != null)
+        {
+            if (!attackMove)
+                fighter.StopAttackMove();
+            if (unitState == UnitState.ATTACKING || !navAgent.enabled)
+                yield return StartCoroutine(fighter.StopAttackCo());
+        }
+
         if (worker != null)
         {
             if (unitState == UnitState.WORKING || !navAgent.enabled)
-                yield return StartCoroutine(worker.StopTaskCo());
-            yield return StartCoroutine(worker.CheckIfImmobileCo());
-            if (targetPosition != target)
-                yield break;
+                yield return StartCoroutine(worker.StopTaskCo()); 
         }
-        navAgent.isStopped = false;
+        
+        yield return StartCoroutine(CheckIfImmobileCo());
+
+        if ((targetPosition != target && !attackMove) || !navAgent.enabled)
+            yield break;
+
         navAgent.SetDestination(targetPosition);
 
         unitState = UnitState.MOVING;
     }
 
-    void CheckIfIdle()
+    public IEnumerator CheckIfImmobileCo()
     {
-        if (unitState != UnitState.MOVING || !navAgent.enabled || (worker != null && worker.IsBusy()))
-            return;
-        //Do I need the distance condition?
-        if (navAgent.hasPath && Vector3.Distance(transform.position, navAgent.destination) <= navAgent.stoppingDistance + 0.1f) 
-        {
-            StopNavAgent();
-            unitState = UnitState.IDLE;
-            target = Vector3.zero;
-        }
+        yield return null;
+        while (immobile)
+            yield return null;
+    }
+
+    public void SetImmobile(bool active)
+    {
+        immobile = active;
     }
 
     public void SetSelected(bool isSelected)
@@ -144,7 +163,6 @@ public class Unit : MonoBehaviour
     {
         if (navAgent.enabled)
         {
-            //navAgent.isStopped = true;
             navAgent.ResetPath();
             navAgent.velocity = Vector3.zero;
         }
@@ -153,6 +171,22 @@ public class Unit : MonoBehaviour
     public void EnableNavAgent(bool isEnabled)
     {
         navAgent.enabled = isEnabled;
+    }
+
+    public void EnableNavObstacle(bool isEnabled)
+    {
+        navObstacle.enabled = isEnabled;
+    }
+
+    public void NavAgentToNavObstacle()
+    {
+        EnableNavAgent(false);
+        EnableNavObstacle(true);
+    }
+
+    public bool IsNavObstacleEnabled()
+    {
+        return navObstacle.enabled;
     }
 
     public void ChangeUnitSpeed(UnitSpeed unitSpeed)
@@ -189,6 +223,9 @@ public class Unit : MonoBehaviour
         if (worker != null)
             yield return StartCoroutine(worker.StopWorkAction());
 
+        if (fighter != null)
+            fighter.StopAttackMove();
+
         StopNavAgent();
     }
 
@@ -206,4 +243,5 @@ public class Unit : MonoBehaviour
     {
         return isSelected;
     }
+
 }

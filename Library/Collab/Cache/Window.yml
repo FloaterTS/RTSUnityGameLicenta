@@ -14,37 +14,39 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SimpleSelectedItems:
     m_Keys:
-    - Assets/Art/Audio.meta
-    - Assets/Art/Audio/MainAudioMixer.mixer
-    - Assets/Art/Audio/MainAudioMixer.mixer.meta
-    - Assets/Art/Materials/Characters/EnemyColor.mat
-    - Assets/Art/Materials/Characters/EnemyColor.mat.meta
-    - Assets/Art/Materials/Characters/PlayerColor.mat
-    - Assets/Art/Materials/Characters/PlayerColor.mat.meta
+    - Assets/Art/Materials/Colors/ColorRed.mat
+    - Assets/Art/Materials/Colors/ColorRed.mat.meta
+    - Assets/Art/Materials/Colors/EnemyColor.mat
+    - Assets/Art/Materials/Colors/EnemyColor.mat.meta
+    - Assets/Art/Materials/Colors/PlayerColor.mat
+    - Assets/Art/Materials/Colors/PlayerColor.mat.meta
+    - Assets/Art/Materials/Colors/PreviewBuildingColor.mat
     - Assets/Art/Materials/Colors/Selection.mat
     - Assets/Art/Materials/Colors/SelectionOld.mat
     - Assets/Art/Materials/Colors/SelectionOld.mat.meta
-    - Assets/Art/UI/Others/Division line.png
-    - Assets/Art/UI/Others/Division line.png.meta
-    - Assets/Prefabs/Character/UnitStats/EnemyVillager.asset
-    - Assets/Prefabs/Character/UnitStats/PlayerVillager.asset
+    - Assets/Prefabs/Buildings/Buildings/ResourceCampPlayer.prefab
+    - Assets/Prefabs/Buildings/Buildings/ResourceCampPlayer.prefab.meta
+    - Assets/Prefabs/Buildings/Constructions/CampContructionPlayer.prefab
+    - Assets/Prefabs/Buildings/Constructions/CampContructionPlayer.prefab.meta
     - Assets/Prefabs/Character/UnitStats/Villager.asset
-    - Assets/Prefabs/UI/Buttons.meta
-    - Assets/Prefabs/UI/MenuComponents.meta
-    - Assets/Prefabs/UI/MenuElements/Buttons/InteractionButton.prefab
-    - Assets/Prefabs/UI/MenuElements/Buttons/InteractionButton.prefab.meta
-    - Assets/Prefabs/UI/MenuElements/Buttons/MenuIconButton.prefab
-    - Assets/Prefabs/UI/MenuElements/Buttons/MenuIconButton.prefab.meta
-    - Assets/Prefabs/UI/MenuElements/Buttons/MenuOption.prefab
-    - Assets/Prefabs/UI/MenuElements/Buttons/MenuOption.prefab.meta
+    - Assets/Prefabs/Character/Units/EnemyVillager.prefab
+    - Assets/Prefabs/Character/Units/EnemyVillager.prefab.meta
+    - Assets/Prefabs/Character/Units/PlayerVillager.prefab
+    - Assets/Prefabs/Character/Units/PlayerVillager.prefab.meta
     - Assets/Scenes/Main.unity
-    - Assets/Scenes/MainMenu.unity
+    - Assets/Scripts/Managers/GameManager.cs
+    - Assets/Scripts/Managers/InteractionManager.cs
+    - Assets/Scripts/Managers/PrefabManager.cs
+    - Assets/Scripts/Managers/SaveSystem/GameSaveData.cs
+    - Assets/Scripts/Managers/SaveSystem/SaveLoadSystem.cs
     - Assets/Scripts/Scriptable/UnitStats.cs
     - Assets/Scripts/UI/MainMenu.cs
+    - Assets/Scripts/Units/Fighter.cs
+    - Assets/Scripts/Units/Fighter.cs.meta
     - Assets/Scripts/Units/Unit.cs
-    - ProjectSettings/ProjectSettings.asset
+    - Assets/Scripts/Units/Worker.cs
     - 
-    m_Values: 000000000000000000000000000000000000000000000000000000000000
+    m_Values: 0000000000000000000000000000000000000000000000000000000000000000
   RevisionSummary: 
   ChangesSearchValue: 
   SelectedHistoryRevision: 

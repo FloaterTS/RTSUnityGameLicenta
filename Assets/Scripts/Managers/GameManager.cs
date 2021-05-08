@@ -9,6 +9,7 @@ public enum Team
     ENEMY2,
     ENEMY3,
     NEUTRAL,
+    NONE
 }
 
 public class GameManager : MonoBehaviour

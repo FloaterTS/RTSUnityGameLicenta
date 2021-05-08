@@ -51,7 +51,7 @@ public class UnitData
         unitTarget[1] = unit.target.y;
         unitTarget[2] = unit.target.z;
 
-        unitHealth = unit.GetHealth();
+        unitHealth = unit.GetCurrentHealth();
 
         isSelected = unit.IsSelected();
 

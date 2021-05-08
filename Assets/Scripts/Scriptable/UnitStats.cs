@@ -28,9 +28,14 @@ public class UnitStats : ScriptableObject
     public float carryHeavySpeedMultiplier;
     public float harvestSpeedMultiplier;
     public float resourceSearchDistance;
+    public float checkSurroundingsDistance;
+    public float checkSurroundingsRate;
+    public float alertDistance;
+    public float chaseDistance;
+    public float chaseVision;
+    public float attackRange;
+    public float attackDamage;
     public int carryCapactity;
-    public string unitModelMeshName;
-    public Material unitMaterial;
 
     [SerializeField] private UnitStats baseUnitStats = null;
 
@@ -47,7 +52,13 @@ public class UnitStats : ScriptableObject
         carryHeavySpeedMultiplier = baseUnitStats.carryHeavySpeedMultiplier;
         harvestSpeedMultiplier = baseUnitStats.harvestSpeedMultiplier;
         resourceSearchDistance = baseUnitStats.resourceSearchDistance;
+        checkSurroundingsDistance = baseUnitStats.checkSurroundingsDistance;
+        checkSurroundingsRate = baseUnitStats.checkSurroundingsRate;
+        alertDistance = baseUnitStats.alertDistance;
+        chaseDistance = baseUnitStats.chaseDistance;
+        chaseVision = baseUnitStats.chaseVision;
+        attackRange = baseUnitStats.attackRange;
+        attackDamage = baseUnitStats.attackDamage;
         carryCapactity = baseUnitStats.carryCapactity;
-        unitModelMeshName = baseUnitStats.unitModelMeshName;
     }
 }

@@ -1,12 +1,5 @@
 ﻿using UnityEngine;
 
-public enum UnitState
-{
-    IDLE,
-    MOVING,
-    WORKING,
-    ATTACKING
-}
 
 public class InteractionManager : MonoBehaviour
 {

@@ -5,11 +5,14 @@ public class PrefabManager : MonoBehaviour
     public static PrefabManager instance;
 
     [Header("Units Prefabs")]
-    public GameObject villagerPrefab;
+    public GameObject villagerPlayerPrefab;
+    public GameObject villagerEnemyPrefab;
 
     [Header("Buildings Prefabs")]
-    public GameObject resourceCampPrefab;
-    public GameObject resourceCampConstructionPrefab;
+    public GameObject resourceCampPlayerPrefab;
+    public GameObject resourceCampConstructionPlayerPrefab;
+    //public GameObject resourceCampEnemyPrefab;
+    //public GameObject resourceCampEnemyConstructionPrefab;
 
     [Header("ResourceFields Prefabs")]
     public GameObject berryBushSmallPrefab;
@@ -22,21 +25,19 @@ public class PrefabManager : MonoBehaviour
     public GameObject logPileDropPrefab;
     public GameObject goldOreDropPrefab;
 
-    [Space] 
-    [Header("Units Stats")]
+    /*[Header("Units Stats")]
     public UnitStats playerVillagerStats;
-
     public UnitStats enemyVillagerStats;
 
     [Header("Buildings Stats")]
-    public BuildingStats playerResourceCamp;
+    public BuildingStats playerResourceCamp;*/
 
     [Header("Resource Info")]
     public ResourceInfo berriesInfo;
     public ResourceInfo woodInfo;
     public ResourceInfo goldInfo;
 
-    [Space][Header("Transform Parents")]
+    [Header("Transform Parents")]
     public GameObject unitsTransformParentGO;
     public GameObject buildingsTransformParentGO;
     public GameObject resourceFieldsTransformParentGO;

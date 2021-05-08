@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using UnityEngine;
-using UnityEngine.AI;
 
 [RequireComponent(typeof(Unit))]
 public class Worker : MonoBehaviour
@@ -9,17 +8,14 @@ public class Worker : MonoBehaviour
 
     private Unit unit;
     private Animator animator;
-    private Transform thingInHand;
-    private NavMeshObstacle navWorkerObstacle;
     private bool onWayToTask = false;
     private bool constructionSiteReached = false;
-    private bool immobile = false;
+ 
 
     void Awake()
     {
         unit = GetComponent<Unit>();
         animator = GetComponent<Animator>();
-        navWorkerObstacle = GetComponent<NavMeshObstacle>();
 
         carriedResource.amount = 0;
     }
@@ -73,16 +69,12 @@ public class Worker : MonoBehaviour
     {
         unit.unitState = UnitState.IDLE;
         animator.SetBool("working", false);
-        navWorkerObstacle.enabled = false;
-        yield return null;
-        unit.EnableNavAgent(true);
-    }
-
-    public IEnumerator CheckIfImmobileCo()
-    {
-        yield return null;
-        while (immobile)
+        if (unit.IsNavObstacleEnabled())
+        {
+            unit.EnableNavObstacle(false);
             yield return null;
+            unit.EnableNavAgent(true);
+        }
     }
 
     public IEnumerator StopWorkAction()
@@ -102,7 +94,7 @@ public class Worker : MonoBehaviour
         if (unit.target == underConstructionBuilding.transform.position)
             yield break;
 
-        yield return StartCoroutine(CheckIfImmobileCo());
+        yield return StartCoroutine(unit.CheckIfImmobileCo());
 
         yield return StartCoroutine(GoToConstructionSiteCo(underConstructionBuilding));
 
@@ -119,11 +111,11 @@ public class Worker : MonoBehaviour
 
         if (carriedResource.amount == 0)
         {
-            if (thingInHand != null)
-                thingInHand.gameObject.SetActive(false);
-            thingInHand = transform.Find(underConstructionBuilding.GetComponent<Building>().buildingStats.toolConstructionName);
-            if (thingInHand != null)
-                thingInHand.gameObject.SetActive(true);
+            if (unit.thingInHand != null)
+                unit.thingInHand.gameObject.SetActive(false);
+            unit.thingInHand = transform.Find(underConstructionBuilding.GetComponent<Building>().buildingStats.toolConstructionName);
+            if (unit.thingInHand != null)
+                unit.thingInHand.gameObject.SetActive(true);
         }
 
         while (!constructionSiteReached && underConstructionBuilding != null && unit.target == underConstructionBuilding.transform.position)
@@ -153,11 +145,11 @@ public class Worker : MonoBehaviour
         Building building = underConstructionBuilding.GetComponent<Building>();
         UnderConstruction underConstruction = underConstructionBuilding.GetComponent<UnderConstruction>();
 
-        /*if (thingInHand != null)
-            thingInHand.gameObject.SetActive(false);
-        thingInHand = transform.Find(building.buildingStats.toolConstructionName);
-        if (thingInHand != null)
-            thingInHand.gameObject.SetActive(true);*/
+        if (unit.thingInHand != null)
+            unit.thingInHand.gameObject.SetActive(false);
+        unit.thingInHand = transform.Find(building.buildingStats.toolConstructionName);
+        if (unit.thingInHand != null)
+            unit.thingInHand.gameObject.SetActive(true);
 
         while (underConstructionBuilding != null && underConstruction.BuiltPercentage() < 100f && unit.target == underConstructionBuildingPosition)
         {
@@ -169,8 +161,8 @@ public class Worker : MonoBehaviour
         if (unit.target == underConstructionBuildingPosition)
             yield return StartCoroutine(StopTaskCo());
 
-        /*if (thingInHand != null)
-            thingInHand.gameObject.SetActive(false);*/
+        /*if (unit.thingInHand != null)
+            unit.thingInHand.gameObject.SetActive(false);*/
     }
 
     private IEnumerator CollectResourceCo(ResourceField resourceToCollect)
@@ -184,7 +176,7 @@ public class Worker : MonoBehaviour
 
         Vector3 currentUnitTarget = unit.target;
 
-        yield return StartCoroutine(CheckIfImmobileCo());
+        yield return StartCoroutine(unit.CheckIfImmobileCo());
 
         if (unit.target != currentUnitTarget)
             yield break; // unit target changed while waiting to be free for current task => task no longer valid
@@ -215,7 +207,7 @@ public class Worker : MonoBehaviour
 
         yield return StartCoroutine(GoToResourceCo(resourceToCollect));
 
-        if (unit.target != targetResourcePosition)
+        if (unit.target != targetResourcePosition) // check to see if unit target changed while walking towards res
             yield break;
 
         // check to see if resource was depleted while walking towards it
@@ -268,11 +260,11 @@ public class Worker : MonoBehaviour
 
         if (carriedResource.amount == 0)
         {
-            if (thingInHand != null)
-                thingInHand.gameObject.SetActive(false);
-            thingInHand = transform.Find(resourceToGoTo.resourceInfo.toolInHandName);
-            if (thingInHand != null)
-                thingInHand.gameObject.SetActive(true);
+            if (unit.thingInHand != null)
+                unit.thingInHand.gameObject.SetActive(false);
+            unit.thingInHand = transform.Find(resourceToGoTo.resourceInfo.toolInHandName);
+            if (unit.thingInHand != null)
+                unit.thingInHand.gameObject.SetActive(true);
         }
 
         while (resourceToGoTo != null && Vector3.Distance(transform.position, resourceToGoTo.transform.position) > resourceToGoTo.collectDistance
@@ -292,11 +284,11 @@ public class Worker : MonoBehaviour
         transform.LookAt(new Vector3(resourceToHarvest.transform.position.x, transform.position.y, resourceToHarvest.transform.position.z));
         animator.SetTrigger(resourceToHarvest.resourceInfo.harvestAnimation);
 
-        if (thingInHand != null)
-            thingInHand.gameObject.SetActive(false);
-        thingInHand = transform.Find(resourceToHarvest.resourceInfo.toolHarvestingName);
-        if (thingInHand != null)
-            thingInHand.gameObject.SetActive(true);
+        if (unit.thingInHand != null)
+            unit.thingInHand.gameObject.SetActive(false);
+        unit.thingInHand = transform.Find(resourceToHarvest.resourceInfo.toolHarvestingName);
+        if (unit.thingInHand != null)
+            unit.thingInHand.gameObject.SetActive(true);
 
         ResourceInfo resourceToHarvestInfo = resourceToHarvest.resourceInfo;
         float timeElapsed = 0f;
@@ -312,8 +304,8 @@ public class Worker : MonoBehaviour
             }
         }
 
-        if (thingInHand != null)
-            thingInHand.gameObject.SetActive(false);
+        if (unit.thingInHand != null)
+            unit.thingInHand.gameObject.SetActive(false);
 
         if (carriedResource.amount > 0 && carriedResource.resourceInfo == resourceToHarvestInfo)
             yield return StartCoroutine(LiftResourceCo());
@@ -340,7 +332,7 @@ public class Worker : MonoBehaviour
                 yield return StartCoroutine(StoreResourceInClosestCampCo());
             else
             {
-                DisableNavAgent();
+                unit.NavAgentToNavObstacle();
                 yield return StartCoroutine(LetDownResourceCo());
 
                 if (resourceCamp.campType != ResourceType.NONE && resourceCamp.campType != carriedResource.resourceInfo.resourceType)
@@ -383,7 +375,7 @@ public class Worker : MonoBehaviour
 
     private IEnumerator LiftResourceCo(bool instant = false)
     {
-        yield return StartCoroutine(CheckIfImmobileCo());
+        yield return StartCoroutine(unit.CheckIfImmobileCo());
 
         if(!instant)
             unit.StopNavAgent();
@@ -392,19 +384,19 @@ public class Worker : MonoBehaviour
 
         animator.SetBool(carriedResource.resourceInfo.carryAnimation, true);
 
-        if (thingInHand != null)
-            thingInHand.gameObject.SetActive(false);
-        thingInHand = transform.Find(carriedResource.resourceInfo.carriedResourceName);
-        if (thingInHand != null)
-            thingInHand.gameObject.SetActive(true);
+        if (unit.thingInHand != null)
+            unit.thingInHand.gameObject.SetActive(false);
+        unit.thingInHand = transform.Find(carriedResource.resourceInfo.carriedResourceName);
+        if (unit.thingInHand != null)
+            unit.thingInHand.gameObject.SetActive(true);
 
         if (!instant)
         {
             StartCoroutine(StopTaskCo());
 
-            SetImmobile(true);
+            unit.SetImmobile(true);
             yield return new WaitForSeconds(carriedResource.resourceInfo.liftAnimationDuration);
-            SetImmobile(false);
+            unit.SetImmobile(false);
         }
         else
         {
@@ -417,7 +409,7 @@ public class Worker : MonoBehaviour
 
     private IEnumerator LetDownResourceCo(bool withAnimation = true)
     {
-        yield return StartCoroutine(CheckIfImmobileCo());
+        yield return StartCoroutine(unit.CheckIfImmobileCo());
 
         unit.StopNavAgent();
 
@@ -427,15 +419,15 @@ public class Worker : MonoBehaviour
         {
             StartCoroutine(StopTaskCo());
 
-            SetImmobile(true);
+            unit.SetImmobile(true);
             yield return new WaitForSeconds(carriedResource.resourceInfo.dropAnimationDuration);
-            SetImmobile(false);
+            unit.SetImmobile(false);
         }
 
         unit.ChangeUnitSpeed(UnitSpeed.RUN);
 
-        if (thingInHand != null)
-            thingInHand.gameObject.SetActive(false);
+        if (unit.thingInHand != null)
+            unit.thingInHand.gameObject.SetActive(false);
     }
 
     private IEnumerator LetDownDropResourceCo(bool withAnimation = true)
@@ -510,18 +502,7 @@ public class Worker : MonoBehaviour
     {
         unit.unitState = UnitState.WORKING;
         animator.SetBool("working", true);
-        DisableNavAgent();
-    }
-
-    private void DisableNavAgent()
-    {
-        unit.EnableNavAgent(false);
-        navWorkerObstacle.enabled = true;
-    }
-
-    private void SetImmobile(bool active)
-    {
-        immobile = active;
+        unit.NavAgentToNavObstacle();
     }
 
     private ResourceField FindResourceFieldAround(ResourceRaw type, Vector3 searchPoint)

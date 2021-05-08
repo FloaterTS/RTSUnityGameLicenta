@@ -20,7 +20,7 @@ public class MainMenu : MonoBehaviour
     public Material enemyColorMaterial;
     public Material selectionMaterial;
 
-    private float selectionColorAlphaValue = 0.2f;
+    private float selectionColorAlphaValue = 0.25f;
 
     [Space]
     [Header("Saved Game Settings")]
