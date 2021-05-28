@@ -35,9 +35,9 @@ public class Worker : MonoBehaviour
         StartCoroutine(CollectResourceCo(targetResource));
     }
 
-    public void StoreResource(ResourceCamp resourceCamp)
+    public void StoreResource(ResourceCamp resourceCamp, bool backToResource = false)
     {
-        StartCoroutine(StoreResourceCo(resourceCamp));
+        StartCoroutine(StoreResourceCo(resourceCamp, backToResource));
     }
 
     public void StoreResourceInClosestCamp()
@@ -69,12 +69,7 @@ public class Worker : MonoBehaviour
     {
         unit.unitState = UnitState.IDLE;
         animator.SetBool("working", false);
-        if (unit.IsNavObstacleEnabled())
-        {
-            unit.EnableNavObstacle(false);
-            yield return null;
-            unit.EnableNavAgent(true);
-        }
+        yield return StartCoroutine(unit.NavObstacleToNavAgent());
     }
 
     public IEnumerator StopWorkAction()
@@ -313,7 +308,7 @@ public class Worker : MonoBehaviour
             yield return StartCoroutine(StopTaskCo());
     }
 
-    private IEnumerator StoreResourceCo(ResourceCamp resourceCamp)
+    private IEnumerator StoreResourceCo(ResourceCamp resourceCamp, bool backToResource = false)
     {
         if (unit.target == resourceCamp.accessLocation)
             yield break;
@@ -344,7 +339,18 @@ public class Worker : MonoBehaviour
                 }
 
                 if (unit.target == resourceCamp.accessLocation)
+                {
                     yield return StartCoroutine(StopTaskCo());
+
+                    if (backToResource)
+                    {
+                        ResourceField resource = GameManager.instance.GetClosestResourceFieldOfTypeFrom(carriedResource.resourceInfo.resourceRaw, transform.position);
+                        if (resource != null)
+                            CollectResource(resource);
+                    }
+                }
+
+                
             }
         }
     }

@@ -35,6 +35,10 @@ public class UnitStats : ScriptableObject
     public float chaseVision;
     public float attackRange;
     public float attackDamage;
+    public float attackAnimationDuration;
+    public float deathAnimationDuration;
+    public int numberOfAttackTypes;
+    public int numberOfDeathTypes;
     public int carryCapactity;
 
     [SerializeField] private UnitStats baseUnitStats = null;
@@ -59,6 +63,10 @@ public class UnitStats : ScriptableObject
         chaseVision = baseUnitStats.chaseVision;
         attackRange = baseUnitStats.attackRange;
         attackDamage = baseUnitStats.attackDamage;
+        attackAnimationDuration = baseUnitStats.attackAnimationDuration;
+        deathAnimationDuration = baseUnitStats.deathAnimationDuration;
+        numberOfAttackTypes = baseUnitStats.numberOfAttackTypes;
+        numberOfDeathTypes = baseUnitStats.numberOfDeathTypes;
         carryCapactity = baseUnitStats.carryCapactity;
     }
 }

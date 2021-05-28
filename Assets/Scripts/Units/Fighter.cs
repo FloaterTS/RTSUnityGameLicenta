@@ -47,9 +47,9 @@ public class Fighter : MonoBehaviour
 
     private void CheckAttackTarget()
     {
-        if (attackTarget == null)
+        if (attackTarget == null || unit.unitState == UnitState.ATTACKING)
             return;
-        //Debug.Log(gameObject + " " + attackTarget);
+
         float distanceFromTarget = Vector3.Distance(transform.position, attackTarget.transform.position);
         if (distanceFromTarget <= unit.unitStats.attackRange)
             StartAttack();
@@ -76,32 +76,38 @@ public class Fighter : MonoBehaviour
 
         attackTarget = target;
         attackCommand = activeAttack;
+        animator.SetBool("isFighting", true);
     }
 
     private void StartAttack()
     {
-        unit.unitState = UnitState.ATTACKING;
+        if (unit.unitState == UnitState.ATTACKING)
+            return;
 
-        transform.LookAt(new Vector3(attackTarget.transform.position.x, transform.position.y, attackTarget.transform.position.z));
-
-        animator.SetBool("isWarrior", true);
-        
         unit.NavAgentToNavObstacle();
 
-        animator.SetTrigger("attack1");
-        //TO DO
+        StartCoroutine(PerformAttackCo());
     }
 
-    public IEnumerator StopAttackCo()
+    private IEnumerator PerformAttackCo()
     {
+        unit.SetImmobile(true);
+
+        unit.unitState = UnitState.ATTACKING;
+        transform.LookAt(new Vector3(attackTarget.transform.position.x, transform.position.y, attackTarget.transform.position.z));
+
+        animator.SetTrigger("attack");
+
+        yield return new WaitForSeconds(unit.unitStats.attackAnimationDuration);
+
+        
+
+        if (attackTarget == null && unit.unitState == UnitState.ATTACKING)
+            yield return StartCoroutine(StopAttackAction());
+
         unit.unitState = UnitState.IDLE;
-        animator.SetBool("isWarrior", false);
-        if (unit.IsNavObstacleEnabled())
-        {
-            unit.EnableNavObstacle(false);
-            yield return null;
-            unit.EnableNavAgent(true);
-        }
+
+        unit.SetImmobile(false);
     }
 
     private void StopChase(bool returnToInitialPosition)
@@ -208,6 +214,19 @@ public class Fighter : MonoBehaviour
     {
         attackCommand = false;
         attackTarget = null;
+        animator.SetBool("isFighting", false);
+    }
+
+    public IEnumerator StopAttackCo()
+    {
+        //unit.unitState = UnitState.IDLE;
+        yield return StartCoroutine(unit.NavObstacleToNavAgent());
+    }
+
+    public IEnumerator StopAttackAction()
+    {
+        StopAttackMove();
+        yield return StartCoroutine(StopAttackCo());
     }
 
     public GameObject GetAttackTarget()

@@ -28,7 +28,11 @@ MonoBehaviour:
   alertDistance: 5
   chaseDistance: 25
   chaseVision: 17.5
-  attackRange: 1.5
+  attackRange: 1.75
   attackDamage: 1
+  attackAnimationDuration: 1.35
+  deathAnimationDuration: 1.6
+  numberOfAttackTypes: 1
+  numberOfDeathTypes: 3
   carryCapactity: 8
   baseUnitStats: {fileID: 0}

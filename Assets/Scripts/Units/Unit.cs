@@ -91,7 +91,7 @@ public class Unit : MonoBehaviour
     {
         if (unitState != UnitState.MOVING || !navAgent.enabled || (worker != null && worker.IsBusy()) || (fighter!= null && fighter.GetAttackTarget() != null))
             return;
-
+        
         if (Vector3.Distance(transform.position, navAgent.destination) <= navAgent.stoppingDistance + 0.1f)
         {
             StopNavAgent();
@@ -128,7 +128,10 @@ public class Unit : MonoBehaviour
         
         yield return StartCoroutine(CheckIfImmobileCo());
 
-        if ((targetPosition != target && !attackMove) || !navAgent.enabled)
+        if (!navAgent.enabled)
+            yield break;
+
+        if ((targetPosition != target) && (fighter == null || fighter.GetAttackTarget() == null))
             yield break;
 
         navAgent.SetDestination(targetPosition);
@@ -145,6 +148,7 @@ public class Unit : MonoBehaviour
 
     public void SetImmobile(bool active)
     {
+        StopNavAgent();
         immobile = active;
     }
 
@@ -184,6 +188,16 @@ public class Unit : MonoBehaviour
         EnableNavObstacle(true);
     }
 
+    public IEnumerator NavObstacleToNavAgent()
+    {
+        if (IsNavObstacleEnabled())
+        {
+            EnableNavObstacle(false);
+            yield return null;
+            EnableNavAgent(true);
+        }
+    }
+    
     public bool IsNavObstacleEnabled()
     {
         return navObstacle.enabled;
@@ -211,24 +225,6 @@ public class Unit : MonoBehaviour
         }
     }
 
-    public void StopAction()
-    {
-        StartCoroutine(StopActionCo());
-    }
-
-    private IEnumerator StopActionCo()
-    {
-        target = Vector3.zero;
-
-        if (worker != null)
-            yield return StartCoroutine(worker.StopWorkAction());
-
-        if (fighter != null)
-            fighter.StopAttackMove();
-
-        StopNavAgent();
-    }
-
     public float GetCurrentHealth()
     {
         return currentHealth;
@@ -242,6 +238,24 @@ public class Unit : MonoBehaviour
     public bool IsSelected()
     {
         return isSelected;
+    }
+
+    public void StopAction()
+    {
+        StartCoroutine(StopActionCo());
+    }
+
+    private IEnumerator StopActionCo()
+    {
+        target = Vector3.zero;
+
+        if (worker != null)
+            yield return StartCoroutine(worker.StopWorkAction());
+
+        if (fighter != null)
+            yield return StartCoroutine(fighter.StopAttackAction());
+
+        StopNavAgent();
     }
 
 }

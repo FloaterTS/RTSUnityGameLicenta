@@ -480,7 +480,7 @@ public class SaveLoadSystem : MonoBehaviour
                 ResourceCamp resourceCamp = unitTargetGO.GetComponent<ResourceCamp>();
                 if (resourceCamp != null)
                 {
-                    loadedUnitsArr[i].worker.StoreResource(resourceCamp);
+                    loadedUnitsArr[i].worker.StoreResource(resourceCamp, true);
                 }
                 else
                 {
