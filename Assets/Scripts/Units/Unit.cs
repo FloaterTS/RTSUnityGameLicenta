@@ -8,7 +8,8 @@ public enum UnitState
     IDLE,
     MOVING,
     WORKING,
-    ATTACKING
+    ATTACKING,
+    DEAD
 }
 
 public class Unit : MonoBehaviour
@@ -71,7 +72,8 @@ public class Unit : MonoBehaviour
 
     private void Update()
     {
-        CheckMovement();
+        if(unitState != UnitState.DEAD)
+            CheckMovement();
     }
 
     private void CheckMovement()
@@ -107,7 +109,7 @@ public class Unit : MonoBehaviour
 
     public IEnumerator MoveToLocationCo(Vector3 targetPosition, bool attackMove = false)
     {
-        if (target == targetPosition)
+        if (target == targetPosition || unitState == UnitState.DEAD)
             yield break;
 
         target = targetPosition;
@@ -116,8 +118,8 @@ public class Unit : MonoBehaviour
         {
             if (!attackMove)
                 fighter.StopAttackMove();
-            if (unitState == UnitState.ATTACKING || !navAgent.enabled)
-                yield return StartCoroutine(fighter.StopAttackCo());
+            //if (unitState == UnitState.ATTACKING || !navAgent.enabled)
+                //yield return StartCoroutine(fighter.StopAttackCo());
         }
 
         if (worker != null)
@@ -128,7 +130,7 @@ public class Unit : MonoBehaviour
         
         yield return StartCoroutine(CheckIfImmobileCo());
 
-        if (!navAgent.enabled)
+        if (!navAgent.enabled || unitState == UnitState.DEAD)
             yield break;
 
         if ((targetPosition != target) && (fighter == null || fighter.GetAttackTarget() == null))
@@ -172,20 +174,23 @@ public class Unit : MonoBehaviour
         }
     }
 
-    public void EnableNavAgent(bool isEnabled)
+    private void EnableNavAgent(bool isEnabled)
     {
         navAgent.enabled = isEnabled;
     }
 
-    public void EnableNavObstacle(bool isEnabled)
+    private void EnableNavObstacle(bool isEnabled)
     {
         navObstacle.enabled = isEnabled;
     }
 
     public void NavAgentToNavObstacle()
     {
-        EnableNavAgent(false);
-        EnableNavObstacle(true);
+        if (!IsNavObstacleEnabled())
+        {
+            EnableNavAgent(false);
+            EnableNavObstacle(true);
+        }
     }
 
     public IEnumerator NavObstacleToNavAgent()
@@ -245,15 +250,39 @@ public class Unit : MonoBehaviour
         StartCoroutine(StopActionCo());
     }
 
+    public void TakeDamage(float amount)
+    {
+        currentHealth -= amount;
+        if (currentHealth <= 0f)
+            Die();
+    }
+
+    public void Die()
+    {
+        if (unitState == UnitState.DEAD)
+            return;
+
+        unitState = UnitState.DEAD;
+
+        StopNavAgent();
+
+        animator.SetInteger("deathType", Random.Range(0, unitStats.numberOfDeathTypes));
+        animator.SetBool("isDead", true);
+        animator.SetTrigger("death");
+
+        Destroy(this.gameObject, unitStats.deathAnimationDuration);
+    }
+
     private IEnumerator StopActionCo()
     {
         target = Vector3.zero;
 
         if (worker != null)
-            yield return StartCoroutine(worker.StopWorkAction());
+            yield return StartCoroutine(worker.StopWorkActionCo());
 
         if (fighter != null)
-            yield return StartCoroutine(fighter.StopAttackAction());
+            fighter.StopAttackAction();
+            //yield return StartCoroutine(fighter.StopAttackAction());
 
         StopNavAgent();
     }

@@ -93,6 +93,25 @@ public class InteractionManager : MonoBehaviour
             else
                 Debug.LogError("UnderConstruction script missing from " + hitLocation.collider.gameObject + " tagged as UnderConstruction");
         }
+        else if(hitLocation.collider.gameObject.CompareTag("Unit"))
+        {
+            Unit enemyUnit = hitLocation.collider.GetComponent<Unit>();
+            if (enemyUnit != null)
+            {
+                if (enemyUnit.unitStats.unitTeam != Team.PLAYER)
+                {
+                    foreach (Unit unit in selectionManager.selectedUnits)
+                        if (unit.fighter != null)
+                            unit.fighter.AttackCommand(enemyUnit.gameObject, true);
+                }
+                else
+                {
+                    MoveToSpot(hitLocation.point);
+                }
+            }
+            else
+                Debug.LogError("Unit script missing from " + hitLocation.collider.gameObject + " tagged as Unit");
+        }
         else
         {
             MoveToSpot(hitLocation.point);

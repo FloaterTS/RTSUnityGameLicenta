@@ -32,7 +32,8 @@ public class Fighter : MonoBehaviour
 
     private void Update()
     {
-        CheckAttackTarget();
+        if (unit.unitState != UnitState.DEAD)
+            CheckAttackTarget();
     }
 
     private void InitTeams()
@@ -56,12 +57,7 @@ public class Fighter : MonoBehaviour
         else
             unit.MoveToLocation(attackTarget.transform.position, true);
 
-        if (attackCommand)
-        {
-            if (distanceFromTarget > unit.unitStats.chaseVision)
-                StopChase(false);
-        }
-        else
+        if(!attackCommand)
         {
             float distanceFromInitialSpot = Vector3.Distance(transform.position, positionBeforeAttack);
             if (distanceFromInitialSpot > unit.unitStats.chaseDistance || distanceFromTarget > unit.unitStats.chaseVision)
@@ -71,7 +67,15 @@ public class Fighter : MonoBehaviour
 
     public void AttackCommand(GameObject target, bool activeAttack)
     {
-        if (attackTarget == null)
+        StartCoroutine(AttackComandCo(target, activeAttack));
+    }
+
+    private IEnumerator AttackComandCo(GameObject target, bool activeAttack)
+    {
+        if (unit.worker != null)
+            yield return StartCoroutine(unit.worker.StopWorkActionCo());
+
+        if (attackTarget == null && !activeAttack)
             positionBeforeAttack = transform.position;
 
         attackTarget = target;
@@ -81,10 +85,10 @@ public class Fighter : MonoBehaviour
 
     private void StartAttack()
     {
-        if (unit.unitState == UnitState.ATTACKING)
+        if (unit.unitState == UnitState.ATTACKING || attackTarget == null)
             return;
 
-        unit.NavAgentToNavObstacle();
+        //unit.NavAgentToNavObstacle();
 
         StartCoroutine(PerformAttackCo());
     }
@@ -100,10 +104,25 @@ public class Fighter : MonoBehaviour
 
         yield return new WaitForSeconds(unit.unitStats.attackAnimationDuration);
 
-        
+        if (unit.unitState == UnitState.DEAD)
+            yield break;
 
-        if (attackTarget == null && unit.unitState == UnitState.ATTACKING)
-            yield return StartCoroutine(StopAttackAction());
+        Unit attackTargetUnit = null;
+        if (attackTarget != null)
+        {
+            attackTargetUnit = attackTarget.GetComponent<Unit>();
+            if (attackTargetUnit == null)
+            {
+                Debug.LogError("Attack target GameObject " + attackTarget + " doesn't have Unit script attached");
+                yield break;
+            }
+        }
+
+        if (attackTarget != null && attackTargetUnit.unitState != UnitState.DEAD && unit.unitState == UnitState.ATTACKING)
+            attackTargetUnit.TakeDamage(unit.unitStats.attackDamage);
+        else
+            StopAttackAction();
+            //yield return StartCoroutine(StopAttackAction());
 
         unit.unitState = UnitState.IDLE;
 
@@ -136,6 +155,9 @@ public class Fighter : MonoBehaviour
                     continue;
                 }
 
+                if (otherUnit.unitState == UnitState.DEAD)
+                    continue;
+
                 if(fromTeams == null || fromTeams.Contains(otherUnit.unitStats.unitTeam))
                     nearbyUnits.Add(otherUnit);
             }
@@ -153,6 +175,9 @@ public class Fighter : MonoBehaviour
         StartCoroutine(CheckSurroundingsCo());
 
         if (unit.unitState != UnitState.IDLE || attackTarget != null) // unit must not be moving and not have an attack target
+            yield break;
+
+        if (unit.worker != null && unit.worker.carriedResource.amount > 0)
             yield break;
 
         List<Unit> enemyUnitsNearby = GetUnitsNearby(unit.unitStats.checkSurroundingsDistance, enemyTeams);
@@ -217,16 +242,21 @@ public class Fighter : MonoBehaviour
         animator.SetBool("isFighting", false);
     }
 
-    public IEnumerator StopAttackCo()
+    /*public IEnumerator StopAttackCo()
     {
-        //unit.unitState = UnitState.IDLE;
+        unit.unitState = UnitState.IDLE;
         yield return StartCoroutine(unit.NavObstacleToNavAgent());
-    }
+    }*/
 
-    public IEnumerator StopAttackAction()
+    /*public IEnumerator StopAttackAction()
     {
         StopAttackMove();
         yield return StartCoroutine(StopAttackCo());
+    }*/
+
+    public void StopAttackAction()
+    {
+        StopAttackMove();
     }
 
     public GameObject GetAttackTarget()

@@ -14,9 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SimpleSelectedItems:
     m_Keys:
+    - Assets/Art/Animations/AnimationControllers/Villager.controller
+    - Assets/Prefabs/Character/UnitStats/Villager.asset
+    - Assets/Scripts/Managers/InteractionManager.cs
+    - Assets/Scripts/Units/Fighter.cs
+    - Assets/Scripts/Units/Unit.cs
+    - Assets/Scripts/Units/Worker.cs
     - 
-    m_Values: 01
-  RevisionSummary: 
+    m_Values: 01010101010101
+  RevisionSummary: 'Added attack mechanics
+
+    Solved bug when storing resources
+    on quickload'
   ChangesSearchValue: 
   SelectedHistoryRevision: 
   HistoryPageNumber: 0

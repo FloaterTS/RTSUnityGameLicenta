@@ -72,7 +72,7 @@ public class Worker : MonoBehaviour
         yield return StartCoroutine(unit.NavObstacleToNavAgent());
     }
 
-    public IEnumerator StopWorkAction()
+    public IEnumerator StopWorkActionCo()
     {
         if (carriedResource.amount > 0)
         {
