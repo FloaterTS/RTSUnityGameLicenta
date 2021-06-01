@@ -7,6 +7,7 @@ public class PrefabManager : MonoBehaviour
     [Header("Units Prefabs")]
     public GameObject villagerPlayerPrefab;
     public GameObject villagerEnemyPrefab;
+    public string weaponInHandName;
 
     [Header("Buildings Prefabs")]
     public GameObject resourceCampPlayerPrefab;

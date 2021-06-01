@@ -14,18 +14,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SimpleSelectedItems:
     m_Keys:
-    - Assets/Art/Animations/AnimationControllers/Villager.controller
-    - Assets/Prefabs/Character/UnitStats/Villager.asset
-    - Assets/Scripts/Managers/InteractionManager.cs
+    - Assets/Prefabs/Buildings/BuildingStats/ResourceCamp.asset
+    - Assets/Prefabs/Character/Units/EnemyVillager.prefab
+    - Assets/Prefabs/Character/Units/PlayerVillager.prefab
+    - Assets/Scenes/Main.unity
+    - Assets/Scripts/Buildings/ResourceCamp.cs
+    - Assets/Scripts/Managers/ConstructionManager.cs
+    - Assets/Scripts/Managers/GameManager.cs
+    - Assets/Scripts/Managers/PrefabManager.cs
+    - Assets/Scripts/Managers/ResourceManager.cs
+    - Assets/Scripts/Managers/SaveSystem/SaveLoadSystem.cs
+    - Assets/Scripts/Managers/UIManager.cs
     - Assets/Scripts/Units/Fighter.cs
-    - Assets/Scripts/Units/Unit.cs
-    - Assets/Scripts/Units/Worker.cs
     - 
-    m_Values: 01010101010101
-  RevisionSummary: 'Added attack mechanics
-
-    Solved bug when storing resources
-    on quickload'
+    m_Values: 01010101010101010101010101
+  RevisionSummary: 
   ChangesSearchValue: 
   SelectedHistoryRevision: 
   HistoryPageNumber: 0

@@ -37,9 +37,13 @@ public class ResourceManager : MonoBehaviour
 {
     public static ResourceManager instance;
 
+    public int initialFoodAmount = 0;
+    public int initialWoodAmount = 0;
+    public int initialGoldAmount = 0;
+
     [HideInInspector] public int currentFoodAmount;
-    [HideInInspector] public int currentGoldAmount;
     [HideInInspector] public int currentWoodAmount;
+    [HideInInspector] public int currentGoldAmount;
 
     [HideInInspector] public List<ResourceCamp> resourceCamps;
 
@@ -51,11 +55,15 @@ public class ResourceManager : MonoBehaviour
             Debug.LogError("Another resource manager present.");
 
         resourceCamps = new List<ResourceCamp>();
+
+        currentFoodAmount = initialFoodAmount;
+        currentWoodAmount = initialWoodAmount;
+        currentGoldAmount = initialGoldAmount;
     }
 
     private void Update()
     {
-        GetResourceAmount();
+        //GetResourceAmount();
     }
 
     private void GetResourceAmount()
@@ -81,6 +89,50 @@ public class ResourceManager : MonoBehaviour
         currentFoodAmount = newFoodAmount;
         currentGoldAmount = newGoldAmount;
         currentWoodAmount = newWoodAmount;
+    }
+
+    public void AddResources(int amount, ResourceType resourceType)
+    {
+        switch (resourceType)
+        {
+            case ResourceType.FOOD:
+                currentFoodAmount += amount;
+                break;
+            case ResourceType.WOOD:
+                currentWoodAmount += amount;
+                break;
+            case ResourceType.GOLD:
+                currentGoldAmount += amount;
+                break;
+        }
+    }
+
+    public bool UseResources(ResourceCost resourceCost, bool check)
+    {
+        if (currentFoodAmount >= resourceCost.foodCost)
+        {
+            if (currentWoodAmount >= resourceCost.woodCost)
+            {
+                if (currentGoldAmount >= resourceCost.goldCost)
+                {
+                    if (!check)
+                    {
+                        currentFoodAmount -= resourceCost.foodCost;
+                        currentWoodAmount -= resourceCost.woodCost;
+                        currentGoldAmount -= resourceCost.goldCost;
+                    }
+                    return true;
+                }
+                else
+                    UIManager.instance.ShowScreenAlert("Not enough gold...");
+            }
+            else
+                UIManager.instance.ShowScreenAlert("Not enough wood...");
+        }
+        else
+            UIManager.instance.ShowScreenAlert("Not enough food...");
+
+        return false;
     }
 
     public static ResourceType ResourceRawToType(ResourceRaw resourceRaw)

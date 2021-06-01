@@ -65,8 +65,8 @@ public class ConstructionManager : MonoBehaviour
         if (previewBuildingGO != null)
             Destroy(previewBuildingGO);
 
-        /*if (!DeductBuildingCostRequirements(underConstructionResourceCampPrefab.GetComponent<Building>().buildingStats.buildingCost))
-            return;*/
+        if (!ResourceManager.instance.UseResources(underConstructionResourceCampPrefab.GetComponent<Building>().buildingStats.buildingCost, true))
+            return;
 
         previewBuildingGO = Instantiate(previewResourceCamp);
         previewBuildingGO.transform.eulerAngles = new Vector3(0f, FaceCameraInitialPreviewRotation(), 0f);
@@ -122,6 +122,9 @@ public class ConstructionManager : MonoBehaviour
 
     private void StartConstructionForSelection()
     {
+        if (!ResourceManager.instance.UseResources(underConstructionBuildingPrefab.GetComponent<Building>().buildingStats.buildingCost, false))
+            return;
+
         GameObject inConstructionBuildingGO = Instantiate(underConstructionBuildingPrefab, previewBuildingGO.transform.position, previewBuildingGO.transform.rotation, PrefabManager.instance.buildingsTransformParentGO.transform);
         UnderConstruction underConstruction = inConstructionBuildingGO.GetComponent<UnderConstruction>();
         underConstruction.constructedBuildingPrefab = constructedBuildingPrefab;
@@ -133,25 +136,4 @@ public class ConstructionManager : MonoBehaviour
                 unit.worker.StartConstruction(inConstructionBuildingGO);
     }
 
-    /*bool DeductBuildingCostRequirements(ResourceCost buildingCost)
-    {
-        if(ResourceManager.instance.currentFoodAmount >= buildingCost.foodCost)
-        {
-            if (ResourceManager.instance.currentWoodAmount >= buildingCost.woodCost)
-            {
-                if (ResourceManager.instance.currentGoldAmount >= buildingCost.goldCost)
-                {
-                    ResourceManager.instance.currentFoodAmount -= buildingCost.foodCost;
-                    ResourceManager.instance.currentWoodAmount -= buildingCost.woodCost;
-                    ResourceManager.instance.currentGoldAmount -= buildingCost.goldCost;
-                    return true;
-                }
-                // else show not enough gold
-            }
-            // else show not enough wood
-        }
-        // else show not enough food
-
-        return false;
-    }*/
 }

@@ -75,6 +75,12 @@ public class Fighter : MonoBehaviour
         if (unit.worker != null)
             yield return StartCoroutine(unit.worker.StopWorkActionCo());
 
+        if (unit.thingInHand != null)
+            unit.thingInHand.gameObject.SetActive(false);
+        unit.thingInHand = transform.Find(PrefabManager.instance.weaponInHandName);
+        if (unit.thingInHand != null)
+            unit.thingInHand.gameObject.SetActive(true);
+
         if (attackTarget == null && !activeAttack)
             positionBeforeAttack = transform.position;
 

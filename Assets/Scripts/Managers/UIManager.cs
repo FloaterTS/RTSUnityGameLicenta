@@ -29,6 +29,10 @@ public class UIManager : MonoBehaviour
     public GameObject campInteractionPanel;
     [Space]
     public TextMeshProUGUI infoText;
+    public TextMeshProUGUI victoryText;
+    public string victoryMessage = "Victory!";
+    public string defeatMessage = "Try again?";
+    public float mainMenuTimeout = 5f;
 
     private InteractionPanelState currentInteractionState;
 
@@ -89,7 +93,7 @@ public class UIManager : MonoBehaviour
         StartCoroutine(LoadMainMenuCo());
     }
 
-    IEnumerator UnPauseCo()
+    private IEnumerator UnPauseCo()
     {
         pauseMenu.GetComponent<Animator>().SetTrigger("fadeOut");
         yield return new WaitForSecondsRealtime(0.5f);
@@ -97,7 +101,7 @@ public class UIManager : MonoBehaviour
         GameManager.instance.UnPauseGameState();
     }
 
-    IEnumerator LoadMainMenuCo()
+    private IEnumerator LoadMainMenuCo()
     {
         Instantiate(fadeCoverPanel);
         AsyncOperation asyncOperation = SceneManager.LoadSceneAsync("MainMenu");
@@ -230,13 +234,41 @@ public class UIManager : MonoBehaviour
             StartCoroutine(ShowScreenAlertCo(message, seconds));
     }
 
+    public void GameOverUI(bool playerWin)
+    {
+        victoryText.gameObject.SetActive(true);
+
+        if (playerWin)
+        {
+            victoryText.text = victoryMessage;
+            victoryText.color = GameManager.instance.playerMaterial.color;
+        }
+        else
+        {
+            victoryText.text = defeatMessage;
+            victoryText.color = GameManager.instance.enemyMaterial.color;
+        }
+
+        StartCoroutine(GameOverMainMenu());
+    }
+
     private IEnumerator ShowScreenAlertCo(string message, float seconds)
     {
+        infoText.gameObject.SetActive(true);
         infoText.text = message;
 
         yield return new WaitForSeconds(seconds);
 
         if (infoText.text == message)
+        {
             infoText.text = "";
+            infoText.gameObject.SetActive(false);
+        }
+    }
+
+    private IEnumerator GameOverMainMenu()
+    {
+        yield return new WaitForSeconds(mainMenuTimeout);
+        LoadMainMenu();
     }
 }

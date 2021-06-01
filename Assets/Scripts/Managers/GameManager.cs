@@ -25,8 +25,13 @@ public class GameManager : MonoBehaviour
     public List<ResourceField> activeResourceFields;
     public List<ResourceDrop> activeResourceDrops;
 
+    public Material playerMaterial;
+    public Material enemyMaterial;
+
     [HideInInspector]
     public bool isPaused = false;
+
+    private bool gameOver = false;
 
     void Awake()
     {
@@ -45,6 +50,11 @@ public class GameManager : MonoBehaviour
         activeBuildings = new List<Building>();
         activeResourceFields = new List<ResourceField>();
         activeResourceDrops = new List<ResourceDrop>();
+    }
+
+    private void Update()
+    {
+        CheckGameEnd();
     }
 
     public void PauseGameState()
@@ -143,5 +153,40 @@ public class GameManager : MonoBehaviour
             }
         }
         return closestResourceField;
+    }
+
+    private void CheckGameEnd()
+    {
+        if (gameOver)
+            return;
+
+        int playerUnits = 0;
+        int enemyUnits = 0;
+        foreach(Unit unit in activeUnits)
+        {
+            if (unit.unitStats.unitTeam == Team.PLAYER)
+                playerUnits++;
+            else if (unit.unitStats.unitTeam == Team.ENEMY1 || unit.unitStats.unitTeam == Team.ENEMY2 || unit.unitStats.unitTeam == Team.ENEMY3)
+                enemyUnits++;
+        }
+
+        if (playerUnits == 0)
+            StartCoroutine(GameOver(false));
+        else if (enemyUnits == 0)
+            StartCoroutine(GameOver(true));
+    }
+
+    private IEnumerator GameOver(bool playerWin)
+    {
+        if (gameOver)
+            yield break;
+
+        gameOver = true;
+
+        yield return new WaitForSeconds(1f);
+
+        Debug.Log("Game Over" + (playerWin ? " Player wins!" : " Enemy wins!"));
+
+        UIManager.instance.GameOverUI(playerWin);
     }
 }

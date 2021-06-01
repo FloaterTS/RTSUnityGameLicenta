@@ -603,6 +603,140 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minimapCam: {fileID: 1561754135}
+--- !u!1 &388011441
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 388011442}
+  - component: {fileID: 388011444}
+  - component: {fileID: 388011443}
+  m_Layer: 5
+  m_Name: Victory Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &388011442
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 388011441}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 388753017}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 8}
+  m_SizeDelta: {x: 525.2029, y: 144}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &388011443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 388011441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 16
+  m_fontSizeBase: 10
+  m_fontWeight: 400
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 16
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &388011444
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 388011441}
+  m_CullTransparentMesh: 1
 --- !u!1 &388753013
 GameObject:
   m_ObjectHideFlags: 0
@@ -697,6 +831,7 @@ RectTransform:
   - {fileID: 1809385673}
   - {fileID: 1267306793}
   - {fileID: 1961178764}
+  - {fileID: 388011442}
   m_Father: {fileID: 831647768}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3570,6 +3705,8 @@ MonoBehaviour:
   activeBuildings: []
   activeResourceFields: []
   activeResourceDrops: []
+  playerMaterial: {fileID: 2100000, guid: 8b5959077476db24a9146962d6d78608, type: 2}
+  enemyMaterial: {fileID: 2100000, guid: d97748b7096e3b04a862654f4fd2bd42, type: 2}
   isPaused: 0
 --- !u!114 &788951018
 MonoBehaviour:
@@ -3595,9 +3732,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e21778b794540a44e894a0a261809233, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialFoodAmount: 0
+  initialWoodAmount: 50
+  initialGoldAmount: 0
   currentFoodAmount: 0
-  currentGoldAmount: 0
   currentWoodAmount: 0
+  currentGoldAmount: 0
   resourceCamps: []
 --- !u!114 &788951020
 MonoBehaviour:
@@ -3621,6 +3761,10 @@ MonoBehaviour:
   buildInteractionPanel: {fileID: 1667452353}
   campInteractionPanel: {fileID: 594682057}
   infoText: {fileID: 1961178765}
+  victoryText: {fileID: 388011443}
+  victoryMessage: Victory!
+  defeatMessage: Try again?
+  mainMenuTimeout: 5
 --- !u!114 &788951021
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3684,6 +3828,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   villagerPlayerPrefab: {fileID: 233158856503798824, guid: 66863a587f002a34695612111e4ba71d, type: 3}
   villagerEnemyPrefab: {fileID: 233158856503798824, guid: 542b8d6a39bb8e547ad61070e9f31f3f, type: 3}
+  weaponInHandName: Villager/root/B-hips/B-spine/B-chest/B-upperChest/B-shoulder_R/B-upper_arm_R/B-forearm_R/B-hand_R/Tools_R/WarriorSword
   resourceCampPlayerPrefab: {fileID: 1267868042687567843, guid: 502ed11b1857cca409b8fb52499dfb1c, type: 3}
   resourceCampConstructionPlayerPrefab: {fileID: 3371895042874901979, guid: 6a257ca9bf43a1c4784d506502734e6d, type: 3}
   berryBushSmallPrefab: {fileID: 1064191063396284, guid: bc0ffd6946c16304bb3ea996aa1247da, type: 3}
@@ -14044,7 +14189,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1961178764
 RectTransform:
   m_ObjectHideFlags: 0

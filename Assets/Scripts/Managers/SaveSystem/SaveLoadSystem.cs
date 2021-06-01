@@ -436,8 +436,10 @@ public class SaveLoadSystem : MonoBehaviour
                     {
                         loadedUnitsArr[i].MoveToLocation(unitTargetPosition);
                     }
-                    // else
-                    // TO IMPLEMENT ATTACKING AND ATTACK UNIT HERE
+                    else
+                    {
+                        loadedUnitsArr[i].fighter.AttackCommand(unitTargetGO, true);
+                    }
                 }
                 else
                 {
@@ -450,12 +452,12 @@ public class SaveLoadSystem : MonoBehaviour
                 Building building = unitTargetGO.GetComponent<Building>();
                 if (building != null)
                 {
-                    if (building.buildingStats.buildingTeam == loadedUnitsArr[i].unitStats.unitTeam)
-                    {
-                        loadedUnitsArr[i].MoveToLocation(unitTargetPosition);
-                    }
+                    //if (building.buildingStats.buildingTeam == loadedUnitsArr[i].unitStats.unitTeam)
+                    //{
+                    loadedUnitsArr[i].MoveToLocation(unitTargetPosition);
+                    //}
                     // else
-                    // TO IMPLEMENT ATTACKING AND ATTACK ENEMY BUILDING HERE
+                    // OR IMPLEMENT ATTACK ENEMY BUILDING HERE
                 }
                 else
                 {

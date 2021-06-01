@@ -20,6 +20,6 @@ MonoBehaviour:
   constructionTime: 10
   buildingCost:
     foodCost: 0
-    woodCost: 20
+    woodCost: 35
     goldCost: 0
   baseBuildingStats: {fileID: 0}

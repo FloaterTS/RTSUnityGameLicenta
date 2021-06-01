@@ -36,7 +36,7 @@ public class ResourceCamp : MonoBehaviour
 
     void Update()
     {
-        CheckIfEmpty();
+        //CheckIfEmpty();
     }
 
     public void StoreResourceInCamp(int amount, ResourceType resourceType)
@@ -47,9 +47,14 @@ public class ResourceCamp : MonoBehaviour
         if (campType == ResourceType.NONE)
             AssignCampType(resourceType);
         else if (campType != resourceType)
+        {
             Debug.LogError("Error: Trying to store resource " + resourceType + " to camp of type: " + campType);
+            return;
+        }
 
         amountStored += amount;
+
+        ResourceManager.instance.AddResources(amount, resourceType);
     }
 
     public int TakeResourceFromCamp(int amount)
