@@ -134,8 +134,9 @@ public class SelectionManager : MonoBehaviour
             Building building = selectionHit.collider.GetComponent<Building>();
             if (unit != null)
             {
-                if (CheckDoubleClick(unit))
-                    return;
+                if(unit.unitStats.unitTeam == Team.PLAYER)
+                    if (CheckDoubleClick(unit))
+                        return;
                 if(Input.GetKey(KeyCode.LeftControl) && selectedUnits.Contains(unit)) // Deselect the unit if ctrl is pressed while single selecting
                 {
                     selectedUnits.Remove(unit);

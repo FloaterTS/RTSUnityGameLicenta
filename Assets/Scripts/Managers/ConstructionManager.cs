@@ -128,6 +128,8 @@ public class ConstructionManager : MonoBehaviour
         GameObject inConstructionBuildingGO = Instantiate(underConstructionBuildingPrefab, previewBuildingGO.transform.position, previewBuildingGO.transform.rotation, PrefabManager.instance.buildingsTransformParentGO.transform);
         UnderConstruction underConstruction = inConstructionBuildingGO.GetComponent<UnderConstruction>();
         underConstruction.constructedBuildingPrefab = constructedBuildingPrefab;
+        Building building = inConstructionBuildingGO.GetComponent<Building>();
+        building.SetCurrentHitpoints(0.1f);
 
         StopPreviewBuildingGO();
 

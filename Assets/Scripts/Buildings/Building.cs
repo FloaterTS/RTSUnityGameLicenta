@@ -9,7 +9,7 @@ public class Building : MonoBehaviour
 
     private void Awake()
     {
-        SetInitialHitpoints(0.1f);
+        SetInitialHitpoints();
 
         if (buildingStats.buildingTeam == Team.PLAYER)
             selectedArea = transform.Find("Selected");
@@ -37,9 +37,9 @@ public class Building : MonoBehaviour
             selectedArea.gameObject.SetActive(isSelected);
     }
 
-    public void SetInitialHitpoints(float amount)
+    private void SetInitialHitpoints()
     {
-        currentHitPoints = amount;
+        currentHitPoints = buildingStats.maxHitPoints;
     }
 
     public void Repair(float amount)

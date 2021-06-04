@@ -55,7 +55,7 @@ public class UnderConstruction : MonoBehaviour
     private void FinishConstruction()
     {
         GameObject finishedBuilding = Instantiate(constructedBuildingPrefab, transform.position, transform.rotation, PrefabManager.instance.buildingsTransformParentGO.transform);
-        finishedBuilding.GetComponent<Building>().SetInitialHitpoints(building.GetCurrentHitpoints());
+        finishedBuilding.GetComponent<Building>().SetCurrentHitpoints(building.GetCurrentHitpoints());
         Destroy(gameObject);
     }
 }

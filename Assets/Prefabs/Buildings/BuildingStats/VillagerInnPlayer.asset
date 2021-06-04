@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9d29937236e5b44d8993304d0052b39, type: 3}
+  m_Name: VillagerInnPlayer
+  m_EditorClassIdentifier: 
+  buildingTeam: 0
+  buildingType: 1
+  buildingName: Villager Inn
+  toolConstructionName: Villager/root/B-hips/B-spine/B-chest/B-upperChest/B-shoulder_R/B-upper_arm_R/B-forearm_R/B-hand_R/Tools_R/Hammer
+  maxHitPoints: 100
+  constructionTime: 10
+  buildingCost:
+    foodCost: 0
+    woodCost: 35
+    goldCost: 0
+  baseBuildingStats: {fileID: 11400000, guid: f1c149b3f22a5b245b21d3f8fa98497d, type: 2}

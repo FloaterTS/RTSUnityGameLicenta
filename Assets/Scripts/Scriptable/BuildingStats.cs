@@ -2,7 +2,8 @@
 
 public enum BuildingType
 {
-    RESOURCE_CAMP
+    RESOURCE_CAMP,
+    VILLAGER_INN
 }
 
 [CreateAssetMenu]

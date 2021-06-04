@@ -9,7 +9,8 @@ enum InteractionPanelState
     NONE,
     UNIT,
     //BUILD,
-    CAMP
+    CAMP,
+    INN
 }
 
 public class UIManager : MonoBehaviour
@@ -27,6 +28,7 @@ public class UIManager : MonoBehaviour
     public GameObject unitInteractionPanel;
     public GameObject buildInteractionPanel;
     public GameObject campInteractionPanel;
+    public GameObject innInteractionPanel;
     [Space]
     public TextMeshProUGUI infoText;
     public TextMeshProUGUI victoryText;
@@ -124,6 +126,8 @@ public class UIManager : MonoBehaviour
         {
             if (SelectionManager.instance.selectedBuilding.gameObject.GetComponent<ResourceCamp>() != null)
                 EnableInteractionPanel(InteractionPanelState.CAMP);
+            else if (SelectionManager.instance.selectedBuilding.gameObject.GetComponent<VillagerInn>() != null)
+                EnableInteractionPanel(InteractionPanelState.INN);
             else
                 Debug.Log("Unknown UI Panel for Selected Building");
         }
@@ -147,6 +151,9 @@ public class UIManager : MonoBehaviour
             case InteractionPanelState.CAMP:
                 campInteractionPanel.SetActive(false);
                 break;
+            case InteractionPanelState.INN:
+                innInteractionPanel.SetActive(false);
+                break;
         }
         currentInteractionState = InteractionPanelState.NONE;
         return;
@@ -168,6 +175,12 @@ public class UIManager : MonoBehaviour
                 {
                     campInteractionPanel.SetActive(true);
                     currentInteractionState = InteractionPanelState.CAMP;
+                }
+                break;
+            case InteractionPanelState.INN:
+                {
+                    innInteractionPanel.SetActive(true);
+                    currentInteractionState = InteractionPanelState.INN;
                 }
                 return;
         }
