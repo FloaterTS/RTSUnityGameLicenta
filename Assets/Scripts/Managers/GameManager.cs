@@ -52,9 +52,9 @@ public class GameManager : MonoBehaviour
         activeResourceDrops = new List<ResourceDrop>();
     }
 
-    private void Update()
+    private void Start()
     {
-        CheckGameEnd();
+        StartCoroutine(CheckGameEndCo());
     }
 
     public void PauseGameState()
@@ -155,25 +155,30 @@ public class GameManager : MonoBehaviour
         return closestResourceField;
     }
 
-    private void CheckGameEnd()
+    private int GetNumberOfUnitsOfTeam(Team team)
     {
-        if (gameOver)
-            return;
-
-        int playerUnits = 0;
-        int enemyUnits = 0;
-        foreach(Unit unit in activeUnits)
+        int units = 0;
+        foreach (Unit unit in activeUnits)
         {
-            if (unit.unitStats.unitTeam == Team.PLAYER)
-                playerUnits++;
-            else if (unit.unitStats.unitTeam == Team.ENEMY1 || unit.unitStats.unitTeam == Team.ENEMY2 || unit.unitStats.unitTeam == Team.ENEMY3)
-                enemyUnits++;
+            if (unit.unitStats.unitTeam == team)
+                units++;
         }
+        return units;
+    }
+
+    private IEnumerator CheckGameEndCo()
+    {
+        yield return new WaitForSeconds(1f);
+
+        int playerUnits = GetNumberOfUnitsOfTeam(Team.PLAYER);
+        int enemyUnits = GetNumberOfUnitsOfTeam(Team.ENEMY1) + GetNumberOfUnitsOfTeam(Team.ENEMY2) + GetNumberOfUnitsOfTeam(Team.ENEMY3);
 
         if (playerUnits == 0)
             StartCoroutine(GameOver(false));
         else if (enemyUnits == 0)
             StartCoroutine(GameOver(true));
+        else
+            StartCoroutine(CheckGameEndCo());
     }
 
     private IEnumerator GameOver(bool playerWin)

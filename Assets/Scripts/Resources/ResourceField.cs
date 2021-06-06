@@ -5,7 +5,8 @@ public enum ResourceFieldModel
     BERRY_BUSH_SMALL,
     BERRY_BUSH_LARGE,
     LUMBER_TREE,
-    GOLD_ORE_MINE
+    GOLD_ORE_MINE,
+    FARM_FIELD
 }
 
 public class ResourceField : MonoBehaviour

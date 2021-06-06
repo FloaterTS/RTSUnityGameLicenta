@@ -71,7 +71,6 @@ public class MainMenu : MonoBehaviour
 
     private void StartGame()
     {
-        InitSettings();
         Instantiate(fadeCoverPanel);
         StartCoroutine(LoadGame());
     }

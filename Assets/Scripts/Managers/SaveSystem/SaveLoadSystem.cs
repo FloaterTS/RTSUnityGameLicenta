@@ -286,6 +286,43 @@ public class SaveLoadSystem : MonoBehaviour
                         }
                     }
                     break;
+                case 2: // Villager Inn Construction
+                    {
+                        switch (data.buildingsData[i].buildingTeam)
+                        {
+                            case 0: // Player Team
+                                buildingGO = Instantiate(PrefabManager.instance.villagerInnConstructionPlayerPrefab, buildingPosition, buildingRotation, PrefabManager.instance.buildingsTransformParentGO.transform);
+                                break;
+                            default:
+                                Debug.LogError("Building team " + data.buildingsData[i].buildingTeam + " from save data not recognized");
+                                yield break;
+                        }
+
+                        UnderConstruction underConstruction = buildingGO.GetComponent<UnderConstruction>();
+                        if (underConstruction != null)
+                        {
+                            underConstruction.Construct(data.buildingsData[i].amountConstructed);
+                        }
+                        else
+                        {
+                            Debug.LogError("Villager Inn Construction prefab doesn't have UnderConstruction script");
+                            yield break;
+                        }
+                    }
+                    break;
+                case 3: // Villager Inn
+                    {
+                        switch (data.buildingsData[i].buildingTeam)
+                        {
+                            case 0: // Player Team
+                                buildingGO = Instantiate(PrefabManager.instance.villagerInnPlayerPrefab, buildingPosition, buildingRotation, PrefabManager.instance.buildingsTransformParentGO.transform);
+                                break;
+                            default:
+                                Debug.LogError("Building team " + data.buildingsData[i].buildingTeam + " from save data not recognized");
+                                yield break;
+                        }
+                    }
+                    break;
                 default:
                     Debug.LogError("Building type " + data.buildingsData[i].buildingType + " from save data not recognized");
                     yield break;

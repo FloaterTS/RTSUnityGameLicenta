@@ -124,13 +124,13 @@ public class ResourceManager : MonoBehaviour
                     return true;
                 }
                 else
-                    UIManager.instance.ShowScreenAlert("Not enough gold...");
+                    UIManager.instance.ShowScreenAlert("Not enough gold... " + resourceCost.goldCost + " gold needed!");
             }
             else
-                UIManager.instance.ShowScreenAlert("Not enough wood...");
+                UIManager.instance.ShowScreenAlert("Not enough wood..." + resourceCost.woodCost + " wood needed!");
         }
         else
-            UIManager.instance.ShowScreenAlert("Not enough food...");
+            UIManager.instance.ShowScreenAlert("Not enough food..." + resourceCost.foodCost + " food needed!");
 
         return false;
     }

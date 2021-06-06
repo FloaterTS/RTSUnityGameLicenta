@@ -10,6 +10,8 @@ using UnityEngine;
 //Building types classification:
 //0 = Resource Camp Construction
 //1 = Resource Camp
+//2 = Villager Inn Construction
+//3 = Villager Inn
 
 //Resource types classification:
 //0 = None
@@ -20,6 +22,7 @@ using UnityEngine;
 //Resource field model classification
 //0 - Small berry bush / Fallen Tree / Gold Ore Mine
 //1 - Large berry bush
+//2 - Farm
 
 [System.Serializable]
 public class UnitData
@@ -153,12 +156,17 @@ public class BuildingData
             case BuildingType.RESOURCE_CAMP:
                 {
                     if (building.gameObject.GetComponent<UnderConstruction>() != null)
-                    {
                         buildingType = 0;
-                        Debug.Log(building.gameObject.GetComponent<UnderConstruction>());
-                    }
                     else
                         buildingType = 1;
+                }
+                break;
+            case BuildingType.VILLAGER_INN:
+                {
+                    if (building.gameObject.GetComponent<UnderConstruction>() != null)
+                        buildingType = 2;
+                    else
+                        buildingType = 3;
                 }
                 break;
             default:
@@ -251,6 +259,9 @@ public class ResourceFieldData
                 break;
             case ResourceFieldModel.BERRY_BUSH_LARGE:
                 resourceFieldModelType = 1;
+                break;
+            case ResourceFieldModel.FARM_FIELD:
+                resourceFieldModelType = 2;
                 break;
             default:
                 resourceFieldModelType = 0;

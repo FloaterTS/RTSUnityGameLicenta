@@ -8,8 +8,7 @@ public class ConstructionManager : MonoBehaviour
     public static ConstructionManager instance;
 
     [SerializeField] private GameObject previewResourceCamp;
-    [SerializeField] private GameObject underConstructionResourceCampPrefab;
-    [SerializeField] private GameObject constructedResourceCampPrefab;
+    [SerializeField] private GameObject previewVillagerInn;
 
     private GameObject previewBuildingGO;
     private GameObject underConstructionBuildingPrefab;
@@ -62,18 +61,35 @@ public class ConstructionManager : MonoBehaviour
 
     public void StartPreviewResourceCampConstruction()
     {
+        StartPreviewConstruction(PrefabManager.instance.resourceCampConstructionPlayerPrefab, PrefabManager.instance.resourceCampPlayerPrefab, previewResourceCamp);
+    }
+
+    public void StartPreviewVillagerInnConstruction()
+    {
+        StartPreviewConstruction(PrefabManager.instance.villagerInnConstructionPlayerPrefab, PrefabManager.instance.villagerInnPlayerPrefab, previewVillagerInn);
+    }
+
+    private void StartPreviewConstruction(GameObject constructionPrefab, GameObject buildingPrefab, GameObject previewPrefab)
+    {
         if (previewBuildingGO != null)
             Destroy(previewBuildingGO);
 
-        if (!ResourceManager.instance.UseResources(underConstructionResourceCampPrefab.GetComponent<Building>().buildingStats.buildingCost, true))
+        Building building = constructionPrefab.GetComponent<Building>();
+        if(building == null)
+        {
+            Debug.LogError("Construction building prefab " + constructionPrefab + " doesn't have Building script attached");
+            return;
+        }
+
+        if (!ResourceManager.instance.UseResources(building.buildingStats.buildingCost, true))
             return;
 
-        previewBuildingGO = Instantiate(previewResourceCamp);
+        previewBuildingGO = Instantiate(previewPrefab);
         previewBuildingGO.transform.eulerAngles = new Vector3(0f, FaceCameraInitialPreviewRotation(), 0f);
         previewPlacementValidity = previewBuildingGO.GetComponent<PlacementValidity>();
 
-        underConstructionBuildingPrefab = underConstructionResourceCampPrefab;
-        constructedBuildingPrefab = constructedResourceCampPrefab;
+        underConstructionBuildingPrefab = constructionPrefab;
+        constructedBuildingPrefab = buildingPrefab;
         isPreviewingBuildingConstruction = true;
     }
 

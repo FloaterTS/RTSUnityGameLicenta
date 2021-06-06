@@ -192,6 +192,11 @@ public class UIManager : MonoBehaviour
         ConstructionManager.instance.StartPreviewResourceCampConstruction();
     }
 
+    public void BuildPanelConstructInn()
+    {
+        ConstructionManager.instance.StartPreviewVillagerInnConstruction();
+    }
+
     public void BuildPanelCancelBuildPreview()
     {
         ConstructionManager.instance.StopPreviewBuildingGO();

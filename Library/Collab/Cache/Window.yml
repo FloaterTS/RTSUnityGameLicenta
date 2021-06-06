@@ -14,55 +14,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SimpleSelectedItems:
     m_Keys:
-    - Assets/Art/Materials/Colors/Main.meta
-    - Assets/Art/Materials/Colors/Main/EnemyColor.mat
-    - Assets/Art/Materials/Colors/Main/EnemyColor.mat.meta
-    - Assets/Art/Materials/Colors/Main/PlayerColor.mat
-    - Assets/Art/Materials/Colors/Main/PlayerColor.mat.meta
-    - Assets/Art/Materials/Colors/Main/PreviewBuildingColor.mat
-    - Assets/Art/Materials/Colors/Main/PreviewBuildingColor.mat.meta
-    - Assets/Art/Materials/Colors/Main/Selection.mat
-    - Assets/Art/Materials/Colors/Main/Selection.mat.meta
-    - Assets/Art/Materials/Colors/Other.meta
-    - Assets/Art/Materials/Colors/Other/Green.mat
-    - Assets/Art/Materials/Colors/Other/Green.mat.meta
-    - Assets/Art/Materials/Colors/Other/Grey.mat
-    - Assets/Art/Materials/Colors/Other/Grey.mat.meta
-    - Assets/Art/Materials/Colors/Other/Orange.mat
-    - Assets/Art/Materials/Colors/Other/Orange.mat.meta
-    - Assets/Art/Materials/Colors/Other/Sand.mat
-    - Assets/Art/Materials/Colors/Other/Sand.mat.meta
-    - Assets/Art/Materials/Colors/Villager Inn.meta
-    - Assets/Art/Materials/Colors/Villager Inn/Accent.mat
-    - Assets/Art/Materials/Colors/Villager Inn/Accent.mat.meta
-    - Assets/Art/Materials/Colors/Villager Inn/LanternLight.mat
-    - Assets/Art/Materials/Colors/Villager Inn/LanternLight.mat.meta
-    - Assets/Art/Materials/Colors/Villager Inn/Walls.mat
-    - Assets/Art/Materials/Colors/Villager Inn/Walls.mat.meta
-    - Assets/Art/Materials/Colors/Villager Inn/WindowLights.mat
-    - Assets/Art/Materials/Colors/Villager Inn/WindowLights.mat.meta
-    - Assets/Art/Models/Buildings/Basic/VillagerInn.FBX
-    - Assets/Art/Models/Buildings/Basic/VillagerInn.FBX.meta
-    - Assets/Prefabs/Buildings/BuildingStats/ResourceCampPlayer.asset
-    - Assets/Prefabs/Buildings/BuildingStats/ResourceCampPlayer.asset.meta
-    - Assets/Prefabs/Buildings/BuildingStats/VillagerInn.asset
-    - Assets/Prefabs/Buildings/BuildingStats/VillagerInn.asset.meta
-    - Assets/Prefabs/Buildings/BuildingStats/VillagerInnPlayer.asset
-    - Assets/Prefabs/Buildings/BuildingStats/VillagerInnPlayer.asset.meta
-    - Assets/Prefabs/Buildings/Buildings/VillagerInnPlayer.prefab
-    - Assets/Prefabs/Buildings/Buildings/VillagerInnPlayer.prefab.meta
+    - Assets/Prefabs/Buildings/Constructions/InnContructionPlayer.prefab
+    - Assets/Prefabs/Buildings/Constructions/InnContructionPlayer.prefab.meta
+    - Assets/Prefabs/Buildings/Previews/VillagerInnPreview.prefab
+    - Assets/Prefabs/Buildings/Previews/VillagerInnPreview.prefab.meta
     - Assets/Scenes/Main.unity
-    - Assets/Scripts/Buildings/Building.cs
-    - Assets/Scripts/Buildings/UnderConstruction.cs
     - Assets/Scripts/Buildings/VillagerInn.cs
-    - Assets/Scripts/Buildings/VillagerInn.cs.meta
     - Assets/Scripts/Managers/ConstructionManager.cs
-    - Assets/Scripts/Managers/SelectionManager.cs
+    - Assets/Scripts/Managers/GameManager.cs
+    - Assets/Scripts/Managers/PrefabManager.cs
+    - Assets/Scripts/Managers/ResourceManager.cs
+    - Assets/Scripts/Managers/SaveSystem/GameSaveData.cs
+    - Assets/Scripts/Managers/SaveSystem/SaveLoadSystem.cs
     - Assets/Scripts/Managers/UIManager.cs
-    - Assets/Scripts/Scriptable/BuildingStats.cs
+    - Assets/Scripts/Resources/ResourceField.cs
+    - Assets/Scripts/Scriptable/UnitStats.cs
+    - Assets/Scripts/UI/MainMenu.cs
     - 
-    m_Values: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-  RevisionSummary: 
+    m_Values: 0101010101010101010101010101010101
+  RevisionSummary: Villager Inn can now be built and can be saved
   ChangesSearchValue: 
   SelectedHistoryRevision: 
   HistoryPageNumber: 0

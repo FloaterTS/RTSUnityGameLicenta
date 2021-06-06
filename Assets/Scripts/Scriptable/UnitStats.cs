@@ -37,9 +37,11 @@ public class UnitStats : ScriptableObject
     public float attackDamage;
     public float attackAnimationDuration;
     public float deathAnimationDuration;
+    public float spawnDuration;
     public int numberOfAttackTypes;
     public int numberOfDeathTypes;
     public int carryCapactity;
+    public ResourceCost unitCost;
 
     [SerializeField] private UnitStats baseUnitStats = null;
 
@@ -47,6 +49,7 @@ public class UnitStats : ScriptableObject
     {
         if (baseUnitStats == null)
             return;
+
         unitName = baseUnitStats.unitName;
         maxHealth = baseUnitStats.maxHealth;
         moveSpeed = baseUnitStats.moveSpeed;
@@ -65,8 +68,13 @@ public class UnitStats : ScriptableObject
         attackDamage = baseUnitStats.attackDamage;
         attackAnimationDuration = baseUnitStats.attackAnimationDuration;
         deathAnimationDuration = baseUnitStats.deathAnimationDuration;
+        spawnDuration = baseUnitStats.spawnDuration;
         numberOfAttackTypes = baseUnitStats.numberOfAttackTypes;
         numberOfDeathTypes = baseUnitStats.numberOfDeathTypes;
         carryCapactity = baseUnitStats.carryCapactity;
+
+        unitCost.foodCost = baseUnitStats.unitCost.foodCost;
+        unitCost.woodCost = baseUnitStats.unitCost.woodCost;
+        unitCost.goldCost = baseUnitStats.unitCost.goldCost;
     }
 }
