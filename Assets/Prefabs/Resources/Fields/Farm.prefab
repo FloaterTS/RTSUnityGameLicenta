@@ -11,7 +11,9 @@ GameObject:
   - component: {fileID: 2817496130338957366}
   - component: {fileID: 2817496130337662998}
   - component: {fileID: 2817496130336664278}
-  m_Layer: 0
+  - component: {fileID: 4071065284682606085}
+  - component: {fileID: 4149501752147241948}
+  m_Layer: 10
   m_Name: Farm
   m_TagString: Resource
   m_Icon: {fileID: 0}
@@ -81,3 +83,33 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &4071065284682606085
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2817496130338927638}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.9999995, y: 0.25, z: 4}
+  m_Center: {x: 0, y: 0.1, z: 0}
+--- !u!114 &4149501752147241948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2817496130338927638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 392bf5cc7f1e4334c8689a16cc06b1ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resourceInfo: {fileID: 11400000, guid: 078d46a1d4ec1ed4b9f64b6efce90b6f, type: 2}
+  resourceFieldModel: 5
+  collectDistance: 1.5
+  initialAmount: 150
+  leftAmount: 0

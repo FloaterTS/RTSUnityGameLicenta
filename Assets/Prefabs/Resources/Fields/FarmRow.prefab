@@ -11,7 +11,9 @@ GameObject:
   - component: {fileID: 6046824595355424835}
   - component: {fileID: 6046824595358816355}
   - component: {fileID: 6046824595357719203}
-  m_Layer: 0
+  - component: {fileID: 6877294699639853602}
+  - component: {fileID: 1837739427880448642}
+  m_Layer: 10
   m_Name: FarmRow
   m_TagString: Resource
   m_Icon: {fileID: 0}
@@ -81,3 +83,33 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6877294699639853602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6046824595355780195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 392bf5cc7f1e4334c8689a16cc06b1ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resourceInfo: {fileID: 11400000, guid: 078d46a1d4ec1ed4b9f64b6efce90b6f, type: 2}
+  resourceFieldModel: 4
+  collectDistance: 1.2
+  initialAmount: 50
+  leftAmount: 0
+--- !u!65 &1837739427880448642
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6046824595355780195}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.666667, y: 0.25, z: 3.3333335}
+  m_Center: {x: 0.000000014901161, y: 0.1, z: -0.00000017881393}

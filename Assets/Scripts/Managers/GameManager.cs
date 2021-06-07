@@ -159,26 +159,24 @@ public class GameManager : MonoBehaviour
     {
         int units = 0;
         foreach (Unit unit in activeUnits)
-        {
             if (unit.unitStats.unitTeam == team)
                 units++;
-        }
         return units;
     }
 
     private IEnumerator CheckGameEndCo()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1f); // the end condition is checked every second
 
         int playerUnits = GetNumberOfUnitsOfTeam(Team.PLAYER);
         int enemyUnits = GetNumberOfUnitsOfTeam(Team.ENEMY1) + GetNumberOfUnitsOfTeam(Team.ENEMY2) + GetNumberOfUnitsOfTeam(Team.ENEMY3);
 
         if (playerUnits == 0)
-            StartCoroutine(GameOver(false));
+            StartCoroutine(GameOver(false)); // level finished - enemy win
         else if (enemyUnits == 0)
-            StartCoroutine(GameOver(true));
+            StartCoroutine(GameOver(true)); // level finished - player win
         else
-            StartCoroutine(CheckGameEndCo());
+            StartCoroutine(CheckGameEndCo()); // level not finished, keep checking
     }
 
     private IEnumerator GameOver(bool playerWin)

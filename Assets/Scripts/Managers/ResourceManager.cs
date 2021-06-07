@@ -14,8 +14,7 @@ public enum ResourceRaw
     BERRIES,
     GOLD,
     WOOD,
-    Fish,
-    Farm
+    FARM
 }
 
 [System.Serializable]
@@ -140,8 +139,7 @@ public class ResourceManager : MonoBehaviour
         switch (resourceRaw)
         {
             case ResourceRaw.BERRIES:
-            case ResourceRaw.Farm:
-            case ResourceRaw.Fish:
+            case ResourceRaw.FARM:
                 return ResourceType.FOOD;
             case ResourceRaw.GOLD:
                 return ResourceType.GOLD;

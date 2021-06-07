@@ -22,8 +22,8 @@ public class PlacementValidity : MonoBehaviour
         overlapping = false;
         invalidTerrainBase = false;
 
-        validColor = new Color(0f, 0.55f, 0f, 0.3f); // transparent dark green 
-        invalidColor = new Color(1f, 0f, 0f, 0.4f); // transparent red
+        validColor = new Color(0f, 0.55f, 0f, 0.55f); // transparent dark green 
+        invalidColor = new Color(1f, 0f, 0f, 0.55f); // transparent red
         validityMaterial.color = validColor;
         currentColor = CurrentColor.valid;
 

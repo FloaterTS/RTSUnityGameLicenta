@@ -22,7 +22,8 @@ using UnityEngine;
 //Resource field model classification
 //0 - Small berry bush / Fallen Tree / Gold Ore Mine
 //1 - Large berry bush
-//2 - Farm
+//2 - Small Farm
+//3 - Large Farm
 
 [System.Serializable]
 public class UnitData
@@ -260,7 +261,10 @@ public class ResourceFieldData
             case ResourceFieldModel.BERRY_BUSH_LARGE:
                 resourceFieldModelType = 1;
                 break;
-            case ResourceFieldModel.FARM_FIELD:
+            case ResourceFieldModel.FARM_FIELD_SMALL:
+                resourceFieldModelType = 2;
+                break;
+            case ResourceFieldModel.FARM_FIELD_LARGE:
                 resourceFieldModelType = 2;
                 break;
             default:
