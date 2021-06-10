@@ -67,13 +67,10 @@
     <Compile Include="Assets\Scripts\Buildings\PlacementValidity.cs" />
     <Compile Include="Assets\Scripts\Managers\SaveSystem\GamePrefsManager.cs" />
     <Compile Include="Assets\Scripts\Resources\ResourceField.cs" />
-    <Compile Include="Assets\Tools\IKHelperTool\Old\Scripts\IKHelperToolSMBRemover.cs" />
     <Compile Include="Assets\Scripts\Managers\Camera\MinimapCameraController.cs" />
     <Compile Include="Assets\Scripts\Managers\PrefabManager.cs" />
     <Compile Include="Assets\Scripts\Managers\UIManager.cs" />
-    <Compile Include="Assets\Tools\IKHelperTool\Old\Scripts\IKHelperTool.cs" />
     <Compile Include="Assets\Scripts\Managers\SaveSystem\SaveLoadSystem.cs" />
-    <Compile Include="Assets\Tools\IKHelperTool\Old\Scripts\IKHelperToolSMB.cs" />
     <Compile Include="Assets\Scripts\Managers\ResourceManager.cs" />
     <Compile Include="Assets\Scripts\UI\MainMenu.cs" />
     <Compile Include="Assets\Scripts\Buildings\Building.cs" />
@@ -84,12 +81,9 @@
     <Compile Include="Assets\Scripts\Managers\InteractionManager.cs" />
     <Compile Include="Assets\Scripts\Scriptable\ResourceInfo.cs" />
     <Compile Include="Assets\Scripts\Buildings\VillagerInn.cs" />
-    <Compile Include="Assets\Tools\IKHelperTool\Old\Scripts\IKHelperToolUtils.cs" />
     <Compile Include="Assets\Scripts\Buildings\ResourceCamp.cs" />
     <Compile Include="Assets\Scripts\Managers\ConstructionManager.cs" />
     <Compile Include="Assets\Scripts\Scriptable\UnitStats.cs" />
-    <Compile Include="Assets\Tools\IKHelperTool\Old\Scripts\IKHelperToolSequenceSMB.cs" />
-    <Compile Include="Assets\Tools\IKHelperTool\Old\Scripts\IKHelperToolCustomInspector.cs" />
     <Compile Include="Assets\Scripts\Managers\SaveSystem\GameSaveData.cs" />
     <Compile Include="Assets\Scripts\Scriptable\LoadSaveBool.cs" />
     <Compile Include="Assets\Scripts\Managers\AIManager.cs" />

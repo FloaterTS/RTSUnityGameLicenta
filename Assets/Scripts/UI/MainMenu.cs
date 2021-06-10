@@ -182,7 +182,7 @@ public class MainMenu : MonoBehaviour
         if (PlayerPrefs.HasKey("volume"))
         {
             float volume = PlayerPrefs.GetFloat("volume");
-            audioMixer.SetFloat("volume", volume);
+            audioMixer.SetFloat("volume", Mathf.Log10(volume) * 20);
             volumeSlider.value = volume;
         }
     }
@@ -197,7 +197,7 @@ public class MainMenu : MonoBehaviour
 
     public void SetVolume(float volume)
     {
-        audioMixer.SetFloat("volume", volume);
+        audioMixer.SetFloat("volume", Mathf.Log10(volume) * 20); 
 
         PlayerPrefs.SetFloat("volume", volume);
     }
