@@ -92,6 +92,7 @@
     <Compile Include="Assets\Tools\IKHelperTool\Old\Scripts\IKHelperToolCustomInspector.cs" />
     <Compile Include="Assets\Scripts\Managers\SaveSystem\GameSaveData.cs" />
     <Compile Include="Assets\Scripts\Scriptable\LoadSaveBool.cs" />
+    <Compile Include="Assets\Scripts\Managers\AIManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Tools\TextMesh Pro\Shaders\TMPro.cginc" />

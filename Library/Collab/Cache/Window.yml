@@ -14,21 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SimpleSelectedItems:
     m_Keys:
-    - Assets/Prefabs/Character/UnitStats/Chomper.asset
-    - Assets/Prefabs/Character/UnitStats/Chomper.asset.meta
-    - Assets/Prefabs/Character/Units/Chomper.prefab
-    - Assets/Scripts/Buildings/VillagerInn.cs
-    - Assets/Scripts/Managers/Camera/MinimapInteractionController.cs
+    - Assets/Scenes/Main.unity
+    - Assets/Scripts/Managers/AIManager.cs
+    - Assets/Scripts/Managers/AIManager.cs.meta
     - Assets/Scripts/Managers/GameManager.cs
-    - Assets/Scripts/Managers/MovementManager.cs
-    - Assets/Scripts/Managers/PrefabManager.cs
-    - Assets/Scripts/Managers/ResourceManager.cs
-    - Assets/Scripts/Managers/SaveSystem/GameSaveData.cs
-    - Assets/Scripts/Managers/SaveSystem/SaveLoadSystem.cs
-    - Assets/Scripts/Managers/SelectionManager.cs
-    - Assets/Scripts/Managers/UIManager.cs
     - 
-    m_Values: 0000000000000000000000000000
+    m_Values: 0000000000
   RevisionSummary: 
   ChangesSearchValue: 
   SelectedHistoryRevision: 

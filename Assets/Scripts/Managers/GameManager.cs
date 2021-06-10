@@ -139,7 +139,7 @@ public class GameManager : MonoBehaviour
     public ResourceField GetClosestResourceFieldOfTypeFrom(ResourceRaw type, Vector3 from)
     {
         ResourceField closestResourceField = null;
-        float minDistance = 10000;
+        float minDistance = 10000f;
         foreach (ResourceField resourseField in activeResourceFields)
         {
             if (resourseField.resourceInfo.resourceRaw == type)
@@ -153,6 +153,25 @@ public class GameManager : MonoBehaviour
             }
         }
         return closestResourceField;
+    }
+
+    public Unit GetClosestUnitOfTeamFrom(Team team, Vector3 from)
+    {
+        Unit closestUnit = null;
+        float minDistance = 10000f;
+        foreach(Unit unit in activeUnits)
+        {
+            if(unit.unitStats.unitTeam == team)
+            {
+                float distance = Vector3.Distance(unit.transform.position, from);
+                if(distance < minDistance)
+                {
+                    closestUnit = unit;
+                    minDistance = distance;
+                }
+            }
+        }
+        return closestUnit;
     }
 
     private int GetNumberOfUnitsOfTeam(Team team)
