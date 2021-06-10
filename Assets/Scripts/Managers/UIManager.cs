@@ -203,6 +203,15 @@ public class UIManager : MonoBehaviour
         ConstructionManager.instance.StopPreviewBuildingBool();
     }
 
+    public void InnPanelRecruitVillager()
+    {
+        VillagerInn villagerInn = SelectionManager.instance.selectedBuilding.gameObject.GetComponent<VillagerInn>();
+        if (villagerInn != null)
+            villagerInn.RecruitVillager();
+        else
+            Debug.LogError("Villager Inn building not selected but recruit button was pressed");
+    }
+
     public void UnitPanelStopAction()
     {
         foreach (Unit unit in SelectionManager.instance.selectedUnits)

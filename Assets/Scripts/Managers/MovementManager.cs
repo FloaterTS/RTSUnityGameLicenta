@@ -103,7 +103,7 @@ public class MovementManager : MonoBehaviour
         return freeFormationPositions;
     }
 
-    Vector3[] SquareFormation(Vector3 targetCenterSpot, bool faceTargetPosition, float yRotation = 0f)
+    Vector3[] SquareFormation(Vector3 targetCenterSpot, bool faceTargetPosition = true, float yRotation = 0f)
     {
         Vector3[] squareFormationPositions = new Vector3[unitSelection.selectedUnits.Count];
 

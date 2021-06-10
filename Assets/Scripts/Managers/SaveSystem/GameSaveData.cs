@@ -18,6 +18,7 @@ using UnityEngine;
 //1 = Food / Berries
 //2 = Wood
 //3 = Gold
+//4 = Farms
 
 //Resource field model classification
 //0 - Small berry bush / Fallen Tree / Gold Ore Mine
@@ -95,6 +96,9 @@ public class UnitData
                     break;
                 case ResourceRaw.GOLD:
                     unitResourceTypeCarried = 3;
+                    break;
+                case ResourceRaw.FARM:
+                    unitResourceTypeCarried = 4;
                     break;
                 default:
                     unitResourceTypeCarried = 0;
@@ -246,6 +250,9 @@ public class ResourceFieldData
             case ResourceRaw.GOLD:
                 resourceFieldType = 3;
                 break;
+            case ResourceRaw.FARM:
+                resourceFieldType = 4;
+                break;
             default:
                 resourceFieldType = 0;
                 break;
@@ -265,7 +272,7 @@ public class ResourceFieldData
                 resourceFieldModelType = 2;
                 break;
             case ResourceFieldModel.FARM_FIELD_LARGE:
-                resourceFieldModelType = 2;
+                resourceFieldModelType = 3;
                 break;
             default:
                 resourceFieldModelType = 0;
@@ -300,6 +307,9 @@ public class ResourceDropData
                 break;
             case ResourceRaw.GOLD:
                 resourceDropType = 3;
+                break;
+            case ResourceRaw.FARM:
+                resourceDropType = 4;
                 break;
             default:
                 resourceDropType = 0;

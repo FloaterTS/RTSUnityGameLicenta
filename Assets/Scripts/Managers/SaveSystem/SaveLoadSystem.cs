@@ -24,6 +24,7 @@ public class SaveLoadSystem : MonoBehaviour
     private readonly string saveExtension = ".rts";
 
     private string saveFilePath;
+    private bool loading = false;
 
     private void Awake()
     {
@@ -131,6 +132,8 @@ public class SaveLoadSystem : MonoBehaviour
     {
         Debug.Log("Setting up loaded save..");
 
+        loading = true;
+
         // Clearing current active objects from scene
         GameManager.instance.ClearSceneEntities();
 
@@ -202,6 +205,9 @@ public class SaveLoadSystem : MonoBehaviour
                         break;
                     case 3: // Gold
                         worker.carriedResource.resourceInfo = PrefabManager.instance.goldInfo;
+                        break;
+                    case 4: // Farm
+                        worker.carriedResource.resourceInfo = PrefabManager.instance.farmInfo;
                         break;
                     case 0:
                         Debug.LogError("Unit carrying non-zero amount of resource type None in save data");
@@ -355,7 +361,7 @@ public class SaveLoadSystem : MonoBehaviour
 
             switch (data.resourceFieldsData[i].resourceFieldType)
             {
-                case 1: // Berries
+                case 1: // Food
                     {
                         switch (data.resourceFieldsData[i].resourceFieldModelType)
                         {
@@ -364,6 +370,12 @@ public class SaveLoadSystem : MonoBehaviour
                                 break;
                             case 1: // Large berry bush
                                 resourceFieldGO = Instantiate(PrefabManager.instance.berryBushLargePrefab, resourceFieldPosition, resourceFieldRotation, PrefabManager.instance.resourceFieldsTransformParentGO.transform);
+                                break;
+                            case 2: // Small farm
+                                resourceFieldGO = Instantiate(PrefabManager.instance.farmFieldSmallPrefab, resourceFieldPosition, resourceFieldRotation, PrefabManager.instance.resourceFieldsTransformParentGO.transform);
+                                break;
+                            case 3: // Large farm
+                                resourceFieldGO = Instantiate(PrefabManager.instance.farmFieldLargePrefab, resourceFieldPosition, resourceFieldRotation, PrefabManager.instance.resourceFieldsTransformParentGO.transform);
                                 break;
                             default:
                                 Debug.LogError("Resource field model type " + data.resourceFieldsData[i].resourceFieldModelType + " from save data not recognized");
@@ -434,6 +446,9 @@ public class SaveLoadSystem : MonoBehaviour
                     break;
                 case 3: // Gold
                     resourceDropGO = Instantiate(PrefabManager.instance.goldOreDropPrefab, resourceDropPosition, Quaternion.identity, PrefabManager.instance.resourceDropsTransformParentGO.transform);
+                    break;
+                case 4: // Farm
+                    resourceDropGO = Instantiate(PrefabManager.instance.farmDropPrefab, resourceDropPosition, Quaternion.identity, PrefabManager.instance.resourceDropsTransformParentGO.transform);
                     break;
                 case 0:
                     Debug.LogError("Resource drop type None from save data not possible");
@@ -562,8 +577,14 @@ public class SaveLoadSystem : MonoBehaviour
         
         Vector3 cameraPositionVector = new Vector3(data.cameraPosition[0], data.cameraPosition[1], data.cameraPosition[2]);
         CameraController.instance.SetCameraPositionAndRotation(cameraPositionVector, data.cameraYRotationDegrees);
-       
+
+        loading = false;
+
         Debug.Log("Finished setting up loaded game save");
     }
 
+    public bool IsLoadingSaveFile()
+    {
+        return loading;
+    }
 }

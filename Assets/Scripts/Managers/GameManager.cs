@@ -168,6 +168,12 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(1f); // the end condition is checked every second
 
+        if (SaveLoadSystem.instance.IsLoadingSaveFile())
+        {
+            StartCoroutine(CheckGameEndCo());
+            yield break;
+        }
+
         int playerUnits = GetNumberOfUnitsOfTeam(Team.PLAYER);
         int enemyUnits = GetNumberOfUnitsOfTeam(Team.ENEMY1) + GetNumberOfUnitsOfTeam(Team.ENEMY2) + GetNumberOfUnitsOfTeam(Team.ENEMY3);
 

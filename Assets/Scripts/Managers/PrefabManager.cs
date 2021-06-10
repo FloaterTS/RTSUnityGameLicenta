@@ -22,13 +22,14 @@ public class PrefabManager : MonoBehaviour
     public GameObject berryBushLargePrefab;
     public GameObject lumberTreePrefab;
     public GameObject goldOreMinePrefab;
-    public GameObject farmFieldPrefab;
+    public GameObject farmFieldSmallPrefab;
+    public GameObject farmFieldLargePrefab;
 
-    [Header("Resource Drops Pefabs")]
+    [Header("Resource Drops Prefabs")]
     public GameObject berriesDropPrefab;
     public GameObject logPileDropPrefab;
     public GameObject goldOreDropPrefab;
-    public GameObject farmFoodDropPrefab;
+    public GameObject farmDropPrefab;
 
     /*[Header("Units Stats")]
     public UnitStats playerVillagerStats;

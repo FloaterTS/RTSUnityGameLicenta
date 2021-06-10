@@ -29,7 +29,7 @@ public class MinimapInteractionController : MonoBehaviour, IPointerClickHandler
             Rect imageRectSize = GetComponent<RawImage>().rectTransform.rect;
 
             /* localCursorPoint is the distance on x and y axis from the rect center point
-            off we add the imageRectSize (by substracting because it's negative) which is the half size
+            off we add the imageRectSize (by subtracting because it's negative) which is the half size
             the rectangle so we can get the local coordinates x and y inside the rectangle
             then we divide them by the rectSize so we can get their ratios (between 0.0 - 1.0) */
             localCursorPoint.x = (localCursorPoint.x - imageRectSize.x) / imageRectSize.width;

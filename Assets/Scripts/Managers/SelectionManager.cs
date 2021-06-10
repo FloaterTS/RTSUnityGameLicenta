@@ -172,7 +172,7 @@ public class SelectionManager : MonoBehaviour
         Vector3[] selectionCorners = { upperLeftCorner, upperRightCorner, lowerLeftCorner, lowerRightCorner }; //The order matters
         Vector3[] selectionMeshVertices = new Vector3[5];
 
-        selectionMeshVertices[0] = Camera.main.transform.position; //First vertice is at camera's position
+        selectionMeshVertices[0] = Camera.main.transform.position; //First vertix is at camera's position
 
         for (int i = 0; i < 4; i++)
         {
@@ -188,7 +188,7 @@ public class SelectionManager : MonoBehaviour
         //We generate a mesh with 5 vertices: one from the camera and the others being our selection corners
         Mesh selectionMesh = GenerateSelectionMesh(selectionMeshVertices);
 
-        //We add a collider to out generated mesh so we can detect the units that are inside it
+        //We add a collider to our generated mesh so we can detect the units that are inside it
         MeshCollider selectionBox = gameObject.AddComponent<MeshCollider>();
         selectionBox.sharedMesh = selectionMesh;
         selectionBox.convex = true;

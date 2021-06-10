@@ -106,7 +106,7 @@ public class ResourceManager : MonoBehaviour
         }
     }
 
-    public bool UseResources(ResourceCost resourceCost, bool check)
+    public bool UseResources(ResourceCost resourceCost, bool check = false)
     {
         if (currentFoodAmount >= resourceCost.foodCost)
         {
