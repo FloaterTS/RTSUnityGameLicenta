@@ -8431,16 +8431,16 @@ MonoBehaviour:
   berryBushLargePrefab: {fileID: 4142610424207543391, guid: 434afa706308cd44889264535d0a866e, type: 3}
   lumberTreePrefab: {fileID: 1522173508516683714, guid: e2687f920f77eb546baa46aea9dd1944, type: 3}
   goldOreMinePrefab: {fileID: 3894429626856774869, guid: fa1315aaa1d09984c9db79868286fcd6, type: 3}
-  farmFieldSmallPrefab: {fileID: 0}
-  farmFieldLargePrefab: {fileID: 0}
+  farmFieldSmallPrefab: {fileID: 6046824595355780195, guid: c3e0c843cbb3f3a4db166cd739570afd, type: 3}
+  farmFieldLargePrefab: {fileID: 2817496130338927638, guid: 573833fb9e0d11845933b07ffff48f9b, type: 3}
   berriesDropPrefab: {fileID: 5312246984776751316, guid: 2c41d814b10c6754db38c9d01ecaafb1, type: 3}
   logPileDropPrefab: {fileID: 5832075680587380271, guid: 7369f7387fa688d4095c202b908a83e3, type: 3}
   goldOreDropPrefab: {fileID: 8833172306506306338, guid: 9e1d1026c39899049bd09ea4dd4a8fbf, type: 3}
-  farmDropPrefab: {fileID: 0}
+  farmDropPrefab: {fileID: 1926521710388617010, guid: f8df31f6166bbfe459037f034d79a248, type: 3}
   berriesInfo: {fileID: 11400000, guid: bc5f86b57fc1f1f46adcfa3e2f18fc75, type: 2}
   woodInfo: {fileID: 11400000, guid: 5e9dc06090410d3469685143aa69f28c, type: 2}
   goldInfo: {fileID: 11400000, guid: 41aef8636866ade419342a4e4c134696, type: 2}
-  farmInfo: {fileID: 0}
+  farmInfo: {fileID: 11400000, guid: 078d46a1d4ec1ed4b9f64b6efce90b6f, type: 2}
   unitsTransformParentGO: {fileID: 1101214097}
   buildingsTransformParentGO: {fileID: 58512408}
   resourceFieldsTransformParentGO: {fileID: 400706121}

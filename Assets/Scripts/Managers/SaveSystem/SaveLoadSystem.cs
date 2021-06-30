@@ -361,7 +361,8 @@ public class SaveLoadSystem : MonoBehaviour
 
             switch (data.resourceFieldsData[i].resourceFieldType)
             {
-                case 1: // Food
+                case 1: // Berries
+                case 4: // Farms
                     {
                         switch (data.resourceFieldsData[i].resourceFieldModelType)
                         {

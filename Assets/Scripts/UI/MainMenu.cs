@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.Audio;
-
+using System.IO;
 
 public class MainMenu : MonoBehaviour
 {
@@ -41,9 +41,14 @@ public class MainMenu : MonoBehaviour
 
     private Resolution[] resolutions;
 
+    private readonly string saveName = "guildsSave";
+    private readonly string saveExtension = ".rts";
+
 
     private void Start()
     {
+        CheckFileSaved();
+
         if(!saveFileExists.saveToBeLoaded)
         {
             continueButton.enabled = false;
@@ -51,6 +56,16 @@ public class MainMenu : MonoBehaviour
         }
 
         InitSettings();
+    }
+
+    private void CheckFileSaved()
+    {
+        string saveFilePath = Path.Combine(Application.persistentDataPath, saveName + saveExtension);
+
+        if (File.Exists(saveFilePath))
+            saveFileExists.saveToBeLoaded = true;
+        else
+            saveFileExists.saveToBeLoaded = false;
     }
 
     public void NewGame()

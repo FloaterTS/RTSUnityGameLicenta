@@ -14,17 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SimpleSelectedItems:
     m_Keys:
-    - Assets/Art/Audio/Music.meta
-    - Assets/Art/Audio/Music/AsiaTensionBGM_01.wav
-    - Assets/Art/Audio/Music/AsiaTensionBGM_01.wav.meta
-    - Assets/Art/Audio/Music/AsiaTensionBGM_02.wav
-    - Assets/Art/Audio/Music/AsiaTensionBGM_02.wav.meta
-    - Assets/Art/Audio/Music/RPG_Lobby.wav
-    - Assets/Art/Audio/Music/RPG_Lobby.wav.meta
-    - Assets/Audio.meta
+    - Assets/Scenes/Main.unity
+    - Assets/Scripts/Managers/SaveSystem/SaveLoadSystem.cs
     - Assets/Scripts/UI/MainMenu.cs
     - 
-    m_Values: 00000000000000000000
+    m_Values: 00000000
   RevisionSummary: 
   ChangesSearchValue: 
   SelectedHistoryRevision: 
